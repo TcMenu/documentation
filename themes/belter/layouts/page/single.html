@@ -1,0 +1,16 @@
+{{ partial "head" . }}
+{{ partial "widgets/breadcrumbs.html" . }}
+<div class="fwContainer">
+    <div class="content">
+      {{ .Content }}
+
+      {{ partial "widgets/socialButtons" . }}
+        {{ partial "widgets/seeAlso" }}
+    </div>
+
+    <div class="sidebarContainer">
+      {{ partial "widgets/sidebar" .}}
+    </div>
+</div>
+
+{{ partial "foot" . }}

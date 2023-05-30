@@ -1,0 +1,20 @@
+{{ partial "head" . }}
+{{ partial "widgets/breadcrumbs.html" . }}
+  <div class="fwContainer">
+    <div class="content">
+        <div>
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+        {{ range $paginator.Pages }}
+         {{ partial "widgets/list-summary.html" . }}
+        {{ end }}
+
+        {{ partial "widgets/pagination.html" . }}
+        </div>
+        {{ partial "banners/sidebar" . }}
+    </div>
+    <div class="col-md-3 sidebarContainer">
+        {{ partial "widgets/sidebar.html" . }}
+    </div>
+  </div>
+</div>
+{{ partial "foot" . }}

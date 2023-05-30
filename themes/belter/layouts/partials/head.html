@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}" />
+  {{ else }}
+  <meta name="description" content="{{ .Site.Params.description }}" />
+  {{ end }}
+  <meta name="keywords" content="{{ if .Keywords }}{{ range .Keywords }}{{ . }}, {{ end }}{{else if isset .Params "tags" }}{{ range .Params.tags }}{{ . }}, {{ end }}{{end}}">
+
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <link href="{{ .Site.BaseURL }}/img/favicon.ico" rel="icon">
+
+  {{ hugo.Generator }}
+
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}products/arduino-libraries/css/thirdparty.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}products/arduino-libraries/css/style-v4.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}products/arduino-libraries/css/hl-js-atelier-ls-light.css">
+  </head>
+<body>
+    {{ partial "base/header" . }}

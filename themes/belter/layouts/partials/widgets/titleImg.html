@@ -1,0 +1,9 @@
+{{ if .Params.titleimg }}
+<img src="{{.Params.titleimg}}" alt="{{.Params.title}}" class="titleimg"/>
+{{ end }}
+{{ if .Params.youtube }}
+<iframe class="titleVideo" src="{{.Params.youtube}}" frameborder="0" allowfullscreen></iframe>
+{{ end }}
+{{ if .Params.wideimg }}
+<img src="{{.Params.wideimg}}" alt="{{.Params.title}}" style="max-width: 97%;"/>
+{{ end }}

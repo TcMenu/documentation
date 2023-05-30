@@ -1,0 +1,12 @@
+name = "Belter theme"
+license = "MIT"
+licenselink = "Based on a hugo theme a long time ago"
+description = "Based on a hugo theme a long time ago"
+homepage = "http://www.thecoderscorner.com"
+tags = ["custom"]
+features = ["commerical"]
+min_version = 0.1
+
+[author]
+    name = "Dave Cherry"
+    homepage = "https://www.thecoderscorner.com"

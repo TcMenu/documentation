@@ -1,0 +1,41 @@
+<div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+        <h3 class="panel-title">Recent posts</h3>
+    </div>
+    <div class="blog-entries">
+        <ul>
+        {{ range first 5 (where .Site.Pages.ByDate.Reverse "Type" "blog") }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+        </ul>
+    </div>
+</div>
+
+{{ if (eq .Page.Type "blog") }}
+<div class="sidebar-menu">
+    <div class="panel-heading">
+        <h3 class="panel-title">Related posts</h3>
+    </div>
+    <div class="blog-entries">
+        <ul>
+        {{ range (where $.Site.Pages "Type" "blog") }}
+        {{ if and (lt ($.Scratch.Get "related_matches") 5) (ge (intersect $.Params.tags .Params.tags | len) 2) }}
+        {{ if ne $.Permalink .Permalink }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ $.Scratch.Add "related_matches" 1 }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        </ul>
+    </div>
+</div>
+
+<div class="panel panel-default sidebar-menu">
+    <div class="blog-entries" style="font-size: 120%;">
+        <p>
+            <a href="/tags">See the tag cloud</a>
+        </p>
+    </div>
+</div>
+
+{{ end }}

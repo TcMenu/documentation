@@ -1,0 +1,20 @@
+<div id="heading-breadcrumbs">
+    <div class="fwContainer breadcrumbs">
+        <h1 class="titleHeading">{{ .Title }}</h1>
+        {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+        {{ $scratch := newScratch }}
+        {{ $scratch.Set "path" "/" }}
+
+        <ul class="breadcrumbs">
+            <li><a href="/">home</a></li>
+            {{ range $index, $element := split $url "/" }}
+            {{ $scratch.Add "path" $element }}
+            {{ if ne $element "" }}
+            <li><a href='{{ ($scratch.Get "path") }}'>{{ . }}</a></li>
+            {{ $scratch.Add "path" "/" }}
+            {{ end }}
+            {{ end }}
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="summary">
+    <div class="image">
+        <a href="{{ .Permalink }}">
+            {{ if .Params.banner }}
+            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-fluid" alt="">
+            {{ else }}
+            {{ if eq .Type "category" }}
+            <img src="{{ .Site.BaseURL}}products/arduino-libraries/img/folder.png" class="img-fluid" alt="">
+            {{ else }}
+            <img src="{{ .Site.BaseURL}}products/arduino-libraries/img/placeholder.png" class="img-fluid" alt="">
+            {{ end }}
+            {{ end }}
+        </a>
+    </div>
+    <div class="description">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="authorDate">
+            <a href="{{ .Permalink }}">By
+            {{ if isset .Params "author" }}
+             {{ .Params.author }}
+            {{ else }}
+              Unknown
+            {{ end }}
+            on {{ .Date.Format "January 2, 2006" }}</a>
+        </p>
+        <p class="intro">{{ .Summary }}</p>
+        <button class="read-more intro">
+            <a href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
+        </button>
+    </div>
+</div>

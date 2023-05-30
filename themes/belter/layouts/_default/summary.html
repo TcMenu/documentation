@@ -1,0 +1,15 @@
+<div class="fwContainer">
+  <h3>
+      <a href="{{ .Permalink }}">{{ if .IsPage }}{{ if .Draft }}{{ .Site.Data.Strings.draft }} :: {{ end }}{{ end }}{{ .Title }}</a>
+  </h3>
+
+  <p>
+      {{ if .IsPage }}
+      {{ if .Description }}
+      {{ .Description | markdownify }}
+      {{ else }}
+      {{ .Summary }}
+      {{ end }}
+      {{ end }}
+  </p>
+</div>

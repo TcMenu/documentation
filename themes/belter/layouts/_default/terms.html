@@ -1,0 +1,35 @@
+{{ partial "head.html" . }}
+{{ partial "widgets/breadcrumbs.html" . }}
+
+<div id="content">
+    <div class="fwContainer">
+
+        <div class="row">
+
+            <div class="content">
+                <div id="post-content">
+                    <p>{{.Description}}</p>
+                    <section id="main">
+                        <div>
+                            <ul class="allTagList">
+                                {{ $data := .Data }}
+                                {{ range $key, $value := .Data.Terms }}
+                                <li><a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>
+                                    <span class="light-badge"> {{ len $value }}</span>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                {{ partial "widgets/socialButtons" . }}
+
+            </div>
+            <div class="sidebarContainer">
+                {{ partial "widgets/sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ partial "foot.html" . }}

@@ -1,0 +1,20 @@
+</div>
+<footer class="footer hidden-print">
+    <div class="fwContainer">
+        <div class="row">
+            {{ if ne (.Site.Params.production) "Y" }}
+                <div style="padding:10px; margin: 6px 0;color:white;width: auto;background-color: #2b2b2b;">Site is running in development mode. Without disqus or analytics</div>
+            {{ end }}
+            <p class="text-xs-center m-a-0 p-a-0">
+                &#169; 2008 - {{ now.Format "2006"}} TheCodersCorner / Dave Cherry all rights reserved.
+            </p>
+            <p class="text-xs-center  m-a-0 p-a-0">
+                {{ $footerMenuLen := len .Site.Menus.footer}} {{ if gt $footerMenuLen 0 }} {{ range $k, $v := .Site.Menus.footer }}
+                <span class="p-l-1 p-r-1">
+                <a href="{{.URL}}">{{ .Name }}</a>
+              </span>
+                {{ if lt $k (sub $footerMenuLen 1) }}&middot;{{ end }} {{ end }} {{ end }}
+            </p>
+        </div>
+    </div>
+</footer>

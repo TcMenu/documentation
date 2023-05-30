@@ -1,0 +1,20 @@
+<!-- layouts/partials/menu_recursive.html -->
+{{ $top := (eq .level 0) }}
+{{ $currentLevel := .level}}
+
+{{ if $top }}
+<ul class="nav navbar-nav"><li class="nav-item"><a class="img-link menu-item" href="/"><img class="small-logo" src="/products/arduino-libraries/img/logo-small.png" alt="The coders corner logo"/></a></li>
+{{ else }}
+<ul class="dropdown-menu">
+{{ end }}
+
+    {{ range .menu }}
+    <li class="nav-item {{ if eq $top false }} nav-inline {{ end }}">
+        {{ $shouldRecurse := (and (lt $currentLevel 2) .HasChildren) }}
+        <a id="{{ .Identifier }}" href="{{ .URL }}" class="nav-link menu-item {{ if $shouldRecurse }}dropdown-toggle{{ end }}">{{ .Name }}</a>
+        {{ if $shouldRecurse }}
+        {{ partial "base/menu_recursive.html" (dict "menu" .Children "level" (add $currentLevel 1) "currentMenu" .) }}
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>

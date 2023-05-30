@@ -1,0 +1,6 @@
+<h2>Other pages within this category</h2>
+<ul>
+    {{ range first 15 (where .Site.Pages "Params.menu" .Params.menu) }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end}}
+</ul>

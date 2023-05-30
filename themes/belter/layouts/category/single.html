@@ -1,0 +1,31 @@
+{{ partial "head.html" . }}
+{{ partial "widgets/breadcrumbs.html" . }}
+<div class="fwContainer">
+    <div class="content">
+        {{ partial "widgets/titleImg.html" . }}
+        <div id="post-content">
+        {{.Content}}
+        {{ if .Params.showChildren }}
+
+            {{ range sort (where .Site.Pages "Params.menu" $.Params.menu.main.identifier) ".Params.weight"}}
+              {{ partial "widgets/list-summary.html" .}}
+            {{ end }}
+
+            {{ $group :=  $.Params.menu.main.identifier }}
+
+            {{ range sort (where .Site.Pages "Type" "category") ".Params.menu.main.weight" }}
+              {{ if eq .Params.menu.main.parent $group }}
+                {{ partial "widgets/list-summary.html" .}}
+              {{ end }}
+            {{ end }}
+
+        {{ end }}
+
+        {{ partial "widgets/socialButtons" . }}
+        </div>
+    </div>
+    <div class="sidebarContainer">
+        {{ partial "widgets/sidebar.html" . }}
+    </div>
+</div>
+{{ partial "foot.html" . }}

@@ -1,0 +1,35 @@
+{{ partial "head.html" . }}
+{{ partial "widgets/breadcrumbs.html" . }}
+
+<div class="fwContainer">
+    <div class="content blogPost">
+        {{ $baseurl := .Site.BaseURL }}
+        <ul class="article-tags">
+            {{ range .Params.tags }}
+            <li> <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a> </li>
+            {{ end }}
+        </ul>
+        <p class="authorDateTags">{{ if .Params.author }}By <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format "January 2, 2006" }}</p>
+        <div id="post-content">
+            {{ partial "widgets/titleImg.html" . }}
+            {{ .Content }}
+        </div>
+        {{ partial "widgets/seeAlso" . }}
+
+        {{ partial "widgets/socialButtons" . }}
+
+        {{ if and (.Site.DisqusShortname) ( eq (.Site.Params.production) "Y")}}
+        <div id="comments">
+            {{ template "_internal/disqus.html" . }}
+        </div>
+        {{ else }}
+        <p>disqus is off production="Y" and set shortname</p>
+        {{ end }}
+
+    </div>
+    <div class="col-md-3 sidebarContainer">
+      {{ partial "widgets/sidebar.html" . }}
+    </div>
+</div>
+{{ partial "foot.html" . }}
+

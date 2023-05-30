@@ -1,0 +1,45 @@
+baseurl = "https://www.thecoderscorner.com/"
+languageCode = "en-us"
+title = "The Coders Corner"
+theme = "belter"
+disqusShortname = "thecoderscorner"
+googleAnalytics = "UA-41766048-1"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[params]
+    production = "N"
+    EnableAds = "N"
+    author = "TheCodersCorner"
+    refDocsLocation = "https://www.thecoderscorner.com"
+    gitEditURL = "https://github.com/davetcc/library-documentation/"
+
+[[menu.main]]
+    name = "Products"
+    weight = 0
+    identifier = "products"
+
+[[menu.footer]]
+    name = "Privacy and terms of use"
+    url = "/legal/privacy"
+    weight = 1
+
+[[menu.footer]]
+    name = "Built by TheCodersCorner"
+    url = "https://www.thecoderscorner.com/"
+    weight = 2
+
+[[menu.footer]]
+    name = "Built on Hugo CMS"
+    url = "https://gohugo.io/"
+    weight = 3
+
+[params.widgets]
+    search = true
+    categories = true
+    tags = true
+
+[markup.goldmark.renderer]
+    unsafe = true
