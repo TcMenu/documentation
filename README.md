@@ -5,4 +5,6 @@ This is completely self-contained and can be tested and developed locally with a
 
 make sure when testing locally that in `config.toml` the `Production` parameter is 'N'. 
 
+To develop the site just load the directory into an editor such as VS Code or IntelliJ.
+
 To test the site, simply start hugo in development mode from this directory with `hugo -w server`. That's it. 
