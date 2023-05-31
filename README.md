@@ -13,3 +13,7 @@ To test the site, simply start hugo in development mode from this directory with
 ## Building the ref-docs documentation
 
 Generally speaking, there is a link to the reference (or doxygen generated) documents within the site, these are usually hosted at the `/ref-docs` location and each of the library repositories and the tcMenu API are built in turn to this end. These are built on web server as the documentation changes.
+
+## A few basic rules for committers
+
+Avoid breaking links at all costs, do not refactor page names or positions without talking to one of the committers first. Check your spelling is correct, best to use a spell checker in the editor that you are using. Think about others needing to read your text, make it as short as you can while keeping the meaning.
