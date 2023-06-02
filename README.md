@@ -17,3 +17,7 @@ Generally speaking, there is a link to the reference (or doxygen generated) docu
 ## A few basic rules for committers
 
 Avoid breaking links at all costs, do not refactor page names or positions without talking to one of the committers first. Check your spelling is correct, best to use a spell checker in the editor that you are using. Think about others needing to read your text, make it as short as you can while keeping the meaning.
+
+## Limitations of use
+
+You must not deploy this site publicly on any third party solution or use any of the logos that suggest it is theCodersCorner without the express permission of TheCodersCorner.com first. You may use a resonable amount of the content under the Apache license as long as you link back to the main site. 
