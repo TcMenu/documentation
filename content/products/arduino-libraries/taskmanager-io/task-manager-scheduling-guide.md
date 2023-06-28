@@ -40,16 +40,22 @@ For every scheduled task that we create, we provide a call back function that wi
 
 To schedule onTimer to be called once in the future - very similar to `setTimeout` in javascript:
 
-	uint8_t taskId = taskManager.scheduleOnce(millisFromNow, onTimer);
+	uint8_t taskId = taskManager.schedule(onceMillis(millisFromNow), onTimer);
 
-Or optionally provide a unit of time as well:
+In new code prefer the `schedule` function using one of the following time helper functions:
+
+* `onceMicros(N)` run once in N microseconds
+* `onceMillis(N)` run once in N milliseconds
+* `onceSeconds(N)` run once in N seconds
+* `repeatMicros(N)` repeatedly run in N microseconds
+* `repeatMillis(N)` repeatedly run in N milliseconds
+* `repeatSeconds(N)` repeatedly run in N seconds
+
+However, you can still use the original schedule functions where the timerUnit will default to milliseconds.
+
 
     // timerUnit is one of enum TimerUnit TIME_MICROS, TIME_SECONDS, TIME_MILLIS
 	uint8_t taskId = taskManager.scheduleOnce(millisFromNow, onTimer, timerUnit);
-	
-To schedule onTimer to be called over and over at a scheduled interval, again the time unit is optional:	
-	
-	uint8_t taskId = taskManager.scheduleFixedRate(millisInterval, onTimer);
 	uint8_t taskId = taskManager.scheduleFixedRate(millisInterval, onTimer, timerUnit);
 
 To cancel a Task just pass in the taskId (return value) from a schedule call.
@@ -60,18 +66,18 @@ To cancel a Task just pass in the taskId (return value) from a schedule call.
 
 You can use lambdas that do not capture on any board including AVR.
 
-    taskManager.scheduleOnce(20, [] {
+    taskManager.schedule(onceSeconds(20), [] {
         // work to be done
-    }, TIME_SECONDS);
+    });
 
 From version 1.2 onwards you can *enable* support to schedule lambda functions that capture arguments on 32 bit boards that support std::function. This includes all ESP boards, all mbed boards, and most SAMD based Arduino devices.
 
 To enable (if support is available on your board), set add the following flag to your compile options: `-DTM_ENABLE_CAPTURED_LAMBDAS`
 
     int variableToCapture = 42;
-    taskManager.scheduleOnce(20, [variableToCapture]() {
+    taskManager.schedule(onceSeconds(20), [variableToCapture]() {
         // code here can use variableToCapture, some 32 bit boards only.
-    }, TIME_SECONDS);
+    });
 
 ### Scheduling things to be done by extending Executable
     
@@ -84,10 +90,8 @@ Should you wish to provide an instance of a class for scheduling then you extend
     };
     MyScheduledClass schedInstance;
     
-    taskManager.scheduleOnce(when, &schedInstance);
-    taskManager.scheduleOnce(when, &schedInstance, timerUnit, [deleteWhenDone=false]);
-    taskManager.scheduleFixedRate(howOften, &schedInstance);
-    taskManager.scheduleFixedRate(howOften, &schedInstance, timerUnit, [deleteWhenDone=false]);
+    taskManager.schedule(onceSeconds(1), &schedInstance);
+    taskManager.schedule(onceSeconds(1), &schedInstance, [deleteWhenDone=false]);
 
 ### Scheduling for immediate execution on task manager
 
@@ -113,7 +117,7 @@ Lastly, we create the task
     // note that the deleteWhenDone parameter is set to true
     // if you allocate using new like this, you must set that parameter.
     auto task = new ExecWithParameter<HardwareSerial*>(myTaskCallback, &Serial);
-    taskManager.scheduleOnce(when, task, TIME_MILLIS, true); 
+    taskManager.schedule(onceSeconds(2), task, TIME_MILLIS, true); 
 
 There's also `ExecWith2Parameters` that allows for two parameters instead of one. 
 
