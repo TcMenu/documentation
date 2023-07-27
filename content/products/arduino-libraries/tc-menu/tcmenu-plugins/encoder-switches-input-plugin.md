@@ -39,7 +39,15 @@ Properties for Up down encoders:
 * Optional IoAbstractionRef - leave blank unless using an IO expander, then see the paragraph further up about expanders.
 * Up Pin - the pin on which the up button is connected
 * Down Pin - the pin on which the up button is connected
-* OK Button Pin - the pin on which the select button is connected to the device.  
+* Optional Back Pin - the pin that will function as back when pressed (usually the left joystick)
+* Optional Next Pin - the pin that will function as next when pressed (usually the right joystick)
+* OK Button Pin - the pin on which the select button is connected to the device.
+
+You can also configure that the right pin of a 4 way joystick will act as OK instead of next. This is useful in conjunction with the ability to rotate the meaning of the joystick when using card layouts and other situations where "sideways" scrolling is needed.
+
+## Controlling the menu with only two buttons
+
+A special case of above is to control the menu with only two buttons, obviously in this case the buttons double up as both UP and DOWN functions and BACK and OK. A short press on either button is UP or DOWN, an longer press (about a second), when UP held becomes back, when DOWN is held becomes OK. To choose this mode select the Two button only plugin.
 
 ## Controlling the menu with a rotary encoder
 
