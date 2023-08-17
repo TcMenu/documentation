@@ -44,7 +44,7 @@ To initialise `switches` during setup we call the `init` method, providing the I
 
 Below the diagram shows all three possibilities:
 
-{{< figure src="/images/electronics/arduino/ioAbstraction/pullup-and-pulldown-switches.png" alt="Pull down & pull up examples" title="Example wiring of a pull-down & pull-up button to an Arduino">}}
+{{< figure src="/products/arduino-libraries/images/electronics/arduino/ioAbstraction/pullup-and-pulldown-switches.png" alt="Pull down & pull up examples" title="Example wiring of a pull-down & pull-up button to an Arduino">}}
 
 * PU1 - here we use INPUT_PULLUP as the input mode, it enables the internal pull-up resistor, it holds the input HIGH until the switch is pressed, when it pulls the input LOW.
 * PU2 - here as above, but we provide an external pull up resistor, needed when either the pin is not pull-up capable or for longer wire runs.
