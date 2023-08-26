@@ -9,10 +9,10 @@
         <App id="6" name="java-app" version="4.0.0"/>
     </Apps>
     <Libraries stream="STABLE">
-        <Library id="1" name="tcMenu" version="4.0.0"/>
-        <Library id="2" name="IoAbstraction" version="4.0.0"/>
+        <Library id="1" name="tcMenu" version="4.1.1"/>
+        <Library id="2" name="IoAbstraction" version="4.0.2"/>
         <Library id="3" name="LiquidCrystalIO" version="1.4.3"/>
-        <Library id="7" name="TaskManagerIO" version="1.3.5"/>
+        <Library id="7" name="TaskManagerIO" version="1.4.1"/>
         <Library id="8" name="SimpleCollections" version="1.2.3"/>
         <Library id="9" name="tcUnicodeHelper" version="1.0.0"/>
     </Libraries>
@@ -25,10 +25,10 @@
         <Library id="9" name="tcUnicodeHelper" version="0.2.0"/>
     </Libraries>
     <Libraries stream="BETA">
-        <Library id="1" name="tcMenu" version="4.0.0"/>
-        <Library id="2" name="IoAbstraction" version="4.0.0"/>
+        <Library id="1" name="tcMenu" version="4.1.1"/>
+        <Library id="2" name="IoAbstraction" version="4.0.2"/>
         <Library id="3" name="LiquidCrystalIO" version="1.4.3"/>
-        <Library id="7" name="TaskManagerIO" version="1.3.5"/>
+        <Library id="7" name="TaskManagerIO" version="1.4.1"/>
         <Library id="8" name="SimpleCollections" version="1.2.3"/>
         <Library id="9" name="tcUnicodeHelper" version="1.0.0"/>
     </Libraries>
