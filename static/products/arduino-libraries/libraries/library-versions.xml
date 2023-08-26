@@ -1,12 +1,12 @@
 <LibraryVersions apiVersion="3" app="tcMenuDesigner">
     <Apps stream="STABLE">
-        <App id="6" name="java-app" version="4.0.0"/>
+        <App id="6" name="java-app" version="4.1.1"/>
     </Apps>
     <Apps stream="PREVIOUS">
         <App id="6" name="java-app" version="3.1.0"/>
     </Apps>
     <Apps stream="BETA">
-        <App id="6" name="java-app" version="4.0.0"/>
+        <App id="6" name="java-app" version="4.1.1"/>
     </Apps>
     <Libraries stream="STABLE">
         <Library id="1" name="tcMenu" version="4.1.1"/>
