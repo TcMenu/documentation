@@ -18,9 +18,13 @@ aliases = "/products/arduino-libraries/tc-menu/tcmenu-generator-ui-documentation
 
 Above: getting started video showing how to use our menu library with Arduino. Link to the [Getting started with tcMenu Slides (from youtube video).](/downloads/slides/tcmenu-starter-presentation.pdf)
 
-TcMenu is a modular, IoT ready multi-level menu library for Arduino and mbed supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. The designer UI works by converting your menu structure into C++ code that works with your chosen hardware through plugins. It is capable of producing localisable multi-language menu applications.
+## Menu library and designer for Arduino and mbed
 
-In most cases, the generated code will present an editable menu without you writing more than a line of code. However, if you use I2C you may need to ensure `Wire.begin();` is called, and for logging make sure you've followed the [Arduino logging with IoAbstraction]({{< relref "arduino-logging-with-io-logging.md">}}) guide!
+TcMenu is a modular, IoT ready multi-level menu library for Arduino and mbed supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. 
+
+First, you design your menu structure using the designer UI, then using the code generator you convert your menu structure into Arduino, mbed or Raspberry-PI compatible code that works with your chosen hardware through plugins. The code generator is non-destructive so can be used throughout your project lifecycle.
+
+Further, the designer and code generator are capable of producing localised multi-language menu applications. You can edit the various languages directly within the IDE and then at runtime you can set a compile flag to choose the locale needed.
 
 The below guide will go from design right through to generating a complete, working application:
 
@@ -34,7 +38,7 @@ The below guide will go from design right through to generating a complete, work
 8. Compile the code in your favourite IDE and upload to a board.
 9. Add more items as needed (round trip between designer and IDE).
 
-### Step 1: Draw out your application state and group logically
+## Step 1: Draw out your application state and group logically
 
 The first step is to understand your application's state, IE the things that can be configured such as settings, the state that can be changed, such as real time adjustments, and also the status values that provide read only information. We provide an example below for a simple amplifier. If you're moving from another solution this step can probably be skipped.
 
@@ -52,36 +56,46 @@ Let's convert this into text:
 
 And at this point we are ready to open the menu designer software.
 
-### Step 2 - Get tcMenu Designer - Windows, macOS, Linux
+## Step 2 - Get tcMenu Designer - Windows, macOS, Linux
 
 Our Menu Designer software is available to download from the [tcMenu releases page](https://github.com/davetcc/tcMenu/releases). It can design menus and generate code for a wide range of input, display and remote control options. Available as a signed installer for Windows, Notarized app for macOS, and as a Debian package for Linux.
 
-### Step 2a: Ensure the Arduino libraries are installed
+## Step 2a: Ensure the Arduino libraries are installed
 
 You will need to install TcMenu library and all dependencies from Arduino IDE, or add the library dependency in the platformIO project ini file. As [TcMenu library](https://github.com/davetcc/tcMenuLib/releases) is built on [IOAbstraction library]({{< relref "io-abstraction.md">}}), [TaskManagerIO library]({{< relref "taskmanager-io.md">}}), [SimpleCollections]({{< relref "simple-collections.md">}}) and [TcUnicodeHelper]({{< relref "tc-unicode-helper.md" >}}) it's worth reading a little about these libraries too.
 
 **PlatformIO note:** Even if you're using platformIO, we recommend that you still [download at least tcMenu library](https://github.com/davetcc/tcMenuLib/releases) initially for the examples. In this case create a libraries directory and put tcMenu in it.
 
-### Step 3: Start the designer UI and ensure everything is ready
+## Step 3: Start the designer UI and ensure everything is ready
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-start-page.jpg" title="Menu Designer UI - main window" alt="menu designer UI on macOS showing main window" >}}
+{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-start-page.jpg" title="Menu Designer UI - Edit -> General Settings" alt="menu designer UI on macOS showing the general settings dialog" >}}
 
-At this point start designer and go to Edit -> General Settings. From here we can set up the project/sketches folder, and libraries directory. The sketches folder is used to provide a list of sketches, and also the default new project location. The libraries directory is used to check if libraries are up-to-date and also to provide a list of examples. You can always see available and installed versions from the "Library Versions" tab of General Settings.
+Once you've started the designer choose the "Edit -> General Settings" menu item. From here we can set up the project/sketches folder, and libraries directory. The sketches folder is used to provide a list of sketches, and also the default new project location. The libraries directory is used to check if libraries are up-to-date and also to provide a list of examples. You can always see available and installed versions from the "Library Versions" tab of General Settings.
 
-**PlatformIO note:** users who don't want to have a global copy of the libraries, from Edit -> General Settings untick the "I am using Arduino IDE" option. 
+Here you can also configure how many backups will be kept (they are now in the .backup directory of your project), how deep into both library and project directory structures to scan for examples, and available projects, and also you can setup the global options for new projects. We'll go into these later.
 
-Nearly all functions are available from the menu, with the main page split into several areas:
+**PlatformIO note:** users who don't want to have a global copy of the libraries, from Edit -> General Settings untick the "I am using Arduino IDE" option. This turns off all library checking, and will not populate the library examples menu item. 
+
+### Overview of the application menu options 
+
+The application has a main menu, on Windows and Linux it is at the top of the designer window, on macOS it will reside in the system menu area as per other apps.
 
 * "File" Menu contains functions to Open and Save projects, including listing out Examples, Sketches and Recently edited items.
 * "Edit" Menu has functions for clipboard, undo/redo and also the Settings dialog.
 * "Menu Item" menu contains functions for working with menu items, most are also in the item toolbar bottom-left below the menu tree.
-* "Code" menu has the Code Generator, EEPROM validator, and also a list of [IO expanders]({{< relref "setting-up-io-expanders-in-menu-designer.md" >}}).
+* "Code" menu has the Code Generator, EEPROM validator, internationalization settings, and also a list of [IO expanders]({{< relref "setting-up-io-expanders-in-menu-designer.md" >}}). It also contains utilities for [bitmap/widget creation]({{< relref "creating-and-using-bitmaps-menu.md">}}) and [font creation]({{< relref "using-custom-fonts-in-menu.md">}}).
 * "Help" menu has links to the most important parts of the tcMenu documentation. It also has a link to the forum and can prepare diagnostic info too.
-* Clicking on an item opens it up for editing in the editor area. You can change the values here and they are validated as you type.
+
+### Overview of the main window
+
+{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/menu-editor-main-with-preview.png" title="Menu Designer UI - main window (left) with preview (right)" alt="menu designer UI showing the main window (left) and preview (right)" >}}
+
+* From the menu tree, clicking on an item opens it up for editing in the editor area. You can change the values here and they are validated as you type.
 * Clicking on the Root item edits the project level properties. From here you can set the unique ID for the project and also the application name that will appear in the title area.
-* To move and copy items you can copy and paste menu items by selecting them in the tree, even using regular clipboard keyboard shortcuts. You can also drag and drop items to move them. If you drop near the top of an item the insert point is above, otherwise it is below. 
+* You can drag and drop items to move them. If you drop near the top of an item the insert point is above, otherwise it will be placed below the item. If you drop into a submenu, it will drop into the submenu instead.
+* You can also use copy and paste to move items around the tree, either from the Edit menu, or using regular clipboard shortcuts.
 * You can take a copy of a menu tree that can be loaded by the Java or C# API by copying from a point in the tree and pasting into a text editor.
-* A prototype view showing an approximate embedded layout is available from the "Menu Item" menu
+* The prototype view (right) that shows an approximate embedded layout is available from the "Menu Item -> Show Preview" menu. This brings up a lightweight EmbedControl form that is kept in sync as you edit. This is discussed in more detail in the [EmbedControl documentation](https://www.thecoderscorner.com/products/apps/embed-control/).
 
 ### Step 4: Create a new project directory to store your embedded application.
 
@@ -89,7 +103,7 @@ At this point you have two choices, either start with an example or a new projec
 
 {{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-create-project.jpg" title="Menu Designer UI - create project dialog" alt="Menu Designer UI - create project dialog" >}}
 
-Select the "I want to create a new project on disk" option, this creates a new folder in the chosen location (default is your sketch directory). Type in the name of the project that you want to create, once done the main window will be displayed again with the created project already opened.
+Select the "I want to create a new project on disk" option, this creates a new folder in the chosen location (default is your sketch directory). Type in the name of the project that you want to create, and select an appropriate platform. Advanced: If you want to use a CPP file instead of an INO, tick the "Use CPP" box, and you can enable internationalization support at this point too. Choose appropriate options and click "Create". 
 
 **PlatformIO note:** At this point you will probably want to create a platformio.ini file in this directory for your specific board. Also add the library dependency on [tcMenu library](https://platformio.org/lib/show/7316/tcMenu) at the same time. 
 
@@ -97,19 +111,29 @@ Select the "I want to create a new project on disk" option, this creates a new f
 
 Now we create the menu items based on the state that we identified earlier in Step 1.
 
-On the left of the main designer window there is a menu tree, this list contains all the menu items within this project and is shown in the main page image below marked (1).  To add a menu item we first select the submenu where we'd like it to appear and press the plus button in the menu item toolbar (below the menu tree on the left). The following will appear:  
+On the left of the main designer window there is a menu tree, this list contains all the menu items within this project and is shown in the main page image below marked (1).  To add a menu item we first select the submenu where we'd like it to appear and press the plus button in the menu item toolbar (below the menu tree on the left).  
+
+Note that items are created in whichever submenu was selected (or the nearest submenu to the item selected). Below is the create new item dialog:
+
+{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/add-menu-item-button.png" title="Menu Item toolbar (add item highlighted)" alt="Menu Item toolbar (add item highlighted)" >}}
+
+And once add menu item is pressed: 
 
 {{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-add-item.jpg" title="Adding a new menu item" alt="add menu item" >}}
 
-Do not change the ID unless you explicitly want to manage them yourself, it is automatically generated and unique. Simply choose the type of item you want to add and press create. In this case we create a regular numeric editor.
+Do not change the ID unless you explicitly want to manage them yourself, it is automatically generated and unique. Simply choose the type of item you want to add and press create. In this case we create a regular numeric editor. The new item will immediately be selected in the tree, and you can start editing its as the name field has the focus. 
 
 {{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/menu-designer-edit-item-view.jpg" title="Editing an analog menu item" alt="edit an analog menu item" >}}
 
-When we select an item in the menu tree (1), its properties become editable on the right-hand side (3). We can change the name, EEPROM storage location (usually by pressing Auto to get the next location), and any properties that are specific to that kind of item. As you edit the values are immediately validated and any errors reported above the item properties. Each menu item type has a link (2) to comprehensive documentation. 
+When we select an item in the menu tree (1), its properties become editable on the right-hand side (3). We can change the name, EEPROM storage location (usually by pressing Auto to get the next location), and any properties that are specific to that kind of item. As you edit the values are immediately validated and any errors reported above the item properties. 
+
+Each menu item type has a link (2) to comprehensive documentation that explains the intended purpose, how to create the item and full instructions on its usage, including the main functions that you can use to interact with that type of item at runtime. 
  
 Callbacks: You can optionally create a callback function that will be notified of any change immediately. However, you can also poll the state of the item as you need to. Both options are fully documented in [the menu item documentation]({{< relref "menu-item-types.md" >}}); which you can directly access from the link (2) in the designer UI. 
 
-Repeat this process until you've fully represented you application state.
+Repeat this process until you've fully represented your application state.
+
+At any time you can switch focus to the menu tree by pressing `F10`, and you can switch focus back to the item properties editor using `Esc`. You can also search for a menu item in a large structure using `F4`, all these functions are available from the "Menu Item" menu too until you familiarize yourself with the shortcuts. 
 
 ### Step 6: Ensure EEPROM ranges don't overlap
 
@@ -165,6 +189,9 @@ You'll now have code in the directory that you generated to. You'll see several 
 
 If you're using things that need wire library, you may need to add `Wire.begin` to your sketch, and if you're using the inbuilt logging, you may need to start Serial too. 
 
+
 Also see the [Designer UI worked example]({{< relref "generator-ui-worked-example.md" >}}) that's a bit out date but still useful for better understanding.
 
-* [Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+## Next steps
+
+[The main tcMenu page]({{< relref "tc-menu" >}}) has a considerable amount of documentation, that covers the vast majority of what you can do with the library.  
