@@ -25,13 +25,16 @@
     {{ partial "widgets/githubLink" . }}
   {{ end  }}
 
+  <div class="panel panel-default sidebar-menu" style="margin-bottom: 20px;">
+    <h3>Edit this page</h3>
+    <a class="github-link" title='{{T "Edit-this-page"}}' href="{{ .Site.Params.gitEditURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank">
+    <span id="top-github-link-text">Correct/Edit this page in GitHub</span>
+    </a>
+  </div>
+
   {{ if (.Params.toc_needed) }}
     {{ partial "widgets/toc" . }}
   {{ end }}
-
-  <a class="github-link" title='{{T "Edit-this-page"}}' href="{{ .Site.Params.gitEditURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank">
-  <span id="top-github-link-text">Edit / report issues on this page</span>
-  </a>
 
   {{ partial "banners/sidebar" . }}
 
