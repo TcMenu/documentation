@@ -89,7 +89,7 @@ Join message is used when a new connection is made, to indicate the details abou
 
 Example:
 
-    NJNM=Lighting|UU=575d327e-fe76-4e68-b0b8-45eea154a126|VE=100|PF=0|
+    NJNM=Lighting|UU=575d327e-fe76-4e68-b0b8-45eea154a126|VE=100|PF=0|US=999999999|
 
 Field definitions:
 
