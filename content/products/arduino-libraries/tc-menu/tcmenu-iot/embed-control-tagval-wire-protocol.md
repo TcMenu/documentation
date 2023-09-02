@@ -93,13 +93,14 @@ Example:
 
 Field definitions:
 
-| Field |Type     |Description                    |
-|-------|---------|-------------------------------|
-| NM    | String  | Name for connection           |
-| IC    | UUID    | UUID Key for UI               |
-| VE    | Version | The version of the sender     |
-| PF    | Platform| The platform of the sender    |
-| UU    | UUID    | The UUID of the remote app    |
+| Field | Type     | Description                     |
+|-------|----------|---------------------------------|
+| NM    | String   | Name for connection             |
+| IC    | UUID     | UUID Key for UI                 |
+| VE    | Version  | The version of the sender       |
+| PF    | Platform | The platform of the sender      |
+| UU    | UUID     | The UUID of the remote app      |
+| US    | Integer  | The serial number of the remote |
 
 ### Heartbeat Message (Type HB)
 
