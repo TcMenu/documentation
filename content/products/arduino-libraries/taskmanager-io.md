@@ -25,7 +25,9 @@ TaskManagerIO provides scheduling, events and interrupt marshalling, all while r
 This library contains the original scheduling support class TaskManager that was previously built into IoAbstraction.
 
 ## Getting started and scheduling things to be done
- 
+
+<iframe width="95%" height="315" src="https://www.youtube-nocookie.com/embed/N1ILzBfu5Zc?si=15pkQ2omW3iC97ll" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 Task manager can schedule tasks to be done either now, or at some point in the future. Available in all versions of task manager. 
  
  * [Task Manager scheduling guide]({{< relref "task-manager-scheduling-guide.md" >}})
