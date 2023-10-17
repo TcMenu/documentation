@@ -100,6 +100,7 @@ Switches and encoder settings:
 * `MAX_ROTARY_ENCODERS` the maximum number of rotary encoders that can be used, will not reallocate.
 * `MAX_JOYSTICK_ACCEL` the maximum acceleration for analog joystick encoder emulation
 * `ALLOWABLE_RANGE` the floating point amount that is used to determine if an analog button press is in range +/-, default is 0.01F
+* `TC_LEGACY_ENCODER` if defined the legacy `HardwareRotaryEncoder` class will be used instead of the newer state based class. 
 
 Touch specific settings:
 
