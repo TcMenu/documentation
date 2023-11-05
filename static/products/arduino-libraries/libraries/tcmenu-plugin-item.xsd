@@ -8,9 +8,11 @@
       <xs:element name="All" maxOccurs="unbounded" minOccurs="0">
       <xs:element name="PlatformGroup" maxOccurs="unbounded" minOccurs="0">
         <xs:simpleType>
+          <xs:restriction base="xs:string">
           <xs:enumeration value="TrueCpp"/>
           <xs:enumeration value="EmbJava"/>
           <xs:enumeration value="Arduino"/>
+          </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="Platform" maxOccurs="unbounded" minOccurs="0">
