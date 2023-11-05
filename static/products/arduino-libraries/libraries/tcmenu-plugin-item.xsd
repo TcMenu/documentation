@@ -9,9 +9,9 @@
       <xs:element name="PlatformGroup" maxOccurs="unbounded" minOccurs="0">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-          <xs:enumeration value="TrueCpp"/>
-          <xs:enumeration value="EmbJava"/>
-          <xs:enumeration value="Arduino"/>
+            <xs:enumeration value="TrueCpp"/>
+            <xs:enumeration value="EmbJava"/>
+            <xs:enumeration value="Arduino"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -179,7 +179,7 @@
     <xs:attribute type="xs:string" name="isValue"/>
     <xs:attribute type="xs:string" name="isNotValue"/>
     <xs:attribute type="xs:string" name="applicabilityRef"/>
-    <xs:attribute type="xs:boolean" name="useNew"/>
+    <xs:attribute type="xs:string" name="useNew"/>
   </xs:complexType>
   <xs:complexType name="GlobalVariablesType">
     <xs:sequence>
