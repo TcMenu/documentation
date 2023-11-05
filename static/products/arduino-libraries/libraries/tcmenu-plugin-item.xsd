@@ -5,7 +5,7 @@
   <xs:element name="TcMenuPlugin" type="TcMenuPluginType"/>
   <xs:complexType name="SupportedPlatformsType">
     <xs:sequence>
-      <xs:element name="All" maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="All" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element name="PlatformGroup" maxOccurs="unbounded" minOccurs="0">
         <xs:simpleType>
           <xs:restriction base="xs:string">
