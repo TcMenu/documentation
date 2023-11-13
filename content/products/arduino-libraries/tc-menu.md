@@ -19,7 +19,7 @@ menu:
 
 TcMenu is a modular, IoT ready multi level menu library for Raspberry PI, Arduino and mbed supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. It is Apache licensed and commercial support is available from us.
 
-Start by [working out what information and state is to be represented]({{< relref "menu-item-types.md" >}}) in the [Designer UI]({{< relref "tcmenu-overview-quick-start.md" >}}). Take inspiration from the [Arduino menu examples](https://github.com/davetcc/tcMenuLib/tree/master/examples). Then, run [Code Generator]({{< relref "code-generator-and-plugins-guide.md" >}}) which outputs code for the selected board. Finally, compile the code using your favourite IDE and test on your device.
+Start by [working out what information and state is to be represented]({{< relref "menu-item-types.md" >}}) in the [Designer UI]({{< relref "tcmenu-overview-quick-start.md" >}}). Take inspiration from the [Arduino menu examples](https://github.com/davetcc/tcMenuLib/tree/master/examples). Then, run [Code Generator]({{< relref "code-generator-and-plugins-guide.md" >}}) which outputs code for the selected board ready for use in an IDE.
 
 {{< blockClear "left" >}}
 
