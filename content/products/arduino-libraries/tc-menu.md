@@ -23,12 +23,13 @@ Start by building out your systems [state represented by menu-items]({{< relref 
 
 {{< blockClear "left" >}}
 
-Each menu item represents a state in the system, for example in an amplifier there would be menu items for "volume" and "input". In a wireless IoT system there could well be items for "SSID" and "Password" and possibly another item for current status. You can also present information such as signal strength as title widgets (small icons on the top-right). The image shown top left presents the ESPAmplifier example.
+Each menu item represents a state in the system, for example in an amplifier there would be menu items for "volume" and "input". In a wireless IoT system there could well be items for "SSID" and "Password" and possibly another item for current status. You can also present information such as signal strength as title widgets (small icons on the top-right). The image shown top left presents the ESPAmplifier example. Normally the quickest way to get started is to [look at the examples](https://github.com/davetcc/tcMenuLib/tree/master/examples) as they cover the most commonly used features. 
 
 ## Menu library core documentation for Arduino 
 
 * [TcMenu - Getting started, including video & slides]({{< relref "tcmenu-overview-quick-start.md" >}})
 * [tcMenu Designer releases page](https://github.com/davetcc/tcMenu/releases)
+* [TcMenu library examples and starter projects](https://github.com/davetcc/tcMenuLib/tree/master/examples)
 * [Guide to working with Menu Item Types]({{< relref "menu-item-types.md" >}})
 * [Code Generator and plugins guide]({{< relref "code-generator-and-plugins-guide.md" >}}) 
 * [EEPROM integration with menus]({{< relref "menu-eeprom-integrations.md" >}})
