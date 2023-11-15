@@ -46,7 +46,7 @@ We can see from the above table that messages start with 0x01 and are followed i
 
 ### Types supported within messages
 
-String fields are free-form and can contain the pipe character by escaping it the same way as C a string.
+String fields are free-form and can contain the pipe character by escaping it the same way as C language strings. Anything marked as defaultable may not appear in the message at all, and you have to then ensure that your processor can handle the message when that field is missing.
 
 Version fields in TagVal are packed into an integer, where major version is multiplied by 100 and the minor version added to it. For example 1.2 would be (100 * 1) + 2 or `102`. The most minor version is not presented, as it's assumed that breaking changes would never occur in a patch release.
 
@@ -297,31 +297,31 @@ Represents a nested menu in the remote menu.
 
 ### Scroll choice Boot Message (type: BZ)
 
-|Field|Type     |Description                    |
-|-----|---------|-------------------------------|
-| PI  | MenuID  | The parent ID (or 0 for ROOT) |
-| ID  | MenuID  | The menu ID                   |
-| RO  | Boolean | Readonly field. True: readonly|
-| NM  | String  | Name of the menu item         |
-| VI  | Boolean | True if item is visibile      |
-| NC  | String  | Number of choices             |
-| WI  | Integer | For array mode, the item width|
-| EM  | Mode    | 0:Ram, 1:EEPROM 2:Custom      |
-| VC  | String  | Text for choice - see note    |
+| Field | Type    | Description                    |
+|-------|---------|--------------------------------|
+| PI    | MenuID  | The parent ID (or 0 for ROOT)  |
+| ID    | MenuID  | The menu ID                    |
+| RO    | Boolean | Readonly field. True: readonly |
+| NM    | String  | Name of the menu item          |
+| VI    | Boolean | True if item is visibile       |
+| NC    | String  | Number of choices              |
+| WI    | Integer | For array mode, the item width |
+| EM    | Mode    | 0:Ram, 1:EEPROM 2:Custom       |
+| VC    | String  | Text for choice - see note     |
 
 Note the text for the current choice also contains the current index, it is in the form `index-text` so for example index 10 with value "Pizza" would be `10-Pizza`. Unlike enum all the values are not known, and there may be many, and they could change.
 
 ### RGBA8 or RGB8 color Boot Message (type: BK)
 
-|Field|Type     |Description                    |
-|-----|---------|-------------------------------|
-| PI  | MenuID  | The parent ID (or 0 for ROOT) |
-| ID  | MenuID  | The menu ID                   |
-| RO  | Boolean | Readonly field. True: readonly|
-| NM  | String  | Name of the menu item         |
-| VI  | Boolean | True if item is visibile      |
-| RA  | Boolean | True if alpha is included     |
-| VC  | RGBColor| Html color string - see note  |  
+| Field | Type     | Description                    |
+|-------|----------|--------------------------------|
+| PI    | MenuID   | The parent ID (or 0 for ROOT)  |
+| ID    | MenuID   | The menu ID                    |
+| RO    | Boolean  | Readonly field. True: readonly |
+| NM    | String   | Name of the menu item          |
+| VI    | Boolean  | True if item is visibile       |
+| RA    | Boolean  | True if alpha is included      |
+| VC    | RGBColor | Html color string - see note   |  
 
 We send the value as a color string in HTML hex format, depending on if alpha is present, it will be either 7 or 9 characters long. EG: `#FF55AA` or `#FF55AADD`.
 
@@ -333,13 +333,14 @@ Represents a dialog update in either direction. A dialog is a simple information
     
     enum ButtonType: byte { BTNTYPE_NONE = 0, BTNTYPE_OK, BTNTYPE_ACCEPT, BTNTYPE_CANCEL, BTNTYPE_CLOSE }
 
-|Field|Type     |Description                    |
-|-----|---------|-------------------------------|
-| MO  | DlgMode | One of the dialog mode values |
-| B1  | BtnType | One of the button types       |
-| B2  | BtnType | One of the button types       |
-| HF  | String  | Free form text of the header  |
-| BU  | String  | Free form text of the buffer  |
+| Field | Type        | Description                                  | Defaultable |
+|-------|-------------|----------------------------------------------|-------------|
+| MO    | DlgMode     | One of the dialog mode values                | No          |
+| B1    | BtnType     | One of the button types                      | No          |
+| B2    | BtnType     | One of the button types                      | No          |
+| HF    | String      | Free form text of the header (not mandatory) | Yes blank   |
+| BU    | String      | Free form text of the buffer (not mandatory) | Yes blank   |
+| CI    | Correlation | (not mandatory)                              | Yes 0       |
 
 ### Change value Message (type: VC)
 
@@ -367,15 +368,14 @@ Example for list response (in this case item 3 is invoked).
 
 Field definitions:
 
-|Field|Type        | Description                                              |
-|-----|------------|----------------------------------------------------------|
-| MT  | MsgType    | Must be `VC`                                             |
-| ID  | MenuID     | The menu ID                                              |
-| IC  | Correlation| Will be returned in the ACK                              | 
-| TC  | Integer    | Relative: 0, Absolute: 1, List: 2, List-State-Changed: 3 |
-| VC  | Depends    | The change value - see above                             |
-| Cn  | Optional   | The values for a list                                    |
-| cn  | Optional   | The keys for a list                                      |
+| Field | Type        | Description                                              | Defaultable |
+|-------|-------------|----------------------------------------------------------|-------------|
+| ID    | MenuID      | The menu ID                                              | No          |
+| IC    | Correlation | Will be returned in the ACK                              | Yes 0       |
+| TC    | Integer     | Relative: 0, Absolute: 1, List: 2, List-State-Changed: 3 | Yes 1       |
+| VC    | Depends     | The change value - see above                             | Yes blank   |
+| Cn    | Optional    | The values for a list                                    | Only list   |
+| cn    | Optional    | The keys for a list                                      | Only list   |
 
 ### Server Acknowledgement Response Message (type: AK)
 
@@ -383,18 +383,20 @@ This message indicates the success or failure of a change sent to the server. It
 
 The status codes are generally defined below, 0 indicates success, negative values are soft errors that can still be treated as success; whereas positive values indicate hard errors.
 
-|Status|Meaning             |
-|-----|---------------------|
-|  -1 | Value out of range  |
-|   0 | Successful          |
-|   1 | ID lookup failed    |
+| Status | Meaning             |
+|--------|---------------------|
+| -1     | Value out of range  |
+| 0      | Successful          |
+| 1      | ID lookup failed    |
+| 2      | Invalid credentials |
+| 10000  | Unspecified error   |
 
 Field definitions:
 
-|Field|Type        |Value                        |
-|-----|------------|-----------------------------|
-| IC  | Correlation| Same as the request         |
-| ST  | Integer    | Status code as above        |
+| Field | Type        | Value                |
+|-------|-------------|----------------------|
+| IC    | Correlation | Same as the request  |
+| ST    | Integer     | Status code as above |
 
 ## Message processing on the remote side
 
