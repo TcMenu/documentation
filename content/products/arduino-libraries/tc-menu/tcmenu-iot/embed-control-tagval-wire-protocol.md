@@ -15,17 +15,15 @@ toc_needed = true
 aliases = ["/products/arduino-libraries/tc-menu/tcmenu-tagval-protocol-documenation/"]
 +++
 
-embedCONTROL local area transmissions use a protocol called TagVal with the option of sending binary data using Raw messages. TagVal is a simple and lightweight protocol that has implementations on device for Arduino and mbed, [Java as an API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [Javascript using embedCONTROL.JS](https://github.com/davetcc/embedcontrolJS) and there is also a .NET implementation should someone step forward to help productionize it. As its name suggests TagVal is a Tag to Value protocol, somewhat like a Map in most high level languages.
+embedCONTROL local area transmissions use a protocol called TagVal with the option of sending binary data using Raw messages. TagVal is a simple and lightweight protocol that has implementations on device for Arduino and mbed, and developer APIs in [Java]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [Javascript](https://github.com/davetcc/embedcontrolJS), [Python](https://github.com/davetcc/tcmenu-python), Dart* and DotNet*. 
 
-If you are working in a language where an API is provided, you don't need to understand the protocol as the API deals with the protocol.
-
-Before reading this, I recommend that you've tried generating a menu, read through at least the [quick start documentation]({{< relref "tcmenu-overview-quick-start.md" >}}) and the reference material (see getting the code section on the right).
+If you are working in a language where an API is provided, you don't need to understand the protocol as the API deals with the protocol. This guide assumes you've read the [quick start documentation]({{< relref "tcmenu-overview-quick-start.md" >}}) and the reference material (see getting the code section on the right).
 
 {{< blockClear "left" >}}
 
 ## The basics of a TagVal message
 
-In tcMenu a message always starts with the byte `0x01` followed by the protocol; which in the case of TagVal is `0x01`. Following the protocol ID is the protocol specific block, here we discuss TagVal protocol. Finally all messages end with a <0x02> regardless of protocol.
+As its name suggests TagVal is a Tag to Value protocol, somewhat like a Map in most high level languages. In tcMenu a message always starts with the byte `0x01` followed by the protocol; which in the case of TagVal is `0x01`. Following the protocol ID is the protocol specific block, here we discuss TagVal protocol. Finally, all messages end with a <0x02> regardless of protocol.
 
 Let us take a look at the simplest possible message in wire format:
 
