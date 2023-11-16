@@ -15,7 +15,7 @@ toc_needed = true
 aliases = ["/products/arduino-libraries/tc-menu/tcmenu-tagval-protocol-documenation/"]
 +++
 
-Embed Control local area transmissions use a protocol called TagVal with the option of sending binary data too. TagVal is a simple and lightweight protocol that has implementations on device for Arduino and mbed, and developer APIs in [Java]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [Javascript](https://github.com/davetcc/embedcontrolJS), [Python](https://github.com/davetcc/tcmenu-python), Dart* and DotNet*. 
+Embed Control local area transmissions use a protocol called TagVal with the option of sending binary data too. TagVal is a simple and lightweight protocol that has implementations on device for Arduino and mbed, and developer APIs in [Java]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [Javascript](https://github.com/davetcc/embedcontrolJS), [Python](https://github.com/davetcc/tcmenu-python), [DotNet](https://github.com/davetcc/tcmenu-dotnet-sdk), and Dart is coming soon. 
 
 If you are working in a language where an API is provided, you don't need to understand the protocol as the API deals with the protocol. This guide assumes you've read the [quick start documentation]({{< relref "tcmenu-overview-quick-start.md" >}}) and the reference material (see getting the code section on the right).
 
