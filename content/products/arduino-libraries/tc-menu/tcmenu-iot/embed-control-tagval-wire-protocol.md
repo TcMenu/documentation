@@ -23,7 +23,7 @@ If you are working in a language where an API is provided, you don't need to und
 
 ## The basics of a TagVal message
 
-As its name suggests TagVal is a Tag to Value protocol, somewhat like a Map in most high level languages. In tcMenu a message always starts with the byte `0x01` followed by the protocol; which in the case of TagVal is `0x01`. Following the protocol ID is the protocol specific block, here we discuss TagVal protocol. Finally, all messages end with a <0x02> regardless of protocol.
+As its name suggests TagVal is a Tag to Value protocol, somewhat like a Map in most high level languages. In tcMenu a message always starts with the byte `0x01` followed by the protocol; which in the case of TagVal is `0x01`. Following the protocol ID is the message type which is present in all protocols. The message type is two characters long, and uniquely identifies a type of message for example `HB` is heartbeat. Following this will be the protocol specific block. 
 
 Let us take a look at the simplest possible message in wire format:
 
@@ -31,16 +31,16 @@ Let us take a look at the simplest possible message in wire format:
 
 Now lets breakdown that message into parts:
 
-| Byte | Data    | Meaning                  |
-|------|---------|--------------------------|
-| 0    | <0x01>  | Start of msg             |
-| 1    | <0x01>  | Protocol (tag val is 1)  |
-| 2    | HB      | Message type field       |
-| 4    | HI=3000 | Heartbeat interval field |
-| 11   | &#124;  | Field separator          |
-| 12   | <0x02>  | End of msg               |
+| Byte | Data    | Meaning                  | Definition type |
+|------|---------|--------------------------|-----------------|
+| 0    | <0x01>  | Start of msg             | Core            |
+| 1    | <0x01>  | Protocol (tag val is 1)  | Core            |
+| 2    | HB      | Message type field       | Core            |
+| 4    | HI=3000 | Heartbeat interval field | Tag Val         |
+| 11   | &#124;  | Field separator          | Tag Val         |
+| 12   | <0x02>  | End of msg               | Tag Val         |
 
-In TagVal protocol, every message has a message type which is the first two characters of the message, and there must be a processor on both sides that can convert this message into something appropriate. Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side.
+Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side.
 
 We can see from the above table that ALL messages (TagVal or Binary) start with 0x01 and are followed immediately by the protocol, following this is always the message type (a two character field represents this). 
 
@@ -48,7 +48,7 @@ For TagVal, this will be followed by a sequence of fields, where two characters 
 
 There is a list of message types and fields in `RemoteTypes.h` within TcMenu library. Each API also has a definition of all possible fields and messages.
 
-### Types supported within messages
+### Types supported within TagVal messages
 
 String fields are free-form and can contain the pipe character by escaping it the same way as C language strings. Anything marked as defaultable may not appear in the message at all, and you have to then ensure that your processor can handle the message when that field is missing.
 
@@ -66,13 +66,13 @@ The platforms and types are defined within `RemoteTypes.h` within the embedded l
 
 A binary message can be sent over a tag value stream, it uses the second available protocol, which is PROTOCOL_BIN_GZIP which means binary data gzipped, and is usually used for static data that is served from the application, such as form data. You should note that this is relatively new being introduced at tcMenu 4.2.
 
-| Byte   | Data        | Meaning                               |
-|--------|-------------|---------------------------------------|
-| 0      | <0x01>      | Start of msg                          |
-| 1      | <0x01>      | Protocol (bin gzip is 2)              |
-| 2      | MT          | Message type field                    |
-| 4      | Length      | uint16 length of data (hi byte first) |
-| 6..end | binary data | the binary data of the length above   |
+| Byte   | Data        | Meaning                               | Definition type |
+|--------|-------------|---------------------------------------|-----------------|
+| 0      | <0x01>      | Start of msg                          | Core            |
+| 1      | <0x01>      | Protocol (bin gzip is 2)              | Core            |
+| 2      | MT          | Message type field                    | Core            |
+| 4      | Length      | uint16 length of data (hi byte first) | Binary Gzip     |
+| 6..end | binary data | the binary data of the length above   | Binary Gzip     |
 
 ## Standard Flows, how messages interact
 
