@@ -33,16 +33,28 @@ Let us take a look at the simplest possible message in wire format:
 
 Now lets breakdown that message into parts:
 
-| Byte | Data   | Meaning                    |
-|------|--------|----------------------------|
-| 0    | <0x01> | Start of msg               |
-| 1    | <0x01> | Protocol (tag val is 1)    |
-| 2    | HB     | Message type field         |
-| 4    | HI=3000| Heartbeat interval field   |
-| 11   | &#124; | Field separator            |
-| 12   | <0x02> | End of msg                 |    
+| Byte | Data    | Meaning                  |
+|------|---------|--------------------------|
+| 0    | <0x01>  | Start of msg             |
+| 1    | <0x01>  | Protocol (tag val is 1)  |
+| 2    | HB      | Message type field       |
+| 4    | HI=3000 | Heartbeat interval field |
+| 11   | &#124;  | Field separator          |
+| 12   | <0x02>  | End of msg               |
 
 We can see from the above table that messages start with 0x01 and are followed immediately by the protocol, following this for TagVal messages the two character field will be followed by an equals sign and the value. Field keys must be exactly two characters and the values must be shorter than the definition `MAX_VALUE_LEN` on the Arduino side (default 40). Every field must be terminated with a pipe symbol, after the last pipe symbol there must be a `<0x02>` which marks the end of message.
+
+### Binary message within a tagval stream
+
+A binary message can be sent over a tag value stream, it uses the second available protocol, which is PROTOCOL_BIN_GZIP which means binary data gzipped, and is usually used for static data that is served from the application, such as form data. You should note that this is relatively new being introduced at tcMenu 4.2.
+
+| Byte   | Data        | Meaning                               |
+|--------|-------------|---------------------------------------|
+| 0      | <0x01>      | Start of msg                          |
+| 1      | <0x01>      | Protocol (bin gzip is 2)              |
+| 2      | MT          | Message type field                    |
+| 4      | Length      | uint16 length of data (hi byte first) |
+| 6..end | binary data | the binary data of the length above   |
 
 ### Types supported within messages
 
@@ -58,9 +70,11 @@ The platforms and types are defined within `RemoteTypes.h` within the embedded l
 
 ## Messages and their contents
 
-In TagVal protocol, every message has a message type which is the first two characters of the message, and there must be a processor on both sides that can convert this message into something appropriate. Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side. There is a list of message types and fields in `RemoteTypes.h`.
+In TagVal protocol, every message has a message type which is the first two characters of the message, and there must be a processor on both sides that can convert this message into something appropriate. Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side. There is a list of message types and fields in `RemoteTypes.h` within TcMenu library, along with all API.
 
 Below, we go through the format of each message type.
+
+{{< figure src="/products/arduino-libraries/images/apps/embed-control/embed-control-protocol-state-machine.png" alt="Embed Control/TcMenu Protocol diagram, showing approximate message flow" title="Embed Control/TcMenu Protocol diagram, showing approximate message flow" >}}
 
 All connections start by sending a heartbeat with mode set to START to the remote. The remote wil respond to this by sending back a join message. Next, we send either a join or pairing request to either start a connection or in the case of pairing, to store our ID with the device.
 
