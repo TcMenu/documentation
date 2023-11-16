@@ -68,7 +68,7 @@ Boolean values are `0` for false and `1` for true.
 
 The platforms and types are defined within `RemoteTypes.h` within the embedded library and also in the APIs.
 
-## Messages and their contents
+## Messages, their contents, and the standard flows
 
 In TagVal protocol, every message has a message type which is the first two characters of the message, and there must be a processor on both sides that can convert this message into something appropriate. Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side. There is a list of message types and fields in `RemoteTypes.h` within TcMenu library, along with all API.
 
