@@ -42,7 +42,27 @@ Now lets breakdown that message into parts:
 | 11   | &#124;  | Field separator          |
 | 12   | <0x02>  | End of msg               |
 
-We can see from the above table that messages start with 0x01 and are followed immediately by the protocol, following this for TagVal messages the two character field will be followed by an equals sign and the value. Field keys must be exactly two characters and the values must be shorter than the definition `MAX_VALUE_LEN` on the Arduino side (default 40). Every field must be terminated with a pipe symbol, after the last pipe symbol there must be a `<0x02>` which marks the end of message.
+In TagVal protocol, every message has a message type which is the first two characters of the message, and there must be a processor on both sides that can convert this message into something appropriate. Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side.
+
+We can see from the above table that ALL messages (TagVal or Binary) start with 0x01 and are followed immediately by the protocol, following this is always the message type (a two character field represents this). 
+
+For TagVal, this will be followed by a sequence of fields, where two characters are used to represent a key, followed by an `=` (an equals sign) and then the value, terminating with the pipe symbol `|`. Field keys must be exactly two characters and the values must be shorter than the definition `MAX_VALUE_LEN` on the Arduino side (default 40). Every field must be terminated with a pipe symbol, after the last pipe symbol there must be a `<0x02>` which marks the end of message.
+
+There is a list of message types and fields in `RemoteTypes.h` within TcMenu library. Each API also has a definition of all possible fields and messages.
+
+### Types supported within messages
+
+String fields are free-form and can contain the pipe character by escaping it the same way as C language strings. Anything marked as defaultable may not appear in the message at all, and you have to then ensure that your processor can handle the message when that field is missing.
+
+Version fields in TagVal are packed into an integer, where major version is multiplied by 100 and the minor version added to it. For example 1.2 would be (100 * 1) + 2 or `102`. The most minor version is not presented, as it's assumed that breaking changes would never occur in a patch release.
+
+MenuIDs are integer values that represent a menu item uniquely.
+
+Boolean values are `0` for false and `1` for true. No other values are accepted.
+
+Some values are defaultable, it means that the device may not send the value to you, so you should prepared to default this field if missing.
+
+The platforms and types are defined within `RemoteTypes.h` within the embedded library and also in the APIs.
 
 ### Binary message within a tagval stream
 
@@ -56,29 +76,15 @@ A binary message can be sent over a tag value stream, it uses the second availab
 | 4      | Length      | uint16 length of data (hi byte first) |
 | 6..end | binary data | the binary data of the length above   |
 
-### Types supported within messages
+## Standard Flows, how messages interact
 
-String fields are free-form and can contain the pipe character by escaping it the same way as C language strings. Anything marked as defaultable may not appear in the message at all, and you have to then ensure that your processor can handle the message when that field is missing.
-
-Version fields in TagVal are packed into an integer, where major version is multiplied by 100 and the minor version added to it. For example 1.2 would be (100 * 1) + 2 or `102`. The most minor version is not presented, as it's assumed that breaking changes would never occur in a patch release.
-
-MenuIDs are integer values that represent a menu item uniquely.
-
-Boolean values are `0` for false and `1` for true.
-
-The platforms and types are defined within `RemoteTypes.h` within the embedded library and also in the APIs.
-
-## Messages, their contents, and the standard flows
-
-In TagVal protocol, every message has a message type which is the first two characters of the message, and there must be a processor on both sides that can convert this message into something appropriate. Message types, like fields are restricted to two bytes in length. It again makes them very easy to process on the embedded side. There is a list of message types and fields in `RemoteTypes.h` within TcMenu library, along with all API.
-
-Below, we go through the format of each message type.
+Before going any further, let's take a look at the standard sequence of events for a connection. The diagram below shows a high level state machine representation of a connection. 
 
 {{< figure src="/products/arduino-libraries/images/apps/embed-control/embed-control-protocol-state-machine.png" alt="Embed Control/TcMenu Protocol diagram, showing approximate message flow" title="Embed Control/TcMenu Protocol diagram, showing approximate message flow" >}}
 
-All connections start by sending a heartbeat with mode set to START to the remote. The remote wil respond to this by sending back a join message. Next, we send either a join or pairing request to either start a connection or in the case of pairing, to store our ID with the device.
+To write this out, all connections start by sending a heartbeat with mode set to START to the remote. The remote wil respond to this by sending back a join message. Next, we send either a join or pairing request to either start a connection or in the case of pairing, to store our ID with the device.
 
-In the case of pairing, the device sends back an Acknowledgement, indicating if the pairing succeeded. This is the end of the connection and a hearbeat of type END should be sent and the connection closed.
+In the case of pairing, the device sends back an Acknowledgement, indicating if the pairing succeeded. **For pairing this is the end of the connection** and a heartbeat of type END should be sent and the connection closed.
 
 In the case of a regular connection, the device also sends an acknowledgement, and if unsuccessful that is the end of the connection, a heartbeat of type END should be sent and the connection closed. Otherwise, we proceed to bootstrapping, where the menu structure on the device is communicated to the client. This starts with a bootstrap start, followed by the boot items then a bootstrap end. Once the bootstrap end is received the connection is ready.
 
@@ -92,10 +98,10 @@ Example:
 
 Field definitions:
 
-|Field|Type     |Description                    |
-|-----|---------|-------------------------------|
-| NM  | String  | The name of your UI           |
-| UU  | String  | UUID of your UI               |
+| Field | Type   | Description         |
+|-------|--------|---------------------|
+| NM    | String | The name of your UI |
+| UU    | String | UUID of your UI     |
 
 ### Join Message (type: NJ)
 
