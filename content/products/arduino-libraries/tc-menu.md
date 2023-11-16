@@ -86,7 +86,9 @@ We now build the designer application and embedCONTROL for the Raspberry PI, so 
 
 ## Remotely controlling your menu / IoT
 
-<img class="pull-left" src="/products/arduino-libraries/images/apps/embed-control/mainicon.png" width="120" alt="IoT control with embedCONTROL"/>Our menu designer can build in IoT capabilities near automatically. Allowing you to [remotely monitor and control your device using embedCONTROL](https://www.thecoderscorner.com/products/apps/embed-control/), using our [Java Remote API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}) on Ethernet2, UipEthernet (ENC28J60), ESP8266-WiFi, ESP32-WiFi, Bluetooth and Serial. Also, you can use our [TypeScript/JavaScript API](https://github.com/davetcc/embedcontrolJS) on a few larger boards supporting web-sockets. Other connectors can easily be added. Last but not least, also see our [C#/.NET API and UI components](https://github.com/davetcc/tcMenuController). Python API is coming soon, see the discussions.
+<img class="pull-left" src="/products/arduino-libraries/images/apps/embed-control/mainicon.png" width="120" alt="IoT control with embedCONTROL"/>Our menu designer can build in IoT capabilities near automatically (on Ethernet2, UipEthernet (ENC28J60), ESP8266-WiFi, ESP32-WiFi, Bluetooth and Serial). Allowing you to [remotely monitor and control your device using Embed Control](https://www.thecoderscorner.com/products/apps/embed-control/) without writing a line of code.
+
+However, to write your own remote monitoring, use our [Java Remote API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [TypeScript/JavaScript API](https://github.com/davetcc/embedcontrolJS), [C#/DotNet API](https://github.com/davetcc/tcmenu-dotnet-sdk), or the [Python API](https://github.com/davetcc/tcmenu-python). Coming soon is a Dart API.
 
 {{< blockClear "left" >}}
 
