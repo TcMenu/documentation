@@ -416,6 +416,50 @@ Field definitions:
 | IC    | Correlation | Same as the request  |
 | ST    | Integer     | Status code as above |
 
+## Form Messages
+
+Forms are basically grid layouts that allow more control over what you're app will look like when presented in the Embed Control application. It is possible within TcMenu Designer to embed forms into FLASH at compile time. The following request/response messages allow the API/UI to access these forms. These messages are only of importance if you intend to write your own UI that will use the same form format. All requests are from the API to the device so it is safe not to implement these.  
+
+Form requests are generally sent from the client / UI side to the device with responses in the opposite direction. The general workflow is to first request all the names, and then to request specific form data as needed.
+
+### Get Form Names Request Message (type: FG)
+
+This command is generally sent from the API to the device in order that the device provides back a list of names using the response message. 
+
+| Field | Type   | Value                                         |
+|-------|--------|-----------------------------------------------|
+| NM    | String | Criteria for future use, currently always '*' |
+
+### Get Form Names Response Message (type FN)
+
+The list of form names, the list size is defined by field NC, and each entry follows with CA being the first, then CB etc.
+
+| Field   | Type    | Value                                             |
+|---------|---------|---------------------------------------------------|
+| NC      | Integer | The number of form names provided in this message |
+| C[A..Z] | String  | A form name, the first in CA then CB etc..        |
+
+### Get Form Data Request Message (type FR)
+
+A request generally from the API back to the device for the actual data for the form. 
+
+| Field | Type   | Value                                                      |
+|-------|--------|------------------------------------------------------------|
+| ID    | String | The name of a form, usually one returned by get form names |
+
+### Get Form Data Response Message (type FD)
+
+The response from the server with the form data, this is gzip compressed using the binary protocol already described.
+
+| Byte Num | Data        | Meaning                |
+|----------|-------------|------------------------|
+| 0        | 0x01        | Msg Start              |
+| 1        | 0x02        | Binary Protocol Header |
+| 2..3     | "FD"        | Message Type           |
+| 4..5     | Length      | Message Length         |
+| 6 onward | Gzipped XML | The form XML gzipped   |
+
+
 ## Message processing on the remote side
 
 On the embedded side of the protocol, (eg Arduino device) the messages are managed by a `TagValueRemoteConnector`. There is a remote connector for each client connecting remotely. It has methods to encode messages onto the wire, take a look at the encode\<MsgToSend\> methods on the object. Incoming messages are handled by `CombinedMessageProcessor` of which there is a default implementation that handles everything needed for TcMenu in `MessageProcessors.h`.
