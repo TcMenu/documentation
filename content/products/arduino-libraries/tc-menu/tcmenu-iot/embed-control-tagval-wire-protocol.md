@@ -418,7 +418,7 @@ Field definitions:
 
 ## Form Messages
 
-Forms are basically grid layouts that allow more control over what you're app will look like when presented in the Embed Control application. It is possible within TcMenu Designer to embed forms into FLASH at compile time. The following request/response messages allow the API/UI to access these forms. These messages are only of importance if you intend to write your own UI that will use the same form format. All requests are from the API to the device so it is safe not to implement these.  
+Forms are basically grid layouts that allow more control over what your app will look like when presented in the Embed Control application. It is possible within TcMenu Designer to embed forms into FLASH at compile time. The following request/response messages allow the API/UI to access these forms. These messages are only of importance if you intend to write your own UI that will use the same form format. All requests are from the API to the device so it is safe not to implement these.  
 
 Form requests are generally sent from the client / UI side to the device with responses in the opposite direction. The general workflow is to first request all the names, and then to request specific form data as needed.
 
@@ -434,10 +434,10 @@ This command is generally sent from the API to the device in order that the devi
 
 The list of form names, the list size is defined by field NC, and each entry follows with CA being the first, then CB etc.
 
-| Field   | Type    | Value                                             |
-|---------|---------|---------------------------------------------------|
-| NC      | Integer | The number of form names provided in this message |
-| C[A..Z] | String  | A form name, the first in CA then CB etc..        |
+| Field  | Type    | Value                                             |
+|--------|---------|---------------------------------------------------|
+| NC     | Integer | The number of form names provided in this message |
+| CA..CZ | String  | A form name, the first in CA then CB etc..        |
 
 ### Get Form Data Request Message (type FR)
 
