@@ -139,6 +139,7 @@ Drawing specific:
 
 * `NEED_32BIT_COLOR_T_ALPHA` use 32-bit colour information instead of 16-bit
 * `MINIMUM_CURSOR_SIZE` ensure that any cursor on a graphical display is at least this many pixels
+* `TC_TOUCH_DEBUG` turn on additional visual diagnotics for touch screens
 
 ### In SimpleCollections
 
