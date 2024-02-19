@@ -13,7 +13,7 @@ weight = 2
 toc_needed = true
 +++
 
-TcMenu 4.0 supports multi-language menus based on [resource bundles](https://www.baeldung.com/java-resourcebundle) which are effectively properties files containing language translations. The designer lets you set up translations on a per-locale basis for the app name, each menu item, and even for additional strings in your application. Once enabled the properties files are turned into a series of C++ include header files that you can choose between using a TC_LOCALE_?? setting described below.
+TcMenu 4.0 onward supports multi-language menus based on [resource bundles](https://www.baeldung.com/java-resourcebundle) which are effectively properties files containing language translations. The designer lets you set up translations on a per-locale basis for the app name, each menu item, and even for additional strings in your application. Once enabled the properties files are turned into a series of C++ include header files that you can choose between using a TC_LOCALE_?? setting described below.
 
 ## Enabling and setting up languages
 
@@ -64,14 +64,13 @@ To escape a `%` at the start of the text:
 
 ## Editing items in designer
 
-In designer, at the right side of the name edit control you can now select the locale that you wish to edit in. If it is left as '--' this means do not localize, otherwise you'll create entries into the locale table.
+In designer, once an application is internationalized, above the menu tree on the left, a new combo box appears where you can select the locale for both menu tree display, and for previewing of values. Importantly, designer does not directly edit the properties files, but will reload them automatically when they are changed. The recommended way to work is to load the properties file into an editor alongside TcMenu Designer, then as you edit the properties they will be reloaded.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-locale-language-change.png" alt="Locale selection for editing items - Generator UI" title="Locale selection during editing" >}}
-
+Once the menu item properly editor is opened, next to the name field you'll see a preview of the name in the chosen locale. Also, if you type in a resource bundle reference that doesn't exist, you'll get a warning until you create it.
 
 ## I18N and code generator
 
-As of 4.0 there are extended save locations, where you can generate files into a "generated" directory. This is recommended when combined with locales, as the number of files increases with each language. To change save location simply select the Root item in the tree and change the save location:
+As of 4.0 there are extended save locations, where you can generate files into a "generated" directory (note this is compatible with PlatformIO and CMake but _not_ with Arduino UI/CLI). If supported on your build, this is recommended when combined with locales, as the number of files increases with each language. To change save location simply select the Root item in the tree and change the save location:
 
 {{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-locale-save-locations.png" alt="Possible save locations for both your and the generated code" title="Choosing a save location" >}}
 
@@ -98,4 +97,4 @@ Always only include `projectName_langSelect.h` as this will select the right loc
 
     TC_LOCALE_FR
 
-The lack of such a compile flag means use the default locale. Even most TcMenu internal strings are now localized and use the same locale definition file, there are presently translations into English, French, Slovak, German and Czech. Any other translations would be greatly welcomed, see the tcMenuLib github repo.
+The lack of such a compile flag means use the default locale. Even most TcMenu internal strings are now localized and use the same locale definition file, there are presently translations into English, French, Slovak, German, Ukrainian, and Czech. Any other translations would be greatly welcomed, see the tcMenuLib github repo.
