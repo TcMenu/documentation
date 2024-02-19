@@ -23,6 +23,16 @@ Start by [working out what information and state is to be represented]({{< relre
 
 {{< blockClear "left" >}}
 
+## Consultancy and support directly from the authors
+
+## Commercial Support for our libraries 
+
+We provide both consultancy and commercial support around all of our libraries, simply press the contact button in the top menu to get more information. We pride ourselves on supportability and maintainability of our libraries, You've only to look at our community issues and discussion boards to see satisfied users, even on the open-source versions.
+
+### We can build your app (or help you build it)
+
+Let us help you to build your application. We have custom versions of our libraries available that can directly target STM32, PicoSDK, ESP-IDF and Atmel AVR/SAMD. These versions can be fine-tuned, along with custom display library solutions that run on those devices. These custom solutions are better tuned to the hardware for maximum performance. Choose contact from the top menu to get more information.
+
 ## Menu library core documentation for Arduino 
 
 * [TcMenu - Getting started, including video & slides]({{< relref "tcmenu-overview-quick-start.md" >}})
