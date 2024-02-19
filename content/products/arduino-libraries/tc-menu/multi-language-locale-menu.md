@@ -113,3 +113,17 @@ Always only include `projectName_langSelect.h` as this will select the right loc
     TC_LOCALE_FR
 
 The lack of such a compile flag means use the default locale. Even most TcMenu internal strings are now localized and use the same locale definition file, there are presently translations into English, French, Slovak, German, Ukrainian, and Czech. Any other translations would be greatly welcomed, see the tcMenuLib github repo.
+
+## Using in your own code
+
+You can create extra entries in the resoure bundles and use then in your own code, they follow exactly the same format as in the previous chapter, let's take a simple example:
+
+We add the following resource entry:
+
+    my.custom.value = Hello World
+
+After code generation, in the language definition header files, we'll find `TC_I18N_MY_CUSTOM_VALUE` is defined for each locale.
+
+Now we include the header `projectName_langSelect.h` where projectName is your project name.
+
+Finally, we can use it as if it were a defined string. For example: `strlen(TC_I18N_MY_CUSTOM_VALUE)`.
