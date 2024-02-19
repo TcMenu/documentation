@@ -67,7 +67,7 @@ Once the "Generate Code" button is pressed, a logging window is displayed that u
 
 Code generation starts by turning the menu items into a series of linked lists, one for each submenu. This is fully documented in the [menu item docs]({{< relref "menu-item-types.md" >}}) where the code generated for each specific type is also discussed.
 
-Along with menu structures, a `ConnectorLocalInfo` is created that contains the unique ID (in the form of a UUID) and name of this embedded application. At this point the EEPROM and Authentication are also generated, the next step is to work out what variables, header file includes and setup functions are needed for each plugin.
+Along with menu structures, a `ConnectorLocalInfo` is created that contains the unique ID (in the form of a UUID) and name of this embedded application. At this point the EEPROM and Authentication are also generated, the next step is to work out what variables, header file includes and setup functions are needed for each plugin. Note that at runtime you an also set the board serial number using compile type definition, or even override how it is generated completely, consult the [build time flags settings]({{< relref "arduino-libraries.md" >}}.
 
 The way this works is that each plugin, Display, then Input, then IoT and lastly theme is asked to generate the includes, variables, and setup functions needed. Menu structures and plugin setup is written into files with the name of the project followed by `_menu.cpp`/`_menu.h`. These two files are overwritten every time code generator runs, so it's best not to edit them.
 
