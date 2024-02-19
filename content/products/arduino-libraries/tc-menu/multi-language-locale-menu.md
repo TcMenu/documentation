@@ -52,9 +52,9 @@ Within one of the properties files, any localized menu items will have their tra
     menu.6.name=Action
     project.name=Adafruit Dashboard
 
-We can see that each menu items name is localized and the localization is done by ID. Enumeration values, Analog unit names and most other strings can be localized from within the designer UI.
+We can see that entries are in the form `key`="value". Code generator supports locale entries for `name` fields, `AnalogMenuItem` unit field, `EnumMenuItem` entries, list menu item values, and the project name field. You can also easily create your own localized values for your own use too (explained further down).
 
-When we localize a string, it's name/unit/value in the `emf` file will show with a `%` at the start, this means it is localized and the translation is within the bundle. The exception is `%%` which escapes the `%` symbol.  
+When we localize a string, it's name/unit/value in the `emf` then its name start with a `%`, which means it is localized and the translation is within the resource bundle. The exception is `%%` which escapes the `%` symbol. Resource bundles are fully documented in many places online, this is just a getting started guide. Example:   
 
         "unitName": "%menu.1.unit"
 
@@ -66,7 +66,22 @@ To escape a `%` at the start of the text:
 
 In designer, once an application is internationalized, above the menu tree on the left, a new combo box appears where you can select the locale for both menu tree display, and for previewing of values. Importantly, designer does not directly edit the properties files, but will reload them automatically when they are changed. The recommended way to work is to load the properties file into an editor alongside TcMenu Designer, then as you edit the properties they will be reloaded.
 
-Once the menu item properly editor is opened, next to the name field you'll see a preview of the name in the chosen locale. Also, if you type in a resource bundle reference that doesn't exist, you'll get a warning until you create it.
+Once the menu item properly editor is opened, next to the name field you'll see a preview of the name in the chosen locale. Also, if you type in a resource bundle reference that doesn't exist, you'll get a warning until you create it. Let's take an example below:
+
+Property file content:
+
+    menu.1.name = Hello
+    menu.1.unit = V
+
+Field values examples:
+
+ | Field        | Output | Comment           |
+ |--------------|--------|-------------------|
+ | %menu.1.name | Hello  | Taken from bundle |
+ | %menu.1.unit | V      | Taken from bundle |
+ | %%           | %      | Escaped to %      |
+ | Text         | Text   | Not from bundle   |
+ | V            | V      | Not from bundle   |
 
 ## I18N and code generator
 
