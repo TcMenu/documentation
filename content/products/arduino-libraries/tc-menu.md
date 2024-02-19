@@ -25,8 +25,6 @@ Start by [working out what information and state is to be represented]({{< relre
 
 ## Consultancy and support directly from the authors
 
-## Commercial Support for our libraries 
-
 We provide both consultancy and commercial support around all of our libraries, simply press the contact button in the top menu to get more information. We pride ourselves on supportability and maintainability of our libraries, You've only to look at our community issues and discussion boards to see satisfied users, even on the open-source versions.
 
 ### We can build your app (or help you build it)
