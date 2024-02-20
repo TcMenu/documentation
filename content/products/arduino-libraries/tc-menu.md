@@ -17,25 +17,21 @@ menu:
         weight: 1
 ---
 
-TcMenu is a modular, IoT ready multi level menu library for Raspberry PI, Arduino and mbed supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. It is Apache licensed and commercial support is available from us.
+TcMenu is a modular, IoT ready multi level menu library for Arduino, mbed and many more platforms supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. It is Apache licensed and commercial support is available from us.
 
 Start by [working out what information and state is to be represented]({{< relref "menu-item-types.md" >}}) in the [Designer UI]({{< relref "tcmenu-overview-quick-start.md" >}}). Take inspiration from the [Arduino menu examples](https://github.com/davetcc/tcMenuLib/tree/master/examples). Then, run [Code Generator]({{< relref "code-generator-and-plugins-guide.md" >}}) which outputs code for the selected board ready for use in an IDE.
 
 {{< blockClear "left" >}}
 
-## Consultancy and support directly from the authors
 
-We provide both [consultancy](https://www.thecoderscorner.com/support-services/consultancy/) and [commercial support](https://www.thecoderscorner.com/support-services/training-support/) around all of our libraries, simply press the contact button in the top menu to get more information. We pride ourselves on supportability and maintainability of our libraries, You've only to look at our community issues and discussion boards to see satisfied users, even on the open-source versions.
-
-### We can build your app (or help you build it)
-
-Let us help you to build your application. We have custom versions of our libraries available that can directly target STM32, PicoSDK, ESP-IDF and Atmel AVR/SAMD. These versions can be fine-tuned, along with custom display library solutions that run on those devices. These custom solutions are better tuned to the hardware for maximum performance. Choose contact from the top menu to get more information.
 
 ## Menu library core documentation for Arduino 
 
 * [TcMenu - Getting started, including video & slides]({{< relref "tcmenu-overview-quick-start.md" >}})
 * [tcMenu Designer releases page](https://github.com/davetcc/tcMenu/releases)
 * [TcMenu library examples and starter projects](https://github.com/davetcc/tcMenuLib/tree/master/examples)
+* [Commercial Support provided by the maintainers](https://www.thecoderscorner.com/support-services/training-support/)
+* [Get help from the C++/Java/Flutter consultants who wrote tcMenu](https://www.thecoderscorner.com/support-services/consultancy/)
 * [Guide to working with Menu Item Types]({{< relref "menu-item-types.md" >}})
 * [Code Generator and plugins guide]({{< relref "code-generator-and-plugins-guide.md" >}}) 
 * [EEPROM integration with menus]({{< relref "menu-eeprom-integrations.md" >}})
@@ -50,9 +46,13 @@ Let us help you to build your application. We have custom versions of our librar
 * [Major code level differences between library versions]({{< relref "major-differences-between-library-versions.md" >}}) 
 * {{< library-overview >}}
 
+### Menu library for vendor environments using CMake (non Arduino)
+
+There are commercially available versions of our libraries that have been tuned to vendor provided environments such as ESP-IDF, STM32Cube and PicoSDK. With these you can purchase version with stronger testing and even indemnification, that do not need an Arduino or mbed environment present. The "standard" PicoSDK version is even open-soured, and all the libraries can build with the CMake build tool, the starting point for these builds is [CMake based library build](https://github.com/davetcc/tccLibSdk). Please contact us using the contact option in the menu or see the [consultancy and support options available](https://www.thecoderscorner.com/support-services/consultancy/).
+
 ### Specific for Java on Raspberry PI or embedded Linux
 
-We now build the designer application and embedCONTROL for the Raspberry PI, so not only can you make a Raspberry PI embedded application, you can even run designer and embedCONTROL on an RPI as well!
+We have tested the designer application and embedCONTROL on a Raspberry PI, so not only can you make a Raspberry PI embedded application, you can even run designer and embedCONTROL on an RPI as well!
 
 * [Creating an embedded Java menu application for RaspberryPI]({{< relref "menu-control-with-embedded-java.md" >}})
 * [Display menu on JavaFX/OpenJDK on Raspberry PI]({{< relref "tcmenu-openjfx-raspberrypi-plugin.md" >}})
