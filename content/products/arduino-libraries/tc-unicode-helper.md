@@ -102,7 +102,7 @@ And that is it.
 
 Fonts are rendered with the base line being considered coordinate 0,0. The letters ascend above the baseline, and lower case letters such as `y,g` also descend below it. This is exactly as custom fonts work in Adafruit_GFX library.
 
-{{< figure src="/arduino-libraries/images/tcUnicode/unicode-drawing.png" alt="TcUnicode font coordinate system showing ascent, descent etc" title="TcUnicode Coordinate System" >}}
+{{< figure src="/products/arduino-libraries/images/tcUnicode/unicode-drawing.png" alt="TcUnicode font coordinate system showing ascent, descent etc" title="TcUnicode Coordinate System" >}}
 
 ## How do I create tcUnicode and Adafruit_GFX fonts?
 
