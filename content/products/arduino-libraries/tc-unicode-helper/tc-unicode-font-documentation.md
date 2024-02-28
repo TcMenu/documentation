@@ -13,9 +13,19 @@ weight = 99
 toc_needed = true
 +++
 
-TcUnicode is a font format suitable for the presentation of a larger number of glyphs from different Unicode blocks. On most boards the size difference to Adafruit fonts is relatively insignificant. TcUnicode rendering is also compatible with Adafruit fonts, so you can present both types of font when using the TcUnicode option in the rendering. It is supported on all our graphical displays and is easily enabled in the display setup from the code generator dialog.
+TcUnicode is a font format suitable for the presentation of a larger number of glyphs from different Unicode blocks. On most boards the size difference to Adafruit fonts is relatively insignificant. The advantage being that you can have fonts with glyphs from multiple unicode blocks efficiently. 
 
-The library is also backward compatible with AdafruitGFX fonts, and can interchange between them without too much effort. In the example we show both being used in the same example. This format is quite similar to the Adafruit font format, it's better to understand that first.
+TcUnicode rendering is also compatible with Adafruit fonts, so you can use both `Adafruit_GFX` and `TcUnicode` fonts at the same time with `TcUnicodeHelper`. For use within TcMenu, it is supported on all our graphical displays and is easily enabled in the display setup from the code generator dialog.
+
+## How fonts are rendered
+
+Fonts are rendered with the base line being considered coordinate 0,0. The letters ascend above the baseline, and lower case letters such as `y,g` also descend below it. This is exactly as custom fonts work in Adafruit_GFX library.
+
+{{< figure src="/arduino-libraries/images/tcUnicode/unicode-drawing.png" alt="TcUnicode font coordinate system showing ascent, descent etc" title="TcUnicode Coordinate System" >}} 
+
+## Supports both Adafruit_GFX and TcUnicode fonts
+
+The library is fully backward compatible with AdafruitGFX fonts, and can interchange between them without any effort. In the examples we show both `TcUnicode` and `Adafruit_GFX` fonts being used in the same example. The `TcUnicode` format is quite similar to the Adafruit font format, so an understanding of that helps when understanding our format.
 
 * [AdafruitGFX font format documentation](https://learn.adafruit.com/creating-custom-symbol-font-for-adafruit-gfx-library/understanding-the-font-specification)
 * [AdafruitGFX font format helpful guide](https://glenviewsoftware.com/projects/products/adafonteditor/adafruit-gfx-font-format/)
