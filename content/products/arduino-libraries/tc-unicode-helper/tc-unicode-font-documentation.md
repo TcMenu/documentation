@@ -17,14 +17,6 @@ TcUnicode is a font format suitable for the presentation of a larger number of g
 
 TcUnicode rendering is also compatible with Adafruit fonts, so you can use both `Adafruit_GFX` and `TcUnicode` fonts at the same time with `TcUnicodeHelper`. For use within TcMenu, it is supported on all our graphical displays and is easily enabled in the display setup from the code generator dialog.
 
-## How fonts are rendered
-
-Fonts are rendered with the base line being considered coordinate 0,0. The letters ascend above the baseline, and lower case letters such as `y,g` also descend below it. This is exactly as custom fonts work in Adafruit_GFX library.
-
-{{< figure src="/arduino-libraries/images/tcUnicode/unicode-drawing.png" alt="TcUnicode font coordinate system showing ascent, descent etc" title="TcUnicode Coordinate System" >}} 
-
-## Supports both Adafruit_GFX and TcUnicode fonts
-
 The library is fully backward compatible with AdafruitGFX fonts, and can interchange between them without any effort. In the examples we show both `TcUnicode` and `Adafruit_GFX` fonts being used in the same example. The `TcUnicode` format is quite similar to the Adafruit font format, so an understanding of that helps when understanding our format.
 
 * [AdafruitGFX font format documentation](https://learn.adafruit.com/creating-custom-symbol-font-for-adafruit-gfx-library/understanding-the-font-specification)
