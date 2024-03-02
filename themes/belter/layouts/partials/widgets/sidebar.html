@@ -3,21 +3,10 @@
 
   <div class="panel panel-default sidebar-menu">
     <div class="panel-heading">
-      <h3 class="panel-title">Please share</h3>
+      <h3 class="panel-title">Share on social sites</h3>
       <div class="blog-entries">
         {{ partial "banners/social-linking" . }}
       </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default sidebar-menu" style="margin-bottom: 20px;">
-    <h3 class="panel-title">Also find me here</h3>
-    <div style="background-color: #fff; padding-top: 4px; border: solid #a5a5af 3px;">
-      <a href="https://twitter.com/thecoderscorner"><img title="Twitter profile" alt="twitter" src="/products/arduino-libraries/img/empty.png" class="mc-twitter-small"/></a>
-      <a href="https://www.facebook.com/TheCodersCornercom-6919542285/?hc_ref=NEWSFEED"><img title="Facebook page" alt="facebook" src="/products/arduino-libraries/img/empty.png" class="mc-facebook-small"/></a>
-      <a href="https://www.linkedin.com/in/davejcherry"><img title="LinkedIN profile" alt="linkedin" src="/products/arduino-libraries/img/empty.png" class="mc-linkedin-small"/></a>
-      <a href="https://www.youtube.com/channel/UCIW7vBUMrfF33mUsfFaL6CA"><img title="Youtube Channel" alt="youtube" src="/products/arduino-libraries/img/empty.png" class="mc-youtube-small"/></a>
-      <a href="https://github.com/davetcc"><img title="Github profile" alt="github profile" src="/products/arduino-libraries/img/empty.png" class="mc-github-small"/></a>
     </div>
   </div>
 
@@ -25,18 +14,23 @@
     {{ partial "widgets/githubLink" . }}
   {{ end  }}
 
-  <div class="panel panel-default sidebar-menu" style="margin-bottom: 20px;">
-    <h3>Edit this page</h3>
-    <a class="github-link" title='{{T "Edit-this-page"}}' href="{{ .Site.Params.gitEditURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank">
-    <span id="top-github-link-text">Correct/Edit this page in GitHub</span>
-    </a>
-  </div>
-
   {{ if (.Params.toc_needed) }}
     {{ partial "widgets/toc" . }}
   {{ end }}
 
   {{ partial "banners/sidebar" . }}
+
+  <div class="panel panel-default sidebar-menu" style="margin-bottom: 20px;">
+    <h3 class="panel-title">Also find me here</h3>
+    <div style="background-color: #fff; padding-top: 4px; border: solid #a5a5af 3px;">
+      <a href="https://twitter.com/thecoderscorner"><img title="Twitter profile" alt="twitter" src="/img/empty.png" class="mc-twitter-small"/></a>
+      <a href="https://www.facebook.com/TheCodersCornercom-6919542285/?hc_ref=NEWSFEED"><img title="Facebook page" alt="facebook" src="/img/empty.png" class="mc-facebook-small"/></a>
+      <a href="https://www.linkedin.com/in/davejcherry"><img title="LinkedIN profile" alt="linkedin" src="/img/empty.png" class="mc-linkedin-small"/></a>
+      <a href="https://www.youtube.com/channel/UCIW7vBUMrfF33mUsfFaL6CA"><img title="Youtube Channel" alt="youtube" src="/img/empty.png" class="mc-youtube-small"/></a>
+      <a href="https://github.com/davetcc"><img title="Github profile" alt="github profile" src="/img/empty.png" class="mc-github-small"/></a>
+    </div>
+  </div>
+
 
   {{ if (or (eq .Page.Type "blog") (eq .Page.Type "category")) }}
     {{ partial "widgets/withinThisMenu" . }}
