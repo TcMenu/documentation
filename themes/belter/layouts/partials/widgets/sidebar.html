@@ -31,11 +31,6 @@
     </div>
   </div>
 
-
-  {{ if (or (eq .Page.Type "blog") (eq .Page.Type "category")) }}
-    {{ partial "widgets/withinThisMenu" . }}
-  {{ end }}
-
   {{ partial "widgets/search" . }}
 
   {{ partial "widgets/recentRelatedPosts" . }}
