@@ -22,7 +22,7 @@ Not only does this work connected to Arduino pins, but you can connect your keyb
 
 {{< blockClear "left" >}}
 
-## Wiring a keyboard to an Arduino / embedded device
+## Wiring a matrix keyboard to an Arduino / embedded device
 
 In order wire up a matrix keyboard, each row gets configured as an INPUT and is connected to an input capable pin, this pin should be pulled up with a 1K resistor too. Then, each column gets configured as OUTPUT and is wired to an output capable pin. Below is an example circuit, it shows how a matrix keyboard is both wired internally and also where the external resistors are needed. The library will actually set all inputs to INPUT_PULLUP, so for very short wire runs you may get away without the PULL-UP resistors shown in the circuit. You'll need to test this yourself. 
 
@@ -36,7 +36,7 @@ Choices:
 
 ## How matrix keyboard decoding works with this driver
 
-Keyboard manager either polls the switches many times a second for a change, or registers an interrupt that fires when there is a change. During the check, the code runs through the matrix, checking each column for an update. If a key press is detected for the first time, this starts the debounce cycle , which determines if a real key press has just occurred. Once that has been determined the keyPress event will be repeated until the key is released. At which point a final released event will be sent to the listener.
+Keyboard manager either polls the matrix many times a second for a change, or registers an interrupt that fires when there is a change. During the check, the code runs through the matrix, checking each column for an update. If a key press is detected for the first time, this starts the debounce cycle , which determines if a real key press has just occurred. Once that has been determined the keyPress event will be repeated until the key is released. At which point a final released event will be sent to the listener.
 
 ## Creating a KeyboardListener
 
