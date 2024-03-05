@@ -15,7 +15,7 @@ aliases = [ "/products/arduino-downloads/io-abstraction/programming-arduino-usin
             "/products/arduino-libraries/io-abstraction/programming-arduino-using-tasks-tutorial/"]
 +++
 
-In this tutorial for IoAbstraction's taskManager I explain the differences between traditional 
+In this tutorial for TaskManagerIO I explain the differences between traditional 
 loop based programming; which is very common on the Arduino platform and event based
 programming based on taskManager. 
 
@@ -65,10 +65,10 @@ to look a bit complicated. At this point we will introduce task manager. TaskMan
 eventing framework, you tell it when you want to do something, and it will call you back at
 the right time to do it.
 
-First we need to include the IoAbstraction library at the top of the file and then change the
+First we need to include the `TaskManagerIO` library at the top of the file and then change the
 file to look like this:
 
-    #include <IoAbstraction.h>
+    #include <TaskManagerIO.h>
     
     bool pin12State;
     bool pin13State;
@@ -92,7 +92,7 @@ file to look like this:
         taskManager.runLoop();
     }
     
-As you can see, the above code may be slightly longer, we can short hand this using lambda
+As you can see, the above code may be slightly longer, we can shorthand this using lambda
 functions if you prefer, here I replace the two functions with inline C11 lambda's that are
 supported on Arduino:
 
@@ -144,7 +144,6 @@ void loop() {
 }
 ```
 
-For greater detail take a look at the examples shipped with the library. There's also the
-[complete documentation for the library]({{< relref "io-abstraction.md">}})
+For greater detail take a look at the examples shipped with the library. There's also the [complete documentation for the library]({{< relref "io-abstraction.md">}})
 
 [Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
