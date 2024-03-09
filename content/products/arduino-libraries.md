@@ -32,23 +32,24 @@ The above libraries support a wide range of hardware, including nearly every off
 
 ## What boards do our libraries support?
 
-| Processor | Platform         | Libraries    | Locking | DAC | Developer boards we test with      | 
-|-----------|------------------|--------------|---------|-----|------------------------------------|
-| AVR       | Arduino          | Fully tested | Atomic  | No  | Uno - some features limited        |
-| AVR       | Arduino          | Fully tested | Atomic  | No  | MEGA 2560, WifiR2                  |
-| SAMD      | Arduino          | Fully tested | Atomic  | Yes | MKR1300                            |
-| SAMD      | Seeed Arduino    | Fully tested | Atomic  | Yes | MG126 board                        |
-| nrf52840  | Arduino(mbed)    | Fully tested | CAS     | Yes | Nano 33 BLE devices                |
-| RPI Pico  | Arduino(mbed)    | Fully tested | CAS     | No  | Raspberry PI pico, TFT, encoder    |
-| RPI Pico  | Arduino(EarlePH) | Fully tested | CAS     | No  | Raspberry PI pico, TFT, encoder    |
-| ESP8266   | Arduino          | Fully tested | Atomic  | No  | Node MCU, Heltek Wifi 8            |
-| ESP32     | Arduino          | Fully tested | CAS     | Yes | Wifi32, AZ Dev Kit                 |
-| ESP32S2   | Arduino          | Fully tested | CAS     | Yes | ESP32S2 Saloma                     |
-| ESP32S3   | Arduino          | Fully tested | CAS     | No  | ESP32S3 Tiny                       |
-| STM32F4   | Stm32Duino       | Fully tested | Hybrid  | Yes | Nucleo STM32F4x9ZI OLED            |
-| STM32F4   | mbed             | Fully tested | CAS     | Yes | Nucleo/Disc1 STM32F4x9ZI LTDC/OLED |
-| Particle  | Photon           | User tested  | Atomic  | No  | Unknown, user tested               |  
-| SAM       | Arduino          | Compilation  | Atomic  | Yes | Arduino Due compile test only      |
+| Processor   | Platform         | Libraries    | Locking | DAC | Developer boards we test with      | 
+|-------------|------------------|--------------|---------|-----|------------------------------------|
+| AVR         | Arduino          | Fully tested | Atomic  | No  | Uno - some features limited        |
+| AVR         | Arduino          | Fully tested | Atomic  | No  | MEGA 2560, WifiR2                  |
+| SAMD        | Arduino          | Fully tested | Atomic  | Yes | MKR1300                            |
+| SAMD        | Seeed Arduino    | Fully tested | Atomic  | Yes | MG126 board                        |
+| nrf52840    | Arduino(mbed)    | Fully tested | CAS     | Yes | Nano 33 BLE devices                |
+| RPI Pico    | Arduino(mbed)    | Fully tested | CAS     | No  | Raspberry PI pico, TFT, encoder    |
+| RPI Pico    | Arduino(EarlePH) | Fully tested | CAS     | No  | Raspberry PI pico, TFT, encoder    |
+| ESP8266     | Arduino          | Fully tested | Atomic  | No  | Node MCU, Heltek Wifi 8            |
+| ESP32       | Arduino          | Fully tested | CAS     | Yes | Wifi32, AZ Dev Kit                 |
+| ESP32S2     | Arduino          | Fully tested | CAS     | Yes | ESP32S2 Saloma                     |
+| ESP32S3     | Arduino          | Fully tested | CAS     | No  | ESP32S3 Tiny                       |
+| STM32F4     | Stm32Duino       | Fully tested | Hybrid  | Yes | Nucleo STM32F4x9ZI OLED            |
+| Particle    | Photon           | User tested  | Atomic  | No  | Unknown, user tested               |  
+| SAM         | Arduino          | Compilation  | Atomic  | Yes | Arduino Due compile test only      |
+| STM32F4     | mbed RTOS        | Fully tested | CAS     | Yes | Nucleo/Disc1 STM32F4x9ZI LTDC/OLED |
+| RP2040      | Pico-SDK/CMake   | Fully tested | CAS     | No  | Tested fully within TcLibSDK       |
 
 Although we only test on some Arduino mbed boards, it should work on nearly all that we know of, you can take a look at [the list of mbed boards we check for](https://github.com/davetcc/IoAbstraction/blob/master/src/PlatformDetermination.h#L19) here, if another springs to light that we haven't added please try adding it to that define statement, and if it works let us know.
 
@@ -122,6 +123,7 @@ Menu item and iteration settings:
 * `NAV_ITEM_ARRAY_SIZE` defines the default stack size for navigation, defaults to 4 levels.
 * `NAME_SIZE_T` sets the size of the char field for name items, defaults to 20 chars.
 * `UNIT_SIZE_T` sets the size of the char field for analog item units, defaults to 5 chars.
+* `TCMENU_NO_DEFAULT_ENCODER` do not allocate a default encoder when there is no other encoder.
 
 Remote connectivity settings:
 
