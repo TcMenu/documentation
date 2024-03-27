@@ -17,7 +17,7 @@ menu:
         weight: 1
 ---
 
-TcMenu is a modular, IoT ready multi level menu library for Arduino, mbed and many more platforms supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. It is Apache licensed and commercial support is available from us.
+TcMenu is a modular, IoT ready multi level menu library for Arduino, mbed, Pico-SDK, mbed and many more platforms supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. Apache licensed and therefore safe for commercial use.
 
 Start by [working out what information and state is to be represented]({{< relref "menu-item-types.md" >}}) in the [Designer UI]({{< relref "tcmenu-overview-quick-start.md" >}}). Take inspiration from the [Arduino menu examples](https://github.com/davetcc/tcMenuLib/tree/master/examples). Then, run [Code Generator]({{< relref "code-generator-and-plugins-guide.md" >}}) which outputs code for the selected board ready for use in an IDE.
 
@@ -30,7 +30,6 @@ Start by [working out what information and state is to be represented]({{< relre
 * [TcMenu - Getting started, including video & slides]({{< relref "tcmenu-overview-quick-start.md" >}})
 * [tcMenu Designer releases page](https://github.com/davetcc/tcMenu/releases)
 * [TcMenu library examples and starter projects](https://github.com/davetcc/tcMenuLib/tree/master/examples)
-* [Commercial Support provided by the maintainers](https://www.thecoderscorner.com/support-services/training-support/)
 * [Get help from the C++/Java/Flutter consultants who wrote tcMenu](https://www.thecoderscorner.com/support-services/consultancy/)
 * [Guide to working with Menu Item Types]({{< relref "menu-item-types.md" >}})
 * [Code Generator and plugins guide]({{< relref "code-generator-and-plugins-guide.md" >}}) 
@@ -48,7 +47,7 @@ Start by [working out what information and state is to be represented]({{< relre
 
 ### Menu library for vendor environments using CMake (non Arduino)
 
-There are commercially available versions of our libraries that have been tuned to vendor provided environments such as ESP-IDF, STM32Cube and PicoSDK. With these you can purchase version with stronger testing and even indemnification, that do not need an Arduino or mbed environment present. The "standard" PicoSDK version is even open-soured, and all the libraries can build with the CMake build tool, the starting point for these builds is [CMake based library build](https://github.com/davetcc/tccLibSdk). Please contact us using the contact option in the menu or see the [consultancy and support options available](https://www.thecoderscorner.com/support-services/consultancy/).
+At the moment PicoSDK is available and does not need Arduino or mbed environment present. The PicoSDK version is even open-soured, and all the libraries can build with the CMake build tool, the starting point for these builds is [CMake based library build](https://github.com/davetcc/tccLibSdk). If you want this support to continue, it is imperative you support the project, as we have no other funding sources for it.
 
 ### Specific for Java on Raspberry PI or embedded Linux
 
