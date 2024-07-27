@@ -6,7 +6,7 @@ type = "blog"
 date = "2017-11-30"
 author =  "dave"
 menu = "io-abstraction"
-githublink = "https://github.com/davetcc/IoAbstraction/"
+githublink = "https://github.com/TcMenu/IoAbstraction"
 referenceDocs = "/ref-docs/ioabstraction/html/index.html"
 banner = "/products/arduino-libraries/images/electronics/arduino/7seg/16x2-display-over-i2c-small.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/7seg/16x2-display-over-i2c-small.jpg"
@@ -23,7 +23,7 @@ There are two additional examples provided with this version that show how to us
 with both a shift register and an 8574 i2c IO expander. If the library is configured without an abstraction
 being provided, it defaults to Arduino pins, just like it used to do.
 
-Download link: [LiquidCrystalIO library on github](https://github.com/davetcc/LiquidCrystalIO)
+Download link: [LiquidCrystalIO library on github](https://github.com/TcMenu/LiquidCrystalIO)
 
 {{< blockClear "left" >}}
 

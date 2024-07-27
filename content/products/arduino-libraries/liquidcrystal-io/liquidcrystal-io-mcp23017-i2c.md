@@ -5,7 +5,7 @@ tags = [ "arduino", "library", "display-driver" ]
 date = "2020-08-02"
 author =  "dave"
 menu = "liquidcrystal-io"
-githublink = "https://github.com/davetcc/LiquidCrystalIO/"
+githublink = "https://github.com/TcMenu/LiquidCrystalIO"
 referenceDocs = "/ref-docs/liquidcrystalio/html/index.html"
 banner = "/images/electronics/arduino/liquidcrystalio/lcd-board.jpg"
 titleimg = "/images/electronics/arduino/liquidcrystalio/lcd-board.jpg"
@@ -20,7 +20,7 @@ You can connect up a device using just about any arrangement of pins or expander
 
 ## Examples showing these use cases
 
-* [MCP23017 LiquidCrystal example](https://github.com/davetcc/LiquidCrystalIO/blob/master/examples/Counter23017/Counter23017.ino)
-* [Shift register 74HC595 LiquidCrystal](https://github.com/davetcc/LiquidCrystalIO/blob/master/examples/HelloShiftReg/HelloShiftReg.ino)
+* [MCP23017 LiquidCrystal example](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/Counter23017/Counter23017.ino)
+* [Shift register 74HC595 LiquidCrystal](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/HelloShiftReg/HelloShiftReg.ino)
 
 [Back to the main page]({{< relref "liquidcrystal-io.md">}})

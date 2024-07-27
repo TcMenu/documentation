@@ -26,7 +26,9 @@
 
             </div>
             <div class="sidebarContainer">
-                {{ partial "widgets/sidebar.html" . }}
+                {{ with .File }}
+                    {{ partial "widgets/sidebar.html" . }}
+                {{ end }}
             </div>
         </div>
     </div>

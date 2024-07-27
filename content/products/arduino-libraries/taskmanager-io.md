@@ -5,7 +5,7 @@ date: "2020-08-10"
 author:  "system"
 showChildren: false
 type: "category"
-githublink: "https://github.com/davetcc/TaskManagerIO/"
+githublink: "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs: "/ref-docs/taskmanagerio/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
 menu:
@@ -35,7 +35,7 @@ Task manager can schedule tasks to be done either now, or at some point in the f
  * [Timed blink example (packaged with IoAbstraction)]({{< relref "timedBlink-example-ioAbstraction-library.md">}})
  * {{< library-overview >}}
  * [Read the reference documentation](/ref-docs/taskmanagerio/html/index.html)
- * [Go to the code repo on github](https://github.com/davetcc/TaskManagerIO/)
+ * [Go to the code repo on github](https://github.com/TcMenu/TaskManagerIO)
 
  
 ## Marshalling interrupts to task manager tasks

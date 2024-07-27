@@ -6,7 +6,7 @@ type = "blog"
 date = "2018-08-24"
 author =  "dave"
 menu = "io-abstraction"
-githublink = "https://github.com/davetcc/IoAbstraction/"
+githublink = "https://github.com/TcMenu/IoAbstraction"
 referenceDocs = "/ref-docs/ioabstraction/html/index.html"
 banner = "/images/electronics/arduino/power/io-abstraction-encoder-pcf8574-thumb.jpg"
 titleimg = "/images/electronics/arduino/power/io-abstraction-encoder-pcf8574-title.jpg"
@@ -22,7 +22,7 @@ useful with IO exapnders.
 
 {{< blockClear "left" >}}
 
-Ensure you've [obtained the IoAbstraction library](https://github.com/davetcc/IoAbstraction/), then this example is packaged
+Ensure you've [obtained the IoAbstraction library](https://github.com/TcMenu/IoAbstraction), then this example is packaged
 as an example named `interruptSwitchEncoder8574`. We'll examine some parts of the sketch here, but the full sketch
 is included with the library. Also, below is the circuit needed for this example:
 

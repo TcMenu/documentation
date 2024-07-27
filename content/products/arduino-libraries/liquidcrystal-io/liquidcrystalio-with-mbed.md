@@ -5,7 +5,7 @@ tags = [ "arduino", "library", "display-driver" ]
 date = "2020-08-02"
 author =  "dave"
 menu = "liquidcrystal-io"
-githublink = "https://github.com/davetcc/LiquidCrystalIO/"
+githublink = "https://github.com/TcMenu/LiquidCrystalIO"
 referenceDocs = "/ref-docs/liquidcrystalio/html/index.html"
 banner = "/images/electronics/arduino/liquidcrystalio/lcd-board.jpg"
 titleimg = "/images/electronics/arduino/liquidcrystalio/lcd-board.jpg"
@@ -20,6 +20,6 @@ LiquidCrystalIO is now also compatible with mbed boards. It supports regular mbe
 
 ## Examples showing these use cases
 
-* [Hello Mbed I2C PCF8574 example](https://github.com/davetcc/LiquidCrystalIO/blob/master/examples/helloMbed/helloMbed.cpp)
+* [Hello Mbed I2C PCF8574 example](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/helloMbed/helloMbed.cpp)
 
 [Back to the main page]({{< relref "liquidcrystal-io.md">}})

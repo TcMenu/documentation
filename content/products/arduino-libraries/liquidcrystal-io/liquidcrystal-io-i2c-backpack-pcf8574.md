@@ -5,7 +5,7 @@ tags = [ "arduino", "library", "display-driver" ]
 date = "2020-08-03"
 author =  "dave"
 menu = "liquidcrystal-io"
-githublink = "https://github.com/davetcc/LiquidCrystalIO/"
+githublink = "https://github.com/TcMenu/LiquidCrystalIO"
 referenceDocs = "/ref-docs/liquidcrystalio/html/index.html"
 banner = "/images/electronics/arduino/liquidcrystalio/lcd-board.jpg"
 titleimg = "/images/electronics/arduino/liquidcrystalio/lcd-board.jpg"
@@ -47,6 +47,6 @@ Where
 
 ## Examples of connecting to PCF8574 i2c backpack 
 
-* [Simple example showing i2c backpack use](https://github.com/davetcc/LiquidCrystalIO/blob/master/examples/HelloI2c/HelloI2c.ino)
+* [Simple example showing i2c backpack use](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/HelloI2c/HelloI2c.ino)
 
 [Back to the main page]({{< relref "liquidcrystal-io.md">}})

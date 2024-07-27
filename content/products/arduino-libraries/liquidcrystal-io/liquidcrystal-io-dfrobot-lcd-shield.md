@@ -5,7 +5,7 @@ tags = [ "arduino", "library", "" ]
 date = "2020-08-01"
 author =  "dave"
 menu = "liquidcrystal-io"
-githublink = "https://github.com/davetcc/LiquidCrystalIO/"
+githublink = "https://github.com/TcMenu/LiquidCrystalIO"
 referenceDocs = "/ref-docs/liquidcrystalio/html/index.html"
 banner = "/images/electronics/arduino/liquidcrystalio/dfrobot-board.jpg"
 titleimg = "/images/electronics/arduino/liquidcrystalio/dfrobot-board.jpg"
@@ -50,7 +50,7 @@ This allows you to control the backlight level at any time by using the `setBack
 
 ## dfRobot LCD shield examples
 
-* [Simplest DfRobot shield example](https://github.com/davetcc/LiquidCrystalIO/blob/master/examples/HelloWorld/HelloWorld.ino)
-* [You can also use IoAbstraction's switches to manage the dfRobot buttons](https://github.com/davetcc/IoAbstraction/blob/master/examples/dfRobotRotaryEncoder/dfRobotRotaryEncoder.ino)
+* [Simplest DfRobot shield example](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/HelloWorld/HelloWorld.ino)
+* [You can also use IoAbstraction's switches to manage the dfRobot buttons](https://github.com/TcMenu/IoAbstraction/blob/main/examples/dfRobotRotaryEncoder/dfRobotRotaryEncoder.ino)
 
 [Back to the main page]({{< relref "liquidcrystal-io.md">}})

@@ -7,7 +7,7 @@ date = "2020-11-11"
 author =  "dave"
 menu = "menu-item-types"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/title-types.jpg"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 toc_needed = true
 +++

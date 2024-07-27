@@ -6,7 +6,7 @@ type = "blog"
 date = "2018-02-09"
 author =  "dave"
 menu = "io-abstraction"
-githublink = "https://github.com/davetcc/IoAbstraction/"
+githublink = "https://github.com/TcMenu/IoAbstraction"
 referenceDocs = "/ref-docs/ioabstraction/html/index.html"
 banner = "/products/arduino-libraries/images/electronics/arduino/7seg/16x2-display-over-i2c-small.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/7seg/16x2-display-over-i2c-small.jpg"
@@ -16,7 +16,7 @@ aliases = ["/products/arduino-downloads/io-abstraction/arduino-switches-handled-
 
 Have you ever wanted to treat button presses in Arduino similar to other languages, where you get an event callback when the switch is pressed? Look no further, the IO abstraction library can do that with very little fuss. In fact it can also do the same for rotary encoders as well, treating them similar to how scroll bars work in desktop applications.
 
-To start we need to get the [IoAbstraction library](https://github.com/davetcc/IoAbstraction/) and open the `buttonRotartyEncoder` example. This example shows how to use a rotary encoder and two switches (the encoder push button and any other switch) with the switches class, outputting the buttons and rotary encoder state to the serial port.
+To start we need to get the [IoAbstraction library](https://github.com/TcMenu/IoAbstraction) and open the `buttonRotartyEncoder` example. This example shows how to use a rotary encoder and two switches (the encoder push button and any other switch) with the switches class, outputting the buttons and rotary encoder state to the serial port.
 
 
 {{< blockClear "left" >}}
@@ -31,7 +31,7 @@ To start we need to get the [IoAbstraction library](https://github.com/davetcc/I
 
 This page is based on the example packaged within the ioabstraction library, called encoderSwitch. It's packaged within the examples directory, in Arduino IDE should be openable directly from the examples once the library is installed.
 
-[Link to the example sketch file](https://github.com/davetcc/IoAbstraction/blob/master/examples/buttonRotaryEncoder/buttonRotaryEncoder.ino)
+[Link to the example sketch file](https://github.com/TcMenu/IoAbstraction/blob/main/examples/buttonRotaryEncoder/buttonRotaryEncoder.ino)
 
 This sketch may look slightly different when you first see it, at the top of the file are a lot of event handlers, they are called by `switches` when buttons are pressed or the encoder changes value. An example callback is shown below: 
 

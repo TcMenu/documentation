@@ -8,7 +8,7 @@ author =  "dave"
 menu = "tcmenu-plugins"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-display.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-display.jpg"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 50
 toc_needed = true
@@ -17,7 +17,7 @@ aliases = ['/products/arduino-libraries/tc-menu/using-liquidcrystalio-rendering/
 
 In this guide we show how to render menu items using LiquidCrystalIO library, onto displays compatible with HD44780 (often referred to as LCD). This rendering driver is built into the core menu designer download, meaning it's available out of the box.
 
-The [LiquidCrystalIO library](https://github.com/davetcc/LiquidCrystalIO) is a fork of the LiquidCrystal library, with a few additional capabilities. Most importantly, updating HD44780 displays is *slow*, think 270Khz slow. This library avoids long pauses by using task manager for managing these delays, so is uniquely able to keep your tasks running. In addition, it supports device pins, PCF8574, MCP23017, AW9523 and some have even used with our shift register pin abstraction!
+The [LiquidCrystalIO library](https://github.com/TcMenu/LiquidCrystalIO) is a fork of the LiquidCrystal library, with a few additional capabilities. Most importantly, updating HD44780 displays is *slow*, think 270Khz slow. This library avoids long pauses by using task manager for managing these delays, so is uniquely able to keep your tasks running. In addition, it supports device pins, PCF8574, MCP23017, AW9523 and some have even used with our shift register pin abstraction!
 
 If you are connecting the device directly to your Arduino here's a [wiring guide for 20x4 and 16x2 units](https://www.thecoderscorner.com/electronics/microcontrollers/driving-displays/90-wiring-a-20x4-character-display-to-an-arduino-board/)
 
@@ -36,7 +36,7 @@ Depending on which of the above options you picked, some additional properties m
 Additional sources of documentation specific to this version, don't forget that our fork is largely compatible with the original, so you can browse the many docs for that too:
 
 * [LiquidCrystalIO documentation page]({{< relref "liquidcrystal-io.md" >}})
-* [LiquidCrystalIO on github](https://github.com/davetcc/LiquidCrystalIO)
+* [LiquidCrystalIO on github](https://github.com/TcMenu/LiquidCrystalIO)
 
 ### For Display direct or non-standard I2C
 

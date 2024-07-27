@@ -8,14 +8,14 @@ author =  "dave"
 menu = "tcmenu-plugins"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/oled-display.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/oled-display.jpg"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 50
 toc_needed = true
 aliases = ['/products/arduino-libraries/tc-menu/using-adafruit_gfx-rendering/']
 +++
 
-In this guide we show how to use the [Adafruit_GFX library for mbed RTOS](https://github.com/davetcc/Adafruit-GFX-mbed-fork) to renderer menu items with tcMenu. This rendering driver for Adafruit_GFX is built into the core menu designer download, meaning it's available out of the box when MBED_RTOS is selected.
+In this guide we show how to use the [Adafruit_GFX library for mbed RTOS](https://github.com/TcMenu/Adafruit-GFX-mbed-fork) to renderer menu items with tcMenu. This rendering driver for Adafruit_GFX is built into the core menu designer download, meaning it's available out of the box when MBED_RTOS is selected.
 
 We maintain a fork of Adafruit_GFX library for mbed that currently supports OLED displays only. Therefore, at the moment all options are memory buffered.
 
@@ -30,7 +30,7 @@ Related documentation:
 ## Plugin and Library details
 
 * Minimum tcMenu Designer version: 1.7
-* Library required: https://github.com/davetcc/Adafruit-GFX-mbed-fork
+* Library required: https://github.com/TcMenu/Adafruit-GFX-mbed-fork
 * What we've tested: mbed RTOS 6 STM32F
 
 ## Configuring the rendering for your display

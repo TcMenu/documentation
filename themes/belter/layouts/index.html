@@ -14,13 +14,13 @@
     <meta name="keywords" content="{{ if .Keywords }}{{ range .Keywords }}{{ . }}, {{ end }}{{else if isset .Params "tags" }}{{ range .Params.tags }}{{ . }}, {{ end }}{{end}}">
 
     <link rel="canonical" href="{{ .Permalink }}" />
-    <link href="{{ .Site.BaseURL }}products/arduino-libraries//img/favicon.ico" rel="icon">
+    <link href="{{ .Site.BaseURL }}/products/arduino-libraries//img/favicon.ico" rel="icon">
 
     {{ hugo.Generator }}
 
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}products/arduino-libraries/css/thirdparty.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}products/arduino-libraries/css/style-v4.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}products/arduino-libraries/css/hl-js-atelier-ls-light.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/products/arduino-libraries/css/thirdparty.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/products/arduino-libraries/css/style-v4.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/products/arduino-libraries/css/hl-js-atelier-ls-light.css">
 
     {{ if eq (.Site.Params.production) "Y" }}
     <script data-ad-client="ca-pub-6094377690691918" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -35,11 +35,11 @@
 
     <p>Developer pages for the library documentation</p>
     <ul>
-        <li><a href="/products/arduino-libraries/tc-menu/">TcMenu pages</li>
-        <li><a href="/products/arduino-libraries/io-abstraction/">IoAbstraction pages</li>
-        <li><a href="/products/arduino-libraries/taskmanager-io/">TaskManagerIO pages</li>
-        <li><a href="/products/arduino-libraries/simple-collections/">SimpleCollections pages</li>
-        <li><a href="/products/arduino-libraries/tc-unicode-helper/">TcUnicodeHelper pages</li>
+        <li><a href="{{ .Site.BaseURL }}/products/arduino-libraries/tc-menu/">TcMenu pages</li>
+        <li><a href="{{ .Site.BaseURL }}/products/arduino-libraries/io-abstraction/">IoAbstraction pages</li>
+        <li><a href="{{ .Site.BaseURL }}/products/arduino-libraries/taskmanager-io/">TaskManagerIO pages</li>
+        <li><a href="{{ .Site.BaseURL }}/products/arduino-libraries/simple-collections/">SimpleCollections pages</li>
+        <li><a href="{{ .Site.BaseURL }}/products/arduino-libraries/tc-unicode-helper/">TcUnicodeHelper pages</li>
     </ul>
 
 </div>

@@ -7,7 +7,7 @@ date = "2021-10-20"
 author =  "dave"
 menu = "tc-menu"
 banner = "/products/arduino-libraries/images/front/tcMenu-banner.png"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 99
 toc_needed = true
@@ -124,4 +124,4 @@ There will inevitably always be libraries that we do not support, we’ve made t
 
 ### The Plugin format
 
-The plugs are not written in Java and they do not need an understanding of Java to work on them. They are purely made up of easily editable XML and C++ source files. They are fully documented in the [Menu designer repo under xmlPlugins](https://github.com/davetcc/tcMenu/tree/master/xmlPlugins) and we gladly accept PRs that don't break existing functionality!
+The plugs are not written in Java and they do not need an understanding of Java to work on them. They are purely made up of easily editable XML and C++ source files. They are fully documented in the [Menu designer repo under xmlPlugins](https://github.com/TcMenu/tcMenu/tree/main/xmlPlugins) and we gladly accept PRs that don't break existing functionality!

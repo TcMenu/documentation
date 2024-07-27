@@ -6,7 +6,7 @@ type = "blog"
 date = "2017-10-20"
 author =  "dave"
 menu = "io-abstraction"
-githublink = "https://github.com/davetcc/IoAbstraction/"
+githublink = "https://github.com/TcMenu/IoAbstraction"
 referenceDocs = "/ref-docs/ioabstraction/html/index.html"
 banner = "/products/arduino-libraries/images/electronics/arduino/power/input-library-8574.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/power/input-library-8574.jpg"
@@ -26,6 +26,6 @@ management library to schedule a task. In addition it uses the libraries IOAbstr
 facilities to switch the LED on and off. This means that the LED could be located on
 a shift register or i2c IO device.
 
-[Source for the example is included in the examples section of the library](https://github.com/davetcc/IoAbstraction/blob/master/examples/timedBlink/timedBlink.ino),
+[Source for the example is included in the examples section of the library](https://github.com/TcMenu/IoAbstraction/blob/main/examples/timedBlink/timedBlink.ino),
 
 [Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})

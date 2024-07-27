@@ -1,9 +1,7 @@
-baseurl = "https://www.thecoderscorner.com/"
+baseurl = "https://tcmenu.github.io/documentation"
 languageCode = "en-us"
-title = "The Coders Corner"
+title = "TcMenu Documentation"
 theme = "belter"
-disqusShortname = "thecoderscorner"
-googleAnalytics = "UA-41766048-1"
 
 [taxonomies]
     tag = "tags"
@@ -12,9 +10,9 @@ googleAnalytics = "UA-41766048-1"
 [params]
     production = "N"
     EnableAds = "N"
-    author = "TheCodersCorner"
-    refDocsLocation = "https://www.thecoderscorner.com"
-    gitEditURL = "https://github.com/davetcc/library-documentation/tree/master/content/"
+    author = "TcMenu"
+    refDocsLocation = "https://tcmenu.github.io/documentation"
+    gitEditURL = "https://github.com/TcMenu/documentation/tree/main/content"
 
 [[menu.main]]
     name = "Products"

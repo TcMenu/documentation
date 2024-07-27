@@ -51,7 +51,7 @@ The above libraries support a wide range of hardware, including nearly every off
 | STM32F4     | mbed RTOS        | Fully tested | CAS     | Yes | Nucleo/Disc1 STM32F4x9ZI LTDC/OLED |
 | RP2040      | Pico-SDK/CMake   | Fully tested | CAS     | No  | Tested fully within TcLibSDK       |
 
-Although we only test on some Arduino mbed boards, it should work on nearly all that we know of, you can take a look at [the list of mbed boards we check for](https://github.com/davetcc/IoAbstraction/blob/master/src/PlatformDetermination.h#L19) here, if another springs to light that we haven't added please try adding it to that define statement, and if it works let us know.
+Although we only test on some Arduino mbed boards, it should work on nearly all that we know of, you can take a look at [the list of mbed boards we check for](https://github.com/TcMenu/IoAbstraction/blob/main/src/PlatformDetermination.h#L19) here, if another springs to light that we haven't added please try adding it to that define statement, and if it works let us know.
 
 * For both mbed direct and Arduino that's based on mbed we rely on mbed inbuilt CAS locking. We've tested on a few different Arduino mbed and direct mbed boards.
 * For ESP32 we use the underlying CAS capabilities to ensure cross core locking

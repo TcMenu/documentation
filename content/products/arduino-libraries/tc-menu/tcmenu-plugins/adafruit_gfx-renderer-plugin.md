@@ -8,7 +8,7 @@ author =  "dave"
 menu = "tcmenu-plugins"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/adagfx-color-display-example.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/adagfx-color-display-example.jpg"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 50
 toc_needed = true
@@ -113,13 +113,13 @@ Each of the display drivers shown below is fully tested with every release of tc
 
 The library for this display is both memory buffered and monochrome. There is a complete example menu packaged with the core tcMenu library. This example was tested on MEGA / AVR with a UipEthernet remote. However, the concepts are generally applicable. Link below takes you to the source on github.
 
-[https://github.com/davetcc/tcMenuLib/tree/master/examples/nokia5110]
+[https://github.com/TcMenu/tcMenuLib/tree/main/examples/nokia5110]
 
 ### Using the menu library with OLED SSD1306 
 
 The library for this display is both memory buffered and monochrome. Again there is a complete example menu packaged with tcMenu. This example was tested on both ESP32 and ESP8266, but the concepts are generally applicable to any processor. Link below takes you to the source on github.
 
-[https://github.com/davetcc/tcMenuLib/tree/master/examples/esp8266WifiOled]
+[https://github.com/TcMenu/tcMenuLib/tree/main/examples/esp8266WifiOled]
 
 ### Using the menu library with color TFT's - ILI9341 and ST7735
 

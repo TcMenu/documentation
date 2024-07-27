@@ -8,7 +8,7 @@ author =  "dave"
 menu = "tcmenu-iot"
 titleimg = "/products/arduino-libraries/images/apps/embed-control/embedCONTROLJS.png"
 banner = "/products/arduino-libraries/images/apps/embed-control/embedCONTROLJS.png"
-githublink = "https://github.com/davetcc/embedcontrolJS"
+githublink = "https://github.com/TcMenu/embedcontrolJS"
 referenceDocs = "/ref-docs/embedcontrol-core/html/index.html"
 weight = 50
 toc_needed = true
@@ -29,7 +29,7 @@ On ESP32 we require that you use the [ESP32 Async Web Server library](https://gi
 There are two options for the actual web-app source, IE the html, images, js and images:
 
 * Ticked - We serve up gzipped versions of all files using the most recent release version of embedCONTROL.JS.
-* Unticked - You will manually provide the files or request handlers yourself, if you're using a customized version of the app. See https://github.com/davetcc/embedcontrolJS for instructions.
+* Unticked - You will manually provide the files or request handlers yourself, if you're using a customized version of the app. See https://github.com/TcMenu/embedcontrolJS for instructions.
 
 ### Concurrent connections property
 

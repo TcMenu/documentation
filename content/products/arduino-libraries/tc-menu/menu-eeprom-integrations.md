@@ -7,7 +7,7 @@ date = "2021-08-14"
 author =  "dave"
 menu = "tc-menu"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/eeprom-title-board.jpg"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 2
 toc_needed = true
@@ -70,7 +70,7 @@ Get the EEPROM from menu manager using `menuMgr.getEepromAbstraction()`, and pro
 
 ## Setting up EEPROM support manually
 
-It's usually best to use the inbuilt support in TcMenu Designer as described above. However, you can also manually add the support too. In order to use any EEPROM functions, or to use EEPROM based choice menu items, you need to set up an EepromAbstraction and provide a pointer to `menuMgr` using `setEepromRef`. For details of how to create an EepromAbstraction see [AVR and Arduino EEPROM example](https://github.com/davetcc/IoAbstraction/blob/master/examples/avrEepromExample/avrEepromExample.ino) and [I2C AT24 EEPROM example](https://github.com/davetcc/IoAbstraction/blob/master/examples/i2cEepromExample/i2cEepromExample.ino).
+It's usually best to use the inbuilt support in TcMenu Designer as described above. However, you can also manually add the support too. In order to use any EEPROM functions, or to use EEPROM based choice menu items, you need to set up an EepromAbstraction and provide a pointer to `menuMgr` using `setEepromRef`. For details of how to create an EepromAbstraction see [AVR and Arduino EEPROM example](https://github.com/TcMenu/IoAbstraction/blob/main/examples/avrEepromExample/avrEepromExample.ino) and [I2C AT24 EEPROM example](https://github.com/TcMenu/IoAbstraction/blob/main/examples/i2cEepromExample/i2cEepromExample.ino).
 
     // before making any call to load or save, or before using ChoiceMenuItems
     menuMgr.setEepromRef(eepromPtr);

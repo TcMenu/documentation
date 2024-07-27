@@ -1,6 +1,10 @@
-# Library documentation
+# Documentation
+[![Documentation](https://github.com/TcMenu/documentation/actions/workflows/hugo.yml/badge.svg)](https://tcmenu.github.io/documentation)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](https://github.com/TcMenu/documentation/blob/main/LICENSE)
+[![davetcc](https://img.shields.io/badge/davetcc-dev-blue.svg)](https://github.com/davetcc)
+[![JSC TechMinds](https://img.shields.io/badge/JSC-TechMinds-green.svg)](https://www.jsctm.cz)
 
-This contains the library docs as they exist on theCodersCorner website.
+This contains the library docs as found on theCodersCorner website. You can view the documentation [here](https://tcmenu.github.io/documentation).
 
 This is completely self-contained and can be tested and developed locally with any recent build of hugo https://gohugo.io/
 

@@ -10,13 +10,19 @@
     </div>
   </div>
 
-  {{ if (.Params.githublink) }}
+  {{ if .Params.githublink }}
     {{ partial "widgets/githubLink" . }}
   {{ end  }}
 
-  <a class="github-link" title='{{T "Edit-this-page"}}' href="{{ .Site.Params.gitEditURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank">
-  <span id="top-github-link-text">Correct or Improve this page</span>
-  </a>
+  {{ if .File }}
+    <a class="github-link" title='{{T "Edit-this-page"}}' href="{{ .Site.Params.gitEditURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank">
+      <span id="top-github-link-text">Correct or Improve this page</span>
+    </a>
+  {{ else }}
+    <a class="github-link" title='{{T "Edit-this-page"}}' href="#" target="blank">
+      <span id="top-github-link-text">Correct or Improve this page</span>
+    </a>
+  {{ end }}
 
   {{ if (.Params.toc_needed) }}
     {{ partial "widgets/toc" . }}
