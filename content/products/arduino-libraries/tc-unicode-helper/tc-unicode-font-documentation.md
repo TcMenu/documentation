@@ -22,6 +22,8 @@ The library is fully backward compatible with AdafruitGFX fonts, and can interch
 * [AdafruitGFX font format documentation](https://learn.adafruit.com/creating-custom-symbol-font-for-adafruit-gfx-library/understanding-the-font-specification)
 * [AdafruitGFX font format helpful guide](https://glenviewsoftware.com/projects/products/adafonteditor/adafruit-gfx-font-format/)
 
+## tcUnicode font format
+
 Internally the font is arranged as an array of unicode blocks, each block contains glyphs, usually in any font on an embedded device, there would be a limited number of blocks normally containing just enough for the job. Blocks are searched sequentially in reverse numeric order to find the right starting group. Once the right block is found, we then need to find the glyph, unlike Adafruit fonts, glyphs can be selected per item, which given than some ranges have over 30,000 items, with millions of possibilities, this is needed. To find a glyph we use a binary search algorithm, which provides fast access to the right glyph.
 
 {{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/tc-unicode-conceptual.png" alt="conceptual diagram of a tcUnicode font" title="TcUnicode font conceptual diagram" >}}
