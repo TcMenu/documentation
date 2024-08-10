@@ -7,8 +7,8 @@ showChildren: false
 type: "category"
 githublink: "https://github.com/TcMenu/tcUnicodeHelper"
 referenceDocs: "/ref-docs/tc-unicode-helper/html/index.html"
-banner: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
-titleimg: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
+banner: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.webp"
+titleimg: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.webp"
 menu:
     main:
         name: 'TcUnicodeHelper library'
@@ -18,7 +18,7 @@ menu:
 
 ---
 
-TcUnicodeHelper is a library for presenting Unicode characters onto a wide range of display libraries, importantly, it works with standard versions of the libraries. It has its own font format that breaks the glyphs into Unicode block groups, and can even easily handle only a few of the glyphs with a block group being required very efficiently. At runtime it is quite light on memory and does not allocate anything outside initial setup.
+TcUnicodeHelper is a library that can draw Unicode characters using stock display libraries including Adafruit_GFX, U8G2, TFT_eSPI, our mbed graphics library and tcMenu. Importantly, it works with standard versions of the libraries and does not do any allocation outside of initialisation. It has its own font format that breaks the glyphs into Unicode block groups, and can even easily handle only a few of the glyphs with a block group being required very efficiently.
 
 From a user perspective, the library is very easy to use, just create a unicode helper object that works with your display technology and write UTF-8 data to the display. It works with both tcUnicode and Adafruit_GFX fonts. [Read more about the tcUnicode format]({{< relref "tc-unicode-font-documentation.md" >}})
 
@@ -31,7 +31,7 @@ From a user perspective, the library is very easy to use, just create a unicode 
 
 ## Why did we write TcUnicode?
 
-Originally, we used the core of this code as part of the tcMenu project specifically for mbed boards, but deemed the format to be very useful, enough to make open to all libraries. It provides a very extensible Unicode format that works across many libraries and boards.
+Originally, we used the core of this code as part of the tcMenu project specifically for mbed boards, but deemed the format to be very useful, enough to make it open to all libraries. It provides a very extensible Unicode format that works across many libraries and boards. Further, there is a pixel perfect font utility inside tcMenu Designer that can write out fonts either in TcUnicode or Adafruit font format. 
 
 ## What does tcUnicode support?
 
@@ -45,7 +45,7 @@ There is support for the following:
 
 You can read more about how this [tcUnicode multi-library support]({{< relref "text-pipelines-for-drawing.md" >}}) is handled here.
 
-If you just want to use tcUnicode without a particular graphics library "driver", the simply include as follows:
+If you just want to use tcUnicode without a particular graphics library "driver", then simply include as follows:
     
     #include <tcUnicodeHelper.h>
 
@@ -70,6 +70,7 @@ For TFT_eSPI use the following include and construction:
 
     UnicodeFontHandler fontHandler(newTFT_eSPITextPipeline(&myTFTeSPI), ENCMODE_UTF8);
 
+### TcMenu integration
 
 When using graphical device renderers with tcMenu, tcUnicode is available whenever it was enabled, and documented fully within tcMenu and tcMenu examples.
 
@@ -100,7 +101,7 @@ And that is it.
 
 ## Coordinate system and how fonts are rendered
 
-Fonts are rendered with the base line being considered coordinate 0,0. The letters ascend above the baseline, and lower case letters such as `y,g` also descend below it. This is exactly as custom fonts work in Adafruit_GFX library.
+Fonts are rendered with the baseline being considered coordinate 0,0. The letters ascend above the baseline, and lower case letters such as `y,g` also descend below it. This is exactly as custom fonts work in Adafruit_GFX library.
 
 {{< figure src="/products/arduino-libraries/images/tcUnicode/unicode-drawing.png" alt="TcUnicode font coordinate system showing ascent, descent etc" title="TcUnicode Coordinate System" >}}
 
@@ -109,11 +110,11 @@ Fonts are rendered with the base line being considered coordinate 0,0. The lette
 TcMenu Designer from version 3.0 onwards has support to do this:
 
 * [tcMenu Font documentation]({{< relref "using-custom-fonts-in-menu.md" >}}) - see the section of font creation
-* [tcMenu Designer releases page](https://github.com/TcMenu/tcMenu/releases) - ensure that you use at least 3.0.
+* [tcMenu Designer releases page](https://github.com/TcMenu/tcMenu/releases) - ensure that you use 4.3 or greater.
 
 ## How do I use the UTF-8 decoder directly
 
-**NOTE: This is only if you want to use the UTF-8 decoder outside of the helper class, normally the helper creates one of these for you.**
+**NOTE: This is only if you want to use the UTF-8 decoder outside the helper class, normally the helper creates one of these for you.**
 
 The UTF-8 decoder is asynchronous and strict/safe, it will disallow most known invalid cases. We first provide a callback that receives the characters as they are decoded. The only thing buffered in this class is the current 32 bit unicode word. It can handle up to 4 byte streams.
 
