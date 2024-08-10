@@ -24,26 +24,25 @@ From a user perspective, the library is very easy to use, just create a unicode 
 
 {{< blockClear "left" >}}
 
-## Platform support and parameters
-
-* {{< library-overview >}}
-
-
-## Why did we write TcUnicode?
-
-Originally, we used the core of this code as part of the tcMenu project specifically for mbed boards, but deemed the format to be very useful, enough to make it open to all libraries. It provides a very extensible Unicode format that works across many libraries and boards. Further, there is a pixel perfect font utility inside tcMenu Designer that can write out fonts either in TcUnicode or Adafruit font format. 
-
 ## What does tcUnicode support?
 
 There is support for the following:
 
-* All Adafruit_GFX based variants with no need for special forks.
+* All Adafruit_GFX based variants with no need for special forks. The `AdafruitGfxUnicode` that ships with the library demonstrates how to do this.
 * LTDC framebuffer - this code was originally written for this purpose.
 * tcMenu - the Designer UI and library have been enhanced to work directly with it.
 * U8G2 library - although it already has UTF-8 support, this is another option
 * TFT_eSPI - although it already has UTF-8 support, this is another option
 
-You can read more about how this [tcUnicode multi-library support]({{< relref "text-pipelines-for-drawing.md" >}}) is handled here.
+You can read more about how this [tcUnicode multi-library support]({{< relref "text-pipelines-for-drawing.md" >}}) is handled here. You could even add another pipeline for your drawing library. 
+
+## Platform support and parameters
+
+{{< library-overview >}}
+
+## Why did we write TcUnicode?
+
+Originally, we used the core of this code as part of the tcMenu project specifically for mbed boards, but deemed the format to be very useful, enough to make it open to all libraries. It provides a very extensible Unicode format that works across many libraries and boards. Further, there is a pixel perfect font utility inside tcMenu Designer that can write out fonts either in TcUnicode or Adafruit font format.
 
 If you just want to use tcUnicode without a particular graphics library "driver", then simply include as follows:
     
