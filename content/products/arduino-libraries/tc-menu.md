@@ -5,7 +5,7 @@ date: "2017-10-11"
 author:  "system"
 showChildren: false
 type: "category"
-githublink: "https://github.com/davetcc/tcMenu"
+githublink: "https://github.com/TcMenu/tcMenu"
 referenceDocs: "/ref-docs/tcmenu/html/index.html"
 banner: "/products/arduino-libraries/images/front/tcMenu-banner.png"
 titleimg: "/products/arduino-libraries/images/electronics/arduino/themes/color-blue-example.jpg"
@@ -19,7 +19,7 @@ menu:
 
 TcMenu is a modular, IoT ready multi level menu library for Arduino, mbed, Pico-SDK, mbed and many more platforms supporting many input, display and IoT / remote interfaces. It makes presenting configuration, status and operational information much easier. Apache licensed and therefore safe for commercial use.
 
-Start by [working out what information and state is to be represented]({{< relref "menu-item-types.md" >}}) in the [Designer UI]({{< relref "tcmenu-overview-quick-start.md" >}}). Take inspiration from the [Arduino menu examples](https://github.com/davetcc/tcMenuLib/tree/master/examples). Then, run [Code Generator]({{< relref "code-generator-and-plugins-guide.md" >}}) which outputs code for the selected board ready for use in an IDE.
+Start by [working out what information and state is to be represented]({{< relref "menu-item-types.md" >}}) in the [Designer UI]({{< relref "tcmenu-overview-quick-start.md" >}}). Take inspiration from the [Arduino menu examples](https://github.com/TcMenu/tcMenuLib/tree/master/examples). Then, run [Code Generator]({{< relref "code-generator-and-plugins-guide.md" >}}) which outputs code for the selected board ready for use in an IDE.
 
 {{< blockClear "left" >}}
 
@@ -28,8 +28,8 @@ Start by [working out what information and state is to be represented]({{< relre
 ## Menu library core documentation for Arduino 
 
 * [TcMenu - Getting started, including video & slides]({{< relref "tcmenu-overview-quick-start.md" >}})
-* [tcMenu Designer releases page](https://github.com/davetcc/tcMenu/releases)
-* [TcMenu library examples and starter projects](https://github.com/davetcc/tcMenuLib/tree/master/examples)
+* [tcMenu Designer releases page](https://github.com/TcMenu/tcMenu/releases)
+* [TcMenu library examples and starter projects](https://github.com/TcMenu/tcMenuLib/tree/master/examples)
 * [Get help from the C++/Java/Flutter consultants who wrote tcMenu](https://www.thecoderscorner.com/support-services/consultancy/)
 * [Guide to working with Menu Item Types]({{< relref "menu-item-types.md" >}})
 * [Code Generator and plugins guide]({{< relref "code-generator-and-plugins-guide.md" >}}) 
@@ -41,13 +41,13 @@ Start by [working out what information and state is to be represented]({{< relre
 * [Writing a multi-language locale based menu]({{< relref "multi-language-locale-menu.md" >}})
 * [Useful helper functions in tcUtil.h](https://www.thecoderscorner.com/ref-docs/tcmenu/html/tc_util_8h.html)
 * [Embedded library reference documentation](/ref-docs/tcmenu/html/index.html)
-* [GitHub Repository - for source and releases](https://github.com/davetcc/tcMenu)
+* [GitHub Repository - for source and releases](https://github.com/TcMenu/tcMenu)
 * [Major code level differences between library versions]({{< relref "major-differences-between-library-versions.md" >}}) 
 * {{< library-overview >}}
 
 ### Menu library for vendor environments using CMake (non Arduino)
 
-At the moment PicoSDK is available and does not need Arduino or mbed environment present. The PicoSDK version is even open-soured, and all the libraries can build with the CMake build tool, the starting point for these builds is [CMake based library build](https://github.com/davetcc/tccLibSdk). If you want this support to continue, it is imperative you support the project, as we have no other funding sources for it.
+At the moment PicoSDK is available and does not need Arduino or mbed environment present. The PicoSDK version is even open-soured, and all the libraries can build with the CMake build tool, the starting point for these builds is [CMake based library build](https://github.com/TcMenu/tccLibSdk). If you want this support to continue, it is imperative you support the project, as we have no other funding sources for it.
 
 ### Specific for Java on Raspberry PI or embedded Linux
 
@@ -95,7 +95,7 @@ We have tested the designer application and embedCONTROL on a Raspberry PI, so n
 
 <img class="pull-left" src="/products/arduino-libraries/images/apps/embed-control/mainicon.png" width="120" alt="IoT control with embedCONTROL"/>Our menu designer can build in IoT capabilities near automatically (on Ethernet2, UipEthernet (ENC28J60), ESP8266-WiFi, ESP32-WiFi, Bluetooth and Serial). Allowing you to [remotely monitor and control your device using Embed Control](https://www.thecoderscorner.com/products/apps/embed-control/) with minimal effort.
 
-However, to write your own remote monitoring, use our [Java Remote API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [TypeScript/JavaScript API](https://github.com/davetcc/embedcontrolJS), [C#/DotNet API](https://github.com/davetcc/tcmenu-dotnet-sdk), or the [Python API](https://github.com/davetcc/tcmenu-python). Coming soon is a Dart API.
+However, to write your own remote monitoring, use our [Java Remote API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [TypeScript/JavaScript API](https://github.com/TcMenu/embedcontrolJS), [C#/DotNet API](https://github.com/TcMenu/tcmenu-dotnet-sdk), or the [Python API](https://github.com/TcMenu/tcmenu-python). Coming soon is a Dart API.
 
 {{< blockClear "left" >}}
 
@@ -116,4 +116,4 @@ However, to write your own remote monitoring, use our [Java Remote API]({{< relr
 
 ## Creating / building / modifying plugins
 
-* [Creating plugins for use with TcMenu](https://github.com/davetcc/tcMenu/tree/master/xmlPlugins)
+* [Creating plugins for use with TcMenu](https://github.com/TcMenu/tcMenu/tree/master/xmlPlugins)

@@ -5,7 +5,7 @@ date: "2020-08-10"
 author:  "system"
 showChildren: false
 type: "category"
-githublink: "https://github.com/davetcc/SimpleCollections/"
+githublink: "https://github.com/TcMenu/SimpleCollections/"
 referenceDocs: "/ref-docs/taskmanagerio/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
 menu:
@@ -23,6 +23,6 @@ Simple collections provides a binary search based list and also a circular buffe
  * [Read the reference documentation](/ref-docs/simple-collections/html/index.html)
  * [Using btree list]({{< relref "simple-collection-btree.md" >}})
  * [Using thread-safe circular buffers]({{< relref "thread-safe-circular-buffer-collection.md" >}})
- * [Go to the code repo on github](https://github.com/davetcc/SimpleCollections/)
+ * [Go to the code repo on github](https://github.com/TcMenu/SimpleCollections/)
  * {{< library-overview >}}
 

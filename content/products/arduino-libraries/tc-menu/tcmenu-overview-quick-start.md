@@ -7,7 +7,7 @@ date = "2018-04-20"
 author =  "dave"
 menu = "tc-menu"
 banner = "/products/arduino-libraries/images/front/tcMenu-banner.png"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 1
 toc_needed = true
@@ -57,11 +57,11 @@ And at this point we are ready to open the menu designer software.
 
 ## Step 2 - Get tcMenu Designer - Windows, macOS, Linux
 
-Our Menu Designer software is available to download from the [tcMenu releases page](https://github.com/davetcc/tcMenu/releases). It can design menus and generate code for a wide range of input, display and remote control options. Available as a signed installer for Windows, Notarized app for macOS, and as a Debian package for Linux.
+Our Menu Designer software is available to download from the [tcMenu releases page](https://github.com/TcMenu/tcMenu/releases). It can design menus and generate code for a wide range of input, display and remote control options. Available as a signed installer for Windows, Notarized app for macOS, and as a Debian package for Linux.
 
 ## Step 2a: Ensure the Arduino libraries are installed
 
-You will need to install TcMenu library and all dependencies from Arduino IDE, or add the library dependency in the platformIO project ini file. As [TcMenu library](https://github.com/davetcc/tcMenuLib/releases) is built on [IOAbstraction library]({{< relref "io-abstraction.md">}}), [TaskManagerIO library]({{< relref "taskmanager-io.md">}}), [SimpleCollections]({{< relref "simple-collections.md">}}) and [TcUnicodeHelper]({{< relref "tc-unicode-helper.md" >}}) it's worth reading a little about these libraries too.
+You will need to install TcMenu library and all dependencies from Arduino IDE, or add the library dependency in the platformIO project ini file. As [TcMenu library](https://github.com/TcMenu/tcMenuLib/releases) is built on [IOAbstraction library]({{< relref "io-abstraction.md">}}), [TaskManagerIO library]({{< relref "taskmanager-io.md">}}), [SimpleCollections]({{< relref "simple-collections.md">}}) and [TcUnicodeHelper]({{< relref "tc-unicode-helper.md" >}}) it's worth reading a little about these libraries too.
 
 **PlatformIO note:** Even if you're using platformIO, we recommend that you still [download at least tcMenu library](https://github.com/davetcc/tcMenuLib/releases) initially for the examples. In this case create a libraries directory and put tcMenu in it.
 

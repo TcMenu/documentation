@@ -8,7 +8,7 @@ author =  "dave"
 menu = "tc-menu"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/title-widget-example.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/title-widget-example.jpg"
-githublink = "https://github.com/davetcc/tcMenu"
+githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/ref-docs/tcmenu/html/index.html"
 weight = 2
 toc_needed = true
@@ -239,7 +239,7 @@ If you're using a sub device (IE effectively a memory buffer), and it is palette
 
 As we said earlier this is not the complete list, see the documentation or one of the examples for a more complete guide:
 
-* [An example of drawing using device drawable](https://github.com/davetcc/tcMenuLib/blob/master/src/extras/DrawableTouchCalibrator.cpp)
+* [An example of drawing using device drawable](https://github.com/TcMenu/tcMenuLib/blob/master/src/extras/DrawableTouchCalibrator.cpp)
 * [read the full device drawable documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_device_drawable.html)
 
 [Back to tcMenu main page]({{< relref "tc-menu" >}}) 

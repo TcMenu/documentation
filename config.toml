@@ -14,7 +14,7 @@ googleAnalytics = "UA-41766048-1"
     EnableAds = "N"
     author = "TheCodersCorner"
     refDocsLocation = "https://www.thecoderscorner.com"
-    gitEditURL = "https://github.com/davetcc/library-documentation/tree/master/content/"
+    gitEditURL = "https://github.com/TcMenu/library-documentation/tree/master/content/"
 
 [[menu.main]]
     name = "Products"

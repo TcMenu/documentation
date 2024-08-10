@@ -5,7 +5,7 @@ date: "2020-07-14"
 author:  "system"
 showChildren: true
 type: "category"
-githublink: "https://github.com/davetcc/LiquidCrystalIO/"
+githublink: "https://github.com/TcMenu/LiquidCrystalIO/"
 banner: "/products/arduino-libraries/images/electronics/arduino/liquidcrystalio/dfrobot-board.jpg"
 menu:
     main:

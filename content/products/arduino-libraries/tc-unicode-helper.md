@@ -5,7 +5,7 @@ date: "2022-12-10"
 author:  "system"
 showChildren: false
 type: "category"
-githublink: "https://github.com/davetcc/tcUnicodeHelper"
+githublink: "https://github.com/TcMenu/tcUnicodeHelper"
 referenceDocs: "/ref-docs/tc-unicode-helper/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
 titleimg: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
@@ -109,7 +109,7 @@ Fonts are rendered with the base line being considered coordinate 0,0. The lette
 TcMenu Designer from version 3.0 onwards has support to do this:
 
 * [tcMenu Font documentation]({{< relref "using-custom-fonts-in-menu.md" >}}) - see the section of font creation
-* [tcMenu Designer releases page](https://github.com/davetcc/tcMenu/releases) - ensure that you use at least 3.0.
+* [tcMenu Designer releases page](https://github.com/TcMenu/tcMenu/releases) - ensure that you use at least 3.0.
 
 ## How do I use the UTF-8 decoder directly
 

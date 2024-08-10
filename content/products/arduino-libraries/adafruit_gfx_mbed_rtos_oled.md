@@ -5,7 +5,7 @@ date: "2021-06-01"
 author:  "system"
 showChildren: true
 type: "category"
-githublink: "https://github.com/davetcc/Adafruit-GFX-mbed-fork/"
+githublink: "https://github.com/TcMenu/Adafruit-GFX-mbed-fork/"
 banner: ""
 menu:
     main:
@@ -22,7 +22,7 @@ We've got everything to compile on mbed RTOS 5 & 6, and we use it ourselves on o
 {{< library-overview >}}
 
 
-The repository is hosted on GitHub [https://github.com/davetcc/Adafruit-GFX-mbed-fork/] and is tested on STM32 hardware. We have tested it with both an SPI and I2C interface.
+The [Adafruit_GFX mbed fork repository](https://github.com/TcMenu/Adafruit-GFX-mbed-fork/) is hosted on GitHub and is tested on STM32 hardware. We have tested it with both an SPI and I2C interface.
 
 There are two examples showing how to use this library packaged with it. It is also possible to [generate an mbed 6 OLED IoT ready menu directly from TcMenu Designer](https://www.thecoderscorner.com/products/arduino-libraries/tc-menu/)
 
