@@ -40,11 +40,9 @@ You can read more about how this [tcUnicode multi-library support]({{< relref "t
 
 {{< library-overview >}}
 
-## Why did we write TcUnicode?
+## How to use TcUnicode
 
-Originally, we used the core of this code as part of the tcMenu project specifically for mbed boards, but deemed the format to be very useful, enough to make it open to all libraries. It provides a very extensible Unicode format that works across many libraries and boards. Further, there is a pixel perfect font utility inside tcMenu Designer that can write out fonts either in TcUnicode or Adafruit font format.
-
-If you just want to use tcUnicode without a particular graphics library "driver", then simply include as follows:
+The main include file for the library needs to be included first:
     
     #include <tcUnicodeHelper.h>
 
@@ -69,15 +67,11 @@ For TFT_eSPI use the following include and construction:
 
     UnicodeFontHandler fontHandler(newTFT_eSPITextPipeline(&myTFTeSPI), ENCMODE_UTF8);
 
-### TcMenu integration
-
-When using graphical device renderers with tcMenu, tcUnicode is available whenever it was enabled, and documented fully within tcMenu and tcMenu examples.
-
-As the code that gets included is inline, it should work as above.
+At this point you have a font handler, you can now draw text onto your display! 
 
 ## How do I draw UTF-8 characters using TcUnicode?
 
-Then we set the font we want to use:    
+Firstly, set the font we want to use:    
 
     fontHandler.setFont(unicodeOrAdaFont);
 
@@ -86,17 +80,19 @@ You can then get the dimensions providing the text and a baseline pointer refere
     int baseline;
     Coord sizeOfText = fontHandler.textExtents_P(helloText, &baseline);
 
-Next we set the cursor position, and color that we want to draw using:
+Next we set the cursor position by providing integer x and y coordinates (as discussed earlier these are relative to the baseline), and color that we want to draw using. Note that the color is passed directly through to the library unchanged:
 
     fontHandler.setCursor(0, sizeOfText.y - baseline);
     fontHandler.setDrawColor(ILI9341_WHITE);
 
 We can then print to the display using various functions:
 
-    fontHandler.print_P(helloText);     // write from progmem
+    fontHandler.print_P(helloText);     // print data from progmem memory
     fontHandler.print((int)textSize.x); // regular print, works as per Arduino.
 
-And that is it.
+Don't forget that just like many other libraries, the print above will not clear the pixels, it is your responsibility to clear the pixels by filling the rectangle with a background color where the text will go.
+
+I'd recommend that you take a look at the packaged example `adafruitGfxUnicode` in the library. 
 
 ## Coordinate system and how fonts are rendered
 
@@ -106,23 +102,23 @@ Fonts are rendered with the baseline being considered coordinate 0,0. The letter
 
 ## How do I create tcUnicode and Adafruit_GFX fonts?
 
-TcMenu Designer from version 3.0 onwards has support to do this:
+TcMenu Designer from version 4.3 onwards has a font creation utility built into it, it can import several desktop font formats and export them to either Adafruit font format, or tcUnicode format. Since 4.3.0 the results are bit perfect and optimized for lower resolution, non aliased fonts. Consult the documentation below for more: 
 
 * [tcMenu Font documentation]({{< relref "using-custom-fonts-in-menu.md" >}}) - see the section of font creation
-* [tcMenu Designer releases page](https://github.com/TcMenu/tcMenu/releases) - ensure that you use 4.3 or greater.
+* [tcMenu Designer releases page](https://github.com/TcMenu/tcMenu/releases) - ensure that you use the latest available for best results.
 
 ## How do I use the UTF-8 decoder directly
 
 **NOTE: This is only if you want to use the UTF-8 decoder outside the helper class, normally the helper creates one of these for you.**
 
-The UTF-8 decoder is asynchronous and strict/safe, it will disallow most known invalid cases. We first provide a callback that receives the characters as they are decoded. The only thing buffered in this class is the current 32 bit unicode word. It can handle up to 4 byte streams.
+The UTF-8 decoder is stream based, asynchronous and strict, it will disallow most known invalid cases. We first provide a callback that receives the characters as they are decoded. The only thing buffered in this class is the current 32 bit unicode word. It can handle up to 4 byte streams.
 
     void characterReceived(void* optionalUserData, uint32_t convertedCode) {
         Serial1.print("Unicode=");
         Serial1.println(convertedCode);
     }
 
-Then you create the text processor globally, you can optionally provide user data that is passed to the callback. 
+Then you create the text processor globally, you can optionally provide user data that is passed to the callback. You can have as many `Utf8TextProcessor` instances as you like, they are lightweight. Probably less than 20 bytes in size on AVR and around 40 bytes on 32-bit boards.
 
     void* optionalUserData = nullptr;
     Utf8TextProcessor textProcessor(characterReceived, optionalUserData, ENCMODE_UTF8); // ENCMODE_EXT_ASCII for extended ASCII processing mode
