@@ -65,6 +65,7 @@ We have tested the designer application and embedCONTROL on a Raspberry PI, so n
 * [Creating and using TitleWidgets and bitmaps]({{< relref "creating-and-using-bitmaps-menu.md" >}})
 * [Themes, properties, grids and icons]({{< relref "rendering-with-themes-icons-grids.md" >}})
 * [How to define fonts within theme configuration]({{< relref "using-custom-fonts-in-menu.md" >}})
+* [Creating and exporting your own Adafruit and tcUnicode fonts]({{< relref "tcunicode-font-creator-designer.md" >}})
 * [Taking over the display]({{< relref "renderer-take-over-display.md" >}})
 * [DfRobot LCD shield driver]({{< relref "dfrobot-input-display-plugin.md" >}})
 * [LiquidCrystal / hd44780 display driver]({{< relref "liquidcrystalio-hd44780-renderer-plugin.md" >}})

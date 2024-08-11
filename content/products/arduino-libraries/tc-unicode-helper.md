@@ -28,7 +28,7 @@ From a user perspective, the library is very easy to use, just create a unicode 
 
 There is support for the following:
 
-* All Adafruit_GFX based variants with no need for special forks. The `AdafruitGfxUnicode` that ships with the library demonstrates how to do this.
+* All Adafruit_GFX based variants with no need for special forks. The `AdafruitGfxUnicode` example demonstrates how to do this.
 * LTDC framebuffer - this code was originally written for this purpose.
 * tcMenu - the Designer UI and library have been enhanced to work directly with it.
 * U8G2 library - although it already has UTF-8 support, this is another option
@@ -46,22 +46,22 @@ The main include file for the library needs to be included first:
     
     #include <tcUnicodeHelper.h>
 
-To pick up the pre-written driver for a given library use one of the following.
+To pick up the pre-written driver for a given library use one of the following. Note that if you're using one of the newer tcMenu display libraries then tcUnicode is already built in.
 
-For Adafruit_GFX use the following include and construction:
+For Adafruit_GFX add the below include and create the global `fontHandler` variable:
 
     #include <tcUnicodeAdaGFX.h>
 
     UnicodeFontHandler fontHandler(newAdafruitTextPipeline(&myGfx), ENCMODE_UTF8);
 
-For U8G2 use the following include and construction:
+For U8G2 add the below include and create the global `fontHandler` variable:
 
     #include <tcUnicodeU8G2.h>
 
     UnicodeFontHandler fontHandler(newU8G2TextPipeline(&myU8g2), ENCMODE_UTF8);
 
 
-For TFT_eSPI use the following include and construction:
+For TFT_eSPI add the below include and create the global `fontHandler` variable:
 
     #include <tcUnicodeTFT_eSPI.h>
 
