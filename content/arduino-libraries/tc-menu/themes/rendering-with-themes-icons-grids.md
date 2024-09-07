@@ -31,7 +31,7 @@ Once you've run code generator for the first time, a new header file for the the
 
 ## Working with Theme Builder
 
-Most operations around configuring the rendering in tcMenu are done using `TcThemeBuilder`, to use if we first include it:
+Theme builder is by far the easiest way to modify how rendering works and you can use theme builder in two ways. Either to completely define how drawing takes place (this is what the theme does), or just to override a few settings in your project files. The class itself is called `TcThemeBuilder`, to use if we first include it:
 
     #include <graphics/TcThemeBuilder.h>
 
@@ -43,7 +43,7 @@ Now let's discuss the core functionality of the builder.
 
 ## Setting up the display dimensions and basics
 
-To auto set the display dimensions from the renderer, and set up how the menu title should be displayed, along with if analog values should be shown as slider controls:
+Unless you're starting from scratch, the theme will have already called `dimensionsFromRenderer` so if you're using the builder to modify an existing layout you can skip doing it again. To auto set the display dimensions from the renderer, and set up how the menu title should be displayed, along with if analog values should be shown as slider controls:
 
     themeBuilder.dimensionsFromRenderer()
                 .withRenderingSettings(titleMode, useAnalogSliders)
