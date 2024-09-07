@@ -60,12 +60,9 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"
       - name: Build TcMenuLib Docs
-        id: tcmenuLibDoc
-        uses: actions/doxygen-action@v1.9.8
-        with:
-          working-directory: "tcMenuLib/"
-          doxyfile-path: "../_refdocs/tcmenu-doxygen.conf"
-
+        working-directory: ./tcMenuLib
+        run: |
+          doxygen $DOXY_DIR/taskmgr-doxygen.conf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
