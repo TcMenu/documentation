@@ -8,7 +8,6 @@ author =  "dave"
 menu = "tc-menu"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/tcmenu-cli-banner.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenujavaapi/html/index.html"
 weight = 50
 toc_needed = true
 +++

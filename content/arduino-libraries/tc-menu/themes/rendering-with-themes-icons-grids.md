@@ -168,16 +168,16 @@ Let's say we want an entire submenu to render with a different palette and adafr
 
 To do the same for action items `themeBuilder.submenuPropertiesActionOverride()`.
 
-* see [TcThemeBuilder docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_tc_theme_builder.html)
-* see [GridPosition docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_grid_position.html)
-* see the `addGridPosition` method in [ItemDisplayPropertiesFactory](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_item_display_properties_factory.html)
+* see {{< refdocs title="TcThemeBuilder docs" src="tcmenu/html/classtcgfx_1_1_tc_theme_builder.html" >}}
+* see {{< refdocs title="GridPosition docs" src="tcmenu/html/classtcgfx_1_1_grid_position.html" >}}
+* see the `addGridPosition` method in {{< refdocs title="ItemDisplayPropertiesFactory" src="tcmenu/html/classtcgfx_1_1_item_display_properties_factory.html" >}}
 
 ## Common structures and classes
 
 Along with this overview, please see the reference documentation for more complete details, they will not be repeated here:
 
-* [GfxMenuConfig.h documentation - core types](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_gfx_menu_config_8h.html)
-* [DrawingPrimitives.h documentation - core types](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_drawing_primitives_8h.html)
+* {{< refdocs title="GfxMenuConfig.h documentation" src="tcmenu/html/graphics_2_gfx_menu_config_8h.html" >}}
+* {{< refdocs title="DrawingPrimitives.h documentation - core types" src="tcmenu/html/_drawing_primitives_8h.html" >}}
 
 ### struct Coord - coordinates
 
@@ -251,9 +251,9 @@ END FOR
 
 ## ItemPropertiesFactory and graphical displays (advanced)
 
-Our flexible configuration based rendering is made possible by a display factory. The display factory stores all the grids, icons and drawing properties in high performance btree lists that are optimised for reading. Graphical displays nearly always have a [ConfigurableItemDisplayPropertiesFactory](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_configurable_item_display_properties_factory.html) that can be obtained using `renderer.getGraphicsPropertiesFactory()`. The themes are always a good starting point for making adjustments to these values.
+Our flexible configuration based rendering is made possible by a display factory. The display factory stores all the grids, icons and drawing properties in high performance btree lists that are optimised for reading. Graphical displays nearly always have a {{< refdocs title="ConfigurableItemDisplayPropertiesFactory" src=tcmenu/html/classtcgfx_1_1_configurable_item_display_properties_factory.html" >}} that can be obtained using `renderer.getGraphicsPropertiesFactory()`. The themes are always a good starting point for making adjustments to these values.
 
-* [ItemDisplayProperties documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_item_display_properties.html)
+* {{< refdocs title="ItemDisplayProperties documentation" src=tcmenu/html/classtcgfx_1_1_item_display_properties.html" >}}
 
 
 ## The properties cache in more detail (advanced)

@@ -9,7 +9,6 @@ menu = "tcmenu-iot"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/remote-ethernet-card.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/remote-ethernet-card.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenujavaapi/html/index.html"
 weight = 50
 toc_needed = true
 aliases = ["/products/arduino-libraries/tc-menu/tcmenu-java-api-to-arduino-remote-control/"]
@@ -71,7 +70,7 @@ When you want to make a change to a remote value, you do not need to update the 
 There are two examples that you can look at to get started:
 
 * [Standalone RS232 Example](https://github.com/TcMenu/tcMenu/blob/main/tcMenuJavaApi/src/test/java/com/thecoderscorner/menu/examples/StandaloneRs232Test.java)
-* [Full reference documentation of the API](/ref-docs/tcmenujavaapi/index.html) (also packaged with the library in maven central).
+* Consult the Java docs that are shipped with the API.
 
 ## Connecting remotely
 

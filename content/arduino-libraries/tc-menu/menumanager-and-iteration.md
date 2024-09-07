@@ -15,8 +15,8 @@ toc_needed = true
 
 `MenuManager` contains the functions to manage menu items, there is a global instance of this class called `menuMgr` on Arduino and mbed boards. Here we present the most commonly used features, check out the reference docs for more details. There are a lot of iteration helper functions that can be used to navigate through menu structures. These are described further down the page. The following two reference documentation pages extend on the information here:
 
-* [Menu iteration reference docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_menu_iterator_8h.html)
-* [MenuManager reference docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_menu_manager.html)
+* {{< refdocs title="Menu iteration reference docs" src="tcmenu/html/_menu_iterator_8h.html" >}}
+* {{< refdocs title="MenuManager reference docs" src="tcmenu/html/class_menu_manager.html" >}}
 * [EEPROM support in menus]({{< relref "menu-eeprom-integrations.md">}})
 
 ## Enabling next and back functionality
@@ -170,7 +170,7 @@ Note that either of the above methods use one of the callback spaces. There is a
 
 **When using the designer, this code gets added automatically, this is to fully document the API.**
 
-We initialise the menu manager as shown below, where renderer is a pointer to a renderer (or an instance of `NoRenderer`), root is the very first menu item and then this is followed by the pin used for either switches or the rotary encoder. Remember that pinA of the encoder must be an interrupt capable pin. If you're not using the designer, then the plugins for display and remote are available within the tcMenu code repo within the two plugin packages, or may be packaged with the embedded folder. Copy the required files into your sketch and make sure they are initialised. The full details are available in [the menu manager class documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_menu_manager.html).
+We initialise the menu manager as shown below, where renderer is a pointer to a renderer (or an instance of `NoRenderer`), root is the very first menu item and then this is followed by the pin used for either switches or the rotary encoder. Remember that pinA of the encoder must be an interrupt capable pin. If you're not using the designer, then the plugins for display and remote are available within the tcMenu code repo within the two plugin packages, or may be packaged with the embedded folder. Copy the required files into your sketch and make sure they are initialised. The full details are available in {{< refdocs title="the menu manager class documentation" src="tcmenu/html/class_menu_manager.html" >}}.
 
 	menuMgr.initForEncoder(MenuRenderer* renderer, MenuItem* root, uint8_t encoderPinA, uint8_t encoderPinB, uint8_t encoderButton);
 	menuMgr.initForUpDownOk(MenuRenderer* renderer, MenuItem* root, uint8_t upPin, 
@@ -199,7 +199,7 @@ Above we see the menu manager surrounded by the components that make up a menu a
 
 Most of the useful functions to iterate over menu items are within the following reference documentation page, we only document the most popular ones here, so it is worth checking this page too:
 
-* [MenuIterator.h reference docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_menu_iterator_8h.html)
+* {{< refdocs title="MenuIterator.h reference docs" src="tcmenu/html/_menu_iterator_8h.html" >}}
 
 ### MenuItemIterator - non-recursive iteration of the tree
 
@@ -254,7 +254,7 @@ If you need to do the same thing to many menu items at the same time, certain op
 
 Many of the boolean flags are supported for read and write, and also there is a method `onEachItem()` that gets called for items in the delegate.
 
-Full documentation: https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtccore_1_1_menu_item_delegate.html
+Full documentation: {{< refdocs title="Menu Item Delegate docs" src="tcmenu/html/classtccore_1_1_menu_item_delegate.html" >}}
 
 Examples:
 

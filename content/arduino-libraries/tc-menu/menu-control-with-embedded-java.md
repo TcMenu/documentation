@@ -30,8 +30,7 @@ Maven is used as the build system by default. It is set up automatically with th
 All the classes discussed here are documented, a few key entry points into the reference docs are linked below. Note that this documentation is taken from the source, so most Java IDEs should show it.
 
 * [Using the JavaAPI guide]({{< relref "tcmenu-java-api-to-arduino-remote-control.md">}})
-* [JavaAPI ref docs](https://www.thecoderscorner.com/ref-docs/tcmenujavaapi/html/annotated.html)
-* [embedCONTROLCore ref docs](https://www.thecoderscorner.com/ref-docs/embedcontrol-core/html/annotated.html)
+* Consult the Java docs shipped with the API.
 
 ## Components of the application
 

@@ -50,13 +50,11 @@ At the moment PicoSDK is available and does not need Arduino or mbed environment
 
 ### Specific for Java on Raspberry PI or embedded Linux
 
-We have tested the designer application and embedCONTROL on a Raspberry PI, so not only can you make a Raspberry PI embedded application, you can even run designer and embedCONTROL on an RPI as well!
+We have tested the designer application and embedCONTROL on a Raspberry PI, so not only can you make a Raspberry PI embedded application, you can even run designer and embedCONTROL on an RPI as well! The Java API and EmbedControl libraries are fully JavaDoc commented.
 
 * [Creating an embedded Java menu application for RaspberryPI]({{< relref "menu-control-with-embedded-java.md" >}})
 * [Display menu on JavaFX/OpenJDK on Raspberry PI]({{< relref "tcmenu-openjfx-raspberrypi-plugin.md" >}})
 * [Menu In Menu - Embed remote menus into a single app]({{< relref "java-menu-in-menu.md" >}})
-* [Java IoT API reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenujavaapi/html/annotated.html)
-* [embedCONTROL Core API reference documentation](https://www.thecoderscorner.com/ref-docs/embedcontrol-core/html/annotated.html)
 
 ## Display plugins
 
@@ -101,7 +99,6 @@ However, to write your own remote monitoring, use our [Java Remote API]({{< relr
 * [embedCONTROL UI documentation](https://www.thecoderscorner.com/products/apps/embed-control/)
 * [Menu library remote connectivity tutorial]({{< relref "menu-library-remote-connectivity.md" >}})
 * [IoT monitoring and control using the Java API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}})
-* [Java IoT API reference documentation](/ref-docs/tcmenujavaapi/html/index.html) 
 * [TagVal protocol documentation]({{< relref "embed-control-tagval-wire-protocol.md" >}})
 
 ### IoT and Remote control plugins
