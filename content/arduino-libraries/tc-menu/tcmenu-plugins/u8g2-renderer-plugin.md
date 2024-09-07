@@ -9,7 +9,7 @@ menu = "tcmenu-plugins"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/oled-display.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/oled-display.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenu/html/index.html"
+referenceDocs = "/tcmenu/html/index.html"
 weight = 50
 toc_needed = true
 +++

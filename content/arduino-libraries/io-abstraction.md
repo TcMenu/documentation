@@ -6,7 +6,7 @@ author:  "system"
 showChildren: false
 type: "category"
 githublink: "https://github.com/TcMenu/IoAbstraction"
-referenceDocs: "/ref-docs/ioabstraction/html/index.html"
+referenceDocs: "/ioabstraction/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/power/input-library-8574.jpg"
 aliases: 
     - "/products/arduino-downloads/io-abstraction/"

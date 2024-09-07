@@ -6,7 +6,7 @@ author:  "system"
 showChildren: false
 type: "category"
 githublink: "https://github.com/TcMenu/tcMenu"
-referenceDocs: "/ref-docs/tcmenu/html/index.html"
+referenceDocs: "/tcmenu/html/index.html"
 banner: "/products/arduino-libraries/images/front/tcMenu-banner.png"
 titleimg: "/products/arduino-libraries/images/electronics/arduino/themes/color-blue-example.jpg"
 menu:

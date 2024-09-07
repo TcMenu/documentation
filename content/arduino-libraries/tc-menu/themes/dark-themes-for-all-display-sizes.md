@@ -8,7 +8,7 @@ author =  "dave"
 menu = "themes"
 banner = "/products/arduino-libraries/images/electronics/arduino/themes/color-dark-example.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenu/html/index.html"
+referenceDocs = "/tcmenu/html/index.html"
 weight = 50
 toc_needed = true
 +++

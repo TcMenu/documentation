@@ -8,7 +8,7 @@ author =  "dave"
 menu = "menu-item-types"
 banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/title-types.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenu/html/index.html"
+referenceDocs = "/tcmenu/html/index.html"
 toc_needed = true
 +++
 

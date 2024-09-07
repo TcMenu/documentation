@@ -9,7 +9,7 @@ menu = "tcmenu-iot"
 titleimg = "/products/arduino-libraries/images/apps/embed-control/embedCONTROLJS.png"
 banner = "/products/arduino-libraries/images/apps/embed-control/embedCONTROLJS.png"
 githublink = "https://github.com/TcMenu/embedcontrolJS"
-referenceDocs = "/ref-docs/embedcontrol-core/html/index.html"
+referenceDocs = "/embedcontrol-core/html/index.html"
 weight = 50
 toc_needed = true
 +++

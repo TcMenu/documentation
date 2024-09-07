@@ -8,7 +8,7 @@ author =  "dave"
 menu = "tc-menu"
 banner = "/products/arduino-libraries/images/electronics/arduino/power/io-abstraction-encoder-pcf8574-thumb.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenu/html/index.html"
+referenceDocs = "/tcmenu/html/index.html"
 weight = 2
 toc_needed = true
 +++

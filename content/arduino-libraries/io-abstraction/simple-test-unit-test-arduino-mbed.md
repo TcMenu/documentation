@@ -7,7 +7,7 @@ date = "2022-11-16"
 author =  "dave"
 menu = "io-abstraction"
 githublink = "https://github.com/TcMenu/IoAbstraction"
-referenceDocs = "/ref-docs/ioabstraction/html/index.html"
+referenceDocs = "/ioabstraction/html/index.html"
 banner = "/images/electronics/arduino/tcMenu/ioa-logging-example.jpg"
 weight = 5
 +++

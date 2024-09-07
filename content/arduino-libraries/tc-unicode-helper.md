@@ -6,7 +6,7 @@ author:  "system"
 showChildren: false
 type: "category"
 githublink: "https://github.com/TcMenu/tcUnicodeHelper"
-referenceDocs: "/ref-docs/tc-unicode-helper/html/index.html"
+referenceDocs: "/tc-unicode-helper/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
 titleimg: "/products/arduino-libraries/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
 menu:

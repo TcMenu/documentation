@@ -6,7 +6,7 @@ author:  "system"
 showChildren: false
 type: "category"
 githublink: "https://github.com/TcMenu/SimpleCollections"
-referenceDocs: "/ref-docs/taskmanagerio/html/index.html"
+referenceDocs: "/taskmanagerio/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
 menu:
     main:

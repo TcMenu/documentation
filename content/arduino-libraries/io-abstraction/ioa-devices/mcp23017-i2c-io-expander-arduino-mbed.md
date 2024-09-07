@@ -7,7 +7,7 @@ date = "2023-05-20"
 author =  "dave"
 menu = "ioa-devices"
 githublink = "https://github.com/TcMenu/IoAbstraction"
-referenceDocs = "/ref-docs/ioabstraction/html/index.html"
+referenceDocs = "/ioabstraction/html/index.html"
 banner = "/images/electronics/arduino/power/input-library-8574.jpg"
 weight = 3
 +++

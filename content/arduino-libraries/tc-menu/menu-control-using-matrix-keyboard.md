@@ -9,7 +9,7 @@ menu = "tc-menu"
 banner = "/products/arduino-libraries/images/electronics/arduino/ioAbstraction/keyboard-connected-to-device.jpg"
 titleimg = "/products/arduino-libraries/images/electronics/arduino/ioAbstraction/keyboard-connected-to-device.jpg"
 githublink = "https://github.com/TcMenu/tcMenu"
-referenceDocs = "/ref-docs/tcmenu/html/index.html"
+referenceDocs = "/tcmenu/html/index.html"
 weight = 2
 toc_needed = true
 +++

@@ -8,7 +8,7 @@ author =  "dave"
 menu = "tc-unicode-helper"
 banner = "/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
 githublink = "https://github.com/TcMenu/tcUnicodeHelper"
-referenceDocs = "/ref-docs/tc-unicode-helper/html/index.html"
+referenceDocs = "/tc-unicode-helper/html/index.html"
 weight = 99
 toc_needed = true
 +++
