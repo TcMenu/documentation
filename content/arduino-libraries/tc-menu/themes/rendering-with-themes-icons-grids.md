@@ -15,31 +15,31 @@ toc_needed = true
 aliases = ["/products/arduino-libraries/tc-menu/tcmenu-plugins/rendering-with-themes-icons-grids/"]
 +++
 
-Most display plugins can be customized using a grid layout, with graphical displays additionally using themes to configure fonts, colors, spacing and icons. To the left you can see cool-blue theme with a multi-column grid layout.
+Most display plugins can be customized using TcThemeBuilder, a utility class that allows you to simply configure fonts, colors, spacing, grids and icons. To the left you can see cool-blue theme with a multi-column grid layout.
 
-Grid positions are used to define an items position in the menu, and even break rows up into multiple columns. Each grid position also defines the justification and drawing mode too. 
+Grids allow for multi-column menus by breaking rows up into multiple columns. You can configure graphical settings at the default level, or even override settings for a specific menu item.  
 
 {{< blockClear "left" >}}
 
 ## Choosing a theme to get started in a new project
 
-To avoid having to define the fonts, spacing, colors and other details from scratch, we have themes that can be applied out of the box. Whenever a graphical display plugin is selected that needs a theme, then the theme is shown underneath the display plugin choice. There are a few pre-canned choices to choose from, so  to get started, pick one that works for your display. The manual theme applies no style whatsoever and is not recommended for beginners.
+To avoid having to define the fonts, spacing, colors and other details from scratch, we have a few starter themes that can be applied out of the box. In code generator, whenever a graphical display plugin is selected that needs a theme, then the theme is shown underneath the display plugin choice. You can either choose one of the "starter themes" or the manual theme that applies no style whatsoever (not recommended for beginners).
 
-**NOTE: Do not pick a color theme for a monochrome display, it is unlikely to work.**
+**IMPORTANT: Do not pick a color theme for a monochrome display, it is unlikely to work.**
 
-Once you've run code generator for the first time, a new header file for the theme will be added to your project. Once added, this will not be altered or overwritten, so you are safe to edit it. However, if you want to regenerate the theme, delete the file and the designer will generate it again.
+Once you've run code generator for the first time, a new header file for the theme will be added to your project. Once added, this will not be altered or overwritten, so you are safe to edit it but we still recommend that once you edited it you should rename it and move to the manual theme approach. If you want to regenerate the theme header file, simply delete the file and the designer will generate it again.
 
-## Theme builder
+## Working with Theme Builder
 
 Most operations around configuring the rendering in tcMenu are done using `TcThemeBuilder`, to use if we first include it:
 
-    #include <graphics/tcThemeBuilder.h>
+    #include <graphics/TcThemeBuilder.h>
 
 Then where we want to use it, we simply create an instance locally, it doesn't use much memory so is safe as a local variable.
 
     TcThemeBuilder themeBuilder(renderer); // provide your renderer as the parameter.
 
-Once created you can use call chaining, this is because each function returns itself, so you can call the next function, this is often called builder pattern. You must remember at the end of your configuration to call `themeBuilder.apply()`, and if any structural changes were made, you may even need to `menuMgr.resetMenu()`
+Now let's discuss the core functionality of the builder.
 
 ## Setting up the display dimensions and basics
 
@@ -51,6 +51,8 @@ To auto set the display dimensions from the renderer, and set up how the menu ti
 Where:
  * titleMode - one of the title mode enumeration values:  BaseGraphicalRenderer::TITLE_ALWAYS, BaseGraphicalRenderer::NO_TITLE, BaseGraphicalRenderer::TITLE_FIRST_ROW
  * useAnalogSliders - true/false to choose if analog values should show like a percentage bar or not.
+
+As you can see above, we use call chaining, this is because each function returns itself, so you can call the next function. Often referred to as builder pattern. Importantly, you must remember at the end of your configuration to call `themeBuilder.apply()`, and if any structural changes were made, you may even need to `menuMgr.resetMenu()`
 
 ## Configuring the basic drawing settings
 
@@ -67,7 +69,19 @@ Here is an example series of settings from one of our themes, let's discuss what
             .withNativeFont(itemFont.fontData, itemFont.fontMag)
             .withSpacing(1);
 
-Firstly the dimensions are configured automatically by calling `dimensionsFromRenderer` by querying the renderer. Then the selected colors are chosen using the RGB macro for each color. After that the item and title padding are configured, you can see we demonstrate both ways to construct a padding object (either all sides same, or separate value for each), then we provide the title mode followed by the palette (we'll discuss palettes later in more detail). Fonts can be configured in many different ways, either using "native font" or you can directly provide adafruit or tcUnicode fonts using specialised overrides. Lastly, the spacing is the amount of space AFTER an item.
+Firstly the dimensions are configured automatically by calling `dimensionsFromRenderer` this sets the display sizes by querying the display plugin. Then the selected colors are chosen using the RGB macro for each color. Read more about `color_t` and the `RGB` macro below. 
+
+After that the item and title padding are configured, you can see we demonstrate both ways to construct a padding object (either all sides same, or separate value for each). The padding is within the rectangle of a menu item, and "pads out" the rectangle's size. You configure the title and item spacing separately (as they are usually different).  
+
+Then we provide the title mode as described in the section above followed by the palette (we'll discuss palettes later in more detail) but these are four colors to be used when drawing the item. 
+
+Next, we configure the default font. Fonts can be configured in many different ways, either using "native font" or you can directly provide adafruit or tcUnicode fonts using specialised overrides. See the section on fonts below, there is also another [guide on fonts and how to use them]({{< relref "using-custom-fonts-in-menu.md" >}}). The three theme methods for dealing with fonts are:
+
+    withNativeFont(void* fontData, int fontMagnification);
+    withAdaFont(const GFXfont* font, int mag = 1)
+    withTcUnicodeFont(const UnicodeFont* font)   
+
+Lastly, the spacing is an amount of vertical space AFTER an item. It will not be part of the item's rectangle.
 
 ## Setting up the absolute minimum
 
@@ -75,12 +89,14 @@ In addition to the above, you need to tell the menu how to render items, action 
 
 ## Choosing editing icons
 
-You can choose to have editing icons where a small "cursor" icon is shown before the selected or editing item. 
+Editing icons are hints for users that are especially important when using a rotary encoder or keyboard arrangement for selection and editing. They appear to the left of a menu item to give a visual clue that it is either selected or editing. In touch arrangements this is not as important. You can decide if you wish to include these visual clues and which icons to use. 
+
+There are two default options for these icons: 
 
         themeBuilder.withStandardMedResCursorIcons(); // for medium resolution displays
         themeBuilder.withStandardLowResCursorIcons(); // for lower resolution displays
 
-Or to specify them manually you provide the size of the icons, and then each icon as an XBMP:
+Or to specify them manually you provide the size of the icons as a `Coord` object, and then each icon as an XBMP where both must be the same size:
 
     themeBuilder.withCursorIconsXbmp(Coord(8, 8), editIcon, activeIcon) {
 
@@ -88,19 +104,34 @@ Or to specify them manually you provide the size of the icons, and then each ico
 
 {{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/grid-layout-example.jpg" title="Grid Layout example" alt="Grid layout showing various column layout possibilities" >}}
 
-Menu items are drawn in a grid layout as presented in the image above. We can draw a menu item at any grid and row position, just be careful that the row definition comes before the natural menu row, otherwise the row will already be taken and can't be overridden.
-
-A row can have either the default height, or the grid position can override the height (in multi-column arrangements all items on one row must be the same height), it can also define the drawing mode and justification. To make a row become multi-column set the grid size parameter to other than 1, and create a grid position for each column position, starting at 1 and working upwards.
+Menu items are drawn in a grid layout as presented in the image above. We can draw a menu item at any grid and row position. The layout for manually overridden items is run first, so other items flow around them.
 
 Further, if the item at row 0 is the title, then any title widgets will also be rendered onto the right. If you choose to use active and edit icons, then appear on the left and are not considered part of the item.    
 
-There are three ways to draw with this type of renderer:
+There are three ways to draw:
 
-* Fully on the fly, don't configure any grid positions, every item will be on a new row by default.
-* Partial overriding of the grid positions
+* Fully on the fly, don't configure any grid positions, every item will be on a new row by default in menu order.
+* Partial overriding of the grid positions where some items layout manually, other automatically.
 * Full overriding of grid positions for every menu item in a given submenu.
 
-Let's say we want a grid of two items on row 3, at positions 1 and 2:
+### Changing the drawing parameters
+
+You can also change the font, color, padding, size and default justification at three levels (shown below in priority order):
+
+* Item level, where there is a match on menu item
+* SubMenu level, when there is no match at item level
+* Default settings when no others match
+* Last chance item that's compiled in just in-case there is a severe mis-configuration to avoid returning `nullptr`.
+
+To change the default settings use `setDrawingPropertiesDefault` on the factory, providing the component type and the drawing settings. This will take effect when there are no other overrides
+
+To change the properties for all items that belong to a submenu use `setDrawingPropertiesForItem` on the factory, providing the component type and drawing settings. This will take effect when there are no item level overrides.
+
+To change the properties for a single item use `setDrawingPropertiesAllInSub` on the factory, providing the component type and drawing settings. This item will always have priority over anything else.
+
+### Creating two icon menu items on the same row
+
+Here we present an example theme builder layout to show how to override two menu items so that they appear on the same row, row `3` in this case, one with an XBMP image, the other with a color 4 bit per pixel palette image. Note that [TcMenu Designer can generate XBMP and palette images]({{< relref "creating-and-using-bitmaps-menu.md" >}})
 
     // for menuEngine, we override the drawing to use a color palette based icon
     themeBuilder.menuItemOverride(menuEngine)
@@ -114,6 +145,10 @@ Let's say we want a grid of two items on row 3, at positions 1 and 2:
             .withImageXbmp(Coord(64, 64), statusIconBits) 
             .apply();
 
+In the above, the row and column upon which the item should appear in configured with `onRowCol(row, col, columnsOnRow)` and then the renderer is told to draw as an icon.  Lastly, and very importantly we call `apply()`.
+
+### Overriding a single item's palette or border
+
 Let's say we want an item to have a different palette, border, and justify differently:
 
         themeBuilder.menuItemOverride(menuSpecial)
@@ -121,6 +156,8 @@ Let's say we want an item to have a different palette, border, and justify diffe
             .withBorder(MenuBorder(1))
             .withPalette(specialPalette)
             .apply();
+
+### Advanced - Overriding submenu drawing 
 
 Let's say we want an entire submenu to render with a different palette and adafruit font by default for regular items:
 
@@ -131,8 +168,7 @@ Let's say we want an entire submenu to render with a different palette and adafr
 
 To do the same for action items `themeBuilder.submenuPropertiesActionOverride()`.
 
-At this point you know how to override the behaviour for items and submenus.
-
+* see [TcThemeBuilder docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_tc_theme_builder.html)
 * see [GridPosition docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_grid_position.html)
 * see the `addGridPosition` method in [ItemDisplayPropertiesFactory](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_item_display_properties_factory.html)
 
@@ -216,21 +252,6 @@ END FOR
 ## ItemPropertiesFactory and graphical displays (advanced)
 
 Our flexible configuration based rendering is made possible by a display factory. The display factory stores all the grids, icons and drawing properties in high performance btree lists that are optimised for reading. Graphical displays nearly always have a [ConfigurableItemDisplayPropertiesFactory](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_configurable_item_display_properties_factory.html) that can be obtained using `renderer.getGraphicsPropertiesFactory()`. The themes are always a good starting point for making adjustments to these values.
-
-### Changing the drawing parameters
-
-You can also change the font, color, padding, size and default justification at three levels (shown below in priority order):
-
-* Item level, where there is a match on menu item
-* SubMenu level, when there is no match at item level
-* Default settings when no others match
-* Last chance item that's compiled in just in-case there is a severe mis-configuration to avoid returning `nullptr`.
-
-To change the default settings use `setDrawingPropertiesDefault` on the factory, providing the component type and the drawing settings. This will take effect when there are no other overrides
-
-To change the properties for all items that belong to a submenu use `setDrawingPropertiesForItem` on the factory, providing the component type and drawing settings. This will take effect when there are no item level overrides.
-
-To change the properties for a single item use `setDrawingPropertiesAllInSub` on the factory, providing the component type and drawing settings. This item will always have priority over anything else.
 
 * [ItemDisplayProperties documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_item_display_properties.html)
 

@@ -13,7 +13,6 @@ menu:
     main:
         name: 'TcUnicodeHelper library'
         identifier: 'tc-unicode-helper'
-        parent: 'arduino-libraries'
         weight: 4
 
 ---

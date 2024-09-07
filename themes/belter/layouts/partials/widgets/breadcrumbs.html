@@ -3,10 +3,10 @@
         <h1 class="titleHeading">{{ .Title }}</h1>
         {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
         {{ $scratch := newScratch }}
-        {{ $scratch.Set "path" "/" }}
+        {{ $scratch.Set "path" .Site.BaseURL }}
 
         <ul class="breadcrumbs">
-            <li><a href="/">home</a></li>
+            <li><a href="/documentation/">home</a></li>
             {{ range $index, $element := split $url "/" }}
             {{ $scratch.Add "path" $element }}
             {{ if ne $element "" }}

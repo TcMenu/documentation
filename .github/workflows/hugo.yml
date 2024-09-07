@@ -49,6 +49,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
+          sed -i 's/production = .N./production = "Y"/g' config.toml
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"

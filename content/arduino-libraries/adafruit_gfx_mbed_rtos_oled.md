@@ -11,7 +11,6 @@ menu:
     main:
         name: 'AdafruitGFX fork - mbed OLED'
         identifier: 'adafruit_gfx_mbed_rtos_oled'
-        parent: 'arduino-libraries'
         weight: 5
 ---
 

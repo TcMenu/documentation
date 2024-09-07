@@ -13,7 +13,6 @@ menu:
     main:
         name: 'TcMenu Framework'
         identifier: 'tc-menu'
-        parent: 'arduino-libraries'
         weight: 1
 ---
 

@@ -4,32 +4,23 @@
             <button class="navbar-toggler" type="button" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
                 &#9776;
             </button>
-            <a class="navbar-brand" href="/">
-                <img class="logoImage" src="/products/arduino-libraries/img/logo.png" alt="The Coders Corner for Audio, Embedded, Arduino and JavaJVM" />
-            </a>
-            {{ if ne (.Site.Params.production) "Y" }}
-            <span style="background-color: red; color: white;">DEV Test</span>
-            {{ end }}
+            <div>
+                <a class="navbar-brand" href="/">
+                    <img class="logoImage" src="{{ .Site.BaseURL }}/img/tcMenu-banner.png" alt="TcMenu framework components : Arduino, ESP32, PicoSDK, mbed" />
+                </a>
+                <a style="float: right; color:blue !important;" class="nav-link menu-item" href="https://github.com/TcMenu/">[TcMenu GitHub]</a>
+            </div>
+
         </div>
         <div class="topMenuArea collapse" id="mainMenu">
             <ul class="nav navbar-nav" >
-
-                {{ if eq (.Site.Params.production) "Y" }}
-                <li class="nav-item"><a class="img-link menu-item" href="/"><img src="/products/arduino-libraries/img/logo-small.png" alt="The coders corner logo"/></a></li>
-                <li class="nav-item" ><a id="products" class="nav-link menu-item dropdown-toggle" href="/products">Products</a></li>
-                <li class="nav-item" ><a id="support-help" class="nav-link menu-item dropdown-toggle" href="/support-help">Community Help</a></li>
-                <li class="nav-item" ><a id="support-services" class="nav-link menu-item dropdown-toggle" href="/support-services">Commercial Services</a></li>
-                <li class="nav-item" ><a id="electronics" class="nav-link menu-item dropdown-toggle" href="/electronics">Electronics</a></li>
-                <li class="nav-item" ><a id="team-blog" class="nav-link menu-item dropdown-toggle" href="/team-blog">Developer Blog</a></li>
-                <li class="nav-item" ><a id="all-contact" class="nav-link menu-item" href="/all-contact">Contact</a></li>
-                {{ else }}
-                {{ $currentNode := . }}
-                {{ range .Site.Menus.main.ByWeight }}
-                <li class="nav-item" >
-                    <a id="{{ .Identifier }}" class="nav-link menu-item" href="{{.URL}}">{{ .Name }}</a>
-                </li>
-                {{end}}
-                {{ end }}
+                <li class="nav-item"><a class="nav-link menu-item" href="{{ .Site.BaseURL }}">Home</a></li>
+                <li class="nav-item" ><a class="nav-link menu-item" href="{{ .Site.BaseURL }}/arduino-libraries/tc-menu">TcMenu</a></li>
+                <li class="nav-item" ><a class="nav-link menu-item" href="{{ .Site.BaseURL }}/arduino-libraries/io-abstraction">IoAbstraction</a></li>
+                <li class="nav-item" ><a class="nav-link menu-item" href="{{ .Site.BaseURL }}/arduino-libraries/tc-unicode-helper">TcUnicode</a></li>
+                <li class="nav-item" ><a class="nav-link menu-item" href="{{ .Site.BaseURL }}/arduino-libraries/taskmanager-io">TaskManagerIO</a></li>
+                <li class="nav-item" ><a class="nav-link menu-item" href="{{ .Site.BaseURL }}/arduino-libraries/simple-collections">SimpleCollections</a></li>
+                <li class="nav-item" ><a class="nav-link menu-item" href="{{ .Site.BaseURL }}/arduino-libraries/liquidcrystal-io">LiquidCrystalIO</a></li>
             </ul>
         </div>
     </nav>
