@@ -65,7 +65,7 @@ jobs:
       - name: Build TcMenuLib Docs
         working-directory: ./tcMenuLib
         run: |
-          doxygen $DOXY_DIR/taskmgr-doxygen.conf
+          doxygen ../_refdocs/tcmenu-doxygen.conf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
