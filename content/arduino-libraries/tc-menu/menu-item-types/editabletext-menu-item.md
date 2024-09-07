@@ -22,7 +22,7 @@ An item that represents a complex data type that needs to be edited a part at a 
 * Type: `DateFormattedMenuItem` with a default callback function of `dateItemRenderFn` in `RuntimeMenuItem.h`
 * [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [Documentation page for these types](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_runtime_menu_item_8h.html)
+* {{< refdocs title="Documentation page for these types" src="/tcmenu/html/_runtime_menu_item_8h.html" >}}
 
 Table showing what `getMenuType()` returns for each class type
 

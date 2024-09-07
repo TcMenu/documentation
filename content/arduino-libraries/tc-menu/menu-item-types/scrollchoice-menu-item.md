@@ -20,7 +20,7 @@ Scroll Choice menu items allow for a single choice from a list of choices. Unlik
 * Enum returned by `getMenuType()` is MENUTYPE_SCROLLER_VALUE
 * [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [Scroll choice menu item documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_scroll_choice_menu_item.html)
+* {{< refdocs title="Scroll choice menu item documentation" src="/tcmenu/html/class_scroll_choice_menu_item.html" >}}
 
 ## Creating a Scroll Choice item from the designer
 

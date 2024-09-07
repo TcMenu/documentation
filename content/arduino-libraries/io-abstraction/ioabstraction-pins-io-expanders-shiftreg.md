@@ -20,7 +20,7 @@ What do we mean by consistent, we mean that configuring a pin, adding an interru
 
 There are several sketches in the examples folder showing how to use most of the capabilities mentioned here. They cover Arduino pins, shift registers, IO expander devices, and [MultiIo abstraction]({{< relref "arduino-pins-and-io-expanders-same-time.md">}}) that allows many devices to be treated as a single large IO device.
 
-You can look at [BasicIoAbstraction in the reference docs](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_basic_io_abstraction.html).
+You can look at {{< refdocs title="BasicIoAbstraction in the reference docs" title="/ioabstraction/html/class_basic_io_abstraction.html" >}}
 
 There is also a [fork of the LiquidCrystal library that works with this abstraction]({{< relref "io-abstraction-liquidcrystal-examples.md">}}), and therefore can be used with pins, IO expanders or a shift register simply by changing the IoAbstraction it's using.
 

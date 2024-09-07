@@ -14,7 +14,7 @@ weight = 3
 
 IO Abstraction library fully supports the AW9523 16-bit IO expander chips on Arduino and mbed. It requires only two pins (three for interrupt mode) SDA, SCL, and optionally INT. Our driver integrates the GPIO, LED controller, and interrupt support providing nearly all functions using familiar Arduino terminology.
 
-This device can even be used in conjunction with an [AW9523 analog device](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_a_w9523_analog_abstraction.html) to make it even easier to use the LED controller.
+This device can even be used in conjunction with an {{< refdocs title="AW9523 analog device" src="/ioabstraction/html/class_a_w9523_analog_abstraction.html" >}} to make it even easier to use the LED controller.
 
 {{< blockClear "left" >}}
 
@@ -34,7 +34,7 @@ Optionally you can create an `AnalogDevice` to access the LED controller feature
 
     AW9523AnalogAbstraction ledController(ioDevice);
 
-This will allow you to treat the extra LED controller features available as an analog device. [See the analog device help]({{< relref "using-ioabstraction-analog-core.md" >}}). Also see the AW9523 example packaged with the library, or the [AW9523 I2C device reference docs](http://thecoderscorner.com/ref-docs/ioabstraction/html/class_a_w9523_io_abstraction.html).
+This will allow you to treat the extra LED controller features available as an analog device. [See the analog device help]({{< relref "using-ioabstraction-analog-core.md" >}}). Also see the AW9523 example packaged with the library, or the {{< refdocs title="AW9523 I2C device reference docs" src="/ioabstraction/html/class_a_w9523_io_abstraction.html" >}}.
 
 Once you have created an instance, [simply use it like any other IoAbstraction]({{< relref "ioabstraction-pins-io-expanders-shiftreg.md" >}}) they all work the same way.
 

@@ -15,7 +15,7 @@ toc_needed = true
 All types of MenuItem can have an INFO block, which is a structure that can be stored in FLASH that represents the static data for an item. This is because all items directly extend from the MenuItem class, they always have a reference to an AnyMenuInfo block that's stored in program memory on devices that support it. In addition to this, there's [RuntimeMenuItem documented here]({{< relref "based-on-runtimemenuitem.md" >}}) which also has what's called a render callback, where a function is called to help render the item. 
 
 * [See the main menu types page]({{< relref "menu-item-types.md" >}})
-* [See the reference documentation showing the full hierarchy](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_menu_item.html) 
+* {{< refdocs title="See the reference documentation showing the full hierarchy" src="/tcmenu/html/class_menu_item.html" >}} 
 
 Items that directly extend MenuItem _always_ reference a data block that extends from AnyMenuInfo, at an absolute minimum the core fields defined in this structure must always be provided. For storage there are two options, either store in const/FLASH, on boards that support PROGMEM this will be program memory. Otherwise, they can be stored in RAM. Below we provide the definition this structure.
 

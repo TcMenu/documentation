@@ -28,7 +28,7 @@ Lists are highly memory efficient, there's one MenuItem that handles every row, 
 * Enum returned by `getMenuType()` is MENUTYPE_RUNTIME_LIST
 * [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [Runtime List menu item documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_list_runtime_menu_item.html)
+* {{< refdocs title="Runtime List menu item documentation" src="/tcmenu/html/class_list_runtime_menu_item.html" >}}
 
 ## Adding a list item from the designer
 

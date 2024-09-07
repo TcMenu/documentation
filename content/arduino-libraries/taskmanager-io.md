@@ -33,7 +33,7 @@ Task manager can schedule tasks to be done either now, or at some point in the f
  * [Tutorial - programming an Arduino using tasks]({{< relref "programming-arduino-using-tasks-tutorial.md" >}})
  * [Timed blink example (packaged with IoAbstraction)]({{< relref "timedBlink-example-ioAbstraction-library.md">}})
  * {{< library-overview >}}
- * [Read the reference documentation](/ref-docs/taskmanagerio/html/index.html)
+ * {{< refdocs title="Read the reference documentation" src="/taskmanagerio/html/index.html" >}}
  * [Go to the code repo on github](https://github.com/TcMenu/TaskManagerIO)
 
  

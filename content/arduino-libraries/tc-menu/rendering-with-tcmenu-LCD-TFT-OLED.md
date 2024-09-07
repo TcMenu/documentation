@@ -37,9 +37,9 @@ From the above diagram we can see that most graphical and LCD displays (except U
 * Type: `BaseMenuRenderer` in BaseRenderers.h - this just provides a few functions to help formatting items, taking over the display and handling dialogs.
 * Type: `BaseGraphicalRenderer` in graphics/BaseGraphicalRenderer.h - extends from above, provides grid based capabilities, but does not do the drawing.
 * Type: `GraphicsDeviceRenderer` in graphics/GraphicsDeviceRenderer.h - does all the drawing to an instance of `Drawable`
-* [See the reference documentation for base renderer](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_base_renderers_8h.html)
-* [See the reference documentation for base graphical renderer](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_base_graphical_renderer.html)
-* [See the device drawable interface](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_device_drawable.html)
+* {{< refdocs title="See the reference documentation for base renderer" src="/tcmenu/html/_base_renderers_8h.html" >}}
+* {{< refdocs title="See the reference documentation for base graphical renderer" src="/tcmenu/html/classtcgfx_1_1_base_graphical_renderer.html" >}}
+* {{< refdocs title="See the device drawable interface" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}
 
 ### Renderer integration into the sketch
 
@@ -134,7 +134,7 @@ Where the `BaseDialogController` interface is implemented as follows:
         }
     };
 
-You can add additional menu items of any type to the dialog, you can even add more buttons, additional buttons should be of this type [https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_local_dialog_button_menu_item.html].
+You can add additional menu items of any type to the dialog, you can even add more buttons, additional buttons should be of this type {{< refdocs title="Dialog Button Menu Item" src="/tcmenu/html/class_local_dialog_button_menu_item.html" >}}. 
 
      void insertMenuItem(MenuItem* item);
 
@@ -169,7 +169,7 @@ See the new guide to [creating and using TitleWidgets and bitmaps]({{< relref "c
 
 ## Drawing direct to the display with DeviceDrawable
 
-You can draw to any of our displays using the same `DeviceDrawable`, it is implemented everywhere we have a graphical plugin, the code remains the same in more or less all cases. All the drawing possibilities are documented, [read the full device drawable documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_device_drawable.html).
+You can draw to any of our displays using the same `DeviceDrawable`, it is implemented everywhere we have a graphical plugin, the code remains the same in more or less all cases. All the drawing possibilities are documented, {{< refdocs title="read the full device drawable documentation" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}.
 
 However, as a summary, we first get hold of the display drawable and tell the drawable we want to start using it:
 
@@ -200,7 +200,7 @@ For drawing text can get the extents and draw as follows:
     // drawing text, simply set the draw color and then text.
     drawable->drawText(Coord(0,0), myFont, 0, "Test");
 
-Drawing bitmaps is covered by two cases, with the [DrawableIcon bitmap](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_drawable_icon.html) case being more configurable, while there is also support to draw an X-Bitmap (xbm) file too. Paint tool Gimp can create XBMs.
+Drawing bitmaps is covered by two cases, with the {{< refdocs title="DrawableIcon bitmap" src="/tcmenu/html/classtcgfx_1_1_drawable_icon.html" >}} case being more configurable, while there is also support to draw an X-Bitmap (xbm) file too. Paint tool Gimp can create XBMs.
 
     DrawableIcon icon(myIconId, Coord(width, height), DrawableIcon::ICON_XBITMAP, iconData);
     drawable->drawBitmap(Coord(0,0), &drawableIcon, selected);
@@ -240,6 +240,6 @@ If you're using a sub device (IE effectively a memory buffer), and it is palette
 As we said earlier this is not the complete list, see the documentation or one of the examples for a more complete guide:
 
 * [An example of drawing using device drawable](https://github.com/TcMenu/tcMenuLib/blob/main/src/extras/DrawableTouchCalibrator.cpp)
-* [read the full device drawable documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_device_drawable.html)
+* {{< refdocs title="read the full device drawable documentation" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}
 
 [Back to tcMenu main page]({{< relref "tc-menu" >}}) 

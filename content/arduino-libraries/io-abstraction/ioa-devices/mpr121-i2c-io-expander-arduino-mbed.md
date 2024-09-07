@@ -14,7 +14,7 @@ weight = 3
 
 IO Abstraction library fully supports the MPR121 12-bit Touch control and IO expander chips on Arduino and mbed. It requires only two pins (three for interrupt mode) SDA, SCL, and optionally INT. Our driver integrates the Touch, GPIO, LED controller, and interrupt support providing nearly all functions using familiar Arduino terminology.
 
-This device can even be used in conjunction with an [MPR121 analog device](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_m_p_r121_analog_abstraction.html) to make it even easier to use the LED controller.
+This device can even be used in conjunction with an {{< refdocs title="MPR121 analog device" src="/ioabstraction/html/class_m_p_r121_analog_abstraction.html" >}} to make it even easier to use the LED controller.
 
 {{< blockClear "left" >}}
 

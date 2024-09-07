@@ -20,7 +20,7 @@ Float items are useful for displaying the result of inexact calculations and are
 * Enum returned by `getMenuType()` is MENUTYPE_FLOAT_VALUE
 * [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [FloatMenuItem reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_float_menu_item.html) 
+* {{< refdocs title="FloatMenuItem reference documentation" src="/tcmenu/html/class_float_menu_item.html" >}} 
 
 ## Creating an object from the designer
 

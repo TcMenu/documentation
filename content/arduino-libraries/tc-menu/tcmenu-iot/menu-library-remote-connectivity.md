@@ -16,8 +16,8 @@ aliases = ["/products/arduino-libraries/tc-menu/menu-library-remote-connectivity
 
 TcMenu has considerable out of the box remote connectivity on both Arduino and mbed. With support for Ethernet2 library, UipEthernet library, ESP8266 WiFi, ESP32 WiFi and Serial (including Bluetooth Serial) to name a few connectors. Please pay close attention to the following classes in the reference documentation as they are mentioned frequently here: 
 
-* [BaseRemoteServerConnection in reference docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcremote_1_1_base_remote_server_connection.html)
-* [TcMenuRemoteService in reference docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcremote_1_1_tc_menu_remote_server.html).
+* {{< refdocs title="BaseRemoteServerConnection in reference docs" src="/tcmenu/html/classtcremote_1_1_base_remote_server_connection.html" >}}
+* {{< refdocs title="TcMenuRemoteService in reference docs" src="/tcmenu/html/classtcremote_1_1_tc_menu_remote_server.html" >}}.
 
 Please bear in mind that TcMenu is able to support a wide range of remote connectors. However, this guide focuses on the core `TcMenuRemoteServer` class and also the TagVal API / embedCONTROL protocol. Specific connectivity options are discussed separately in other guides.
 

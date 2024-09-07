@@ -73,7 +73,7 @@ The original purpose of the reset / inactivity support was for complex menus, wh
 
 ## Object oriented approach to display management
 
-If we extend the class `CustomDrawing` and provide that instance to the renderer, then we can both handle taking over the display and reset events at the same time. [See custom drawing class in reference docs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_custom_drawing.html). Here we present a simple way to extend it.
+If we extend the class `CustomDrawing` and provide that instance to the renderer, then we can both handle taking over the display and reset events at the same time. {{< refdocs title="See custom drawing class in reference docs" src="/tcmenu/html/class_custom_drawing.html" >}}. Here we present a simple way to extend it.
 
     class MyCustomDrawing : public CustomDrawing {
     public:

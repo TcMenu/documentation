@@ -13,7 +13,7 @@ titleimg = "/products/arduino-libraries/images/electronics/arduino/tcMenu/ioa-lo
 weight = 5
 +++
 
-IoAbstraction comes with a few text utilities that can be helpful when rendering text as raw character arrays. Internally, IoAbstraction and TcMenu DO NOT use any string objects to avoid runtime memory allocation. [See the complete text utility documentation](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/_text_utilities_8h.html)
+IoAbstraction comes with a few text utilities that can be helpful when rendering text as raw character arrays. Internally, IoAbstraction and TcMenu DO NOT use any string objects to avoid runtime memory allocation. {{< refdocs title="See the complete text utility documentation" src="/ioabstraction/html/_text_utilities_8h.html" >}}
 
 To use the text utilities you need to include the header
 
@@ -43,6 +43,6 @@ There is also a standardized abs function that works on most boards:
 
     float absVal = tcFltAbs(floatVal);
 
-[See the complete documentation](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/_text_utilities_8h.html)
+{{< refdocs title="See the complete documentation" src=/ioabstraction/html/_text_utilities_8h.html" >}}
 
 [Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})

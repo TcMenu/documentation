@@ -133,6 +133,6 @@ To draw with a TcUnicode font in your code, simply use the global `renderer` and
     // always do this last, it ensures the screen is updated
     drawable->endDraw();
 
-As I said above, this code works on every display we have plugins for. It has many other methods for dealing with common drawing operations. [Read the full documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/classtcgfx_1_1_device_drawable.html).
+As I said above, this code works on every display we have plugins for. It has many other methods for dealing with common drawing operations. {{< refdocs title="Read the full documentation" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}.
 
 You'll also see examples of using `DeviceDrawable` within many packaged examples. 

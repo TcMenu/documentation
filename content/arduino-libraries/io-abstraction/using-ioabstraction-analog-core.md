@@ -16,7 +16,7 @@ weight = 0
 
 IoAbstraction has a simple interface to the analog capabilities of all supported boards. It provides frequently used functionality around acquiring and setting analog values from ADC, PWM and DACs. Having the ability to read and write analog values as float, where the value is between 0 and 1; where 0 is off and 1 is fully on. this capability allows you share code across different Arduino and mbed boards.
  
-The base class for this abstraction is `AnalogDevice` and you can see the full documentation in the [reference guide](/ref-docs/ioabstraction/html/index.html).
+The base class for this abstraction is `AnalogDevice` and you can see the full documentation in the {{< refdocs title="reference guide" src="/ioabstraction/html/index.html" >}}.
 
 {{< blockClear "left" >}}
 

@@ -28,7 +28,7 @@ Need help with a commercial design, or want a customised version for your hardwa
 
 ## Reference guide and code repo
 
-* [Read the reference guide](/ref-docs/ioabstraction/html/index.html)
+* {{< refdocs title="Read the reference guide" src="/ioabstraction/html/index.html" >}}
 * [Go to the code repo on github](https://github.com/TcMenu/IoAbstraction)
 * [Collections - BtreeList]({{< relref "simple-collection-btree.md" >}})
 * {{< library-overview >}}

@@ -50,7 +50,7 @@ Although not recommended, you can copy the library from GitHub manually. Full ja
 
 ## Getting started with the API
 
-In the Java API menu items are managed by a `MenuTree` instance, each connection to an Arduino has its own tree, as otherwise the ID's would overlap. Menu's are represented as a ROOT menu and submenu's, the `MenuTree` controls where in this tree of menus each `MenuItem` sits. `MenuItem` is the base class of all menu item instances. We draw a simplified hierarchy below - [see the full heirachy in the refdocs](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_menu_item.html):
+In the Java API menu items are managed by a `MenuTree` instance, each connection to an Arduino has its own tree, as otherwise the ID's would overlap. Menu's are represented as a ROOT menu and submenu's, the `MenuTree` controls where in this tree of menus each `MenuItem` sits. `MenuItem` is the base class of all menu item instances. We draw a simplified hierarchy below - {{< refdocs title="see the full heirachy in the refdocs" src="/tcmenu/html/class_menu_item.html" >}}:
 
     MenuItem
         AnalogMenuItem          -- holds numeric values

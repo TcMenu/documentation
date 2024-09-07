@@ -39,7 +39,7 @@ Each item has a type that defines what kind of data it can hold, for example an 
 * Fully qualified variable name (recommended): menuSettingsBrightness
 * Unqualified variable name: menuBrightness 
 
-This guide is designed to be read in conjunction with the [tcMenu reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/_menu_items_8h.html).
+This guide is designed to be read in conjunction with the {{< refdocs title="tcMenu reference documentation" src="/tcmenu/html/_menu_items_8h.html" >}}.
 
 ## Properties shared by all MenuItems
 

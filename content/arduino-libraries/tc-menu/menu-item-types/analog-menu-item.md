@@ -29,7 +29,7 @@ You can apply an optional step to an analog item, which means that it goes up in
 * Type returned by `getMenuType()` is MENUTYPE_INT_VALUE
 * [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [AnalogMenuItem reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_analog_menu_item.html) 
+* {{< refdocs title="AnalogMenuItem reference documentation" src="/tcmenu/html/class_analog_menu_item.html" >}} 
 
 ## Creating an object from the designer
 

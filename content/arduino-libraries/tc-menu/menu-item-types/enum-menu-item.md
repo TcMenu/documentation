@@ -22,7 +22,7 @@ If you want choices that can change at runtime, or acquired from EEPROM or RAM t
 * Type returned by `getMenuType()` is MENUTYPE_ENUM_VALUE
 * [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [EnumMenuItem reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_enum_menu_item.html) 
+* {{< refdocs title="EnumMenuItem reference documentation" src="/tcmenu/html/class_enum_menu_item.html" >}} 
 
 ## Creating an enum item in the designer
 

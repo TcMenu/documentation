@@ -70,7 +70,7 @@ You can read back the values at any time, it is split into three methods, one to
 
 ## Deal with touches in an event driven way
 
-To do this instead of using the above `ValueStoringTouchScreenManager` you create your own class that extends from `TouchScreenManager`. See the [Touch interface reference docs](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/_resistive_touch_screen_8h.html) for more information.
+To do this instead of using the above `ValueStoringTouchScreenManager` you create your own class that extends from `TouchScreenManager`. See the {{< refdocs title="Touch interface reference docs" src="/ioabstraction/html/_resistive_touch_screen_8h.html" >}} for more information.
 
 ## Creating a new touch interrogator for new hardware
 
@@ -80,6 +80,6 @@ To do this you create an object that extends from TouchInterrogator, it must ind
                 float* ptrX, float* ptrY, TouchRotation rotation, 
                 const CalibrationHandler& calib)=0;
 
-See the [Touch interface reference docs](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/_resistive_touch_screen_8h.html) for more information.
+See the {{< refdocs title="Touch interface reference docs" src="/ioabstraction/html/_resistive_touch_screen_8h.html" >}} for more information.
 
 [Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})

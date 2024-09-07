@@ -28,7 +28,7 @@ When remote connectivity is added to a menu then the authenticator has a second 
 
 ## Different types of authenticator
 
-There are three different authenticators built in to the core of TcMenu, each one provides the same core functionality, that is to store and verify the pin for submenus, and also to check if a connection from a given client UUID and name should be established. They all [implement the AuthenticationManager interface](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_authentication_manager.html). You can browse the class hierarchy using the link.
+There are three different authenticators built in to the core of TcMenu, each one provides the same core functionality, that is to store and verify the pin for submenus, and also to check if a connection from a given client UUID and name should be established. They all {{< refdocs title="implement the AuthenticationManager interface" src="/tcmenu/html/class_authentication_manager.html" >}}. You can browse the class hierarchy using the link.
 
 ### No Authentication 
 

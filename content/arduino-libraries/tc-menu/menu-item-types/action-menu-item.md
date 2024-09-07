@@ -20,7 +20,7 @@ Action menu items represent a menu item that does nothing more than run the call
 * Enum returned by `getMenuType()` is MENUTYPE_ACTION_VALUE
 * [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [ActionMenuItem reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_action_menu_item.html) 
+* {{< refdocs title="ActionMenuItem reference documentation" src="/tcmenu/html/class_action_menu_item.html" >}} 
 
 ## Creating an object from the designer
 

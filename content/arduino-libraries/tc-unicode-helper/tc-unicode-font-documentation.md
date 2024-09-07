@@ -26,4 +26,4 @@ Internally the font is arranged as an array of unicode blocks, each block contai
 
 The bitmaps are stored within the block, and can be up to 64KB in size for each block, and the char-code is an offset to the block's starting point, with up to 64K range allowed in each block. Bitmap format, offset parameters, and sizing is exactly as per AdafruitGFX (that's why we can easily be backward compatible with a few lines of code). You can see more about this in the reference documentation linked below.
 
-See https://www.thecoderscorner.com/ref-docs/tc-unicode-helper/html/_unicode_font_defs_8h.html for the reference documentation.
+See {{< refdocs title="Unicode font defs docs" src="/tc-unicode-helper/html/_unicode_font_defs_8h.html" >}} for the reference documentation.

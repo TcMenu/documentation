@@ -69,6 +69,6 @@ Where:
 * retriesAllowed is the number of times to attempt the operation, 0 = only once.
 * sendStop allows you to keep the bus open ready for a repeated start, use with care.
 
-[You can read more about this in the reference documentation](/ref-docs/ioabstraction/html/index.html)
+{{< refdocs title="You can read more about this in the reference documentation" src="/ioabstraction/html/index.html" >}}
 
 [Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})

@@ -97,7 +97,7 @@ NOTE on single save it is assumed that the magic key has been written out at som
 
 ## Special cases and other details
 
-See the [reference docs about EeepromAbstraction](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_eeprom_abstraction.html).
+See the {{< refdocs title="reference docs about EeepromAbstraction" src="/ioabstraction/html/class_eeprom_abstraction.html" >}}
 
 Should you need to use EEPROM functions before initialisation, you can set the root menu item before initialise for this special case. In this case, should need to use the menuMgr load function, as you must either set the EEPROM reference yourself as above, or  call the overload of the load function that takes a pointer to an EepromAbstraction. 
 

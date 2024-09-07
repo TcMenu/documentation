@@ -20,7 +20,7 @@ An item type that represents a color in the Red Green Blue space, optionally als
 * Enum returned by `getMenuType()` is MENUTYPE_COLOR_VALUE
 * [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [RGB color item reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_rgb32_menu_item.html)
+* {{< refdocs title="RGB color item reference documentation" src="/tcmenu/html/class_rgb32_menu_item.html" >}}
 
 ## Creating a color menu item using the designer
 

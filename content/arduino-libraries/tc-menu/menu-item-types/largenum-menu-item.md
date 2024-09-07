@@ -20,7 +20,7 @@ tcMenu supports Large numbers for editing, with values up to 12 digits in total,
 * Enum returned by `getMenuType()` is MENUTYPE_LARGENUM_VALUE
 * [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [Large Number reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_editable_large_number_menu_item.html)
+* {{< refdocs title="Large Number reference documentation" src="/tcmenu/html/class_editable_large_number_menu_item.html" >}}
 
 ## Creating an object from the designer
 

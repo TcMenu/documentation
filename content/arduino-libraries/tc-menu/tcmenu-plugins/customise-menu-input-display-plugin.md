@@ -40,7 +40,7 @@ Real world rendering classes extend from one of three base classes, we'll discus
 * The base graphical renderer `BaseGraphicalRenderer` is middle of the road, it takes care of the `render` function for you, works out what fits onto your screen etc. It does not handle the drawing. An exmaple of this is the full version of the LCD renderer.
 * Lastly, the `GraphicsDeviceRenderer` does all the drawing, spacing and everything else on your behalf to a `DeviceDrawable` device, we have such drawables for many libraries, it's very easy to implement the drawable as there is no business logic, just drawing commands.
 
-Before trying to modify the class you should probably [read through the API documentation](/ref-docs/tcmenu/html/index.html), especially look at the documentation for the chosen render in detail. Never make changes to files inside tcMenu library, these will be overwritten in future updates.
+Before trying to modify the class you should probably {{< refdocs title="read through the API documentation" src="/tcmenu/html/index.html" >}}, especially look at the documentation for the chosen render in detail. Never make changes to files inside tcMenu library, these will be overwritten in future updates.
 
 There's also a dialog class within most renderers that will normally extend from either `BaseDialog` or `MenuBasedDialog`. The API documentation for this is in BaseDialog.h. If you want to also override how dialogs look, you'll need to change the rendering here too.  
 
@@ -55,6 +55,6 @@ Most of the input plugins work based on IoAbstraction's switches `SwitchInput` c
  * Select no input for the input type in the generator.
  * In the setup of your application prepare your own input facilities.
  * When your equivalent of the OK button is pressed, call `menuMgr.onMenuSelect(buttonHeld);` where button held indicates if the button is held down.
- * The standard renderer is based on values being chosen based on values between 0 and a maximum value. Generally this is done by a rotary encoder (or a simulation thereof). If you are not using a rotary encoder you'd probably still need to implement `RotaryEncoder` using the interface to capture the changes in range when menus are selected or editing starts. See the [IoAbstraction documentation](/ref-docs/ioabstraction/html/index.html) around rotary encoders.
+ * The standard renderer is based on values being chosen based on values between 0 and a maximum value. Generally this is done by a rotary encoder (or a simulation thereof). If you are not using a rotary encoder you'd probably still need to implement `RotaryEncoder` using the interface to capture the changes in range when menus are selected or editing starts. See the {{< refdocs title="IoAbstraction documentation" src="/ioabstraction/html/index.html" >}} around rotary encoders.
  
  [Back to tcMenu main page]({{< relref "tc-menu" >}}) 

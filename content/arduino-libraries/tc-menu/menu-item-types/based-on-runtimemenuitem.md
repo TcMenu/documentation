@@ -15,7 +15,7 @@ toc_needed = true
 Items that extend from runtime menu item use a callback at runtime that can be used to get more or less every property, but will use the INFO block if it is available (not null). That being the case, they _don't need_ but _can use_ an info block (that is defined ahead of time) ahead of time. However, in general use they work almost identically to regular menu items in nearly every way. In addition, they are still quite memory efficient.
 
 * [See the main menu types page]({{< relref "menu-item-types.md" >}})
-* [See the reference documentation showing the full hierarchy](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_menu_item.html) 
+* {{< refdocs title="See the reference documentation showing the full hierarchy" src="/tcmenu/html/class_menu_item.html" >}} 
 
 Runtime menu items main difference is that a "render callback" function can be used to get the static values such as EEPROM address, name and even it's current value. If you stick to creating items using the designer UI, you do not need to understand this fully. For all cases apart from list and custom scroll choice items you probably wouldn't even see the callback. Normally, in most cases, you'd still use an INFO block with runtime items, as they are just easier to create that way. 
 

@@ -38,7 +38,7 @@ As above, the i2c communication bus is used to read and write values. You will n
     // create an IO device that has a single interrupt for both ports
     MCP23017IoAbstraction io23017(address, interruptMode, interruptPin, optionalWirePtr);
 
-See the [reference docs for parameter details](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_m_c_p23017_io_abstraction.html) 
+See the {{< refdocs title="reference docs for parameter details" src="/ioabstraction/html/class_m_c_p23017_io_abstraction.html" >}} 
 
 Once you have created an instance, [simply use it like any other IoAbstraction]({{< relref "ioabstraction-pins-io-expanders-shiftreg.md" >}}) they all work the same way.
 

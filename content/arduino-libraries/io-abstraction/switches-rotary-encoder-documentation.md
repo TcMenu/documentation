@@ -26,7 +26,7 @@ Key points:
 * Rotary encoder needs no additional components in most cases.
 * Works with Arduino, mbed 5/6, ESP on pins, PCF8574, MCP23017 or shift-registers.
 
-You can see [SwitchInput in the reference docs](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_switch_input.html). 
+You can see {{< refdocs title="SwitchInput in the reference docs" src="/ioabstraction/html/class_switch_input.html" >}} 
 
 ### To setup SwitchInput for button management
 

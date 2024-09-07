@@ -38,8 +38,8 @@ Start by [working out what information and state is to be represented]({{< relre
 * [Creating and generating menus using the CLI]({{< relref "tcmenu-cli-workflow.md">}})
 * [MenuManager and Menu iteration Guide]({{< relref "menumanager-and-iteration.md" >}})
 * [Writing a multi-language locale based menu]({{< relref "multi-language-locale-menu.md" >}})
-* [Useful helper functions in tcUtil.h](https://www.thecoderscorner.com/ref-docs/tcmenu/html/tc_util_8h.html)
-* [Embedded library reference documentation](/ref-docs/tcmenu/html/index.html)
+* {{< refdocs title="Useful helper functions in tcUtil.h" src="/tcmenu/html/tc_util_8h.html" >}}
+* {{< refdocs title="Embedded library reference documentation" src="/tcmenu/html/index.html" >}}
 * [GitHub Repository - for source and releases](https://github.com/TcMenu/tcMenu)
 * [Major code level differences between library versions]({{< relref "major-differences-between-library-versions.md" >}}) 
 * {{< library-overview >}}

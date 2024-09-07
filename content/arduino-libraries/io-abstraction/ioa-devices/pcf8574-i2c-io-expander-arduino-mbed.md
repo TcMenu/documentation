@@ -39,7 +39,7 @@ There's a few things to note about this device:
     // simple 16 bit exmaple
     PCF8574IoAbstraction ioExpander(i2cAddress, interruptPin, &Wire, true);
 
-We can see above that we simply create an instance of the class, the parameters are full explained in the [PCF8574 reference documentation](https://www.thecoderscorner.com/ref-docs/ioabstraction/html/class_p_c_f8574_io_abstraction.html).
+We can see above that we simply create an instance of the class, the parameters are full explained in the {{< refdocs title="PCF8574 reference documentation" src="/ioabstraction/html/class_p_c_f8574_io_abstraction.html" >}}.
 
 Once you have created an instance, [simply use it like any other IoAbstraction]({{< relref "ioabstraction-pins-io-expanders-shiftreg.md" >}}) they all work the same way.
 

@@ -19,7 +19,7 @@ An item that can represent only boolean true or false. It can be configured to s
 * Enum returned by `getMenuType()` is MENUTYPE_BOOLEAN_VALUE
 * [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
 * [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* [BooleanMenuItem reference documentation](https://www.thecoderscorner.com/ref-docs/tcmenu/html/class_boolean_menu_item.html) 
+* {{< refdocs title="BooleanMenuItem reference documentation" src="/tcmenu/html/class_boolean_menu_item.html" >}} 
 
 ## Creating an object from the designer
 
