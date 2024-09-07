@@ -67,6 +67,7 @@ jobs:
         env:
           DOXY_DIR: ../_refdocs/
         run: |
+          mkdir -p ../public/ref-docs/tcmenu
           doxygen ../_refdocs/tcmenu-doxygen.conf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
