@@ -64,6 +64,8 @@ jobs:
           path: "tcMenuLib"
       - name: Build TcMenuLib Docs
         working-directory: ./tcMenuLib
+        env:
+          DOXY_DIR: ../_refdocs/
         run: |
           doxygen ../_refdocs/tcmenu-doxygen.conf
       - name: Upload artifact
