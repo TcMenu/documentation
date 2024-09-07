@@ -24,4 +24,4 @@ Avoid breaking links at all costs, do not refactor page names or positions witho
 
 ## Limitations of use
 
-You must not deploy this site publicly on any third party solution or use any of the logos that suggest it is theCodersCorner without the express permission of TheCodersCorner.com first. You may use a resonable amount of the content under the Apache license as long as you link back to the main site. 
+Please ensure that if you host a copy of this site, that it links back to the original, and change any logos or company names to your own. License: Apache.
