@@ -9,7 +9,7 @@ toc_needed: true
 
 ---
 
-## Core libraries that we release regularly 
+## TcMenu organisation documentation for our libraries 
 
 There are several core libraries that we keep in lock step in terms of compatibility and board support. These libraries are:
 

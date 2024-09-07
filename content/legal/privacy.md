@@ -9,7 +9,7 @@ author =  "legal"
 
 ## Who we are
 
-In this privacy policy references to 'we', 'us' and 'our' are to "TcMenu organisation.
+In this privacy policy references to 'we', 'us' and 'our' are to TcMenu organisation.
 
 ## Forward
 
