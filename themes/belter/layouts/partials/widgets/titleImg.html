@@ -1,5 +1,5 @@
 {{ if .Params.titleimg }}
-<img src="{{.Params.titleimg}}" alt="{{.Params.title}}" class="titleimg"/>
+<img src="{{ .Site.BaseURL }}{{ .Params.titleimg}}" alt="{{.Params.title}}" class="titleimg"/>
 {{ end }}
 {{ if .Params.youtube }}
 <iframe class="titleVideo" src="{{.Params.youtube}}" frameborder="0" allowfullscreen></iframe>

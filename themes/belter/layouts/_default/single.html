@@ -18,14 +18,6 @@
 
         {{ partial "widgets/socialButtons" . }}
 
-        {{ if and (.Site.DisqusShortname) ( eq (.Site.Params.production) "Y")}}
-        <div id="comments">
-            {{ template "_internal/disqus.html" . }}
-        </div>
-        {{ else }}
-        <p>disqus is off production="Y" and set shortname</p>
-        {{ end }}
-
     </div>
     <div class="col-md-3 sidebarContainer">
       {{ partial "widgets/sidebar.html" . }}

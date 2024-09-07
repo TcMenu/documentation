@@ -15,7 +15,6 @@ aliases:
 menu:
     main:
         name: 'IO Abstraction library'
-        parent: 'arduino-libraries'
         identifier: 'io-abstraction'
         weight: 2
 

@@ -7,14 +7,6 @@ showChildren: true
 type: "category"
 toc_needed: true
 
-menu:
-    main:
-        name : "Arduino and mbed Libraries"
-        identifier : "arduino-libraries"
-        parent: 'products'
-        weight : "1"
-
-
 ---
 
 ## Core libraries that we release regularly 

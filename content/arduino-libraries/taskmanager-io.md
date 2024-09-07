@@ -13,7 +13,6 @@ menu:
         name: 'TaskManagerIO library'
         identifier: 'taskmanager-io'
         weight: 3
-        parent: 'arduino-libraries'
 aliases:
    - "/products/arduino-libraries/io-abstraction/task-manager-scheduling-guide/"
 ---

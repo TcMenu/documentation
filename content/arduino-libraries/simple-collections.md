@@ -10,7 +10,6 @@ referenceDocs: "/ref-docs/taskmanagerio/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
 menu:
     main:
-      parent: 'arduino-libraries'
       name: 'SimpleCollections library'
       identifier: 'simple-collections'
       weight: 3

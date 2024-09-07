@@ -2,35 +2,5 @@
 {{ partial "base/scripts" . }}
 {{ partial "widgets/cookieConsent.html" . }}
 
-<div id="inlineContactForm">
-    <h2>
-        Send a message
-        <div style="float:right;font-size: 15px;margin-top:8px;" ><a style="color:#fff;background: black;border-radius: 4px;padding:4px;" href="javascript:closeMailWindow();">X</a></div>
-    </h2>
-    <p id="contactFormStatus"> </p>
-    <form action="/" id="contactFormInner" method="post">
-        <p>Please <a href="https://www.thecoderscorner.com/jforum/forums/list.page">use the forum</a> for help with UI &amp; libraries.</p>
-
-        <input type="hidden" name="system" value="TheCodersCorner"/>
-        <label for="userName">Your Name:</label>
-        <input id="userName" type="text" name="name" />
-        <label for="emailAddr">Your Email Address:</label>
-        <input id="emailAddr" type="text" name="email"/>
-        <label for="emailSubject">Subject:</label>
-        <input type="text" id="emailSubject" name="subject" />
-        <label for="emailMsg">Message:</label>
-        <textarea id="emailMsg" rows="10" name="messageContent"></textarea>
- {{ if eq (.Site.Params.production) "Y" }}
-        <div class="g-recaptcha" data-sitekey="6Lei2UIUAAAAAFylhDzdxMw3TYoC5AaZ-nu4cfzM"></div>
- {{ else }}
-        sending to dev
-        <div class="g-recaptcha" data-sitekey="6LeQ2EIUAAAAAAhfAnoKNKAjPMJSx8Rmua5h7CEd"></div>
- {{ end }}
-        <input type="submit" name="send" value="Send Message"/>
-        <p style="font-size: 10px">This message will be securely transmitted to our servers.</p>
-    </form>
-</div>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 </body>
 </html>

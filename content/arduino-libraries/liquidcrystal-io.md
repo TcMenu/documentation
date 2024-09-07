@@ -11,7 +11,6 @@ menu:
     main:
         name: 'LiquidCrystalIO Library'
         identifier: 'liquidcrystal-io'
-        parent: 'arduino-libraries'
         weight: 4
 
 ---

@@ -15,9 +15,9 @@ theme = "belter"
     gitEditURL = "https://github.com/TcMenu/documentation/tree/main/content"
 
 [[menu.main]]
-    name = "Products"
+    name = "tcMenu"
     weight = 0
-    identifier = "products"
+    identifier = "tc-menu"
 
 [[menu.footer]]
     name = "Privacy and terms of use"

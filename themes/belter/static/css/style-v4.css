@@ -9,6 +9,16 @@ body {
   font-weight: 300;
 }
 
+.bottom-social-btn {
+  padding: 5px;
+  background-color: #1b5e7a;
+  margin: 10px;
+}
+
+.bottom-social-btn a {
+  color: white;
+}
+
 h1 {
   font-size: 1.8em;
   font-weight: bold;
@@ -414,7 +424,6 @@ ul.allTagList li {
 }
 
 ul.allTagList li a {
-  background: url("/products/arduino-libraries/img/small-light-circle.png") no-repeat left center;
   padding: 12px;
   color: white;
 }
@@ -437,10 +446,8 @@ ul.article-tags li {
   margin-right: 6px;
 }
 
-ul.article-tags li a {
-  background: url("/products/arduino-libraries/img/small-light-circle.png") no-repeat left center;
-  padding: 12px;
-  color: white;
+ul.article-tags a {
+  color: #00C0E0;
 }
 
 .authorDateTags {
@@ -475,74 +482,6 @@ ul.article-tags li a {
   background-color: #fff;
   padding: 0px 6px;
 }
-
-img.mc-instagram {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  width: 96px;  height:96px;
-}
-
-img.mc-facebook {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  background-position-x: 288px;  background-position-y: 192px;
-  width: 96px;  height:96px;
-}
-
-img.mc-twitter {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  background-position-x: 0px;  background-position-y: 288px;
-  width: 96px;  height:96px;
-}
-
-img.mc-linkedin {
-  background: url("/products/arduino-libraries/img/social-media-buttons.jpg") left top;
-  background-position-x: 385px;
-  width: 96px;  height:96px;
-}
-
-img.mc-youtube {
-  background: url("/products/arduino-libraries/img/social-media-buttons.jpg") left top;
-  background-position-x: 288px;
-  width: 96px;  height:96px;
-}
-
-img.mc-facebook-small {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  background-position-x: 142px;  background-position-y: 93px;
-  background-size: 240px;
-  width: 42px;  height:40px;
-}
-
-img.mc-twitter-small {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  background-position-x: -2px;  background-position-y: 139px;
-  background-size: 240px;
-  width: 42px;  height:40px;
-}
-
-img.mc-youtube-small {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  background-position-x: 142px;
-  background-position-y: -3px;
-  background-size: 240px;
-  width: 42px;  height:40px;
-}
-
-img.mc-linkedin-small {
-  background-image: url("/products/arduino-libraries/img/social-media-buttons.jpg");
-  background-position-x: 190px;
-  background-position-y: -3px;
-  background-size: 240px;
-  width: 42px;  height:40px;
-}
-
-img.mc-github-small {
-  background-image: url("/products/arduino-libraries/img/GitHub-Mark-64px.png");
-  background-size: 36px;
-  background-position: 2px;
-  background-repeat: no-repeat;
-  width: 40px;  height:40px;
-}
-
 
 .light-badge {
   border-radius: 4px;

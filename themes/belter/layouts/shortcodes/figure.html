@@ -1,0 +1,11 @@
+<figure>
+{{ if (.Get "link") }}
+    <a href='{{ .Site.BaseURL }}{{ .Get "link" }}'>
+{{ end }}
+    <img src='{{ .Site.BaseURL }}{{ .Get "src" }}' alt='{{ .Get "alt" }}'>
+    <figcaption>{{ .Get "title" }}</figcaption>
+{{ if (.Get "link") }}
+    </a>
+{{ end }}
+
+</figure>
