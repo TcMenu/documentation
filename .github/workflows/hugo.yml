@@ -36,7 +36,9 @@ jobs:
       - name: Install Dart Sass and Doxygen
         run: |
           sudo snap install dart-sass
-          sudo snap install doxygen
+          sudo apt-add-repository universe
+          sudo apt-get update
+          sudo apt-get install doxygen
       - name: Checkout
         uses: actions/checkout@v4
         with:
