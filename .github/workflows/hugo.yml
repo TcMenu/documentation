@@ -81,6 +81,54 @@ jobs:
         run: |
           mkdir -p ../public/ref-docs/ioabstraction
           doxygen ../_refdocs/ioa-doxygen.conf
+      - name: Checkout TaskManagerIO
+        uses: actions/checkout@v4
+        with:
+          repository: "TcMenu/TaskManagerIO"
+          path: "TaskManagerIO"
+      - name: Build TaskManagerIO Docs
+        working-directory: ./TaskManagerIO
+        env:
+          DOXY_DIR: ../_refdocs/
+        run: |
+          mkdir -p ../public/ref-docs/taskmanagerio
+          doxygen ../_refdocs/taskmgr-doxygen.conf
+      - name: Checkout tcUnicodeHelper
+        uses: actions/checkout@v4
+        with:
+          repository: "TcMenu/tcUnicodeHelper"
+          path: "tcUnicodeHelper"
+      - name: Build tcUnicodeHelper Docs
+        working-directory: ./tcUnicodeHelper
+        env:
+          DOXY_DIR: ../_refdocs/
+        run: |
+          mkdir -p ../public/ref-docs/tc-unicode-helper
+          doxygen ../_refdocs/tc-unicode-helper.conf
+      - name: Checkout SimpleCollections
+        uses: actions/checkout@v4
+        with:
+          repository: "TcMenu/SimpleCollections"
+          path: "SimpleCollections"
+      - name: Build SimpleCollections Docs
+        working-directory: ./SimpleCollections
+        env:
+          DOXY_DIR: ../_refdocs/
+        run: |
+          mkdir -p ../public/ref-docs/simple-collections
+          doxygen ../_refdocs/simple-collections.conf
+      - name: Checkout LiquidCrystalIO
+        uses: actions/checkout@v4
+        with:
+          repository: "TcMenu/LiquidCrystalIO"
+          path: "LiquidCrystalIO"
+      - name: Build LiquidCrystalIO Docs
+        working-directory: ./LiquidCrystalIO
+        env:
+          DOXY_DIR: ../_refdocs/
+        run: |
+          mkdir -p ../public/ref-docs/liquidcrystalio
+          doxygen ../_refdocs/liquidio-doxygen.conf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
