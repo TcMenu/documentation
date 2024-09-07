@@ -35,12 +35,6 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass
-      - name: Checkout TcMenuLib
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          repository: "TcMenu/tcMenuLib"
-          path: "tcMenuLib"
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -59,6 +53,11 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"
+      - name: Checkout TcMenuLib
+        uses: actions/checkout@v4
+        with:
+          repository: "TcMenu/tcMenuLib"
+          path: "tcMenuLib"
       - name: Build TcMenuLib Docs
         working-directory: ./tcMenuLib
         run: |
