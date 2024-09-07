@@ -11,7 +11,7 @@ theme = "belter"
     production = "N"
     EnableAds = "N"
     author = "TcMenu"
-    refDocsLocation = "https://tcmenu.github.io/documentation/refdocs"
+    refDocsLocation = "https://tcmenu.github.io/documentation/ref-docs"
     gitEditURL = "https://github.com/TcMenu/documentation/tree/main/content"
 
 [[menu.main]]

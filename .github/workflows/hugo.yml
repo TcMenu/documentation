@@ -69,6 +69,18 @@ jobs:
         run: |
           mkdir -p ../public/ref-docs/tcmenu
           doxygen ../_refdocs/tcmenu-doxygen.conf
+      - name: Checkout IoAbstraction
+        uses: actions/checkout@v4
+        with:
+          repository: "TcMenu/IoAbstraction"
+          path: "IoAbstraction"
+      - name: Build IoAbstraction Docs
+        working-directory: ./IoAbstraction
+        env:
+          DOXY_DIR: ../_refdocs/
+        run: |
+          mkdir -p ../public/ref-docs/ioabstraction
+          doxygen ../_refdocs/ioa-doxygen.conf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
