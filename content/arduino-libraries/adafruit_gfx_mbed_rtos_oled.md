@@ -16,7 +16,7 @@ menu:
 
 We maintain a fork of Adafruit_GFX that provides OLED support on mbed RTOS, it's based on the original work by both [AdaFruit - Adafruit_GFX repo](https://github.com/adafruit/Adafruit-GFX-Library) and [the original SSD1306 library for mbed 2](https://os.mbed.com/users/nkhorman/code/Adafruit_GFX/).
 
-We've got everything to compile on mbed RTOS 5 & 6, and we use it ourselves on our STM32F439 test board as one of our core tests.
+We've got everything to compile on mbed RTOS 5 & 6, and we use it ourselves on both PicoSDK and our mbed STM32F439 test board as one of our core tests.
 
 {{< library-overview >}}
 
