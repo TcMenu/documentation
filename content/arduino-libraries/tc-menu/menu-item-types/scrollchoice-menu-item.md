@@ -117,6 +117,14 @@ Where choice mode is one of:
 
 ## Manually creating a ScrollChoice item 
 
+Firstly, you can use an info block, that defines the name, ID and EEPROM location. Then create the scroll choice to use the info block:
+
+    [const] [PROGMEM] AnyMenuInfo minfoScroll = { "Scroll", myId, myEepromLocation, 0, NO_CALLBACK };
+    ScrollChoiceMenuItem(minfoScroll, myRuntimeCallback, currentSel, numberOfItems, 
+                         &nextMenuItem, isPgm);
+
+Secondly, you can use the callback method for everything:
+
     RENDERING_CALLBACK_NAME_INVOKE(fnScrollChoiceCb, enumItemRenderFn, "Choice", 
                                    myEepromLocation, NO_CALLBACK)
     ScrollChoiceMenuItem menuScrollChoice(myId, fnScrollChoiceCb, 0, 
