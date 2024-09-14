@@ -54,7 +54,7 @@ Caching: To cache EEPROM values into RAM call `cacheEepromValues` on the item, i
 
 ### Custom rendering option
 
-In this case the menu item will call a custom rendering function that each time information about the item is needed (such as the name or the value of each choice). The designer will create the render function for this automatically, and you can look at many examples for inspiration too.
+In this case the menu item will call a custom rendering function each time information about the item is needed (such as the name or the value of each choice). The designer will create the render function for this automatically, and you can look at many examples for inspiration too.
 
 Consult [Runtime Menu Item documentation]({{< relref "based-on-runtimemenuitem.md" >}}) for a more detailed background on callbacks.
 
