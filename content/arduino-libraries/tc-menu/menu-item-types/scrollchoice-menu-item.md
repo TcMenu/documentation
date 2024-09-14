@@ -34,7 +34,7 @@ To set up for EEPROM storage, you choose data mode as EEPROM, the item width is 
 
 To set up for RAM storage, you choose data mode as RAM, the item width is again the maximum width and initial items works as per EEPROM mode. In this case you must specify the array variable, which is a character array in memory large enough to account for width * numItems. If it does not exist in your sketch, the variable will be created for you in non-const memory as type `char*`, so you can change it at runtime. As per callbacks, if you start the RAM variable with "@" such as `@myVariableName` then it will be exported but not declared.  
 
-To set up for custom, you choose custom data mode, at this point only initial items needs setting, the designer will add a custom callback to your code, see the section below on implementing it.
+You can also choose custom that will callback every time the item needs data. In this mode only initial items needs setting, the designer will add a custom callback to your code, see the section below on implementing it.
 
 ## Dealing with a scroll choice item in code
 
@@ -54,9 +54,11 @@ Caching: To cache EEPROM values into RAM call `cacheEepromValues` on the item, i
 
 ### Custom rendering option
 
-In this case you use a custom rendering function that will be called back to get the name of the item, the location in EEPROM, and also to get the value of each choice. The designer will create the render function for this automatically, and many examples have implementations too.
+In this case the menu item will call a custom rendering function that each time information about the item is needed (such as the name or the value of each choice). The designer will create the render function for this automatically, and you can look at many examples for inspiration too.
 
-Basically, by default the designer created code will call into the default function as follows:
+Consult [Runtime Menu Item documentation]({{< relref "based-on-runtimemenuitem.md" >}}) for a more detailed background on callbacks.
+
+By default, the designer created code will call into the default function as follows:
 
     int CALLBACK_FUNCTION exampleListRenderFn(RuntimeMenuItem* item, uint8_t row, RenderFnMode mode, char* buffer, int bufferSize) {
         switch(mode) {
@@ -72,7 +74,7 @@ Into the above, we can handle the various `mode` and `row` cases as follows:
 
 In most cases implementing just value should be enough. However, the core runtime item documentation linked above describes all the `mode` possibilities in more detail. 
   
-### General purpose functions
+## General purpose functions you can use
 
 To get the text of a particular choice
 
