@@ -90,7 +90,7 @@ We have tested the designer application and embedCONTROL on a Raspberry PI, so n
 
 ## Remotely controlling your menu / IoT
 
-<img class="pull-left" src="/products/arduino-libraries/images/apps/embed-control/mainicon.png" width="120" alt="IoT control with embedCONTROL"/>Our menu designer can build in IoT capabilities near automatically (on Ethernet2, UipEthernet (ENC28J60), ESP8266-WiFi, ESP32-WiFi, Bluetooth and Serial). Allowing you to [remotely monitor and control your device using Embed Control](https://www.thecoderscorner.com/products/apps/embed-control/) with minimal effort.
+{{< img class="pull-left" src="/products/arduino-libraries/images/apps/embed-control/mainicon.png" width="120" alt="IoT control with embedCONTROL" >}} Our menu designer can build in IoT capabilities near automatically (on Ethernet2, UipEthernet (ENC28J60), ESP8266-WiFi, ESP32-WiFi, Bluetooth and Serial). Allowing you to [remotely monitor and control your device using Embed Control](https://www.thecoderscorner.com/products/apps/embed-control/) with minimal effort.
 
 However, to write your own remote monitoring, use our [Java Remote API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [TypeScript/JavaScript API](https://github.com/TcMenu/embedcontrolJS), [C#/DotNet API](https://github.com/TcMenu/tcmenu-dotnet-sdk), or the [Python API](https://github.com/TcMenu/tcmenu-python-api). Coming soon is a Dart API.
 
