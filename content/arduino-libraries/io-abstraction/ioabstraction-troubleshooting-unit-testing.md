@@ -24,7 +24,7 @@ Within the MockIoAbstraction.h header there is an implementation of BasicIoAbstr
 
 ## Mock objects for use with Unit testing
 
-This library itself is quite well tested using our simple test facilities, and further it makes unit testing your code easier. There is a MockIoAbstraction that provides very easy support for mocking out an IoAbstraction. You just provide how many `sync()` calls to store in the internal buffer: 
+This library itself is quite well tested, and further it makes unit testing your code easier. There is a MockIoAbstraction that provides very easy support for mocking out an IoAbstraction. You just provide how many `sync()` calls to store in the internal buffer: 
 
     MockedIoAbstraction mockIo(numberOfCycles = 6);
 

@@ -62,9 +62,8 @@ Need help with a commercial design, or want a customised version for your hardwa
 
 * [Seamless EEPROM implementations, AVR, Arduino, I2C]({{< relref "eeprom-impl-seamless-8-and-32-bit.md">}})
 
-## Logging, text utilities and unit testing
+## Logging, text utilities and unit testing helper classes
 
 * [Arduino logging with IoAbstraction]({{< relref "arduino-logging-with-io-logging.md">}})
 * [Text Utilities and helpers]({{< relref "text-utilities-and-helpers.md" >}})
 * [Troubleshooting, IoAbstraction mock implementations]({{< relref "ioabstraction-troubleshooting-unit-testing.md">}})
-* [Simple Test - simple no frills unit test framework for Arduino and mbed]({{< relref "simple-test-unit-test-arduino-mbed.md">}})

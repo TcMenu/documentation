@@ -14,9 +14,9 @@ toc_needed = true
 weight = 5
 +++
 
-Logging is part of the IoAbstraction offering, it has a moderately complete logging framework that is still lightweight enough to work on small boards. It can easily be turned off completely for very small boards too. Both IoAbstraction and tcMenu use this logging to provide information about internal state and operations.
+Logging is part of the TcMenu offering provided by library `TcMenuLog`, it has a moderately complete logging framework that is still lightweight enough to work on small boards. It can easily be turned off completely for very small boards too. TaskManagerIO, IoAbstraction and tcMenu use this logging to provide information about internal state and operations.
 
-The logging is fully integrated into both IoAbstraction and TcMenu, and this change is backward compatible at a code level.
+You can also use this logging framework in your own project code, regardless if you're using any other of our libraries. 
 
 {{< blockClear "left" >}}
 
@@ -26,11 +26,15 @@ To use the logging in your project you first include the logging header file:
 
     #include <IoLogging.h>
 
-Secondly you define the following build switch to turn on logging: `IO_LOGGING_DEBUG`. For example on platformIO that would be:
+Should an older version of Arduino need the library header match the library name, you can also include:
+
+    #include <TcMenuLog.h>
+
+Next, you define the following build switch to turn on logging: `IO_LOGGING_DEBUG`. For example on platformIO that would be:
 
     build_flags = -DIO_LOGGING_DEBUG=1
 
-If you are using the original Arduino IDE, it does not support build flags, you can in this case open IoLogging.h in the IoAbstraction library and uncomment the entry to define it in there. This would need to be done after each upgrade and is not recommended.
+If you are using the original Arduino IDE, it does not support build flags, you can in this case open `IoLogging.h` in the TcMenuLog library and uncomment the entry to define it in there. This would need to be done after each upgrade and is not recommended.
 
 You can set the logging levels at compile time using `IO_LOGGING_DEFAULT_LEVEL` by ORing together entries from `SerLoggingLevel`. An is shown below for only warning and error logs:
 
@@ -106,6 +110,14 @@ On mbed proper (IE using mbed without Arduino), **we must define the print inter
 
     BufferedSerial serPort(USBTX, USBRX);
     MBedLogger LoggingPort(serPort);
+
+Instead of the above, you can use the following macro that always work, on any platform.
+
+    IOLOG_MBED_PORT_IF_NEEDED(txPin, rxPin)
+
+You should always start the serial port. For example on Arduino you may need to start the serial port youre using with something like `Serial.begin(115200);`, and there is also a macro for that:
+
+    IOLOG_START_SERIAL
 
 In summary, the logging framework is a compromise between functionality and size, biased slightly toward size.
 

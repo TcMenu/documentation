@@ -69,7 +69,7 @@ Here is an example series of settings from one of our themes, let's discuss what
             .withNativeFont(itemFont.fontData, itemFont.fontMag)
             .withSpacing(1);
 
-Firstly the dimensions are configured automatically by calling `dimensionsFromRenderer` this sets the display sizes by querying the display plugin. Then the selected colors are chosen using the RGB macro for each color. Read more about `color_t` and the `RGB` macro below. 
+Firstly the dimensions are configured automatically by calling `dimensionsFromRenderer` this sets the display sizes by querying the display plugin. Then the selected colors are chosen using the `RGB` macro for each color. As you'd probably expect by convention the `RGB` macro takes red, green and blue parameters between `0` and `255`.
 
 After that the item and title padding are configured, you can see we demonstrate both ways to construct a padding object (either all sides same, or separate value for each). The padding is within the rectangle of a menu item, and "pads out" the rectangle's size. You configure the title and item spacing separately (as they are usually different).  
 
@@ -123,11 +123,13 @@ You can also change the font, color, padding, size and default justification at 
 * Default settings when no others match
 * Last chance item that's compiled in just in-case there is a severe mis-configuration to avoid returning `nullptr`.
 
-To change the default settings use `setDrawingPropertiesDefault` on the factory, providing the component type and the drawing settings. This will take effect when there are no other overrides
+To change the default settings use `themeBuilder.defaultActionProperties()`, `themeBuilder.defaultItemProperties()` or `themeBuilder.defaultTitleProperties()`  on a theme builder. This will take effect when there are no other overrides
 
-To change the properties for all items that belong to a submenu use `setDrawingPropertiesForItem` on the factory, providing the component type and drawing settings. This will take effect when there are no item level overrides.
+To change the settings for all items that belong to a submenu use `themeBuilder.submenuPropertiesActionOverride(subMenuItem)`, `themeBuilder.submenuPropertiesActionOverride(subMenuItem)` on theme builder, providing the menu to apply these settings to. This will take effect when there are no item level overrides.
 
-To change the properties for a single item use `setDrawingPropertiesAllInSub` on the factory, providing the component type and drawing settings. This item will always have priority over anything else.
+To change the properties for a single item use `themeBuilder.menuItemOverride(menuItem)` on theme builder, providing the menu item. This item will always have priority over anything else. Important note that if you apply changes at the item level, it is normally best to manually set the `row(..)` to keep control of the ordering. 
+
+These all use chained builder syntax as described elsewhere in this guide. You adjust the settings as desired, and finally you must call the `apply()` method. See below for examples.
 
 ### Creating two icon menu items on the same row
 
@@ -147,7 +149,7 @@ Here we present an example theme builder layout to show how to override two menu
 
 In the above, the row and column upon which the item should appear in configured with `onRowCol(row, col, columnsOnRow)` and then the renderer is told to draw as an icon.  Lastly, and very importantly we call `apply()`.
 
-### Overriding a single item's palette or border
+### Overriding a single item's palette, border or font
 
 Let's say we want an item to have a different palette, border, and justify differently:
 
@@ -155,6 +157,8 @@ Let's say we want an item to have a different palette, border, and justify diffe
             .withJustification(GridPosition::JUSTIFY_LEFT_NO_VALUE)
             .withBorder(MenuBorder(1))
             .withPalette(specialPalette)
+            .withAdaFont(myAdafruitFontPtr)
+            .onRow(1) // on the first row
             .apply();
 
 ### Advanced - Overriding submenu drawing 
