@@ -15,7 +15,7 @@ toc_needed = true
 
 In the theme plugin properties you can often select the font to use. However, there are a few points to bear in mind when using fonts. Here are the key points:
 
-* From version 3.0 Most graphical plugins (other than Uno specific) support TcUnicode, a font rendering system that has full Unicode UTF-8 support. These fonts can be easily created in the designer UI, see further down. It is also backward compatible with Adafruit fonts.    
+* Most graphical plugins (other than Uno specific) support TcUnicode, a font rendering system that has full Unicode UTF-8 support. These fonts can be easily created in the designer UI, see further down. It is also backward compatible with Adafruit fonts.    
 * Each plugin's text drawing can also use native text drawing, based on how the underlying library itself draws fonts. You must use a compatible font.
 * Some libraries such as U8G2 and TFT_eSPI generally include the fonts in the package, and it is up to you to know which ones are available.
 * For Adafruit_GFX the fonts are generally included as needed from the `Fonts` directory, either in the package itself, or from your local project. They will be included once only in the C++ menu file and the variable for the font will be exported.
@@ -62,23 +62,22 @@ It is a struct, so has trivially simple copy characteristics.
 
 ## Creating a Unicode or Adafruit font using the designer UI
 
-From V3.0 of designer onwards you can create an embedded font from a font available on your desktop. The font creator presently supports header generation for both Adafruit_GFX or TcUnicode fonts. TcUnicode fonts are described in more detail in the next section.
+TcMenu Designer can create an embedded font from a font available on your desktop. The font creator presently supports header generation for both Adafruit_GFX or TcUnicode fonts. TcUnicode fonts are described in more detail in the next section.
 
 **NOTE: It is your responsibility to check the usage license on the font you choose, to ensure you are legally allowed to use it in an embedded context.** 
 
 To start the font creation utility, it is best to have a project open first, as it will then offer to save within your project.
 
-From the "Code" menu select "Font Creation Utility" (requires 3.0) and the following dialog will be shown:
+From the "Code" menu select "Font Creation Utility" and the following dialog will be shown:
 
 {{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generator-font-creator-utility.jpg" alt="Font creation dialog with highlighted points" title="Font Creation Dialog" >}} 
 
-Notice that the above diagram is annotated with numbers, this is roughly the order that you'd use the panel. Each point is described below:
+We'll now go through the general way in which to work with fonts:
 
-1. Font load button. Click this button to load a font into the creator tool. Once loaded by default it will show the glyphs for Latin in the selection area (4). Clicking on the "Choose Ranges" in the button bar (5) allows you to change the Unicode ranges that are selected.
-2. Size in pixels of the font to generate, adjust this as needed, as you adjust the font will update in the selection area.
-3. Font style allows you to change the style, toggling italics and bold typeface, again the selection area automatically updates.
-4. The selection area is where you can turn on and off both character groups and characters. Toggle the group by clicking the checkbox next to it. To add/remove whole groups use the "Choose Ranges" button.
-5. The button bar has the two options for code generation, each of these will take a file name and write the font in the format selected. Each of these formats, and their limitations are described below.
+1. Open a font into the editor either using `Open Embedded Font` which allows you to open an existing font XML file previously saved. Alternatively, `Import Font` imports a font from any file format supported by FreeFont library. When importing a font, make sure you choose the Unicode ranges that you want to include, by default all Latin ranges are selected.
+2. One a font is opened you can choose which glyphs to include, and also touch up any minor rendering errors. To either select or deselect a glyph click on it, a popup will allow you to either edit the glyph or toggle its selection status. To toggle the group by clicking the `select/clear all` checkbox next to it. 
+3. You can `Save` the font as XML, it can be loaded back at any time using `Open Embedded Font`.
+4. To export the font simply use the `Generate` menu button, where you can choose either to export to clipboard or file. When the clipboard option is ticked, the header file will be saved to the clipboard. The two export options are discussed below.  
 
 ### Exporting to Adafruit_GFX font format
 
