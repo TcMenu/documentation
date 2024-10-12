@@ -109,6 +109,7 @@ However, to write your own remote monitoring, use our [Java Remote API]({{< relr
 * [Simhub connector for tcMenu using custom serial protocol]({{< relref "simhub-connector.md" >}})
 * [Embedded Java plugin for ethernet/WiFi remote]({{< relref "embedded-java-ethernet-wifi.md" >}})
 * [Serving up embedCONTROL in a web browser]({{< relref "embedcontroljs-webserver-plugin.md" >}})
+* [Device acts as client to remote server]({{< relref "connect-to-remote-server-plugin.md" >}})
 
 ## Creating / building / modifying plugins
 
