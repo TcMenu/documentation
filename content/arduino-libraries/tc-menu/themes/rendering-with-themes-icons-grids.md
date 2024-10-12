@@ -176,6 +176,34 @@ To do the same for action items `themeBuilder.submenuPropertiesActionOverride()`
 * see {{< refdocs title="GridPosition docs" src="tcmenu/html/classtcgfx_1_1_grid_position.html" >}}
 * see the `addGridPosition` method in {{< refdocs title="ItemDisplayPropertiesFactory" src="tcmenu/html/classtcgfx_1_1_item_display_properties_factory.html" >}}
 
+## Using card layout
+
+Card layout works differently to regular layout in that there is only ever one item on the display, and it takes up all the available space. This layout is often used when there are a few options at the top level, and you want to use icons or large fonts to present them.
+
+Let's take an example of a turntable that had only four top level options, 33rpm, 45rpm, 78rpm and lastly, Settings. We may choose to use a card layout using a large letter font for the speeds (33, 45, 78) and a cog icon for the settings. Just as we learnt above how to change the way that items render, we do exactly the same for card layout (I.E. we create a `menuItemOverride` or `submenuPropertiesItemOverride` for each item we want to lay out as a card).
+
+Below we see an example display where card layout has been enabled for the menu, the main area in the middle belongs entirely to the menu item, excepting the areas taken by any widgets or title at the top, and the left and right icons that show when you can move left or right. When there is an item to the "left" then the left icon is shown, and when there is an icon to the "right", the right icon is shown. 
+
+{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/card-layout-example.jpg" title="Example display in card layout mode" alt="Example display in card layout mode" >}}
+
+### Enabling card layout
+
+To enable card layout, it is easiest to do so from theme builder (see above):
+
+    themeBuilder.enableCardLayoutWithXbmImages(Coord(wid, hei), TheLeftXBmpData, TheRightXbmpData, monoDisplay);
+
+This enables card layout for the root menu and provides the "left" and "right" icons that are shown on the sides of the display. The two Xbmp icons must be the same size. From the above example image, the left and right Xbmp parameters are the arrows you see at the sides. Finally, the last parameter indicates if the display is monochrome, and slightly changes the greying out behaviour. We can also control card layout a sub-menu at a time:
+
+    themeBuilder.setMenuAsCard(menuStatusCards, true);
+
+This would enable `menuStatusCards` to use card layout. If the second parameter were false, it would return the menu to regular layout.
+
+As with any other adjustments to the renderer, ensure you call apply afterwards. 
+
+    themeBuilder.apply();
+
+The `Stm32DuinoDemo` and `esp32s3TftEncoder` examples both use card layout extensively. It is best practice whenever possible to enable card layout at startup, as it is done in the two examples.
+
 ## Common structures and classes
 
 Along with this overview, please see the reference documentation for more complete details, they will not be repeated here:
@@ -234,7 +262,7 @@ You can also set the selected text and background color, these will override oth
 Read the [guide for setting up fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}}).
 
 
-### Some take away notes
+## Some take away notes
 
 * Many of the examples create grid layout overrides, you can take a look how they do it.
 * Apart from SSD1306Ascii and LCD Uno, all other renderers draw in grids.
@@ -253,14 +281,14 @@ FOR each item in the current menu
 END FOR
 ```
 
-## ItemPropertiesFactory and graphical displays (advanced)
+### ItemPropertiesFactory and graphical displays (advanced)
 
 Our flexible configuration based rendering is made possible by a display factory. The display factory stores all the grids, icons and drawing properties in high performance btree lists that are optimised for reading. Graphical displays nearly always have a {{< refdocs title="ConfigurableItemDisplayPropertiesFactory" src=tcmenu/html/classtcgfx_1_1_configurable_item_display_properties_factory.html" >}} that can be obtained using `renderer.getGraphicsPropertiesFactory()`. The themes are always a good starting point for making adjustments to these values.
 
 * {{< refdocs title="ItemDisplayProperties documentation" src=tcmenu/html/classtcgfx_1_1_item_display_properties.html" >}}
 
 
-## The properties cache in more detail (advanced)
+### The properties cache in more detail (advanced)
 
 {{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/item-properties-cache-example.jpg" title="Graphical representation of properties cache" alt="The item properties cache that is used for rendering" >}}
 
