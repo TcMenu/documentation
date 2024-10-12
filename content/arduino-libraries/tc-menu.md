@@ -60,7 +60,7 @@ We have tested the designer application and embedCONTROL on a Raspberry PI, so n
 
 * [Working with display renderers]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md" >}})
 * [Creating and using TitleWidgets and bitmaps]({{< relref "creating-and-using-bitmaps-menu.md" >}})
-* [Themes, properties, grids and icons]({{< relref "rendering-with-themes-icons-grids.md" >}})
+* [Themes, properties, grids and card layout]({{< relref "rendering-with-themes-icons-grids.md" >}})
 * [How to define fonts within theme configuration]({{< relref "using-custom-fonts-in-menu.md" >}})
 * [Taking over the display and dashboards]({{< relref "renderer-take-over-display.md" >}})
 * [DfRobot LCD shield driver]({{< relref "dfrobot-input-display-plugin.md" >}})
