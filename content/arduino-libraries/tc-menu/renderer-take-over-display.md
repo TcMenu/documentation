@@ -129,6 +129,8 @@ Below is an example dashboard from the `esp32Simhub` example, it is from a racin
 
 If we look at the above image, we see that it has a very large `N` item on the left which is the value of the current gear menu item, this is using a very large font that can easily be generated using [tcMenu Designers font generator]({{< relref "using-custom-fonts-in-menu.md">}}). To the right we have some more menu items with static text next to them, and at the top, we custom draw the LED matrix. The full example is packaged with [tcMenu library in the examples/esp folder](https://github.com/TcMenu/tcMenuLib/blob/main/examples/esp/esp32SimHub/dashboardSetup.cpp).
 
+You can also look at the {{< refdocs src="/tcmenu/html/_drawable_dashboard_8h.html" title="ref-docs for the details of each method and parameter option." >}}.
+
 To get started, we create a main `DrawableDashboard` object and as it is done only once at startup we normally use `new` to create it. For example:
 
     mainDashboard = new DrawableDashboard(renderer.getDeviceDrawable(), &renderer, &widgetConnected,
@@ -139,7 +141,14 @@ Where:
 * deviceDrawable is generally just taken from the renderer as follows `renderer.getDeviceDrawable()`
 * renderer is generally `rederer`
 * widget you can also render a title widget in the top right corner
-* dashboardMode is one of `DASH_ON_RESET_CLICK_EXIT, DASH_ON_RESET_MANUAL_EXIT, DASH_FULLY_MANUAL, DASH_MANUAL_START_CLICK_EXIT`
+* dashboardMode is one of `DASH_ON_RESET_CLICK_EXIT, DASH_ON_RESET_MANUAL_EXIT, DASH_FULLY_MANUAL, DASH_MANUAL_START_CLICK_EXIT`. This defines how the dashboard will start, IE will it start on the menu resetting because it timed out, or will it start manually. It also defines if it should automatically exit if the user clicks/presses select.
+
+Possible modes for `dashboardMode`:
+
+* `DASH_ON_RESET_CLICK_EXIT` the dash will appear when the display times out/resets, dismisses upon clicking select
+* `DASH_ON_RESET_MANUAL_EXIT` the dash will appear when the display times out/resets, you have to manually dismiss it 
+* `DASH_FULLY_MANUAL` the dash will only appear and dismiss under your control. I.E. calling `takeOverDisplay()` etc
+* `DASH_MANUAL_START_CLICK_EXIT` the dash will appear under your control, but will dismiss upon click. 
 
 You then set the main colors for the dashboard (background and primary foreground):
 
@@ -183,14 +192,18 @@ You can define parameters for text items that match on equality:
 
 For alignment the options are:
 
-* `TITLE_LEFT_VALUE_LEFT`
-* `TITLE_LEFT_VALUE_RIGHT`
-* `NO_TITLE_VALUE_LEFT`
-* `NO_TITLE_VALUE_RIGHT` 
-* `TITLE_RIGHT_VALUE_LEFT`
-* `TITLE_RIGHT_VALUE_RIGHT`
+* `TITLE_LEFT_VALUE_LEFT` name and value on the left
+* `TITLE_LEFT_VALUE_RIGHT` name on the left, value on the right
+* `NO_TITLE_VALUE_LEFT` only print the value on the left
+* `NO_TITLE_VALUE_RIGHT` only print the value on the right
+* `TITLE_RIGHT_VALUE_LEFT` print the name on the right, value on the left
+* `TITLE_RIGHT_VALUE_RIGHT` print the name on the right along with value
 
-Along with the ability to use a delegate this gives a lot of flexibility in screen drawing outside the regular menu rendering.
+To register the dashboard with the menu library, do the following:
+
+    renderer.setCustomDrawingHandler(mainDashboard);
+
+Where `mainDashboard` is a pointer to a dashboard object.  
 
 ## Setting the speed of rendering
 
@@ -198,9 +211,12 @@ You can adjust the number of update cycles per second by calling `setUpdatesPerS
 
 ## Using a delegate to customize the dashboard - ADVANCED
 
-Optionally, you can set a delegate if you want to draw extra things to the display, or need more control around how it opens and closes.
+Optionally, you can set a delegate if you want to draw extra things to the display, or need more control around how it opens and closes. 
 
 * Step 1 - create a class that extends from `DrawableDashboardDelegate`
 * Step 2 - now override the functions you need to handle, see the documentation for the class for the options.
 * Step 3 - add the delegate to the dash, `mainDashboard->setDelegate(&myDelegate);`
 
+In summary, when you implement this class, you are given the first chance to handle events either before or after the dashboard itself processes them, you can decide to take some action, or draw something else on the display. Methods containing `will` mean that you are ahead of the dashboard in processing something, methods containing `did` mean you are after it. Consult the {{< refdocs src="/tcmenu/html/class_drawable_dashboard_delegate.html" title="ref-docs for detailed descriptions" >}}.
+
+See [the example packaged with tcMenu library in the examples/esp folder](https://github.com/TcMenu/tcMenuLib/blob/main/examples/esp/esp32SimHub/dashboardSetup.cpp) that implements `DrawableDashboardDelegate`.
