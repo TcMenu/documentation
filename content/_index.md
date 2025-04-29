@@ -126,8 +126,8 @@ Remote connectivity settings:
 
 Should you need serial number management, (IE you have more than one board):
 
-* `TC_MANUAL_SERIAL_NO_IMPL` indicate that you want to implement `uint32_t getBoardSerialNumber()` yourself
-* `TC_BOARD_SERIAL_NO` long 32 bit integer containing the board serial number. Defaults to `999999999L`
+* `TC_MANUAL_SERIAL_NO_IMPL` indicate that you want to implement `const char * getBoardSerialNumber()` yourself
+* `TC_BOARD_SERIAL_NO` string literal containing the board serial number. Defaults to `999999999`
 
 Drawing specific:
 

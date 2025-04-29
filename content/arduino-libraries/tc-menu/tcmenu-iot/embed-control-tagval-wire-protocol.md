@@ -118,7 +118,7 @@ Field definitions:
 | VE    | Version  | The version of the sender       |
 | PF    | Platform | The platform of the sender      |
 | UU    | UUID     | The UUID of the remote app      |
-| US    | Integer  | The serial number of the remote |
+| US    | String   | The serial number of the remote |
 
 ### Heartbeat Message (Type HB)
 
