@@ -168,11 +168,13 @@ To write a 32 bit long back to ROM storage at location `romStart`
 
 To read an array into memory starting at `data` from ROM starting at `romStart` with length `len`
 
-	anEeprom.readIntoMemArray(data, romStart, len);
-
+	anEeprom.readIntoMemArray(data, romStart, len); // for uint8_t* data
+	anEeprom.readCharArrIntoMemArray(data, romStart, len); // for char* data
+	
 To write an array from memory starting at `data` to ROM starting at `romStart` with length `len`
 
-	anEeprom.writeArrayToRom(romStart, data, len);
+	anEeprom.writeArrayToRom(romStart, data, len); // for uint8_t* data
+    anEeprom.writeCharArrToRom(romStart, data, len); // for char* data
 
 ## A word about EEPROM performance
 
