@@ -83,6 +83,26 @@ Note that on the ESP range of devices, you'll need to call `EEPROM.begin(size)` 
 
     ArduinoEEPROMAbstraction eepromWrapper(EEPROM);
 
+### EspPreferencesEeprom for ESP32 Preferences storage
+
+Requires ESP32 framework with Preferences library available for use. Note that in order to write back what's in memory you need to call `commit` to do the actual write.
+
+This class wraps the preferences API that's available on ESP32 Arduino framework. To use the wrapper first include:
+
+	#include <esp32/EspPreferencesEeprom.h>
+
+Then construct globally as follows:
+
+	EspPreferencesEeprom prefsStore(myNamespace, size);
+
+Where `myNamespace` is the namespace to use with preferences, and `size` is the size of the byte array it will create.
+
+Once you've finished writing values to it, flush the values out to storage as follows:
+
+    prefsStore.commit();
+
+A word of caution, do not call commit too often, this storage is probably in FLASH, and has limited write cycles.
+
 ### HalStm32EepromAbstraction for STM32 applications
 
 Requires version 1.8 of IoAbstraction.
