@@ -14,21 +14,21 @@ toc_needed = true
 
 An item that can represent a known series of values where only one can be selected at a time. Somewhat like a combo box. For enum items these values must be set at compile time, and on AVR / ESP they are in program memory. We store the choice as a zero based integer with the first choice being 0 and so on.
 
-If you want choices that can change at runtime, or acquired from EEPROM or RAM then see [ScrollChoiceMenuItem]({{< relref "scrollchoice-menu-item.md" >}})
+If you want choices that can change at runtime, or acquired from EEPROM or RAM then see [ScrollChoiceMenuItem](${relRef("scrollchoice-menu-item.md")})
 
 ## Class types for EnumMenuItem
 
 * Type: `EnumMenuItem` / `EnumMenuInfo` in MenuItems.h
 * Type returned by `getMenuType()` is MENUTYPE_ENUM_VALUE
-* [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="EnumMenuItem reference documentation" src="/tcmenu/html/class_enum_menu_item.html" >}} 
+* [This item is based on an Info block](${relRef("based-on-infoblock.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [EnumMenuItem reference documentation](${refdocs("/tcmenu/html/class_enum_menu_item.html")}) 
 
 ## Creating an enum item in the designer
 
 From the add item dialog choose Enum item, the editor panel will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-enum.png" title="Enumeration Item Editor UI" alt="image showing the enumeration editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-enum.png" alt="image showing the enumeration editor" /><figcaption>Enumeration Item Editor UI</figcaption></figure>
 
 To add additional choices, press the Add button below the values list. Double click on the item in the list to edit it, press enter when done. Pressing remove deletes the selected item.
 
@@ -51,7 +51,7 @@ Where:
 
 ## Creating an enum menu item from the CLI
 
-To create an enum menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create an enum menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type enum --eeprom AUTO --name EnumName [--localonly --readonly --hide]
 

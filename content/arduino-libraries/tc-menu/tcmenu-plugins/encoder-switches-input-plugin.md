@@ -22,15 +22,15 @@ It's quite common to connect buttons and rotary encoders on an i2c expander, and
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can click on the image below the input plugin selection, and you'll see the two below options in the list:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/base-input-plugin-options.jpg" alt="Choices for switches and rotary encoder" title="Choices for switches and rotary encoder" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/base-input-plugin-options.jpg" alt="Choices for switches and rotary encoder" /><figcaption>Choices for switches and rotary encoder</figcaption></figure>
 
 With these two options you can control the menu with a rotary encoder, or up / down buttons. See further down the page for analog joysticks. 
 
-All switches UP/DOWN/OK are controlled by [IoAbstraction's switch library]({{< relref "switches-rotary-encoder-documentation.md" >}}), as such they can be either PULL UP or PULL DOWN depending on the second parameter passed to `switches.init`. It's easy to add additional switches for your own purposes too.
+All switches UP/DOWN/OK are controlled by [IoAbstraction's switch library](${relRef("switches-rotary-encoder-documentation.md")}), as such they can be either PULL UP or PULL DOWN depending on the second parameter passed to `switches.init`. It's easy to add additional switches for your own purposes too.
 
 ## Controlling the menu with buttons
 
-With this option the menu navigation will be controlled by UP and DOWN switches. [See menu manager docs for details about back and next buttons]({{< relref "menumanager-and-iteration.md" >}})
+With this option the menu navigation will be controlled by UP and DOWN switches. [See menu manager docs for details about back and next buttons](${relRef("menumanager-and-iteration.md")})
 
 Properties for Up down encoders:
 
@@ -53,7 +53,7 @@ A special case of above is to control the menu with only two buttons, obviously 
 
 In terms of rotary encoders this plugin can handle both direct connection to device pins and connection via an IO expander. Both PCF8574 and MCP23017 I2C IO expanders are supported and unless the wire runs are long, no pull up resistors will be required. PinA must be an interrupt capable pin, if an expander has been used, it's interrupt pin must be connected to an interrupt capable pin on the main device.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/wiring-rotary-encoder.png" alt="Example of wiring a rotary encoder to an Arduino" title="Example of wiring a rotary encoder to an Arduino">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/wiring-rotary-encoder.png" alt="Example of wiring a rotary encoder to an Arduino" /><figcaption>Example of wiring a rotary encoder to an Arduino</figcaption></figure>
 
 Properties for rotary encoders:
 
@@ -66,7 +66,7 @@ Properties for rotary encoders:
 
 ## Using more than one rotary encoder or additional buttons
 
-You can use additional rotary encoders with tcMenu, but the menu library will always take the first one (slot 0). Read the [IoAbstraction documentation]({{< relref "io-abstraction.md" >}}), section: Advanced usage of rotary encoders.
+You can use additional rotary encoders with tcMenu, but the menu library will always take the first one (slot 0). Read the [IoAbstraction documentation](${relRef("io-abstraction.md")}), section: Advanced usage of rotary encoders.
 
 **Take special note of the fact that switches gets initialised during the `setupMenu` call, so anything you add to switches must be after that.**
 
@@ -100,7 +100,7 @@ Again you can add more buttons using the regular switches methods, but again, as
 
 You can also control the menu using an analog joystick, choose the analog joystick option from the list of input devices during code generation. 
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-analogjoystick-option.jpg" title="Analog joystick input plugin option" alt="Image of analog joystick plugin" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-analogjoystick-option.jpg" alt="Image of analog joystick plugin" /><figcaption>Analog joystick input plugin option</figcaption></figure>
 
 The joystick will be of the potentiometer type, with one end connected to Vcc, and the other connected to ground. The middle pin will be connected to an analog input, with the analog input configured in the code generator. In addition to the analog input, you also provide the pin on which the button will be connected.
 
@@ -112,4 +112,4 @@ Properties for Analog Joysticks:
 * Analog Pin - the pin on which the potentiometer wiper is connected to the device.
 * Button Pin - the pin on which the select button is connected to the device.  
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

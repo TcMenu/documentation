@@ -1,7 +1,7 @@
 +++
 title = "PGA2310 Volume Control device for IoAbstraction"
 description = ""
-tags = [ "arduino", "library" ]
+tags = "arduino, library"
 type = "blog"
 date = "2023-05-22"
 author =  "dave"

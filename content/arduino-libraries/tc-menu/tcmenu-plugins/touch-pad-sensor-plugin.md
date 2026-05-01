@@ -32,7 +32,7 @@ This plugin basically allows the ESP32 touch sensors to be used with switches li
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can click on the image below the input plugin selection, and you'll see the following option, select it:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-esp32touchpad-option.jpg" alt="Choices for switches and rotary encoder" title="Choices for switches and rotary encoder" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-esp32touchpad-option.jpg" alt="Choices for switches and rotary encoder" /><figcaption>Choices for switches and rotary encoder</figcaption></figure>
 
 Once you've chosen the touch-pad sensor plugin, you'll need to configure the plugin for use, further, you need to determine the threshold value, below which you can be certain there has been a touch event. 
 

@@ -1,7 +1,7 @@
 +++
 title = "Simple Collection - Thread safe circular buffer"
 description = ""
-tags = [ "arduino", "digital-io", "library" ]
+tags = "arduino, digital-io, library"
 type = "blog"
 date = "2020-11-28"
 author =  "dave"
@@ -9,7 +9,6 @@ menu = "simple-collections"
 githublink = "https://github.com/TcMenu/SimpleCollections"
 referenceDocs = "/simple-collections/html/index.html"
 banner = "/images/electronics/arduino/power/io-abstraction-encoder-pcf8574-thumb.jpg"
-aliases = ["/products/arduino-libraries/io-abstraction/simple-collection-btree/"]
 weight = 2
 +++
 

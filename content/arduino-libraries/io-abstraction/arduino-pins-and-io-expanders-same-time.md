@@ -17,9 +17,9 @@ Sometimes there is a need for more IO than can be catered for using an single se
 
 In this case IoAbstraction now supports that, you create an abstraction of type `MultiIoAbstraction`. See the sketch that has [Arduino pins and PCF8574 on the same IoAbstraction](https://github.com/TcMenu/IoAbstraction/tree/main/examples/multiIoExample) in the packaged examples.
 
-We have an example that you can look at, build the circuit exactly as per the [standard i2c expander example]({{< relref "pcf8574-i2c-io-expander-arduino-mbed.md" >}}), but this time this sketch also switches on and off the built in LED pin as well, showing it is possible to use both built in pins and the expander at the same time.
+We have an example that you can look at, build the circuit exactly as per the [standard i2c expander example](${relRef("pcf8574-i2c-io-expander-arduino-mbed.md")}), but this time this sketch also switches on and off the built in LED pin as well, showing it is possible to use both built in pins and the expander at the same time.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Using MultiIoAbstraction
 
@@ -41,4 +41,4 @@ Step 2 in the setup method register additional devices. You can add up to 7 more
     
 Then use it just like you would any other IoAbstractionRef.
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

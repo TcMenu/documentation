@@ -1,7 +1,7 @@
 +++
 title = "IoAbstraction: Switches and rotary encoder documentation"
 description = ""
-tags = [ "arduino", "digital-io", "library", "button-press", "eventing", "switches" ]
+tags = [ "arduino", "digital-io", "library", "button-press", "event-based", "switches" ]
 date = "2018-11-15"
 author =  "dave"
 menu = "io-abstraction"
@@ -26,7 +26,7 @@ Key points:
 * Rotary encoder needs no additional components in most cases.
 * Works with Arduino, mbed 5/6, ESP on pins, PCF8574, MCP23017 or shift-registers.
 
-You can see {{< refdocs title="SwitchInput in the reference docs" src="/ioabstraction/html/class_switch_input.html" >}} 
+You can see [SwitchInput in the reference docs](${refdocs("/ioabstraction/html/class_switch_input.html")}) 
 
 ### To setup SwitchInput for button management
 
@@ -38,13 +38,13 @@ To initialise `switches` during setup we call the `init` method, providing the I
         switches.init(ioUsingArduino(), pollingMode, defaultIsPullUp);
     }
     
-* `ioDevice` in this case we provided ioUsingArduino() but we could have provided any IoAbstractionRef device, see the [IoAbstractionRef documentation]({{< relref "ioabstraction-pins-io-expanders-shiftreg.md" >}})
+* `ioDevice` in this case we provided ioUsingArduino() but we could have provided any IoAbstractionRef device, see the [IoAbstractionRef documentation](${relRef("ioabstraction-pins-io-expanders-shiftreg.md")})
 * `pollingMode` polling mode is one of SWITCHES_NO_POLLING - all buttons and encoders interrupt driven, SWITCHES_POLL_KEYS_ONLY - interrupt for encoder, keys polled, SWITCHES_POLL_EVERYTHING - everything polled.
 * `defaultIsPullUp` parameter refers to if the switch is active low (pull-up) or active high (pull-down). Pull-up is the most common because no external components are needed in most cases. When using a switch the input must always be pulled in one direction, because the input pin is very high impedance and will otherwise float between low and high.
 
 Below the diagram shows all three possibilities:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/ioAbstraction/pullup-and-pulldown-switches.png" alt="Pull down & pull up examples" title="Example wiring of a pull-down & pull-up button to an Arduino">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/ioAbstraction/pullup-and-pulldown-switches.png" alt="Pull down & pull up examples" /><figcaption>Example wiring of a pull-down & pull-up button to an Arduino</figcaption></figure>
 
 * PU1 - here we use INPUT_PULLUP as the input mode, it enables the internal pull-up resistor, it holds the input HIGH until the switch is pressed, when it pulls the input LOW.
 * PU2 - here as above, but we provide an external pull up resistor, needed when either the pin is not pull-up capable or for longer wire runs.
@@ -137,7 +137,7 @@ Where:
 * accelerationMode is the amount of acceleration to apply, defaults to regular.
 * encType is optional and defaults to full cycle, covering the vast majority of encoders. QUARTER_CYCLE covers the case for quarter cycle encoders. Thanks to [ddd999](https://github.com/ddd999) for adding this.
 
-{{< figure src="/images/electronics/arduino/tcMenu/wiring-rotary-encoder.png" alt="Example of wiring a rotary encoder to an Arduino" title="Example of wiring a rotary encoder to an Arduino">}}
+<figure><img src="/images/electronics/arduino/tcMenu/wiring-rotary-encoder.png" alt="Example of wiring a rotary encoder to an Arduino" /><figcaption>Example of wiring a rotary encoder to an Arduino</figcaption></figure>
 
 ## Encoder emulation using buttons
 
@@ -263,7 +263,7 @@ Where:
 
 ### Limitations when using more than one encoder at once
 
-There are a few limitations with multiple encoders. rotary encoders share the same input device as `switches`. You can either use multi IO described below, or put all switches and encoders on the same device, such as device pins, or an i2c expander (MCP23017 or PCF8574) which is fully supported. [If you need more than one expander, or a mix with device pins see MultiIo]({{< relref "arduino-pins-and-io-expanders-same-time.md" >}}) Secondly, there is a hard limit on the number defined by MAX_ROTARY_ENCODERS that can be changed by altering the file SwitchInput.h should you need more (or less) than 4.
+There are a few limitations with multiple encoders. rotary encoders share the same input device as `switches`. You can either use multi IO described below, or put all switches and encoders on the same device, such as device pins, or an i2c expander (MCP23017 or PCF8574) which is fully supported. [If you need more than one expander, or a mix with device pins see MultiIo](${relRef("arduino-pins-and-io-expanders-same-time.md")}) Secondly, there is a hard limit on the number defined by MAX_ROTARY_ENCODERS that can be changed by altering the file SwitchInput.h should you need more (or less) than 4.
 
 Note that PinA of each encoder must be on an interrupt capable pin, so whichever way you are connecting it *each encoder's pinA must be capable of raising interrupts*. In all cases `switches` will register the required interrupts on you behalf.
 
@@ -274,4 +274,4 @@ A couple of common mistakes we've seen in the wild that you should avoid:
 * Do not initialise `switches` more than once, this can cause problems
 * Ensure that you only have one `IoAbtractionRef` referring to any IO device, they cache some important state.
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

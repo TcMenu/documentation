@@ -20,14 +20,14 @@ be connected to an Arduino pin that supports interrupts (such as pins 2 or 3).
 Further, you can also have `switches` handle push button input without polling, by initialising for interrupt, especially
 useful with IO exapnders.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 Ensure you've [obtained the IoAbstraction library](https://github.com/TcMenu/IoAbstraction), then this example is packaged
 as an example named `interruptSwitchEncoder8574`. We'll examine some parts of the sketch here, but the full sketch
 is included with the library. Also, below is the circuit needed for this example:
 
 
-{{< figure src="/images/electronics/arduino/power/ioabstraction-switches-interrupt-8574.png" title="Breadboard example of rotary encoder to PCF8574" alt="breadboard example circuit for PCF8574 based rotary encoder" >}}
+<figure><img src="/images/electronics/arduino/power/ioabstraction-switches-interrupt-8574.png" alt="breadboard example circuit for PCF8574 based rotary encoder" /><figcaption>Breadboard example of rotary encoder to PCF8574</figcaption></figure>
 
 First in order to use the PCF8574 abstractions, we must include the library (and the Wire extensions):
 
@@ -78,4 +78,4 @@ managers schedule functions.
       taskManager.runLoop();  
     } 
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})    
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})    

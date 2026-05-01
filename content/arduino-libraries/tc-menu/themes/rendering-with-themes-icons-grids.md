@@ -19,7 +19,7 @@ Most display plugins can be customized using TcThemeBuilder, a utility class tha
 
 Grids allow for multi-column menus by breaking rows up into multiple columns. You can configure graphical settings at the default level, or even override settings for a specific menu item.  
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Choosing a theme to get started in a new project
 
@@ -75,7 +75,7 @@ After that the item and title padding are configured, you can see we demonstrate
 
 Then we provide the title mode as described in the section above followed by the palette (we'll discuss palettes later in more detail) but these are four colors to be used when drawing the item. 
 
-Next, we configure the default font. Fonts can be configured in many different ways, either using "native font" or you can directly provide adafruit or tcUnicode fonts using specialised overrides. See the section on fonts below, there is also another [guide on fonts and how to use them]({{< relref "using-custom-fonts-in-menu.md" >}}). The three theme methods for dealing with fonts are:
+Next, we configure the default font. Fonts can be configured in many different ways, either using "native font" or you can directly provide adafruit or tcUnicode fonts using specialised overrides. See the section on fonts below, there is also another [guide on fonts and how to use them](${relRef("using-custom-fonts-in-menu.md")}). The three theme methods for dealing with fonts are:
 
     withNativeFont(void* fontData, int fontMagnification);
     withAdaFont(const GFXfont* font, int mag = 1)
@@ -102,7 +102,7 @@ Or to specify them manually you provide the size of the icons as a `Coord` objec
 
 ## Drawing in grid positions
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/grid-layout-example.jpg" title="Grid Layout example" alt="Grid layout showing various column layout possibilities" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/grid-layout-example.jpg" alt="Grid layout showing various column layout possibilities" /><figcaption>Grid Layout example</figcaption></figure>
 
 Menu items are drawn in a grid layout as presented in the image above. We can draw a menu item at any grid and row position. The layout for manually overridden items is run first, so other items flow around them.
 
@@ -133,7 +133,7 @@ These all use chained builder syntax as described elsewhere in this guide. You a
 
 ### Creating two icon menu items on the same row
 
-Here we present an example theme builder layout to show how to override two menu items so that they appear on the same row, row `3` in this case, one with an XBMP image, the other with a color 4 bit per pixel palette image. Note that [TcMenu Designer can generate XBMP and palette images]({{< relref "creating-and-using-bitmaps-menu.md" >}})
+Here we present an example theme builder layout to show how to override two menu items so that they appear on the same row, row `3` in this case, one with an XBMP image, the other with a color 4 bit per pixel palette image. Note that [TcMenu Designer can generate XBMP and palette images](${relRef("creating-and-using-bitmaps-menu.md")})
 
     // for menuEngine, we override the drawing to use a color palette based icon
     themeBuilder.menuItemOverride(menuEngine)
@@ -172,9 +172,9 @@ Let's say we want an entire submenu to render with a different palette and adafr
 
 To do the same for action items `themeBuilder.submenuPropertiesActionOverride()`.
 
-* see {{< refdocs title="TcThemeBuilder docs" src="tcmenu/html/classtcgfx_1_1_tc_theme_builder.html" >}}
-* see {{< refdocs title="GridPosition docs" src="tcmenu/html/classtcgfx_1_1_grid_position.html" >}}
-* see the `addGridPosition` method in {{< refdocs title="ItemDisplayPropertiesFactory" src="tcmenu/html/classtcgfx_1_1_item_display_properties_factory.html" >}}
+* see [TcThemeBuilder docs](${refdocs("tcmenu/html/classtcgfx_1_1_tc_theme_builder.html")})
+* see [GridPosition docs](${refdocs("tcmenu/html/classtcgfx_1_1_grid_position.html")})
+* see the `addGridPosition` method in [ItemDisplayPropertiesFactory](${refdocs("tcmenu/html/classtcgfx_1_1_item_display_properties_factory.html")})
 
 ## Using card layout
 
@@ -184,7 +184,7 @@ Let's take an example of a turntable that had only four top level options, 33rpm
 
 Below we see an example display where card layout has been enabled for the menu, the main area in the middle belongs entirely to the menu item, excepting the areas taken by any widgets or title at the top, and the left and right icons that show when you can move left or right. When there is an item to the "left" then the left icon is shown, and when there is an icon to the "right", the right icon is shown. 
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/card-layout-example.jpg" title="Example display in card layout mode" alt="Example display in card layout mode" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/card-layout-example.jpg" alt="Example display in card layout mode" /><figcaption>Example display in card layout mode</figcaption></figure>
 
 ### Enabling card layout
 
@@ -208,8 +208,8 @@ The `Stm32DuinoDemo` and `esp32s3TftEncoder` examples both use card layout exten
 
 Along with this overview, please see the reference documentation for more complete details, they will not be repeated here:
 
-* {{< refdocs title="GfxMenuConfig.h documentation" src="tcmenu/html/graphics_2_gfx_menu_config_8h.html" >}}
-* {{< refdocs title="DrawingPrimitives.h documentation - core types" src="tcmenu/html/_drawing_primitives_8h.html" >}}
+* [GfxMenuConfig.h documentation](${refdocs("tcmenu/html/graphics_2_gfx_menu_config_8h.html")})
+* [DrawingPrimitives.h documentation - core types](${refdocs("tcmenu/html/_drawing_primitives_8h.html")})
 
 ### struct Coord - coordinates
 
@@ -259,7 +259,7 @@ You can also set the selected text and background color, these will override oth
 
 ## Font overview
 
-Read the [guide for setting up fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}}).
+Read the [guide for setting up fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")}).
 
 
 ## Some take away notes
@@ -283,17 +283,17 @@ END FOR
 
 ### ItemPropertiesFactory and graphical displays (advanced)
 
-Our flexible configuration based rendering is made possible by a display factory. The display factory stores all the grids, icons and drawing properties in high performance btree lists that are optimised for reading. Graphical displays nearly always have a {{< refdocs title="ConfigurableItemDisplayPropertiesFactory" src=tcmenu/html/classtcgfx_1_1_configurable_item_display_properties_factory.html" >}} that can be obtained using `renderer.getGraphicsPropertiesFactory()`. The themes are always a good starting point for making adjustments to these values.
+Our flexible configuration based rendering is made possible by a display factory. The display factory stores all the grids, icons and drawing properties in high performance btree lists that are optimised for reading. Graphical displays nearly always have a [ConfigurableItemDisplayPropertiesFactory](${refdocs("tcmenu/html/classtcgfx_1_1_configurable_item_display_properties_factory.html")}) that can be obtained using `renderer.getGraphicsPropertiesFactory()`. The themes are always a good starting point for making adjustments to these values.
 
-* {{< refdocs title="ItemDisplayProperties documentation" src=tcmenu/html/classtcgfx_1_1_item_display_properties.html" >}}
+* [temDisplayProperties documentation](${refdocs("tcmenu/html/classtcgfx_1_1_item_display_properties.html")})
 
 
 ### The properties cache in more detail (advanced)
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/item-properties-cache-example.jpg" title="Graphical representation of properties cache" alt="The item properties cache that is used for rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/item-properties-cache-example.jpg" alt="The item properties cache that is used for rendering" /><figcaption>Graphical representation of properties cache</figcaption></figure>
 
 There is a properties cache within any graphical menu application, the cache stores the grid positions, icon cache and also a list of drawing properties as described above. These are stored in high performance btree lists, and memory usage is quite minimal for most applications.
 
 Each time a new menu is displayed, the rows are calculated upfront to avoid having to query these lists and perform the priority defaulting during each run. 
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

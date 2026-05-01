@@ -16,30 +16,30 @@ toc_needed = true
 
 TcMenu supports a wide range of rendering devices, from HD44780 based units using our LiquidCrystal fork through to mono OLEDs and full colour TFT displays using Adafruit_GFX and TFT_eSPI library. Over to the left you see an example of rendering to OLED device with title widgets. 
 
-You can also easily [take over the display to draw your own screen at any time]({{< relref "renderer-take-over-display.md" >}}). This is such a large subject, it deserves a page of its own.
+You can also easily [take over the display to draw your own screen at any time](${relRef("renderer-take-over-display.md")}). This is such a large subject, it deserves a page of its own.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## How the menu application looks on the device
 
 How a menu will look on the device will largely depend on which display is used. However, there are a few common features of all displays. They can generally all have a title, and the title can nearly always contain title widgets. Title widgets provide a way to present the graphical state of something within the system in a small icon, the most common would be the signal strength indicator, or a connection status icon. An example showing this is presented below:
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/basic-rendering-of-menu.jpg" title="The basic layout of a menu application" alt="application with title containing widgets and item rows" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/basic-rendering-of-menu.jpg" alt="application with title containing widgets and item rows" /><figcaption>The basic layout of a menu application</figcaption></figure>
 
 ## Common functions on most renderers 
 
 In order to allow for a wide range of displays, we provide multiple extension points within the rendering class hierarchy, and keep as much functionality as possible in the core.
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/rendering-class-diagram-all.jpg" title="Class Diagram showing nearly all rendering classes" alt="Class diagram showing rendering class, doxygen has a more accessible version" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/rendering-class-diagram-all.jpg" alt="Class diagram showing rendering class, doxygen has a more accessible version" /><figcaption>Class Diagram showing nearly all rendering classes</figcaption></figure>
 
 From the above diagram we can see that most graphical and LCD displays (except Uno cases) extend from at least the `BaseGraphicalRenderer`. And in fact all the true graphical displays extend from `GraphicsDeviceRenderer` and then have a custom drawable. The benefit of `GraphicsDeviceRenderer` is that does all the complex logic, and the drawable just has to implement the drawing glue code that calls into the library.   
 
 * Type: `BaseMenuRenderer` in BaseRenderers.h - this just provides a few functions to help formatting items, taking over the display and handling dialogs.
 * Type: `BaseGraphicalRenderer` in graphics/BaseGraphicalRenderer.h - extends from above, provides grid based capabilities, but does not do the drawing.
 * Type: `GraphicsDeviceRenderer` in graphics/GraphicsDeviceRenderer.h - does all the drawing to an instance of `Drawable`
-* {{< refdocs title="See the reference documentation for base renderer" src="/tcmenu/html/_base_renderers_8h.html" >}}
-* {{< refdocs title="See the reference documentation for base graphical renderer" src="/tcmenu/html/classtcgfx_1_1_base_graphical_renderer.html" >}}
-* {{< refdocs title="See the device drawable interface" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}
+* [See the reference documentation for base renderer](${refdocs("/tcmenu/html/_base_renderers_8h.html")})
+* [See the reference documentation for base graphical renderer](${refdocs("/tcmenu/html/classtcgfx_1_1_base_graphical_renderer.html")})
+* [See the device drawable interface](${refdocs("/tcmenu/html/classtcgfx_1_1_device_drawable.html")})
 
 ### Renderer integration into the sketch
 
@@ -134,7 +134,7 @@ Where the `BaseDialogController` interface is implemented as follows:
         }
     };
 
-You can add additional menu items of any type to the dialog, you can even add more buttons, additional buttons should be of this type {{< refdocs title="Dialog Button Menu Item" src="/tcmenu/html/class_local_dialog_button_menu_item.html" >}}. 
+You can add additional menu items of any type to the dialog, you can even add more buttons, additional buttons should be of this type [Dialog Button Menu Item](${refdocs("/tcmenu/html/class_local_dialog_button_menu_item.html")}). 
 
      void insertMenuItem(MenuItem* item);
 
@@ -165,11 +165,11 @@ Then in your setup method:
 
 ## Drawing bitmaps and presenting state with TitleWidget
 
-See the new guide to [creating and using TitleWidgets and bitmaps]({{< relref "creating-and-using-bitmaps-menu.md" >}}).
+See the new guide to [creating and using TitleWidgets and bitmaps](${relRef("creating-and-using-bitmaps-menu.md")}).
 
 ## Drawing direct to the display with DeviceDrawable
 
-You can draw to any of our displays using the same `DeviceDrawable`, it is implemented everywhere we have a graphical plugin, the code remains the same in more or less all cases. All the drawing possibilities are documented, {{< refdocs title="read the full device drawable documentation" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}.
+You can draw to any of our displays using the same `DeviceDrawable`, it is implemented everywhere we have a graphical plugin, the code remains the same in more or less all cases. All the drawing possibilities are documented, [read the full device drawable documentation](${refdocs("/tcmenu/html/classtcgfx_1_1_device_drawable.html")}).
 
 However, as a summary, we first get hold of the display drawable and tell the drawable we want to start using it:
 
@@ -200,7 +200,7 @@ For drawing text can get the extents and draw as follows:
     // drawing text, simply set the draw color and then text.
     drawable->drawText(Coord(0,0), myFont, 0, "Test");
 
-Drawing bitmaps is covered by two cases, with the {{< refdocs title="DrawableIcon bitmap" src="/tcmenu/html/classtcgfx_1_1_drawable_icon.html" >}} case being more configurable, while there is also support to draw an X-Bitmap (xbm) file too. Paint tool Gimp can create XBMs.
+Drawing bitmaps is covered by two cases, with the [DrawableIcon bitmap](${refdocs("/tcmenu/html/classtcgfx_1_1_drawable_icon.html")}) case being more configurable, while there is also support to draw an X-Bitmap (xbm) file too. Paint tool Gimp can create XBMs.
 
     DrawableIcon icon(myIconId, Coord(width, height), DrawableIcon::ICON_XBITMAP, iconData);
     drawable->drawBitmap(Coord(0,0), &drawableIcon, selected);
@@ -240,6 +240,6 @@ If you're using a sub device (IE effectively a memory buffer), and it is palette
 As we said earlier this is not the complete list, see the documentation or one of the examples for a more complete guide:
 
 * [An example of drawing using device drawable](https://github.com/TcMenu/tcMenuLib/blob/main/src/extras/DrawableTouchCalibrator.cpp)
-* {{< refdocs title="read the full device drawable documentation" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}
+* [read the full device drawable documentation](${refdocs("/tcmenu/html/classtcgfx_1_1_device_drawable.html")})
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

@@ -1,7 +1,7 @@
 +++
 title = "Arduino logging using io-logging"
 description = ""
-tags = [ "arduino", "library" ]
+tags = "arduino, library"
 type = "blog"
 date = "2022-08-10"
 author =  "dave"
@@ -18,7 +18,7 @@ Logging is part of the TcMenu offering provided by library `TcMenuLog`, it has a
 
 You can also use this logging framework in your own project code, regardless if you're using any other of our libraries. 
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Initialise the logging
 
@@ -129,3 +129,5 @@ In summary, the logging framework is a compromise between functionality and size
     3658-TCM:root has changed
 
 In the above examples we can see the time in mills since board start, followed by the level in three digits, then the text of the log line follows that. Any parameters are at the end after the title text.
+
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

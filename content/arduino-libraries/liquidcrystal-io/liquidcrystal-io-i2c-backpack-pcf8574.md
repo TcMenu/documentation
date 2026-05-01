@@ -1,7 +1,7 @@
 +++
 title = "LiquidCystalIO with PCF8574 i2c backpack"
 description = ""
-tags = [ "arduino", "library", "display-driver" ]
+tags = "arduino, library, display-driver"
 date = "2020-08-03"
 author =  "dave"
 menu = "liquidcrystal-io"
@@ -16,7 +16,7 @@ weight = 2
 
 An I2C LCD backpack based on the PCF8574 chip provides an easy way to get started with LiquidCrystalIO on most Arduino boards. It is usually in one of two configurations as listed below. This library works correctly with the display and even has a shorthand way of creating the LCD for this case.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Connectivity combinations for i2c backpacks
 
@@ -49,4 +49,4 @@ Where
 
 * [Simple example showing i2c backpack use](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/HelloI2c/HelloI2c.ino)
 
-[Back to the main page]({{< relref "liquidcrystal-io.md">}})
+[Back to the main page](${relRef("liquidcrystal-io.md")})

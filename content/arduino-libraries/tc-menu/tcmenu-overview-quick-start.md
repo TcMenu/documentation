@@ -41,7 +41,7 @@ The below guide will go from design right through to generating a complete, work
 
 The first step is to understand your application's state, IE the things that can be configured such as settings, the state that can be changed, such as real time adjustments, and also the status values that provide read only information. We provide an example below for a simple amplifier. If you're moving from another solution this step can probably be skipped.
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/example-state-diagram-menu-item.jpg" title="Drawing out the state of an amplifier" alt="Drawing representing the state of a simple integrated amplifier" width="300px" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/example-state-diagram-menu-item.jpg" alt="Drawing representing the state of a simple integrated amplifier" width="300px" /><figcaption>Drawing out the state of an amplifier</figcaption></figure>
 
 Let's convert this into text:
 
@@ -61,13 +61,16 @@ Our Menu Designer software is available to download from the [tcMenu releases pa
 
 ## Step 2a: Ensure the Arduino libraries are installed
 
-You will need to install TcMenu library and all dependencies from Arduino IDE, or add the library dependency in the platformIO project ini file. As [TcMenu library](https://github.com/TcMenu/tcMenuLib/releases) is built on [IOAbstraction library]({{< relref "io-abstraction.md">}}), [TaskManagerIO library]({{< relref "taskmanager-io.md">}}), [SimpleCollections]({{< relref "simple-collections.md">}}) and [TcUnicodeHelper]({{< relref "tc-unicode-helper.md" >}}) it's worth reading a little about these libraries too.
+You will need to install TcMenu library and all dependencies from Arduino IDE, or add the library dependency in the platformIO project ini file. As [TcMenu library](https://github.com/TcMenu/tcMenuLib/releases) is built on [IOAbstraction library](${relRef("io-abstraction.md")}), [TaskManagerIO library](${relRef("taskmanager-io.md")}), [SimpleCollections](${relRef("simple-collections.md")}) and [TcUnicodeHelper](${relRef("tc-unicode-helper.md")}) it's worth reading a little about these libraries too.
 
 **PlatformIO note:** Even if you're using platformIO, we recommend that you still [download at least tcMenu library](https://github.com/TcMenu/tcMenuLib/releases) initially for the examples. In this case create a libraries directory and put tcMenu in it.
 
 ## Step 3: Start the designer UI and ensure everything is ready
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-start-page.jpg" title="Menu Designer UI - Edit -> General Settings" alt="menu designer UI on macOS showing the general settings dialog" >}}
+<figure>
+<img src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-start-page.jpg" alt="menu designer UI on macOS showing the general settings dialog"/>
+<figcaption>Menu Designer UI on macOS showing the general settings dialog</figcaption>
+</figure>
 
 Once you've started the designer choose the "Edit -> General Settings" menu item. From here we can set up the project/sketches folder, and libraries directory. The sketches folder is used to provide a list of sketches, and also the default new project location. The libraries directory is used to check if libraries are up-to-date and also to provide a list of examples. You can always see available and installed versions from the "Library Versions" tab of General Settings.
 
@@ -82,12 +85,12 @@ The application has a main menu, on Windows and Linux it is at the top of the de
 * "File" Menu contains functions to Open and Save projects, including listing out Examples, Sketches and Recently edited items.
 * "Edit" Menu has functions for clipboard, undo/redo and also the Settings dialog.
 * "Menu Item" menu contains functions for working with menu items, most are also in the item toolbar bottom-left below the menu tree.
-* "Code" menu has the Code Generator, EEPROM validator, internationalization settings, and also a list of [IO expanders]({{< relref "setting-up-io-expanders-in-menu-designer.md" >}}). It also contains utilities for [bitmap/widget creation]({{< relref "creating-and-using-bitmaps-menu.md">}}) and [font creation]({{< relref "using-custom-fonts-in-menu.md">}}).
+* "Code" menu has the Code Generator, EEPROM validator, internationalization settings, and also a list of [IO expanders](${relRef("setting-up-io-expanders-in-menu-designer.md")}). It also contains utilities for [bitmap/widget creation](${relRef("creating-and-using-bitmaps-menu.md")}) and [font creation](${relRef("using-custom-fonts-in-menu.md")}).
 * "Help" menu has links to the most important parts of the tcMenu documentation. It also has a link to the forum and can prepare diagnostic info too.
 
 ### Overview of the main window
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/menu-editor-main-with-preview.png" title="Menu Designer UI - main window (left) with preview (right)" alt="menu designer UI showing the main window (left) and preview (right)" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/menu-editor-main-with-preview.png" alt="menu designer UI showing the main window (left) and preview (right)" /><figcaption>Menu Designer UI - main window (left) with preview (right)</figcaption></figure>
 
 * From the menu tree, clicking on an item opens it up for editing in the editor area. You can change the values here and they are validated as you type.
 * Clicking on the Root item edits the project level properties. From here you can set the unique ID for the project and also the application name that will appear in the title area.
@@ -100,7 +103,7 @@ The application has a main menu, on Windows and Linux it is at the top of the de
 
 At this point you have two choices, either start with an example or a new project. We will start from scratch by choosing File -> New Project.
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-create-project.jpg" title="Menu Designer UI - create project dialog" alt="Menu Designer UI - create project dialog" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-create-project.jpg" alt="Menu Designer UI - create project dialog" /><figcaption>Menu Designer UI - create project dialog</figcaption></figure>
 
 Select the "I want to create a new project on disk" option, this creates a new folder in the chosen location (default is your sketch directory). Type in the name of the project that you want to create, and select an appropriate platform. Advanced: If you want to use a CPP file instead of an INO, tick the "Use CPP" box, and you can enable internationalization support at this point too. Choose appropriate options and click "Create". 
 
@@ -114,21 +117,21 @@ On the left of the main designer window there is a menu tree, this list contains
 
 Note that items are created in whichever submenu was selected (or the nearest submenu to the item selected). Below is the create new item dialog:
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/add-menu-item-button.png" title="Menu Item toolbar (add item highlighted)" alt="Menu Item toolbar (add item highlighted)" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/add-menu-item-button.png" alt="Menu Item toolbar (add item highlighted)" /><figcaption>Menu Item toolbar (add item highlighted)</figcaption></figure>
 
 And once add menu item is pressed: 
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-add-item.jpg" title="Adding a new menu item" alt="add menu item" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/tcmenu-designer-add-item.jpg" alt="add menu item" /><figcaption>Adding a new menu item</figcaption></figure>
 
 Do not change the ID unless you explicitly want to manage them yourself, it is automatically generated and unique. Simply choose the type of item you want to add and press create. In this case we create a regular numeric editor. The new item will immediately be selected in the tree, and you can start editing its as the name field has the focus. 
 
-{{< figure src="/products/arduino-libraries/images/electronics/renderer-docs/menu-designer-edit-item-view.jpg" title="Editing an analog menu item" alt="edit an analog menu item" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/renderer-docs/menu-designer-edit-item-view.jpg" alt="edit an analog menu item" /><figcaption>Editing an analog menu item</figcaption></figure>
 
 When we select an item in the menu tree (1), its properties become editable on the right-hand side (3). We can change the name, EEPROM storage location (usually by pressing Auto to get the next location), and any properties that are specific to that kind of item. As you edit the values are immediately validated and any errors reported above the item properties. 
 
 Each menu item type has a link (2) to comprehensive documentation that explains the intended purpose, how to create the item and full instructions on its usage, including the main functions that you can use to interact with that type of item at runtime. 
  
-Callbacks: You can optionally create a callback function that will be notified of any change immediately. However, you can also poll the state of the item as you need to. Both options are fully documented in [the menu item documentation]({{< relref "menu-item-types.md" >}}); which you can directly access from the link (2) in the designer UI. 
+Callbacks: You can optionally create a callback function that will be notified of any change immediately. However, you can also poll the state of the item as you need to. Both options are fully documented in [the menu item documentation](${relRef("menu-item-types.md")}); which you can directly access from the link (2) in the designer UI. 
 
 Repeat this process until you've fully represented your application state.
 
@@ -138,7 +141,7 @@ At any time you can switch focus to the menu tree by pressing `F10`, and you can
 
 Before generating a menu, it's a good idea to check that none of the EEPROM ranges or ID values overlap. To do this go to the `Code -> Show ID & ROM layout` item from the main menu / toolbar. You'll see something similar to the following dialog. **Note that there should be no red entries in the EEPROM layout, this signifies that there is an overlap**.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/quickstart-menu-designer-eepromid.png" title="Editing the new menu item" alt="edit a menu item" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/quickstart-menu-designer-eepromid.png" alt="edit a menu item" /><figcaption>Editing the new menu item</figcaption></figure>
 
 On the right is a representation of the EEPROM memory layout, Each entry shows the start position and number of bytes needed. If the item is in green, it does not overlap with another value. However, any item in red signifies a memory clash. Ensure there are no clashes before generating code.
 
@@ -146,13 +149,13 @@ On the right is a representation of the EEPROM memory layout, Each entry shows t
 
 Before proceeding to code generator, on the main designer window select the root item and ensure the application level properties are correct.
 
-Now, we are ready to generate the code, from the main menu select `Code -> Generate Code` to bring up the following dialog. We'll skip quite a bit of detail here, see the section [Generating menu code and plugins]({{< relref "code-generator-and-plugins-guide.md" >}}) for more details.
+Now, we are ready to generate the code, from the main menu select `Code -> Generate Code` to bring up the following dialog. We'll skip quite a bit of detail here, see the section [Generating menu code and plugins](${relRef("code-generator-and-plugins-guide.md")}) for more details.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/quickstart-menu-designer-codegen.png" title="Generating code from the designer" alt="code generator within menu designer" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/quickstart-menu-designer-codegen.png" alt="code generator within menu designer" /><figcaption>Generating code from the designer</figcaption></figure>
 
 ### Step 7a: Set up the board type, EEPROM, and Authentication
 
-Before going on to generate any code select the right embedded platform for the board you are targeting. This is important as some plugins are not compatible with all architectures, and the code generation differs slightly for different boards. You also now choose the type of [EEPROM that you wish to use]({{< relref "menu-eeprom-integrations.md" >}}), or no EEPROM by clicking the "Choose EEPROM" button. If you have used secured sub menus anywhere, or intend to secure remote connections, an [Authenticator]({{< relref "secure-menuitem-pins-and-remotes.md" >}}) will be needed. 
+Before going on to generate any code select the right embedded platform for the board you are targeting. This is important as some plugins are not compatible with all architectures, and the code generation differs slightly for different boards. You also now choose the type of [EEPROM that you wish to use](${relRef("menu-eeprom-integrations.md")}), or no EEPROM by clicking the "Choose EEPROM" button. If you have used secured sub menus anywhere, or intend to secure remote connections, an [Authenticator](${relRef("secure-menuitem-pins-and-remotes.md")}) will be needed. 
 
 Note: An EEPROM will be needed if you use any EEPROM based functions such as `load`, `save`, or a ScrollChoice item set to EEPROM mode.
 
@@ -168,7 +171,7 @@ You'll see the rest of the code generator screen is broken up into three section
 
 For both input and display, click on the image button showing the current plugin that has "Change" underneath it. This presents you with a list of possible plugins, select the most appropriate one and fill in the parameters on the right-hand side. Clicking on the documentation link will take you to the online documentation for that plugin.
 
-If you've used a graphical display, then you will also need to [pick a theme]({{< relref "rendering-with-themes-icons-grids.md" >}}). Without going into too much detail that's covered in the linked guide, choose a suitable theme for your display - IE for mono displays choose a mono theme, for color displays choose a color theme. 
+If you've used a graphical display, then you will also need to [pick a theme](${relRef("rendering-with-themes-icons-grids.md")}). Without going into too much detail that's covered in the linked guide, choose a suitable theme for your display - IE for mono displays choose a mono theme, for color displays choose a color theme. 
 
 For now, we recommend leaving the remote / IoT option as no remote.
 
@@ -176,7 +179,7 @@ For now, we recommend leaving the remote / IoT option as no remote.
 
 Once you've filled in the parameters for the chosen plugins, the next step is to press Generate and let code generator run. You'll see a log window, it's worth checking through the entries here to ensure everything went as expected.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-code-generator-logging.png" title="Code generator logging window" alt="Code generator logging window after execution has completed" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-code-generator-logging.png" alt="Code generator logging window after execution has completed" /><figcaption>Code generator logging window</figcaption></figure>
 
 ### Step 8: Compile and Upload to your board
 
@@ -189,8 +192,8 @@ You'll now have code in the directory that you generated to. You'll see several 
 If you're using things that need wire library, you may need to add `Wire.begin` to your sketch, and if you're using the inbuilt logging, you may need to start Serial too. 
 
 
-Also see the [Designer UI worked example]({{< relref "generator-ui-worked-example.md" >}}) that's a bit out date but still useful for better understanding.
+Also see the [Designer UI worked example](${relRef("generator-ui-worked-example.md")}) that's a bit out date but still useful for better understanding.
 
 ## Next steps
 
-[The main tcMenu page]({{< relref "tc-menu" >}}) has a considerable amount of documentation, that covers the vast majority of what you can do with the library.  
+[The main tcMenu page](${relRef("tc-menu")}) has a considerable amount of documentation, that covers the vast majority of what you can do with the library.  

@@ -20,7 +20,7 @@ In order to use the keyboard, we create a class of type `MatrixKeyboardManager` 
 
 Not only does this work connected to Arduino pins, but you can connect your keyboard to any supported device such as an I2C PCF8574 or MCP23017. Both interrupt and polling operation are supported, you configure this in the call to initialise. **Important Note** - interrupt support is only available either on device pins or MCP23017 devices, it is unlikely to work on a PCF8574 as changing the outputs in the matrix raises an interrupt and therefore is potentially recursive.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Wiring a matrix keyboard to an Arduino / embedded device
 
@@ -32,7 +32,7 @@ Choices:
 * Connect using an MCP23017 I2C IO expander, either interrupt based or polling.
 * Connect using a PCF8574 using polling.
 
-{{< figure src="/images/electronics/arduino/ioAbstraction/matrix-keyboard-circuit.png" alt="Matrix keyboard circuit diagram" title="Circuit showing 3 column by 4 row matrix keyboard" >}}
+<figure><img src="/images/electronics/arduino/ioAbstraction/matrix-keyboard-circuit.png" alt="Matrix keyboard circuit diagram" /><figcaption>Circuit showing 3 column by 4 row matrix keyboard</figcaption></figure>
 
 ## How matrix keyboard decoding works with this driver
 
@@ -89,4 +89,4 @@ Lastly as the keyboard manager uses task manager, we must call it's run loop fre
 
 And that's it, you should now get called back when keys are pressed. There's also a packaged example that you can take a look at.
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

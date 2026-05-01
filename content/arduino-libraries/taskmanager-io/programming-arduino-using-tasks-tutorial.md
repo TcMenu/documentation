@@ -1,18 +1,15 @@
 +++
 title = "Programming Arduino using tasks instead of loops - tutorial"
 description = ""
-tags = [ "arduino", "digital-io", "library", "eventing" ]
+tags = "arduino, digital-io, library, event-based"
 type = "blog"
 date = "2018-02-09"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/7seg/16x2-display-over-i2c-small.jpg"
 titleimg = "/images/electronics/arduino/7seg/16x2-display-over-i2c-small.jpg"
 weight = 3
-aliases = [ "/products/arduino-downloads/io-abstraction/programming-arduino-using-tasks-tutorial/",
-            "/products/arduino-libraries/io-abstraction/programming-arduino-using-tasks-tutorial/"]
 +++
 
 In this tutorial for TaskManagerIO I explain the differences between traditional 
@@ -23,7 +20,7 @@ Although event based programming looks slightly more complicated at first, as th
 surrounding code gets more complex, eventing will scale to that much easier. Eventing task
 frameworks make ongoing maintenance much easier.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Example: Two LEDs blink at different rates.
 
@@ -144,6 +141,6 @@ void loop() {
 }
 ```
 
-For greater detail take a look at the examples shipped with the library. There's also the [complete documentation for the library]({{< relref "io-abstraction.md">}})
+For greater detail take a look at the examples shipped with the library. There's also the [complete documentation for the library](${relRef("io-abstraction.md")})
 
-[Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
+[Go back to the TaskManagerIO page](${relRef("taskmanager-io.md")})

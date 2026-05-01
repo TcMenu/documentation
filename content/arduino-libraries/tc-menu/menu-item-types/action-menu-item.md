@@ -18,15 +18,15 @@ Action menu items represent a menu item that does nothing more than run the call
 
 * Class type: `ActionMenuItem` / `AnyMenuInfo` in MenuItems.h
 * Enum returned by `getMenuType()` is MENUTYPE_ACTION_VALUE
-* [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="ActionMenuItem reference documentation" src="/tcmenu/html/class_action_menu_item.html" >}} 
+* [This item is based on an Info block](${relRef("based-on-infoblock.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [ActionMenuItem reference documentation](${refdocs("/tcmenu/html/class_action_menu_item.html")}) 
 
 ## Creating an object from the designer
 
 Choose to add a new menu item, and from the dialog choose Float item, once created the properties panel will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-action.png" title="Action Editor UI" alt="image showing the action editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-action.png" alt="image showing the action editor" /><figcaption>Action Editor UI</figcaption></figure>
 
 For action items there are no special fields over and above the ones for all menu items.
 
@@ -36,7 +36,7 @@ There are no specific functions for action items.
 
 ## Creating an action menu item from the CLI
 
-To create an action menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create an action menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type action --name ActionName [--localonly --readonly --hide]
 

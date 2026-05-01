@@ -1,0 +1,76 @@
+{
+  "name": "Arduino Libraries",
+  "id": "arduino-libraries",
+  "relativePath": "/products/arduino-libraries/",
+  "children": [
+    {
+      "name": "Tc Menu library",
+      "id": "tc-menu",
+      "relativePath": "/products/arduino-libraries/tc-menu/",
+      "children": [
+        {
+          "name": "Menu Item Types",
+          "id": "menu-item-types",
+          "relativePath": "/products/arduino-libraries/tc-menu/menu-item-types/"
+        },
+        {
+          "name": "IoT Menu Plugins",
+          "id": "tcmenu-iot",
+          "relativePath": "/products/arduino-libraries/tc-menu/tcmenu-iot/"
+        },
+        {
+          "name": "Plugins Display/Inputs",
+          "id": "tcmenu-plugins",
+          "relativePath": "/products/arduino-libraries/tc-menu/tcmenu-plugins/"
+        },
+        {
+          "name": "Menu Themes",
+          "id": "themes",
+          "relativePath": "/products/arduino-libraries/tc-menu/themes/"
+        }
+      ]
+    },
+    {
+      "name": "Io Abstraction Library",
+      "id": "io-abstraction",
+      "relativePath": "/products/arduino-libraries/io-abstraction/",
+      "children": [
+        {
+          "name": "Io Abstraction - Devices",
+          "id": "ioa-devices",
+          "relativePath": "/products/arduino-libraries/io-abstraction/ioa-devices/"
+        },
+        {
+          "name": "Io Abstraction - Extras",
+          "id": "ioa-extras",
+          "relativePath": "/products/arduino-libraries/io-abstraction/ioa-extras/"
+        }
+      ]
+    },
+    {
+      "name": "Tc Unicode Library",
+      "id": "tc-unicode-helper",
+      "relativePath": "/products/arduino-libraries/tc-unicode-helper/"
+    },
+    {
+      "name": "Task Manager IO",
+      "id": "taskmanager-io",
+      "relativePath": "/products/arduino-libraries/taskmanager-io/"
+    },
+    {
+      "name": "Simple Collections",
+      "id": "simple-collections",
+      "relativePath": "/products/arduino-libraries/simple-collections/"
+    },
+    {
+      "name": "LiquidCrystalIO",
+      "id": "liquidcrystal-io",
+      "relativePath": "/products/arduino-libraries/liquidcrystal-io/"
+    },
+    {
+      "name": "NativeCpp AdafruitGfx fork",
+      "id": "native-adafruit-gfx",
+      "relativePath": "/products/arduino-libraries/picosdk-native-adafruit-gfx/"
+    }
+  ]
+}

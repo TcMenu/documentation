@@ -16,4 +16,4 @@ toc_needed = true
 In this guide we show how to setup and use the embedded Java remote plugin to allow embedCONTROL connections to a Raspberry PI or other embedded Linux board.
 
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

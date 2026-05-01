@@ -17,7 +17,7 @@ IoAbstraction has core I2C/Wire and SPI functionality provided by several functi
 
 Prior to 2.0, we had conditional I2C code scattered around the project, but now nearly all such functionality is separated out by platform, and sometimes even by board simplifying access.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Wire/I2C abstraction
 
@@ -106,6 +106,6 @@ Where
 * readWriteData is a uint8_t array of at least dataSize, the read data is put into the array after calling.
 * dataSize is the number of bytes to transfer
 
-{{< refdocs title="You can read more about this in the reference documentation" src="/ioabstraction/html/index.html" >}}
+[You can read more about this in the reference documentation](${refdocs("/ioabstraction/html/index.html")})
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

@@ -18,13 +18,13 @@ TcMenu resistive touch screen input plugin supports four wire resistive touch de
 
 When using this touch unit, the concept of touching and holding touches is handled by the unit itself, even managing "repeat key" is handled by the library, based on which mode it is in.
 
-You should note that this plugin can only be used with display renderers based on core graphical renderer, as of 2.0 this will be nearly all renderers. You can also read the IoAbstraction [touch screen documentation]({{< relref "touch-screen-support.md" >}}) as this support is based on that.
+You should note that this plugin can only be used with display renderers based on core graphical renderer, as of 2.0 this will be nearly all renderers. You can also read the IoAbstraction [touch screen documentation](${relRef("touch-screen-support.md")}) as this support is based on that.
 
 ## Configuring for your system
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can click on the image below the input plugin selection, and you'll see the two below options in the list:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-resistivetouchscreen-option.jpg" alt="Choices for switches and rotary encoder" title="Choices for switches and rotary encoder" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-resistivetouchscreen-option.jpg" alt="Choices for switches and rotary encoder" /><figcaption>Choices for switches and rotary encoder</figcaption></figure>
 
 Once you've chosen the resistive touch screen plugin, you'll need to configure the plugin for use, this includes working out the resistive ranges and how they map onto the screen, the easiest way to do this is to use the test sketch that's packaged with IoAbstraction. You provide the minimum and maximum values in both the X and Y directions as floating-point fractions between 0 and 1.
 
@@ -34,8 +34,8 @@ Once you've chosen the resistive touch screen plugin, you'll need to configure t
 * X- is the pin connected to X- of the resistive touch unit - needs ADC
 * Y+ is the pin connected to Y+ of the resistive touch unit
 * Y- is the pin connected to Y- of the resistive touch unit - needs ADC
-* Orientation settings - see the [Orientation Settings section]({{< relref "touch-screen-calibration-ui.md" >}}) for more details on each option
-* Calibration Support - see the [Calibration Settings]({{< relref "touch-screen-calibration-ui.md" >}}) a full explanation of calibration
+* Orientation settings - see the [Orientation Settings section](${relRef("touch-screen-calibration-ui.md")}) for more details on each option
+* Calibration Support - see the [Calibration Settings](${relRef("touch-screen-calibration-ui.md")}) a full explanation of calibration
 
 ## Working with the touch interface in code
 

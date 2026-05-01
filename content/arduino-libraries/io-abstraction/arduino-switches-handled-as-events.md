@@ -1,7 +1,7 @@
 +++
 title = "Arduino Button presses that are handled like events"
 description = ""
-tags = [ "arduino", "digital-io", "library", "button-press", "eventing", "switches" ]
+tags = [ "arduino", "digital-io", "library", "button-press", "event-based", "switches" ]
 type = "blog"
 date = "2018-02-09"
 author =  "dave"
@@ -19,13 +19,13 @@ Have you ever wanted to treat button presses in Arduino similar to other languag
 To start we need to get the [IoAbstraction library](https://github.com/TcMenu/IoAbstraction) and open the `buttonRotartyEncoder` example. This example shows how to use a rotary encoder and two switches (the encoder push button and any other switch) with the switches class, outputting the buttons and rotary encoder state to the serial port.
 
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## First, you'll need to build the following circuit:
 
-{{< figure src="/images/electronics/arduino/tcMenu/wiring-rotary-encoder.png" alt="Example of wiring a rotary encoder to an Arduino" title="Wire the rotary encoder to pins, PinA needs an interrupt pin (EG: 2)">}}
+<figure><img src="/images/electronics/arduino/tcMenu/wiring-rotary-encoder.png" alt="Example of wiring a rotary encoder to an Arduino" /><figcaption>Wire the rotary encoder to pins, PinA needs an interrupt pin (EG: 2)</figcaption></figure>
 
-{{< figure src="/images/electronics/arduino/tcMenu/wiring-pulldown-switch.png" alt="wiring a pull down switch to Arduino" title="Connect two switches as follows (usually one is the encoder push button)">}}
+<figure><img src="/images/electronics/arduino/tcMenu/wiring-pulldown-switch.png" alt="wiring a pull down switch to Arduino" /><figcaption>Connect two switches as follows (usually one is the encoder push button)</figcaption></figure>
 
 ## A walk through of the code
 
@@ -69,7 +69,7 @@ Notice that the loop function just contains one line, as everything else is cont
 
     taskManager.runLoop();
 
-For more detail, there's [complete documentation for the library]({{< relref "io-abstraction.md">}}).
+For more detail, there's [complete documentation for the library](${relRef("io-abstraction.md")}).
 In addition to this, there's also lots of other examples packaged with the library. 
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

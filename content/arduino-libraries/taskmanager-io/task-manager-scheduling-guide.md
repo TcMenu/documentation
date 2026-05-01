@@ -1,10 +1,9 @@
 +++
 title = "Scheduling tasks with Task Manager on Arduino and mbed"
 description = ""
-tags = [ "arduino", "library", "eventing" ]
+tags = "arduino, library, event-based"
 date = "2019-08-15"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
@@ -12,7 +11,6 @@ titleimg = "/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.p
 toc_needed = true 
 type ="blog"
 weight = 0
-aliases = ["/products/arduino-downloads/io-abstraction/task-manager-scheduling-guide/"]
 +++
 
 # Using TaskManager in your sketches 
@@ -242,4 +240,4 @@ the serial port, the output is the state of each task in turn.
 
 There's rarely a need to change the number of tasks, task manager grows the number of tasks automatically in a way that will suit 99% of cases. However, in extreme cases, you can define `DEFAULT_TASK_SIZE` that sets the initial number of task slots, and `DEFAULT_TASK_BLOCKS` that sets the number of times it will create an additional block of the same size.
 
-[Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
+[Go back to the TaskManagerIO page](${relRef("taskmanager-io.md")})

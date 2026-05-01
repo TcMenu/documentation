@@ -13,7 +13,7 @@ weight = 2
 toc_needed = true
 +++
 
-[IoAbstraction EEPROM support]({{< relref "eeprom-impl-seamless-8-and-32-bit.md" >}}) can be integrated into your menu application, it can be used to load and store menu item values, authentication and also [choice menu items]({{< relref "scrollchoice-menu-item.md" >}}) that are using EEPROM storage. Menu Manager makes it very easy to save values to EEPROM between runs. Each menu item can optionally have a storage point in the EEPROM area (-1 / 0xffff means not stored). Any items that have a valid EEPROM address will be persisted upon calling the `save` function on menuMgr, and similarly, will be read back by calling `load`.
+[IoAbstraction EEPROM support](${relRef("scrollchoice-menu-item.md")}) that are using EEPROM storage. Menu Manager makes it very easy to save values to EEPROM between runs. Each menu item can optionally have a storage point in the EEPROM area (-1 / 0xffff means not stored). Any items that have a valid EEPROM address will be persisted upon calling the `save` function on menuMgr, and similarly, will be read back by calling `load`.
 
     void menuMgr.load(magicKey = 0xfade, firstRunCallback = NULL);
     void menuMgr.save(magicKey = 0xfade);
@@ -29,11 +29,11 @@ NOTE: during `load()` the menu item callbacks are NOT run, this leads to instabi
 
 From version 2.2 onwards EEPROM support can be added to you project by the designer UI. To change the EEPROM type used by your project, open the code generator and choose the "Change EEPROM" button highlighted in the image below.
 
-{{< figure src="/products/arduino-libraries/images/apps/tcmenu/codegen-rom-auth-selection.jpg" alt="code generator authenticator area" title="Code generator - authenticator and eeprom settings" >}}
+<figure><img src="/products/arduino-libraries/images/apps/tcmenu/codegen-rom-auth-selection.jpg" alt="code generator authenticator area" /><figcaption>Code generator - authenticator and eeprom settings</figcaption></figure>
 
 Once you click on the above button, the following dialog will appear, where you can configure the type of EEPROM required:
 
-{{< figure src="/products/arduino-libraries/images/apps/tcmenu/codegen-choose-eeprom.jpg" alt="code generator EEPROM area" title="Code generator - EEPROM settings dialog" >}}
+<figure><img src="/products/arduino-libraries/images/apps/tcmenu/codegen-choose-eeprom.jpg" alt="code generator EEPROM area" /><figcaption>Code generator - EEPROM settings dialog</figcaption></figure>
 
 * No EEPROM - do not set an EEPROM, in this case you must not call load or save, use an EEPROM Authenticator, or any EEPROM based choice items.
 * AVR EEPROM - use AVR direct EEPROM functions, the lightest option for AVR based boards.
@@ -97,7 +97,7 @@ NOTE on single save it is assumed that the magic key has been written out at som
 
 ## Special cases and other details
 
-See the {{< refdocs title="reference docs about EeepromAbstraction" src="/ioabstraction/html/class_eeprom_abstraction.html" >}}
+See the [reference docs about EeepromAbstraction](${refdocs("/ioabstraction/html/class_eeprom_abstraction.html")})
 
 Should you need to use EEPROM functions before initialisation, you can set the root menu item before initialise for this special case. In this case, should need to use the menuMgr load function, as you must either set the EEPROM reference yourself as above, or  call the overload of the load function that takes a pointer to an EepromAbstraction. 
 

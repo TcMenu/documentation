@@ -16,15 +16,15 @@ aliases = ["/products/arduino-libraries/tc-menu/tcmenu-plugins/monochrome-themes
 
 ## Examples of this theme
 
-[Information about themes in general]({{< relref "rendering-with-themes-icons-grids.md" >}}).
+[Information about themes in general](${relRef("rendering-with-themes-icons-grids.md")}).
 
 Below we show three examples of this theme, first you see an inverse title example, but with sliders turned on, we don't do this by default as it comes with some issues, but some may like it. Second, we show inverse video on a dual color OLED, and lastly, we show the bordered theme.
 
-{{< figure class="pull-left" title="oled menu using border theme plugin" alt="menu library on oled screen bordered" src="/products/arduino-libraries/images/electronics/arduino/themes/mono-u8g2-example.jpg">}}
-{{< figure class="pull-left"  title="Two color oled inverse theme plugin" alt="menu library on 2 color oled screen inverse" src="/products/arduino-libraries/images/electronics/arduino/themes/mono-u8g2-oled-2col.jpg">}}
-{{< figure class="pull-left" title="oled menu using inverse title theme plugin" alt="menu library on oled screen inverse title" src="/products/arduino-libraries/images/electronics/arduino/themes/mono-u8g2-oled-border.jpg">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/themes/mono-u8g2-example.jpg" alt="menu library on oled screen bordered" class="pull-left" /><figcaption>oled menu using border theme plugin</figcaption></figure>
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/themes/mono-u8g2-oled-2col.jpg" alt="menu library on 2 color oled screen inverse" class="pull-left" /><figcaption>Two color oled inverse theme plugin</figcaption></figure>
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/themes/mono-u8g2-oled-border.jpg" alt="menu library on oled screen inverse title" class="pull-left" /><figcaption>oled menu using inverse title theme plugin</figcaption></figure>
 
-{{< blockClear "both" >}}
+${blockClear("both")}
 
 TcMenu ships with two monochrome themes, one that uses borders for the title and avoids the use of inverse video to a large extent, and one where the title and selection use inverse video.
 
@@ -36,11 +36,11 @@ Themes add a theme header file to your sketch, _which once generated will not be
 
 ### Font for items
 
-This is the default font that menu items will draw using. See [Fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}})
+This is the default font that menu items will draw using. See [Fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")})
 
 ### Font for title
 
-This is the title font that will be used for header text. See [Fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}})
+This is the title font that will be used for header text. See [Fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")})
 
 ### Border size of the title / title padding
 
@@ -56,5 +56,5 @@ There are various ways that the title can be drawn, always, as the first row, or
 
 ## Additional documentation
 
-* [Information about themes in general]({{< relref "rendering-with-themes-icons-grids.md" >}}).
-* [Full documentation of tcMenu rendering]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md" >}}).
+* [Information about themes in general](${relRef("rendering-with-themes-icons-grids.md")}).
+* [Full documentation of tcMenu rendering](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")}).

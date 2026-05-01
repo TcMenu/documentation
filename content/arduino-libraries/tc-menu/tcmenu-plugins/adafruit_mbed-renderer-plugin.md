@@ -19,13 +19,13 @@ In this guide we show how to use the [Adafruit_GFX library for mbed RTOS](https:
 
 We maintain a fork of Adafruit_GFX library for mbed that currently supports OLED displays only. Therefore, at the moment all options are memory buffered.
 
-Before proceeding, you'll need to make sure you've installed the Adafruit_GFX for mbed library and the library; which also contains the OLED drivers. I'd recommend taking a read through the [Adafruit_GFX library documentation](https://learn.adafruit.com/adafruit-gfx-graphics-library/overview) if you're not familiar with the library already. We'll also assume you've got a menu structure already prepared in the [menu designer UI]({{< relref "tcmenu-overview-quick-start.md">}}).  
+Before proceeding, you'll need to make sure you've installed the Adafruit_GFX for mbed library and the library; which also contains the OLED drivers. I'd recommend taking a read through the [Adafruit_GFX library documentation](https://learn.adafruit.com/adafruit-gfx-graphics-library/overview) if you're not familiar with the library already. We'll also assume you've got a menu structure already prepared in the [menu designer UI](${relRef("tcmenu-overview-quick-start.md")}).  
 
 
 Related documentation:
  
-* [Core menu rendering class guide]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md">}})
-* [How to take over the display]({{< relref "renderer-take-over-display.md">}})
+* [Core menu rendering class guide](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")})
+* [How to take over the display](${relRef("renderer-take-over-display.md")})
 
 ## Plugin and Library details
 
@@ -37,11 +37,11 @@ Related documentation:
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, change the current display by either pressing on the image (or on older UIs a button named "Change"). From this menu select the Adafruit mbed driver.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-mbed-renderer-option.jpg" alt="Adafruit_GFX mbed fork option" title="Image showing Adafruit_GFX mbed fork choice">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-mbed-renderer-option.jpg" alt="Adafruit_GFX mbed fork option" /><figcaption>Image showing Adafruit_GFX mbed fork choice</figcaption></figure>
 
 Once you've chosen this display type, the following properties will be added to the table at the bottom:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-mbed-renderer-properties.jpg" alt="Property Choices for this renderer" title="Image showing property choices for Adafruit_GFX mbed rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-mbed-renderer-properties.jpg" alt="Property Choices for this renderer" /><figcaption>Image showing property choices for Adafruit_GFX mbed rendering</figcaption></figure>
 
 ### DISPLAY_VARIABLE property
 
@@ -79,4 +79,4 @@ The rotation of the display between 0 and 3, 0 for regular
 
 How many times the menu structure should be scanned for changes and redrawn if needed. TcMenu tries to minimise redraws where reasonably possible.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

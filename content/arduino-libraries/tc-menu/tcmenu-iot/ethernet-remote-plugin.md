@@ -39,7 +39,7 @@ UipEthernet library is GPL code and tcMenu purposely does not link with it direc
 
 Ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, to the right of the current remote type will be a button named "Change". Select the ethernet control option:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/ethernet-remote-choice-generator.png" title="Serial remote choice in designer UI" alt="Serial remote choice in designer UI" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/ethernet-remote-choice-generator.png" alt="Serial remote choice in designer UI" /><figcaption>Serial remote choice in designer UI</figcaption></figure>
 
 ### Number of connections
 
@@ -55,4 +55,4 @@ It is your responsibility to fully initialise the network stack before calling `
 
 There are several Ethernet examples packaged with tcMenu. Take a look at either the Nokia5110 or TakeOverDisplay example. 
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

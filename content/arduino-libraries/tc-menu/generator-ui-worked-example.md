@@ -78,7 +78,7 @@ if the eeprom is still intact at startup. If you need to change the magic key it
 Before generating code, it is advisable to check the ID and eeprom ranges, to ensure there are no overlaps. To do
 this, from the Code menu choose "Show ID and Rom Layout"; which will pop up the following dialog:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-romlayout.png" title="TcMenu generator ID and Rom Layout dialog">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-romlayout.png" alt="" /><figcaption>TcMenu generator ID and Rom Layout dialog</figcaption></figure>
 
 On the left you see the IDs laid out in numeric order, and on the right the rom layout. If there are any overlaps in the
 rom, I.E. a value that overlaps with another, it is highlighted in red. Any overlaps should be changed before generating
@@ -89,7 +89,7 @@ code.
 Finally, we get to generating the code for Arduino. Choose Code/Generate Code from the menu. You should see a dialog
 similar to the following:
 
-{{< figure link="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-generate.png" src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-generate-thumb.png" title="Code generation window - click for full size" alt="Code generation window">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-generate-thumb.png" alt="Code generation window" link="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-generate.png" /><figcaption>Code generation window - click for full size</figcaption></figure>
 
 Once this dialog appears you'll notice it's split into roughly two areas, the platform and hardware choices, and the properties
 that need to be defined for those choices.
@@ -100,9 +100,9 @@ that need to be defined for those choices.
   file. Any existing INO file in that directory will be backed up before adjusting it.
 * **Embedded Platform** sets the type of board to be targeted. Currently, only arduino is supported. The display and
  input are filtered down so only compatible technologies are left.
-* **Display type** chooses the type of display to use, for example [LiquidCrystalIO for HD44870 displays]({{< relref "liquidcrystalio-hd44780-renderer-plugin.md" >}}), [U8G2 for OLED / Monochrome units]({{< relref "u8g2-renderer-plugin.md">}}) or [Adafruit_GFX for graphical units]({{< relref "adafruit_gfx-renderer-plugin.md" >}}).
-* **Input technology** the method of input to be used, at the moment UP/DOWN switches, Rotary encoder, Analog Joystick or no input. See the [quick start guide]({{< relref "tcmenu-overview-quick-start.md" >}}) if you need example circuits for this.
-* **Remote capabilities** here you can choose to add remote capabilities to your menu, so it can be controlled remotely using either [the Controller app](https://www.thecoderscorner.com/products/apps/embed-control/), [ our Java API]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}) or [writing to the protocol]({{< relref "embed-control-tagval-wire-protocol.md" >}}), Ethernet2, UipEthernet, ESP WiFi and most forms of Serial (anything extending from Stream) are supported.
+* **Display type** chooses the type of display to use, for example [LiquidCrystalIO for HD44870 displays](${relRef("liquidcrystalio-hd44780-renderer-plugin.md")}), [U8G2 for OLED / Monochrome units](${relRef("u8g2-renderer-plugin.md")}) or [Adafruit_GFX for graphical units](${relRef("adafruit_gfx-renderer-plugin.md")}).
+* **Input technology** the method of input to be used, at the moment UP/DOWN switches, Rotary encoder, Analog Joystick or no input. See the [quick start guide](${relRef("tcmenu-overview-quick-start.md")}) if you need example circuits for this.
+* **Remote capabilities** here you can choose to add remote capabilities to your menu, so it can be controlled remotely using either [the Controller app](https://www.thecoderscorner.com/products/apps/embed-control/), [ our Java API](${relRef("tcmenu-java-api-to-arduino-remote-control.md")}) or [writing to the protocol](${relRef("embed-control-tagval-wire-protocol.md")}), Ethernet2, UipEthernet, ESP WiFi and most forms of Serial (anything extending from Stream) are supported.
 
 ### Properties to define
 
@@ -114,4 +114,4 @@ Press the generate button, a new window should popup, that logs the code generat
 
 Hope you enjoy using TcMenu!
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

@@ -1,11 +1,10 @@
 +++
 title = "Text pipelines for drawing with tcUnicode"
 description = ""
-tags = [ "arduino", "display-driver", "embedded-menu", "library" ]
+tags = "arduino, display-driver, embedded-menu, library"
 type = "blog"
 date = "2023-01-01"
 author =  "dave"
-menu = "tc-unicode-helper"
 banner = "/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
 githublink = "https://github.com/TcMenu/tcUnicodeHelper"
 referenceDocs = "/tc-unicode-helper/html/index.html"

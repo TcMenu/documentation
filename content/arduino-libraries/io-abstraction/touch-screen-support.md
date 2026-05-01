@@ -1,7 +1,7 @@
 +++
 title = "Touch screen support that works on all Arduino and mbed boards"
 description = ""
-tags = [ "arduino", "digital-io", "library", "button-press", "eventing", "switches" ]
+tags = [ "arduino", "digital-io", "library", "button-press", "event-based", "switches" ]
 date = "2021-05-15"
 author =  "dave"
 menu = "io-abstraction"
@@ -18,7 +18,7 @@ IoAbstraction includes support for touch screens. The support is built in layers
 
 As with switches and rotary encoder support, this component deals with debouncing the user input and also working out if the user has selected or held, therefore supporting drag operations.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Adding touch screen support to your project
 
@@ -70,7 +70,7 @@ You can read back the values at any time, it is split into three methods, one to
 
 ## Deal with touches in an event driven way
 
-To do this instead of using the above `ValueStoringTouchScreenManager` you create your own class that extends from `TouchScreenManager`. See the {{< refdocs title="Touch interface reference docs" src="/ioabstraction/html/_resistive_touch_screen_8h.html" >}} for more information.
+To do this instead of using the above `ValueStoringTouchScreenManager` you create your own class that extends from `TouchScreenManager`. See the [Touch interface reference docs](${refdocs("/ioabstraction/html/_resistive_touch_screen_8h.html")}) for more information.
 
 ## Creating a new touch interrogator for new hardware
 
@@ -80,6 +80,6 @@ To do this you create an object that extends from TouchInterrogator, it must ind
                 float* ptrX, float* ptrY, TouchRotation rotation, 
                 const CalibrationHandler& calib)=0;
 
-See the {{< refdocs title="Touch interface reference docs" src="/ioabstraction/html/_resistive_touch_screen_8h.html" >}} for more information.
+See the [Touch interface reference docs](${refdocs("/ioabstraction/html/_resistive_touch_screen_8h.html")}) for more information.
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

@@ -1,7 +1,7 @@
 +++
 title = "IoAbstraction: Arduino Pins, IO Expanders, Shift Registers using same code"
 description = ""
-tags = [ "arduino", "library", "digital-io" ]
+tags = "arduino, library, digital-io"
 date = "2019-08-15"
 author =  "dave"
 menu = "io-abstraction"
@@ -16,13 +16,13 @@ weight = 0
 
 Using IoAbstraction you can write a sketch / program that uses Arduino pins, shift registers and IO expander devices at the same time, very much like you'd normally use Arduino pins. This library also provides simple interrupt handling that again is consistent across Arduino, mbed and IO expander ICs.
 
-What do we mean by consistent, we mean that configuring a pin, adding an interrupt, reading from pins, and writing to pins is the same across Arduino, mbed, PCF8574, MCP23017, AW9523, MPR121 and shift registers. Even [analog operations are standardized too]({{< relref "using-ioabstraction-analog-core.md" >}}). For most cases, such as adding switches, encoders and checking analog levels, it is device independent.  
+What do we mean by consistent, we mean that configuring a pin, adding an interrupt, reading from pins, and writing to pins is the same across Arduino, mbed, PCF8574, MCP23017, AW9523, MPR121 and shift registers. Even [analog operations are standardized too](${relRef("using-ioabstraction-analog-core.md")}). For most cases, such as adding switches, encoders and checking analog levels, it is device independent.  
 
-There are several sketches in the examples folder showing how to use most of the capabilities mentioned here. They cover Arduino pins, shift registers, IO expander devices, and [MultiIo abstraction]({{< relref "arduino-pins-and-io-expanders-same-time.md">}}) that allows many devices to be treated as a single large IO device.
+There are several sketches in the examples folder showing how to use most of the capabilities mentioned here. They cover Arduino pins, shift registers, IO expander devices, and [MultiIo abstraction](${relRef("arduino-pins-and-io-expanders-same-time.md")}) that allows many devices to be treated as a single large IO device.
 
-You can look at {{< refdocs title="BasicIoAbstraction in the reference docs" title="/ioabstraction/html/class_basic_io_abstraction.html" >}}
+You can look at  [BasicIoAbstraction in the reference docs](${refdocs("/ioabstraction/html/class_basic_io_abstraction.html")})
 
-There is also a [fork of the LiquidCrystal library that works with this abstraction]({{< relref "io-abstraction-liquidcrystal-examples.md">}}), and therefore can be used with pins, IO expanders or a shift register simply by changing the IoAbstraction it's using.
+There is also a [fork of the LiquidCrystal library that works with this abstraction](${relRef("io-abstraction-liquidcrystal-examples.md")}), and therefore can be used with pins, IO expanders or a shift register simply by changing the IoAbstraction it's using.
 
 # Using IO Abstraction in your sketches
 
@@ -34,7 +34,7 @@ First let's take a look at how to set the direction of a pin, here it is very si
     ioDevice.pinMode(pin, OUTPUT);
     ioDevice.pinMode(pin, INPUT_PULLUP);
 
-To register a raw interrupt handler for a pin again similar to Arduino we use `ioDevice.attachInterrupt(..)`, see the [TaskManagerIO]({{< relref "taskmanager-io.md" >}}) section on events and interrupt handling for better strategies, where you can either marshal interrupts to task manager, or use events.
+To register a raw interrupt handler for a pin again similar to Arduino we use `ioDevice.attachInterrupt(..)`, see the [TaskManagerIO](${relRef("taskmanager-io.md")}) section on events and interrupt handling for better strategies, where you can either marshal interrupts to task manager, or use events.
 
     ioDevice.attachInterrupt(pin, pinMode)
 
@@ -91,10 +91,10 @@ On Arduino and mbed we fully support creating IoAbstractionRefs for the inbuilt 
 
 ### Using with external devices
 
-* [PCF8574 and PCF8575 I2C IoExpanders]({{< relref "pcf8574-i2c-io-expander-arduino-mbed.md" >}})
-* [MCP23017 I2C IoExpanders]({{< relref "mcp23017-i2c-io-expander-arduino-mbed.md" >}})
-* [AW9523 I2C IoExpanders with LED Control]({{< relref "aw9523-i2c-io-expander-arduino-mbed.md" >}})
-* [MPR121 I2C Touch/GPIO/LED control]({{< relref "mpr121-i2c-io-expander-arduino-mbed.md" >}})
+* [PCF8574 and PCF8575 I2C IoExpanders](${relRef("pcf8574-i2c-io-expander-arduino-mbed.md")})
+* [MCP23017 I2C IoExpanders](${relRef("mcp23017-i2c-io-expander-arduino-mbed.md")})
+* [AW9523 I2C IoExpanders with LED Control](${relRef("aw9523-i2c-io-expander-arduino-mbed.md")})
+* [MPR121 I2C Touch/GPIO/LED control](${relRef("mpr121-i2c-io-expander-arduino-mbed.md")})
 
 ### Using with shift registers:
 
@@ -132,7 +132,7 @@ For input and output:
 
 ### To use more than one IO expander at the same time
 
-To use more than one IoAbstraction at once in the same code, simply create a multi IO as below, and add as many IO expander devices as needed. `numberOfPinsForArduino` allocates `0` thru `numberOfPinsForArduino - 1` as for Arduino pins. Following this will be each expander that you add. The type is `MultiIoAbstraction` and is created as below. [See the full MultiIoAbstraction guide]({{< relref "arduino-pins-and-io-expanders-same-time.md" >}})
+To use more than one IoAbstraction at once in the same code, simply create a multi IO as below, and add as many IO expander devices as needed. `numberOfPinsForArduino` allocates `0` thru `numberOfPinsForArduino - 1` as for Arduino pins. Following this will be each expander that you add. The type is `MultiIoAbstraction` and is created as below. [See the full MultiIoAbstraction guide](${relRef("arduino-pins-and-io-expanders-same-time.md")})
 
     MultiIoAbstraction multiIo(numberOfPinsForArduino);
 
@@ -155,4 +155,4 @@ To convert any io device object into an `IoAbstractionRef` simply call `asIoRef(
 
 Either submit a patch on github, raise an issue on IoAbstraction, or get in touch using the contact form. 
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

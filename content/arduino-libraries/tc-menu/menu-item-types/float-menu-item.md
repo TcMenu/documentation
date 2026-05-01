@@ -18,15 +18,15 @@ Float items are useful for displaying the result of inexact calculations and are
 
 * Class type: `FloatMenuItem` / `FloatMenuInfo` in MenuItems.h
 * Enum returned by `getMenuType()` is MENUTYPE_FLOAT_VALUE
-* [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="FloatMenuItem reference documentation" src="/tcmenu/html/class_float_menu_item.html" >}} 
+* [This item is based on an Info block](${relRef("based-on-infoblock.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [FloatMenuItem reference documentation](${refdocs("/tcmenu/html/class_float_menu_item.html")}) 
 
 ## Creating an object from the designer
 
 Choose to add a new menu item, and from the dialog choose Float item, once created the properties panel will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-float.png" title="Float Editor UI" alt="image showing the float editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-float.png" alt="image showing the float editor" /><figcaption>Float Editor UI</figcaption></figure>
 
 For float items, the only additional parameter is the number of decimal places to be displayed.
 
@@ -43,7 +43,7 @@ To check how many decimal places the value should format to:
 
 ## Creating a float menu item from the CLI
 
-To create a float menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create a float menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type float --name FloatName [--localonly --readonly --hide]
 

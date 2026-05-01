@@ -18,18 +18,18 @@ In this guide we show how to use the U8G2 library to renderer menu items to an O
 
 The U8G2 library supports a lot of different displays, with very different capabilities. This plugin concentrates on monochrome displays, mainly OLED that are supported by this library. It's worth reading this guide fully so that you understand how we manage the various capabilities.
 
-Before proceeding, you'll need to make sure you've installed the U8G2 library (usually through library manager). Also, I'd recommend taking a read through the [U8G2 library documentation](https://github.com/olikraus/u8g2/wiki) if you're not familiar with the library already. We'll also assume you've got a menu structure already prepared in the [menu designer UI]({{< relref "tcmenu-overview-quick-start.md">}}).  
+Before proceeding, you'll need to make sure you've installed the U8G2 library (usually through library manager). Also, I'd recommend taking a read through the [U8G2 library documentation](https://github.com/olikraus/u8g2/wiki) if you're not familiar with the library already. We'll also assume you've got a menu structure already prepared in the [menu designer UI](${relRef("tcmenu-overview-quick-start.md")}).  
 
 Related documentation:
  
-* [Core menu rendering class guide]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md">}})
-* [How to take over the display]({{< relref "renderer-take-over-display.md">}})
+* [Core menu rendering class guide](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")})
+* [How to take over the display](${relRef("renderer-take-over-display.md")})
 
 ## Configuring U8G2 rendering for your display
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can change the display renderer by clicking on the image to the left of the renderer.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/u8g2-renderer-option.jpg" alt="U8G2 rendering option" title="Image showing U8G2 renderer choice">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/u8g2-renderer-option.jpg" alt="U8G2 rendering option" /><figcaption>Image showing U8G2 renderer choice</figcaption></figure>
 
 There are two possible ways to work with U8G2, firstly you can use the quick start option, where the code generator will create the display variable and set it up on your behalf. This is less configurable, but quicker for common cases. We'll refer to this as "Quick Start".
 
@@ -39,7 +39,7 @@ Alternatively, you can use the manual declared mode, where you manually declare 
 
 When you use the quick start option, the code generator will create the display variable and initialise the display on your behalf. You will however be able to use the display in your own code, it will be exported using the variable name provided.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/u8g2-creator-quickstart-properties.jpg" alt="Property Choices for this renderer" title="Image showing property choices for U8G2 rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/u8g2-creator-quickstart-properties.jpg" alt="Property Choices for this renderer" /><figcaption>Image showing property choices for U8G2 rendering</figcaption></figure>
 
 ### Display variable property
 
@@ -82,7 +82,7 @@ How many times the menu structure should be scanned for changes and redrawn if n
 
 When you choose the manual configuration option, you need to create the display variable in your sketch, and make sure it is fully initialised before calling `setupMenu` in your sketch.  
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/u8g2-creator-properties.jpg" alt="Property Choices for this renderer" title="Image showing property choices for U8G2 rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/u8g2-creator-properties.jpg" alt="Property Choices for this renderer" /><figcaption>Image showing property choices for U8G2 rendering</figcaption></figure>
 
 ### Display variable property
 
@@ -103,4 +103,4 @@ How many times the menu structure should be scanned for changes and redrawn if n
 * ESP32 / ESP8266 with HW_I2C (using Wire library).  Working and tested, both with and without the yielding enabled. We found it worked best when initialising wire **before** calling setupMenu, and leaving the SDA and SCL values at their default (U8X8_PIN_NONE). Once you call begin the SDA,SCL pins cannot be changed. You may need to try this yourself using the u8g2 hello world example first.
 * Nano33BLE as above for ESP32 and ESP8266, we tested HW_I2C with and without the yielding callback. 
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

@@ -1,7 +1,7 @@
 +++
 title = "SimHub connector for tcMenu library"
 description = ""
-tags = [ "arduino", "serial", "embedded-menu", "menu-plugin" ]
+tags = "arduino,serial,embedded-menu,menu-plugin"
 type = "blog"
 date = "2020-07-06"
 author =  "dave"
@@ -21,17 +21,23 @@ Please note that we are not affiliated in any way with SimHub, any issues with S
 
 So why would you use tcMenu SimHub connector instead of the inbuilt SimHub Arduino support? You get more control of the rendering, more input options, and it supports nearly all boards, including AVR/Uno/Mega , SAMD/MKR, ESP8266, ESP32, mbed RTOS, and soon Nano 33 sense BLE. The cost of this is slightly more complexity. **This connector is in BETA at the moment while we get everything up to scratch.**
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Add Simhub Connector to a menu
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, change the remote control type by clicking on "click to change", and then choose the SimHub connector from the popup:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/simhub-generator-selection.png" alt="selection of SimHub from generator list" title="Select the SimHub option in the code generator popup" >}}
+<figure>
+    <img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/simhub-generator-selection.png" alt="selection of SimHub from generator list" />
+    <figcaption>Select the SimHub option in the code generator popup</figcaption>
+</figure>
 
 Once selected, it will be shown as the new remote control configuration as follows:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/simhub-selected.png" alt="Example of simhub connector configuration" title="Example of SimHub connector configuration when selected" >}}
+<figure>
+    <img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/simhub-selected.png" alt="Example of simhub connector configuration" />
+    <figcaption>Example of SimHub connector configuration when selected</figcaption>
+</figure>
 
 
 ### Serial port parameter

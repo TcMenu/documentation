@@ -1,11 +1,10 @@
 +++
 title = "TcUnicode Font format documentation"
 description = ""
-tags = [ "arduino", "display-driver", "embedded-menu", "library" ]
+tags = "arduino, display-driver, embedded-menu, library"
 type = "blog"
 date = "2023-01-01"
 author =  "dave"
-menu = "tc-unicode-helper"
 banner = "/images/electronics/arduino/tcMenu/unicode-font-editor-banner.jpg"
 githublink = "https://github.com/TcMenu/tcUnicodeHelper"
 referenceDocs = "/tc-unicode-helper/html/index.html"
@@ -26,4 +25,4 @@ Internally the font is arranged as an array of unicode blocks, each block contai
 
 The bitmaps are stored within the block, and can be up to 64KB in size for each block, and the char-code is an offset to the block's starting point, with up to 64K range allowed in each block. Bitmap format, offset parameters, and sizing is exactly as per AdafruitGFX (that's why we can easily be backward compatible with a few lines of code). You can see more about this in the reference documentation linked below.
 
-See {{< refdocs title="Unicode font defs docs" src="/tc-unicode-helper/html/_unicode_font_defs_8h.html" >}} for the reference documentation.
+See [Unicode font defs docs](${refdocs("/tc-unicode-helper/html/_unicode_font_defs_8h.html")}) for the reference documentation.

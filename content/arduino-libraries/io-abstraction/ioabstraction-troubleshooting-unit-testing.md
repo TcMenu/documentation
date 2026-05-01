@@ -1,7 +1,7 @@
 +++
 title = "Troubleshooting and mock objects for testing"
 description = ""
-tags = [ "arduino", "digital-io", "library", "button-press", "eventing", "switches" ]
+tags = "arduino, digital-io, library, button-press, event-based, switches"
 date = "2017-11-15"
 author =  "dave"
 menu = "io-abstraction"
@@ -34,6 +34,6 @@ There is a simulated version of the EepromAbstraction, this uses a small amount 
 
 There is no need for a mock task manager, just use the regular instance, it has accessors to get hold of tasks if needed. Be sure to call `reset()` after each test that interacts with it.
 
-These Mock interfaces are {{< refdocs title="fully documented in the reference docs" src="/ioabstraction/html/index.html" >}}
+These Mock interfaces are [fully documented in the reference docs](${refdocs("/ioabstraction/html/index.html")})
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

@@ -38,13 +38,13 @@ Further we made a few other changes, the easiest way to pick up these changes is
 
 ### Configuring a display using the AdaColorGfxMenuConfig structure
 
-For users that are not able to move beyond tcMenu 1.7, the below documentation is left in place. For 2.0 see the [theme, grids and properties docs]({{< relref "rendering-with-themes-icons-grids.md" >}}).
+For users that are not able to move beyond tcMenu 1.7, the below documentation is left in place. For 2.0 see the [theme, grids and properties docs](${relRef("rendering-with-themes-icons-grids.md")}).
 
 Should you need to change the drawing settings such as font, spacing and colors to suit your display. For Adafruit_GFX this is the configuration type, if you leave the config field blank, the generator will provide a default with name `gfxConfig`.
 
     AdaColorGfxMenuConfig gfxConfig;
 
-It is probable that you'll either want to completely override, or make some small adjustments to the graphics configuration. [See the graphical configuration section in this rendering guide.]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md">}})
+It is probable that you'll either want to completely override, or make some small adjustments to the graphics configuration. [See the graphical configuration section in this rendering guide.](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")})
 
 When you don't choose a graphics configuration by leaving the property blank, the code generator will use a default one on your behalf, by adding it to your `<project>_menu.cpp` file:
 
@@ -63,7 +63,7 @@ For this driver the graphical configuration is of type:
 
     U8g2GfxMenuConfig myConfig;
 
-It is probable that you'll either want to completely override, or make some small adjustments to the graphics configuration. [See the graphical configuration section in this rendering guide.]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md">}})
+It is probable that you'll either want to completely override, or make some small adjustments to the graphics configuration. [See the graphical configuration section in this rendering guide.](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")})
 
 ### Display configuration for bitmapped displays (AdaGfx and U8G2)
 

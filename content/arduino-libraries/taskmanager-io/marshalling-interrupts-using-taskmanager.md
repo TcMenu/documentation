@@ -1,10 +1,9 @@
 +++
 title = "Marshalling interrupts into TaskManagerIO tasks"
 description = ""
-tags = [ "arduino", "library", "eventing" ]
+tags = "arduino, library, event-based"
 date = "2020-08-15"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/taskmgr/taskmanager-marshalling-interrupt.png"
@@ -16,7 +15,7 @@ weight = 5
 
 Interrupt handling is generally an advanced topic, but this library provides a very simple way to handle interrupts. There are two ways to handle interrupts in TaskManagerIO, the first is by marshalling, and the second is by writing an event. 
 
-We recommend that all new code uses [the event method to handle interrupts]({{< relref "using-interrupt-threaded-events-taskmanager.md" >}}), although we have no plans to deprecate the method below. 
+We recommend that all new code uses [the event method to handle interrupts](${relRef("using-interrupt-threaded-events-taskmanager.md")}), although we have no plans to deprecate the method below. 
 
 When you tell the library to handle an interrupt, the library registers the interrupt handler on your behalf, then when the condition is met the internal handler is triggered, it sets a flag to tell the library an interrupt has been raised. The task library treats this as the highest priority, and as soon as the current task is completed the interrupt code runs. This may not be real time enough for all uses, but will be fine for most cases.
  
@@ -48,4 +47,4 @@ Where
 
 That's it, your interrupt function will be called by task-manager when an interrupt gets triggered. This provides a very simple way to work with interrupts, and it work across a wide range of devices..
 
-[Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
+[Go back to the TaskManagerIO page](${relRef("taskmanager-io.md")})

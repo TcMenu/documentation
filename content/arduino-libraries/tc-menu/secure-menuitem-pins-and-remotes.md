@@ -16,19 +16,19 @@ aliases = ["/products/arduino-libraries/tc-menu/howto-secure-sub-menu/"]
 
 You can secure both sub-menu items and remote connections using an `Authenticator`. In summary, when an `authenticator` is present on `menuMgr` any attempt to show a secure sub menu will result in a dialog asking for the pin; only proceeding to display the sub menu if the pin matches the on in `authenticator`. In addition, all remote/IoT connections will only be allowed if the authenticator approves the connection. An example of the secure sub-menu pin entry screen is below:   
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/secure-submenu-password.jpg" title="Secure menu password request on LCD" alt="LCD showing secure menu password request" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/secure-submenu-password.jpg" alt="LCD showing secure menu password request" /><figcaption>Secure menu password request on LCD</figcaption></figure>
 
 Notice that in the above secure pin entry screen, the pin as entered shows with the '*' character instead of what was entered, except for the current character that you are editing. After the last character is entered, select the lowest value (empty) which terminates editing. Now select Proceed.
 
 To secure a sub-menu in designer simply select the menu you wish to secure and tick the "secure submenu with password" check box. Although not mandatory, it is recommended that you also tick the "do not send remotely" checkbox to ensure they can only display locally.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/secure-menu-example-ui.png" title="Setting the secure menu option" alt="screen shot - secure menu" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/secure-menu-example-ui.png" alt="screen shot - secure menu" /><figcaption>Setting the secure menu option</figcaption></figure>
 
 When remote connectivity is added to a menu then the authenticator has a second job, that is to determine if the client that is connecting should be allowed. Every client has a UUID and a name, and it is these two together that uniquely identify a remote client.
 
 ## Different types of authenticator
 
-There are three different authenticators built in to the core of TcMenu, each one provides the same core functionality, that is to store and verify the pin for submenus, and also to check if a connection from a given client UUID and name should be established. They all {{< refdocs title="implement the AuthenticationManager interface" src="/tcmenu/html/class_authentication_manager.html" >}}. You can browse the class hierarchy using the link.
+There are three different authenticators built in to the core of TcMenu, each one provides the same core functionality, that is to store and verify the pin for submenus, and also to check if a connection from a given client UUID and name should be established. They all [implement the AuthenticationManager interface](${refdocs("/tcmenu/html/class_authentication_manager.html")}). You can browse the class hierarchy using the link.
 
 ### No Authentication 
 
@@ -48,11 +48,11 @@ Stores the pin and a pre-defined array of remote connection details in FLASH. As
 
 From version 2.2 onwards authentication can be added to you project by the designer UI. To change the authenticator used by your project, open the code generator and choose the "Change Auth" button highlighted in the image below.
 
-{{< figure src="/products/arduino-libraries/images/apps/tcmenu/codegen-rom-auth-selection.jpg" alt="code generator authenticator area" title="Code generator - authenticator and eeprom settings" >}}
+<figure><img src="/products/arduino-libraries/images/apps/tcmenu/codegen-rom-auth-selection.jpg" alt="code generator authenticator area" /><figcaption>Code generator - authenticator and eeprom settings</figcaption></figure>
 
 Once selected the following dialog will be presented:
 
-{{< figure src="/products/arduino-libraries/images/apps/tcmenu/codegen-choose-authenticator.jpg" alt="Authentication selection dialog" title="Authentication selection dialog" >}}
+<figure><img src="/products/arduino-libraries/images/apps/tcmenu/codegen-choose-authenticator.jpg" alt="Authentication selection dialog" /><figcaption>Authentication selection dialog</figcaption></figure>
 
 You can choose between the authentication options as listed out in the above section.
 
@@ -99,4 +99,4 @@ Lastly, as we've manually created the item, we need to ensure that the authentic
 
     menuMgr.setAuthenticator(&authManager);
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

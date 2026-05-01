@@ -19,18 +19,18 @@ In this guide we show how to use the Adafruit_GFX library to renderer menu items
 
 The Adafruit_GFX library supports a lot of different displays, with very different capabilities. Some are monochrome with an in-memory buffer; whereas others are high resolution colour displays that are not buffered in memory. In order to make our renderer as generic as possible it supports both of these capabilities through configuration. It's worth reading this guide fully so that you understand how we manage the various capabilities.
 
-Before proceeding, you'll need to make sure you've installed both the Adafruit_GFX core library and the library that is compatible with your display. Also, I'd recommend taking a read through the [Adafruit_GFX library documentation](https://learn.adafruit.com/adafruit-gfx-graphics-library/overview) if you're not familiar with the library already. We'll also assume you've got a menu structure already prepared in the [menu designer UI]({{< relref "tcmenu-overview-quick-start.md">}}).  
+Before proceeding, you'll need to make sure you've installed both the Adafruit_GFX core library and the library that is compatible with your display. Also, I'd recommend taking a read through the [Adafruit_GFX library documentation](https://learn.adafruit.com/adafruit-gfx-graphics-library/overview) if you're not familiar with the library already. We'll also assume you've got a menu structure already prepared in the [menu designer UI](${relRef("tcmenu-overview-quick-start.md")}).  
 
 Related documentation:
  
-* [Core menu rendering class guide]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md">}})
-* [How to take over the display]({{< relref "renderer-take-over-display.md">}})
+* [Core menu rendering class guide](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")})
+* [How to take over the display](${relRef("renderer-take-over-display.md")})
 
 ## Configuring the rendering for your display
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can change the display renderer by clicking on the image to the left of the renderer.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-graphics-renderer-option.jpg" alt="Adafruit_GFX rendering option" title="Image showing Adafruit_GFX renderer choice">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-graphics-renderer-option.jpg" alt="Adafruit_GFX rendering option" /><figcaption>Image showing Adafruit_GFX renderer choice</figcaption></figure>
 
 There are two possibilities for Adafruit_GFX based displays, the first and easiest is the "quick start" option, it supports a few common displays (ST7735, ST7789, ILI9341 and Nokia 5110), it creates all the variables and initialises the display for you. We'll refer to this option as quick start.
 
@@ -40,7 +40,7 @@ If you need full control over the display variable, and all the configuration op
 
 If you choose quick start, then the code generator will create the variable, and initialise the display on your behalf. It is obviously far less configurable than manual option, but easier for a few select display. It looks like there are more options than for the manual case, but that is because we will create everything on your behalf.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-graphics-quick-properties.png" alt="Property Choices for quick start renderer" title="Image showing properties for Adafruit_GFX quick start" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-graphics-quick-properties.png" alt="Property Choices for quick start renderer" /><figcaption>Image showing properties for Adafruit_GFX quick start</figcaption></figure>
 
 ### Variable Name
 
@@ -87,7 +87,7 @@ How many times the menu structure should be scanned for changes and redrawn if n
 
 When you choose the manual configuration option, you need to create the display variable in your sketch, and make sure it is fully initialised before calling `setupMenu` in your sketch.  
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-graphics-creator-properties.png" alt="Property Choices for manual config renderer" title="Image showing property choices for Adafruit_GFX manual configuration" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/adafruit-graphics-creator-properties.png" alt="Property Choices for manual config renderer" /><figcaption>Image showing property choices for Adafruit_GFX manual configuration</figcaption></figure>
 
 ### Display variable property
 
@@ -145,4 +145,4 @@ Next, for 2-bit per pixel drawing, there `drawCookieCutBitmap2bpp` that does exa
 
 We have many examples that use Adafruit displays packaged in the examples folder within tcMenu. We test TFTs on a very wide range of boards.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

@@ -15,7 +15,7 @@ toc_needed = true
 
 You can combine many menu structures from different devices into a single menu, this works by each remote menu being represented by a `MenuInMenu` object being associated with a `RemoteConnection` and a `MenuManagerServer`. It maps the remote menu into an unused ID range on the local device and even handles dialog commands. Available from version 2.3 of tcMenu Designer and API.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Menu In Menu range and submenu mapping
 
@@ -23,7 +23,7 @@ Each menu in menu definition that we create results in a remote connection to an
 
 In the diagram below we have three MenuInMenus, `Device 1` maps all remote item ID by adding 100000 to them and the items appear in the "Device 1 SubMenu" locally. `Device 2` maps all remote item ID by adding 200000 to them and the items appear in the "Device 2 SubMenu" locally, and likewise `Device 3` maps all remote item ID by adding 300000 into the "Device 3 SubMenu" locally. 
 
-{{< figure src="/products/arduino-libraries/images/apps/embed-control/menuInMenuExplainer.jpg" alt="Explaination of menu in menu operation showing ID range and submenu mapping" title="Menu In Menu operation showing ID and submenu mapping" >}}
+<figure><img src="/products/arduino-libraries/images/apps/embed-control/menuInMenuExplainer.jpg" alt="Explaination of menu in menu operation showing ID range and submenu mapping" /><figcaption>Menu In Menu operation showing ID and submenu mapping</figcaption></figure>
 
 In addition to the range of IDs we also provide the dialog manager that will be used to forward any dialogs from the remote, the submenu in the local tree where this menu should be replicated, and also the replication mode, there are tree possible modes:
 
@@ -33,7 +33,7 @@ In addition to the range of IDs we also provide the dialog manager that will be 
 
 ## Creating MenuInMenu connections
 
-If you've not already read it first read the [Embedded Java core documentation]({{< relref "menu-control-with-embedded-java" >}})
+If you've not already read it first read the [Embedded Java core documentation](${relRef("menu-control-with-embedded-java")})
 
 ## Notes about pairing
 
@@ -51,11 +51,11 @@ First ensure that you have the platform set to "RaspberryPI / Java". This is the
 
 From the "Code" menu select the "Menu In Menu" option, this will present the menu in menu editor shown below:
 
-{{< figure src="/products/arduino-libraries/images/apps/embed-control/menuInMenu-table.jpg" alt="Menu In Menu selection window" title="Menu In Menu selection window" >}}
+<figure><img src="/products/arduino-libraries/images/apps/embed-control/menuInMenu-table.jpg" alt="Menu In Menu selection window" /><figcaption>Menu In Menu selection window</figcaption></figure>
 
 In the above window the table shows the list of currently set up `MenuInMenu` items for this project. Here you can "Add", "Edit" and "Remove" items. When you add or edit an item the following dialog appears:
 
-{{< figure src="/products/arduino-libraries/images/apps/embed-control/menuInMenu-itemEditor.jpg" alt="Menu In Menu item editor window" title="Menu In Menu item editor" >}}
+<figure><img src="/products/arduino-libraries/images/apps/embed-control/menuInMenu-itemEditor.jpg" alt="Menu In Menu item editor window" /><figcaption>Menu In Menu item editor</figcaption></figure>
 
 In the above dialog the fields are as follows:
 

@@ -28,4 +28,4 @@ a shift register or i2c IO device.
 
 [Source for the example is included in the examples section of the library](https://github.com/TcMenu/IoAbstraction/blob/main/examples/timedBlink/timedBlink.ino),
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

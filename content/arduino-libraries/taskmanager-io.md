@@ -4,17 +4,10 @@ description: ""
 date: "2020-08-10"
 author:  "system"
 showChildren: false
-type: "category"
+type: "menu_list"
 githublink: "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs: "/taskmanagerio/html/index.html"
 banner: "/products/arduino-libraries/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
-menu:
-    main:
-        name: 'TaskManagerIO library'
-        identifier: 'taskmanager-io'
-        weight: 3
-aliases:
-   - "/products/arduino-libraries/io-abstraction/task-manager-scheduling-guide/"
 ---
 
 # TaskManagerIO - Summary
@@ -29,11 +22,10 @@ This library contains the original scheduling support class TaskManager that was
 
 Task manager can schedule tasks to be done either now, or at some point in the future. Available in all versions of task manager. 
  
- * [Task Manager scheduling guide]({{< relref "task-manager-scheduling-guide.md" >}})
- * [Tutorial - programming an Arduino using tasks]({{< relref "programming-arduino-using-tasks-tutorial.md" >}})
- * [Timed blink example (packaged with IoAbstraction)]({{< relref "timedBlink-example-ioAbstraction-library.md">}})
- * {{< library-overview >}}
- * {{< refdocs title="Read the reference documentation" src="/taskmanagerio/html/index.html" >}}
+ * [Task Manager scheduling guide](${relRef("task-manager-scheduling-guide.md")})
+ * [Tutorial - programming an Arduino using tasks](${relRef("programming-arduino-using-tasks-tutorial.md")})
+ * [Timed blink example (packaged with IoAbstraction)](${relRef("timedBlink-example-ioAbstraction-library.md")})
+ * [Read the reference documentation](${refdocs("/taskmanagerio/html/index.html")})
  * [Go to the code repo on github](https://github.com/TcMenu/TaskManagerIO)
 
  
@@ -41,20 +33,20 @@ Task manager can schedule tasks to be done either now, or at some point in the f
  
 Task Manager can add an interrupt on your behalf that is marshalled into a task execution. Available in all versions of task manager.
 
-* [Add a marshalled interrupt to task manager]({{< relref "marshalling-interrupts-using-taskmanager.md">}}) 
+* [Add a marshalled interrupt to task manager](${relRef("marshalling-interrupts-using-taskmanager.md")}) 
  
  
 ## Polling, Interrupt based and multi-threaded events
 
 TaskManagerIO has a complete eventing framework built into it, on top of this many types of event based programs can be built.
 
-* [Using polled events with TaskManager]({{< relref "using-polled-events-taskmanager.md">}})
-* [Using interrupt event with TaskManager]({{< relref "using-interrupt-threaded-events-taskmanager.md">}})
-* [Using spin-lock with TaskManager]({{< relref "task-manager-spin-lock-guide.md">}})
+* [Using polled events with TaskManager](${relRef("using-polled-events-taskmanager.md")})
+* [Using interrupt event with TaskManager](${relRef("using-interrupt-threaded-events-taskmanager.md")})
+* [Using spin-lock with TaskManager](${relRef("task-manager-spin-lock-guide.md")})
 
 ## Power management
  
- * [Low power task manager example - SAMD]({{< relref "task-manager-low-power-samd-example.md" >}})
+ * [Low power task manager example - SAMD](${relRef("task-manager-low-power-samd-example.md")})
  
 ## Adding tasks from other threads
 

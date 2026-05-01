@@ -18,7 +18,7 @@ From tcMenu 2.1 onwards the designer download also has a CLI available. This CLI
 
 The below guide is broken down into the workflows that are supported, we'd recommend that the first time around you add the TcMenuDesigner app directory to set your path, so you can access the tcmenu command, and add the JSON schema that's in the directory to VS-code at the same time as it makes EMF file editing easier.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Initial setup and overview
 
@@ -145,4 +145,4 @@ Each item will appear within the `items` block, and is structured as follows:
 
 The above example shows a subMenu item, that has a parent of ROOT (root always has an id of 0). It's best to add new items using the `create-item` command, as it will put them in the right place and expose all the fields you need. Likewise, to delete items it's best to use the `delete-item` command.
 
-There is a template create item request for each item type, along with a discussion of the fields in the [menu item types documentation]({{< relref "menu-item-types.md" >}}). Just scroll to the bottom of that document, and a page for each type is linked.
+There is a template create item request for each item type, along with a discussion of the fields in the [menu item types documentation](${relRef("menu-item-types.md")}). Just scroll to the bottom of that document, and a page for each type is linked.

@@ -26,15 +26,15 @@ Lists are highly memory efficient, there's one MenuItem that handles every row, 
 
 * `ListRuntimeMenuItem` is defined in RuntimeMenuItem.h
 * Enum returned by `getMenuType()` is MENUTYPE_RUNTIME_LIST
-* [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="Runtime List menu item documentation" src="/tcmenu/html/class_list_runtime_menu_item.html" >}}
+* [This item is based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [Runtime List menu item documentation](${refdocs("/tcmenu/html/class_list_runtime_menu_item.html")})
 
 ## Adding a list item from the designer
 
 To add a list item in the designer select add item and then choose "List". The properties area will switch to look similar to below:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-list.png" title="List Item Editor UI" alt="image showing the list editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-list.png" alt="image showing the list editor" /><figcaption>List Item Editor UI</figcaption></figure>
 
 When you choose list, you can choose from the three types discussed above:
 
@@ -46,7 +46,7 @@ Callbacks in the INFO block, and from designer work exactly as any other item, w
 
 ## Creating a list menu item from the CLI
 
-To create a list menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create a list menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type list --name ListName [--localonly --readonly --hide]
 
@@ -87,7 +87,7 @@ As discussed earlier, we use one list item for everything. We discuss these meth
 
 Now let us look at this in terms of how lists show up on the renderer. Below, we see an image showing an example of how lists render onto displays. Remember from above that there is only one list item, when we call one of the above three methods the list prepares itself to act as it should for that item. Notice that there is a number in brackets next to each list item, this is the row number sent to the name and value callbacks.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/runtime-menuitem-rendering.png" title="Left, list in parent menu. Right, list drawn similar to submenu" alt="List item presentation on most renderers" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/runtime-menuitem-rendering.png" alt="List item presentation on most renderers" /><figcaption>Left, list in parent menu. Right, list drawn similar to submenu</figcaption></figure>
 
 Now we will take a look at how to send a list via the API conceptually.
 
@@ -137,7 +137,7 @@ The character array will be available in your sketch, you can repopulate the lis
 
 ## Implementing the list rendering callback
 
-Before reading this please ensure you've read [items based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}}), it provides the  core knowledge needed to understand the following code.
+Before reading this please ensure you've read [items based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")}), it provides the  core knowledge needed to understand the following code.
 
 It is up to you to implement the render function, it will default to present the row number for each row when designer generated the rendering code. To choose this option simply choose the custom list option and set the number of initial rows. 
 

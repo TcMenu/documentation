@@ -1,17 +1,15 @@
 +++
 title = "Task Manager Low Power example for SAMD boards"
 description = ""
-tags = [ "arduino", "digital-io", "library", "power-management" ]
+tags = "arduino, digital-io, library, power-management"
 type = "blog"
 date = "2019-09-25"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/tcMenu/low-power-arduino-battery-9v.jpg"
 titleimg = "/images/electronics/arduino/tcMenu/low-power-arduino-battery-9v.jpg"
 weight = 2
-aliases = ["/products/arduino-libraries/io-abstraction/task-manager-low-power-samd-example/"]
 +++
 
 There are often cases when you'll need to run a micro controller from a battery power source. Unlike when running from mains power, every milli-amp matters. In these cases IoAbstraction's task manager is able to integrate easily with most low power libraries.
@@ -101,4 +99,4 @@ The output of the above sketch is that the built in LED will flash on and off ev
 
 You could essentially alter the loop above to go into an ultra low power state under some circumstances. You could essentially stop calling into task manager altogether for some time. There are many combinations that would reduce power even further.
 
-[Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
+[Go back to the TaskManagerIO page](${relRef("taskmanager-io.md")})

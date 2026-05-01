@@ -1,17 +1,16 @@
 +++
 title = "Working with Menu Item types in tcMenu"
 description = ""
-tags = [ "arduino", "display-driver", "embedded-menu", "library" ]
+tags = "arduino, display-driver, embedded-menu, library"
 type = "blog"
 date = "2018-03-31"
 author =  "dave"
 menu = "tc-menu"
-banner = "/products/arduino-libraries/images/electronics/arduino/tcMenu/title-types.png"
+banner = "/images/electronics/arduino/tcMenu/title-types.png"
 githublink = "https://github.com/TcMenu/tcMenu"
 referenceDocs = "/tcmenu/html/index.html"
 weight = 4
 toc_needed = true
-aliases = [ "/products/arduino-libraries/tc-menu/tcmenu-menu-item-types-tutorial", "/products/arduino-libraries/tc-menu/manually-creating-menu-with-tcmenu" ]
 +++
 
 Many embedded applications need to present status and allow users to manage settings. TcMenu provides first class support for both presenting status and managing configuration/settings using menu items. It is possible to use with and without a local user interface. All menu item types can be accessed remotely, and we have a remote API, UI solutions, and connectors to commercial IoT endpoints for that.  
@@ -39,7 +38,7 @@ Each item has a type that defines what kind of data it can hold, for example an 
 * Fully qualified variable name (recommended): menuSettingsBrightness
 * Unqualified variable name: menuBrightness 
 
-This guide is designed to be read in conjunction with the {{< refdocs title="tcMenu reference documentation" src="/tcmenu/html/_menu_items_8h.html" >}}.
+This guide is designed to be read in conjunction with the [tcMenu reference documentation](${refdocs("/tcmenu/html/_menu_items_8h.html")}).
 
 ## Properties shared by all MenuItems
 
@@ -55,7 +54,7 @@ TcMenu can handle many menu item data types with each one extending MenuItem, so
 
 On the designer you edit these parameters by selecting the menu item from the tree, the properties area will show something similar to below:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-corefields.png" title="Core fields in the property editor" alt="screenshot of core properties for menu item" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-corefields.png" alt="screenshot of core properties for menu item" /><figcaption>Core fields in the property editor</figcaption></figure>
 
 ### Callback function for changes
 
@@ -71,7 +70,7 @@ This is a simple example showing how we would control a PWM channel based on the
 
 For advanced users you can click the "edit" button shown to the right of the callback, where you can select from one of the options in the callback type combo:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/callback-function-dialog.png" alt="Advanced editing of the callback function parameter"  title="Advanced callback parameter editor" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/callback-function-dialog.png" alt="Advanced editing of the callback function parameter" /><figcaption>Advanced callback parameter editor</figcaption></figure>
 
 * No callback defined - you don't want any callback for this item
 * Function callback with implementation - you want a regular function callback, and you want designer to create the method in the INO file.
@@ -132,20 +131,20 @@ Menu items that are local only will never be sent to any remote, default is fals
 
 Core menu item types that others extend from
 
-* [Detailed description of MenuInfo based menu items]({{< relref "based-on-infoblock.md" >}})
-* [Detailed description of RuntimeMenuItem based menu items]({{< relref "based-on-runtimemenuitem.md" >}})
+* [Detailed description of MenuInfo based menu items](${relRef("based-on-infoblock.md")})
+* [Detailed description of RuntimeMenuItem based menu items](${relRef("based-on-runtimemenuitem.md")})
 
 Menu item types that you can generate
 
-* [Working with numeric values - AnalogMenuItems]({{< relref "analog-menu-item.md" >}})
-* [Working with very large numbers - EditableLargeNumberMenuItem]({{< relref "largenum-menu-item.md" >}})
-* [Working with floating point values - FloatMenuItems]({{< relref "float-menu-item.md" >}})
-* [Working with fixed choices - EnumMenuItems]({{< relref "enum-menu-item.md" >}})
-* [Working with scroll choice items - ScrollChoiceMenuItem]({{< relref "scrollchoice-menu-item.md" >}})
-* [Working with boolean values - BooleanMenuItems]({{< relref "boolean-menu-item.md" >}})
-* [Working with sub menus - SubMenuItems]({{< relref "sub-menu-item.md" >}})
-* [Working with lists of data - RuntimeListMenuItem]({{< relref "list-menu-item.md" >}})
-* [Working with text, date, time and IP address items - EditableMultiPartMenuItem]({{< relref "editabletext-menu-item.md" >}})
-* [Working with RGB color choices - Rgb32MenuItem]({{< relref "rgb32-menu-item.md" >}})
+* [Working with numeric values - AnalogMenuItems](${relRef("analog-menu-item.md")})
+* [Working with very large numbers - EditableLargeNumberMenuItem](${relRef("largenum-menu-item.md")})
+* [Working with floating point values - FloatMenuItems](${relRef("float-menu-item.md")})
+* [Working with fixed choices - EnumMenuItems](${relRef("enum-menu-item.md")})
+* [Working with scroll choice items - ScrollChoiceMenuItem](${relRef("scrollchoice-menu-item.md")})
+* [Working with boolean values - BooleanMenuItems](${relRef("boolean-menu-item.md")})
+* [Working with sub menus - SubMenuItems](${relRef("sub-menu-item.md")})
+* [Working with lists of data - RuntimeListMenuItem](${relRef("list-menu-item.md")})
+* [Working with text, date, time and IP address items - EditableMultiPartMenuItem](${relRef("editabletext-menu-item.md")})
+* [Working with RGB color choices - Rgb32MenuItem](${relRef("rgb32-menu-item.md")})
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

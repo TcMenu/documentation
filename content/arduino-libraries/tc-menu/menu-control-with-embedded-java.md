@@ -19,15 +19,15 @@ We will try and add Android support longer term but right now it is tested for J
 
 ## Overview of the embedded Java version
 
-The main components are shown in the diagram below. In the middle we see the `MenuManagerServer` that is the central point, it holds the menu tree, handles updates to the tree, notifies user and UI code when things change, and controls any remote communication. To listen to changes that take place within the manager, we register a `MenuManagerListener` that will receive any updates. For remote control, we register `RemoteServerManager` instances that can create and maintain connections. User interface components are covered in [OpenJFX rendering guide]({{< relref "tcmenu-openjfx-raspberrypi-plugin.md">}}).
+The main components are shown in the diagram below. In the middle we see the `MenuManagerServer` that is the central point, it holds the menu tree, handles updates to the tree, notifies user and UI code when things change, and controls any remote communication. To listen to changes that take place within the manager, we register a `MenuManagerListener` that will receive any updates. For remote control, we register `RemoteServerManager` instances that can create and maintain connections. User interface components are covered in [OpenJFX rendering guide](${relRef("tcmenu-openjfx-raspberrypi-plugin.md")}).
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/java-embedded-raspberrypi-high-level.jpg" alt="embedded java on raspberry pi component overview" title="Overview of Embedded Java Components" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/java-embedded-raspberrypi-high-level.jpg" alt="embedded java on raspberry pi component overview" /><figcaption>Overview of Embedded Java Components</figcaption></figure>
 
 An important thing to note here is that unlike with the C++ version, it is highly recommended that you use a "namespace" aka package name in lower case, usually using reverse domain name syntax. For example I may create a project that would start with something like "com.thecoderscorner.example". All the classes in this example would be created in `src/main/com/thecoderscorner/example`.
 
 ### Getting started
 
-To get started with a Java project either create a new project within TcMenu Designer `File -> New` and choose the `Java/Raspberry PI` option, note that you must provide a package name. Alternatively, from the command line in the directory where the project should be created - [see CLI documentation]({{< relref "tcmenu-cli-workflow.md" >}}):
+To get started with a Java project either create a new project within TcMenu Designer `File -> New` and choose the `Java/Raspberry PI` option, note that you must provide a package name. Alternatively, from the command line in the directory where the project should be created - [see CLI documentation](${relRef("tcmenu-cli-workflow.md")}):
 
     tcmenu create-project -p RASPBERRY_PIJ -n my.package.name ProjectNameNoSpaces
 

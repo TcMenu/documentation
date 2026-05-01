@@ -22,7 +22,7 @@ In the theme plugin properties you can often select the font to use. However, th
 * With themes, the designer will NOT overwrite any theme header file that has already been created in case you have manually modified it, **to make the changes you must delete the file yourself so that it is recreated.**
 
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/font-editor-snap.jpg" title="Font definition dialog" alt="Font dialog showing default selection" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/font-editor-snap.jpg" alt="Font dialog showing default selection" /><figcaption>Font definition dialog</figcaption></figure>
 
 We'll now discuss each option in turn, and what it means in terms of generated code.
 
@@ -70,7 +70,7 @@ To start the font creation utility, it is best to have a project open first, as 
 
 From the "Code" menu select "Font Creation Utility" and the following dialog will be shown:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generator-font-creator-utility.jpg" alt="Font creation dialog with highlighted points" title="Font Creation Dialog" >}} 
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generator-font-creator-utility.jpg" alt="Font creation dialog with highlighted points" /><figcaption>Font Creation Dialog</figcaption></figure> 
 
 We'll now go through the general way in which to work with fonts:
 
@@ -100,7 +100,7 @@ Adafruit fonts take very slightly less room for the basic latin case, but quickl
 * [TFT_eSPI documentation - font section](https://github.com/Bodmer/TFT_eSPI).
 * [Adafruit_GFX packaged fonts](https://github.com/adafruit/Adafruit-GFX-Library/tree/master/Fonts).
 * [u8g2 fonts page](https://github.com/olikraus/u8g2/wiki/fntlistall).
-* [TcUnicode font format documentation]({{< relref "tc-unicode-font-documentation.md" >}})
+* [TcUnicode font format documentation](${relRef("tc-unicode-font-documentation.md")})
 * [AdafruitGFX font format documentation](https://learn.adafruit.com/creating-custom-symbol-font-for-adafruit-gfx-library/understanding-the-font-specification)
 * [AdafruitGFX font format helpful guide](https://glenviewsoftware.com/projects/products/adafonteditor/adafruit-gfx-font-format/)
 
@@ -132,6 +132,6 @@ To draw with a TcUnicode font in your code, simply use the global `renderer` and
     // always do this last, it ensures the screen is updated
     drawable->endDraw();
 
-As I said above, this code works on every display we have plugins for. It has many other methods for dealing with common drawing operations. {{< refdocs title="Read the full documentation" src="/tcmenu/html/classtcgfx_1_1_device_drawable.html" >}}.
+As I said above, this code works on every display we have plugins for. It has many other methods for dealing with common drawing operations. [Read the full documentation](${refdocs("/tcmenu/html/classtcgfx_1_1_device_drawable.html")}).
 
 You'll also see examples of using `DeviceDrawable` within many packaged examples. 

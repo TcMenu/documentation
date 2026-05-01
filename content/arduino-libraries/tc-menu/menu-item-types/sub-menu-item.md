@@ -18,14 +18,14 @@ Items of type submenu can hold another list of menu items; which are presented a
 
 * Type: `SubMenuItem` and `BackMenuItem` in RuntimeMenuItem.h, default callback type `backSubItemRenderFn`
 * Enum returned by `getMenuType()` is MENUTYPE_SUB_VALUE
-* [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
+* [This item is based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
 
 ## Creating a sub menu in the designer
 
 From the add item dialog choose SubMenu item, once created a new entry will be present in the tree. SubMenus are created under the nearest submenu, be that ROOT, or another submenu. In the designer, the BackMenu is not shown but is created automatically during code generation. Be aware that by default menu structures should not exceed 4 levels deep (including Root). See increasing menu depth further down.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-submenu.png" title="SubMenu editor in the UI" alt="View of sub menu editor in the UI">}} 
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-submenu.png" alt="View of sub menu editor in the UI" /><figcaption>SubMenu editor in the UI</figcaption></figure> 
 
 ## Accessing SubMenuItem from code
 
@@ -35,7 +35,7 @@ You can get the first child of this submenu as follows, remember from the all me
 
 ## Creating a submenu item from the CLI
 
-Submenu items are slightly different to other items in the EMF file. They must appear BEFORE the first reference to them. To create a submenu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+Submenu items are slightly different to other items in the EMF file. They must appear BEFORE the first reference to them. To create a submenu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type submenu --name SubmenuName [--localonly --readonly --hide]
 

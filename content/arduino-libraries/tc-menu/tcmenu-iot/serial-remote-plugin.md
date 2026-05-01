@@ -25,7 +25,7 @@ If you would like to use bluetooth instead, then you'll need to have an extra Se
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, to the right of the current remote type will be a button named "Change". Click this button and choose:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/serial-remote-choice-generator.png" title="Serial remote choice in designer UI" alt="Serial remote choice in designer UI" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/serial-remote-choice-generator.png" alt="Serial remote choice in designer UI" /><figcaption>Serial remote choice in designer UI</figcaption></figure>
 
 ### SERIAL_PORT parameter
 
@@ -35,4 +35,4 @@ The only parameter for serial is the name of the port to be used, if you are usi
 
 You must call begin on your serial port setting the desired speed before the `setupMenu` call. There are no other requirements of this plugin.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

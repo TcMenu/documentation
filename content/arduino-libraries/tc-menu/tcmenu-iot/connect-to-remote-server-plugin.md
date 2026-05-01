@@ -16,7 +16,7 @@ toc_needed = true
 
 In this guide we show how to setup and use the remote server communication plugin for tcMenu. This plugin allows you to reverse the normal connection direction, and have the API side be a server accepting connections from devices. You simply configure the address and port that the connector should connect with, and ensure there is an API listening at the other side.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Direction of connection
 
@@ -30,7 +30,7 @@ For this plugin the direction of connection is reversed, and you similarly need 
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, to the right of the current remote type will be a button named "Change". Click this button and choose:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/client-remote-choice-generator.png" title="Serial remote choice in designer UI" alt="Serial remote choice in designer UI" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/client-remote-choice-generator.png" alt="Serial remote choice in designer UI" /><figcaption>Serial remote choice in designer UI</figcaption></figure>
 
 ### Parameters
 
@@ -51,4 +51,4 @@ Presently, only the Java API supports this mode. Within the Java API the followi
 
     com.thecoderscorner.menu.examples.client.ClientThatAcceptsForRemoteExample
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

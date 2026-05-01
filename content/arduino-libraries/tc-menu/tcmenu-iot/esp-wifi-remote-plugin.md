@@ -25,7 +25,7 @@ For a general overview on remotely controlling and monitoring see [controlling e
 
 First, ensure that you've chosen the right "Embedded Platform" type which should be either `ESP32` or `ESP8266` to match your board, then ensure your menu structure is saved and lastly choose Code -> Generate Code from the menu. Once the code generation dialog appears, to the right of the current remote type will be a button named "Change". Click this button choose the appropriate ESP plugin for your board. For example:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/esp8266-remote-choice-generator.png" title="Serial remote choice in designer UI" alt="Serial remote choice in designer UI" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/esp8266-remote-choice-generator.png" alt="Serial remote choice in designer UI" /><figcaption>Serial remote choice in designer UI</figcaption></figure>
 
 ### Number of connections
 
@@ -50,4 +50,4 @@ The absolute minimum that you'll need to do to start the WiFi is call the follow
 
 Take a look at the example esp8266WifiOled packaged with tcMenu, which works for both ESP32 and ESP8266.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

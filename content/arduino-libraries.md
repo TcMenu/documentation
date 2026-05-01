@@ -4,21 +4,24 @@ description: "Arduino and mbed Libraries"
 date: "2015-05-04"
 author: "system"
 showChildren: true
-type: "category"
+type: "blog"
 toc_needed: true
-
 ---
 
-## TcMenu organisation documentation for our libraries 
+
+
+## Libraries Maintained actively by us
+
+Our team actively maintains these libraries. Use these Arduino and PicoSDK libraries safely in the knowledge that there is both community and commercial support. 
 
 There are several core libraries that we keep in lock step in terms of compatibility and board support. These libraries are:
 
-* [TaskManagerIO]({{< relref "taskmanager-io.md">}}) provides core event and task scheduling services to Arduino sketches.
-* [IoAbstraction]({{< relref "io-abstraction.md">}}) provides user input, EEPROM and IO helper classes.
-* [tcMenu]({{< relref "tc-menu.md">}}) a fully fledged embedded menu framework with a designer UI and IoT capabilities
-* [tcUnicodeHelper]({{< relref "tc-unicode-helper.md">}}) UTF-8 unicode support for Adafruit_GFX, tcMenu, U8G2, LTDC, and TFT_eSPI.
-* [SimpleCollections]({{< relref "simple-collections.md">}}) a simple binary searchable list and a thread/interrupt safe circular buffer that work on a very wide range of boards.
-* [LiquidCrystalIO]({{< relref "liquidcrystal-io.md">}}) a task manager friendly fork of the Arduino LCD library that works over many IO devices.
+* [TaskManagerIO](${relRef("taskmanager-io.md")}) provides core event and task scheduling services to Arduino sketches.
+* [IoAbstraction](${relRef("io-abstraction.md")}) provides user input, EEPROM and IO helper classes.
+* [tcMenu](${relRef("tc-menu.md")}) a fully fledged embedded menu framework with a designer UI and IoT capabilities
+* [tcUnicodeHelper](${relRef("tc-unicode-helper.md")}) UTF-8 unicode support for Adafruit_GFX, tcMenu, U8G2, LTDC, and TFT_eSPI.
+* [SimpleCollections](${relRef("simple-collections.md")}) a simple binary searchable list and a thread/interrupt safe circular buffer that work on a very wide range of boards.
+* [LiquidCrystalIO](${relRef("liquidcrystal-io.md")}) a task manager friendly fork of the Arduino LCD library that works over many IO devices.
 
 The above libraries support a wide range of hardware, including nearly every official Arduino board, most ESP boards, along with many mbed version 5 and 6 boards with or without an RTOS. We test with everything from Uno to ESP32 and large STM32F4 boards.
 
@@ -116,6 +119,7 @@ Menu item and iteration settings:
 * `NAME_SIZE_T` sets the size of the char field for name items, defaults to 20 chars.
 * `UNIT_SIZE_T` sets the size of the char field for analog item units, defaults to 5 chars.
 * `TCMENU_NO_DEFAULT_ENCODER` do not allocate a default encoder when there is no other encoder.
+* `BUILDER_ALLOCATER_SIZE` used by the builder to deterime the block size for info blocks. Defaults to 10 that allows up to 80 items.
 
 Remote connectivity settings:
 

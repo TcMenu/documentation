@@ -14,12 +14,12 @@ toc_needed = true
 
 Items that extend from runtime menu item use a callback at runtime that can be used to get more or less every property, but will use the INFO block if it is available (not null). That being the case, they _don't need_ but _can use_ an info block (that is defined ahead of time) ahead of time. However, in general use they work almost identically to regular menu items in nearly every way. In addition, they are still quite memory efficient.
 
-* [See the main menu types page]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="See the reference documentation showing the full hierarchy" src="/tcmenu/html/class_menu_item.html" >}} 
+* [See the main menu types page](${relRef("menu-item-types.md")})
+* [See the reference documentation showing the full hierarchy](${refdocs("/tcmenu/html/class_menu_item.html")}) 
 
 Runtime menu items main difference is that a "render callback" function can be used to get the static values such as EEPROM address, name and even it's current value. If you stick to creating items using the designer UI, you do not need to understand this fully. For all cases apart from list and custom scroll choice items you probably wouldn't even see the callback. Normally, in most cases, you'd still use an INFO block with runtime items, as they are just easier to create that way. 
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/runtime-menuitem-desc.png" title="Runtime menu item association with callback" alt="Runtime menu item callback view" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/runtime-menuitem-desc.png" alt="Runtime menu item callback view" /><figcaption>Runtime menu item association with callback</figcaption></figure>
 
 It's important to understand that the render callbacks follow a kind of chain of command pattern, generally you provide a callback function that is capable of handling the things you want to override, and then delegates everything else to the parent. For most cases, you don't write a callback yourself, instead you'd normally use the INFO block method to create one, however if you really wanted to avoid an info block, you could use the following which fully implements a render function with name, EEPROM and invoke method:
 
@@ -112,7 +112,7 @@ For these types, row 0 is indicating that we are before the editing has started,
 
 Text menu items and a few other multi edit controls support overriding the renderFN to create a custom control. For example, you can filter text input or create a completely custom implementation with this. There are several different cases covered in the examples. In the designer UI to create such menu item simply click "edit" next to the callback, and then select one of the "Runtime render FN" options from the callback type list, see the dialog below:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/callback-function-dialog.png" alt="Advanced editing of the callback function parameter"  title="Advanced callback parameter editor" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/callback-function-dialog.png" alt="Advanced editing of the callback function parameter" /><figcaption>Advanced callback parameter editor</figcaption></figure>
 
 Let's take a look at what gets generated for this:
 

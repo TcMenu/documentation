@@ -16,7 +16,7 @@ toc_needed = true
 
 TcMenu allows you to take over the display from the renderer very easily, and once you own the display, you will be called back at regular intervals by the rendering class. During the time that you've taken over the display or presented a dashboard, you're responsible for the user input and rendering. **Please note that you should never update the screen outside of these callbacks**, as doing so would interfere with TcMenu rendering.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Different methods for taking control of the display
 
@@ -77,7 +77,7 @@ The original purpose of the reset / inactivity support was for complex menus, wh
 
 ## 2. Object oriented approach to display management
 
-If we extend the class `CustomDrawing` and provide that instance to the renderer, then we can both handle taking over the display and reset events at the same time. {{< refdocs title="See custom drawing class in reference docs" src="/tcmenu/html/class_custom_drawing.html" >}}. Here we present a simple way to extend it.
+If we extend the class `CustomDrawing` and provide that instance to the renderer, then we can both handle taking over the display and reset events at the same time. [See custom drawing class in reference docs](${refdocs("/tcmenu/html/class_custom_drawing.html")}). Here we present a simple way to extend it.
 
     class MyCustomDrawing : public CustomDrawing {
     public:
@@ -125,11 +125,11 @@ Then to take over the display, use the no parameter version of the method:
 
 Below is an example dashboard from the `esp32Simhub` example, it is from a racing simulator and contains a few different menu items presented in the dashboard, and also some custom items as well. We'll go through each below.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/themes/tft-dashboard-example.jpg" title="Dashboard example on ILI9431" alt="An example dashboard rendered onto a TFT ILI9431 display" width="200px" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/themes/tft-dashboard-example.jpg" alt="An example dashboard rendered onto a TFT ILI9431 display" width="200px" /><figcaption>Dashboard example on ILI9431</figcaption></figure>
 
-If we look at the above image, we see that it has a very large `N` item on the left which is the value of the current gear menu item, this is using a very large font that can easily be generated using [tcMenu Designers font generator]({{< relref "using-custom-fonts-in-menu.md">}}). To the right we have some more menu items with static text next to them, and at the top, we custom draw the LED matrix. The full example is packaged with [tcMenu library in the examples/esp folder](https://github.com/TcMenu/tcMenuLib/blob/main/examples/esp/esp32SimHub/dashboardSetup.cpp).
+If we look at the above image, we see that it has a very large `N` item on the left which is the value of the current gear menu item, this is using a very large font that can easily be generated using [tcMenu Designers font generator](${relRef("using-custom-fonts-in-menu.md")}). To the right we have some more menu items with static text next to them, and at the top, we custom draw the LED matrix. The full example is packaged with [tcMenu library in the examples/esp folder](https://github.com/TcMenu/tcMenuLib/blob/main/examples/esp/esp32SimHub/dashboardSetup.cpp).
 
-You can also look at the {{< refdocs src="/tcmenu/html/_drawable_dashboard_8h.html" title="ref-docs for the details of each method and parameter option." >}}.
+You can also look at the [ref-docs for the details of each method and parameter option](${refdocs("/tcmenu/html/_drawable_dashboard_8h.html")}).
 
 To get started, we create a main `DrawableDashboard` object and as it is done only once at startup we normally use `new` to create it. For example:
 
@@ -217,6 +217,6 @@ Optionally, you can set a delegate if you want to draw extra things to the displ
 * Step 2 - now override the functions you need to handle, see the documentation for the class for the options.
 * Step 3 - add the delegate to the dash, `mainDashboard->setDelegate(&myDelegate);`
 
-In summary, when you implement this class, you are given the first chance to handle events either before or after the dashboard itself processes them, you can decide to take some action, or draw something else on the display. Methods containing `will` mean that you are ahead of the dashboard in processing something, methods containing `did` mean you are after it. Consult the {{< refdocs src="/tcmenu/html/class_drawable_dashboard_delegate.html" title="ref-docs for detailed descriptions" >}}.
+In summary, when you implement this class, you are given the first chance to handle events either before or after the dashboard itself processes them, you can decide to take some action, or draw something else on the display. Methods containing `will` mean that you are ahead of the dashboard in processing something, methods containing `did` mean you are after it. Consult the [ref-docs for detailed descriptions](${refdocs("/tcmenu/html/class_drawable_dashboard_delegate.html")})
 
 See [the example packaged with tcMenu library in the examples/esp folder](https://github.com/TcMenu/tcMenuLib/blob/main/examples/esp/esp32SimHub/dashboardSetup.cpp) that implements `DrawableDashboardDelegate`.

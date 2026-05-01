@@ -25,7 +25,7 @@ If you are connecting the device directly to your Arduino here's a [wiring guide
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, to the right of the current display type will be a button named "Change". Click this button and choose one of the following new drivers by clicking select on the right.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-renderer-option.jpg" alt="LiquidCrystalIO rendering options" title="Image showing LiquidCrystalIO renderer choices">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-renderer-option.jpg" alt="LiquidCrystalIO rendering options" /><figcaption>Image showing LiquidCrystalIO renderer choices</figcaption></figure>
 
 * The "display direct or other i2c" option is for the situation where you either have a non-standard i2c arrangement, or are using Arduino pins other than the DFRobot layout.
 * The "commonly available i2c option" is for standard I2C backpacks, that adhere to the regular layout.
@@ -35,23 +35,23 @@ Depending on which of the above options you picked, some additional properties m
 
 Additional sources of documentation specific to this version, don't forget that our fork is largely compatible with the original, so you can browse the many docs for that too:
 
-* [LiquidCrystalIO documentation page]({{< relref "liquidcrystal-io.md" >}})
+* [LiquidCrystalIO documentation page](${relRef("liquidcrystal-io.md")})
 * [LiquidCrystalIO on github](https://github.com/TcMenu/LiquidCrystalIO)
 
 ### For Display direct or non-standard I2C
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-creator-properties.png" alt="Property Choices for this renderer" title="Image showing property choices for Adafruit_GFX rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-creator-properties.png" alt="Property Choices for this renderer" /><figcaption>Image showing property choices for Adafruit_GFX rendering</figcaption></figure>
 
 * D4-D7, RS, RW and EN pins: These set the pins onto which you have connected the various display pins. Take note from your wiring of which pins you have used and configure them here. 
 * LCD_BACKLIGHT: Optionally allows the backlight pin to be set. If you don't have a backlight leave as -1. If you want to use a custom backlight (such as PWM or AW9523 LED control) leave as -1 here and set this up yourself after setupMenu() has finished.  
 * LCD_PWM_PIN: Allows for automatic use of PWM contrast, see the link to the wiring guide above (leave at -1 if not used).
-* LCD_IO_DEVICE: If you're using a non-standard I2C / SPI expander arrangement, you can set it up in your sketch as an IoAbstractionRef and refer to it here. See [configuring an IoAbstractionRef for that device]({{< relref "io-abstraction.md" >}}). This parameter can be left blank, but if it is set, you must create an IoAbstractionRef as a global variable in your code.
+* LCD_IO_DEVICE: If you're using a non-standard I2C / SPI expander arrangement, you can set it up in your sketch as an IoAbstractionRef and refer to it here. See [configuring an IoAbstractionRef for that device](${relRef("io-abstraction.md")}). This parameter can be left blank, but if it is set, you must create an IoAbstractionRef as a global variable in your code.
 
 See the takeOverDisplay example packaged with the menu library.   
 
 ### For Commonly available I2C (PCF8574 backpack)
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-i2cstd-creator-properties.png" alt="Property Choices for this renderer" title="Image showing property choices for Adafruit_GFX rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/liquidcrystalio-i2cstd-creator-properties.png" alt="Property Choices for this renderer" /><figcaption>Image showing property choices for Adafruit_GFX rendering</figcaption></figure>
 
 * LCD_WIDTH, LCD_HEIGHT: Set these to the width and height of your display. For example 16x2 or 20x4.
 * I2C_ADDRESS: Sets the I2C address that your display is on, often 0x20.
@@ -82,4 +82,4 @@ And in either case, you control the level as follows:
 
 The levels for the backlight are between 0..255 regardless of the analog range of the device.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

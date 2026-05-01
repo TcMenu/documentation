@@ -1,10 +1,9 @@
 +++
 title = "How to create a polled event with TaskManager"
 description = ""
-tags = [ "arduino", "library", "eventing" ]
+tags = "arduino, library, event-based"
 date = "2020-08-20"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
@@ -43,14 +42,14 @@ The other method you must implement is the method that will be called when the e
 
     virtual void exec() = 0;
 
-## Registering an event instance
+## Registering an event instance
 
     taskid_t TaskManager::registerEvent(BaseEvent *eventToAdd, bool deleteWhenDone = false)
- 
+
 Where:
 
 * eventToAdd is an instance of BaseEvent
 * deleteWhenDone defaults to false, when true, task manager will delete the memory when the event is marked as complete.
-* returns the ID of the task or TASKMGR_INVALIDID
+* returns the ID of the task or `TASKMGR_INVALIDID`
 
-[Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
+[Go back to the TaskManagerIO page](${relRef("taskmanager-io.md")})

@@ -16,11 +16,11 @@ aliases = ["/products/arduino-libraries/tc-menu/tcmenu-plugins/color-themes-for-
 
 ## Examples of this theme
 
-[Information about themes in general]({{< relref "rendering-with-themes-icons-grids.md" >}}).
+[Information about themes in general](${relRef("rendering-with-themes-icons-grids.md")}).
 
 Below we show an example of a color theme, the one shown is the cool-blue theme:
 
-{{< figure title="TFT screen using modern cool blue" alt="menu library on TFT with blue theme" src="/products/arduino-libraries/images/electronics/arduino/themes/color-blue-example.jpg">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/themes/color-blue-example.jpg" alt="menu library on TFT with blue theme" /><figcaption>TFT screen using modern cool blue</figcaption></figure>
 
 TcMenu ships with the cool-blue color theme presently that is only compatible with color displays. Each color scheme has a traditional mode aimed at smaller resolutions, and a modern theme designed for larger fonts, with more spacing between elements; which is ideal for touch screens.
 
@@ -32,15 +32,15 @@ Themes add a theme header file to your sketch, _which once generated will not be
 
 You can now choose between native fonts supported by the library, or using our tcUnicode support.
 
-With 3.0 of TcMenu onwards, we include support for [drawing UTF-8 Unicode fonts with TcUnicode]({{< relref "tc-unicode-helper.md" >}}). TcUnicode supports both its own Unicode fonts that can support all unicode ranges, and is also backward compatible with Adafruit fonts too. The designer is also equiped with a new font creation UI as of 3.0 which can convert desktop fonts to embedded format.  
+With 3.0 of TcMenu onwards, we include support for [drawing UTF-8 Unicode fonts with TcUnicode](${relRef("tc-unicode-helper.md")}). TcUnicode supports both its own Unicode fonts that can support all unicode ranges, and is also backward compatible with Adafruit fonts too. The designer is also equiped with a new font creation UI as of 3.0 which can convert desktop fonts to embedded format.  
 
 ### Font for items
 
-This is the default font that menu items will draw using. See [Fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}})
+This is the default font that menu items will draw using. See [Fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")})
 
 ### Font for title
 
-This is the title font that will be used for header text. See [Fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}})
+This is the title font that will be used for header text. See [Fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")})
 
 ### Border width for action items
 
@@ -60,6 +60,6 @@ Determines if an active / edit item indicator should be shown on the left.  This
 
 ## Additional documentation
 
-* [Information about themes in general]({{< relref "rendering-with-themes-icons-grids.md" >}}).
-* [Full documentation of tcMenu rendering]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md" >}}).
+* [Information about themes in general](${relRef("rendering-with-themes-icons-grids.md")}).
+* [Full documentation of tcMenu rendering](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")}).
 

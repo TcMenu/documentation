@@ -14,9 +14,9 @@ weight = 2
 toc_needed = true
 +++
 
-Using a matrix keyboard with TcMenu is straightforward, we use the [IoAbstraction Keyboard Manager component]({{< relref "matrix-keyboard-keypad-manager.md" >}}) to handle the keyboard, along with a custom listener for tcMenu that feeds the menu manager with appropriate events upon key presses. This library allows you to connect your keyboard either using Arduino pins, or any supported IoAbstraction such as the I2C PCF8574 or MCP23017.
+Using a matrix keyboard with TcMenu is straightforward, we use the [IoAbstraction Keyboard Manager component](${relRef("matrix-keyboard-keypad-manager.md")}) to handle the keyboard, along with a custom listener for tcMenu that feeds the menu manager with appropriate events upon key presses. This library allows you to connect your keyboard either using Arduino pins, or any supported IoAbstraction such as the I2C PCF8574 or MCP23017.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Setting up the menu sketch for a Matrix Keyboard
 
@@ -28,7 +28,7 @@ Once tested you can either set up the matrix keyboard automatically using tcMenu
 
 From code generator window click on the input plugin and select the following:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-matrix-keyboard-option.jpg" alt="matrix keyboard selection option in code generator window" title="Matrix Keyboard selection in Code Generator" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-matrix-keyboard-option.jpg" alt="matrix keyboard selection option in code generator window" /><figcaption>Matrix Keyboard selection in Code Generator</figcaption></figure>
 
 Once selected the plugin will give various options, you can choose if you want the keyboard support along with a rotary encoder. We'll now discuss the various configuration options:
 
@@ -154,4 +154,4 @@ That's it, your menu will be controllable by the keyboard. We'll now discuss how
 * Number editor starts allowing editing of the whole number, pressing '*' to edit the fraction (if available), then pressing '*' to exit editing.
 * For IPAddress, Large numbers and time fields: as per integer editing, but '*' moves between each part.  
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

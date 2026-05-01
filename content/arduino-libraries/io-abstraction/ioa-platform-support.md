@@ -1,7 +1,7 @@
 +++
 title = "IoAbstraction - Cross platform build support"
 description = ""
-tags = [ "arduino", "library", "eventing" ]
+tags = [ "arduino", "library", "event-based" ]
 date = "2020-12-04"
 author =  "dave"
 menu = "io-abstraction"
@@ -12,8 +12,6 @@ toc_needed = true
 type ="blog"
 weight = 5
 +++
-
-{{< library-overview >}}
 
 ## General Arduino
 

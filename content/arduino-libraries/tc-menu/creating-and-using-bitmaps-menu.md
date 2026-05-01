@@ -20,13 +20,13 @@ Within TcMenu designer there is a bitmap creation utility, it can take most comm
 
 Below, I present the dialog that will appear once the bitmap creation tool is loaded. We'll study each section of it in detail.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/bitmap-creation-utility.jpg" alt="Bitmap and Widget creation utility showing two PNGs with transparency" title="Bitmap/Widget creation utility window" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/bitmap-creation-utility.jpg" alt="Bitmap and Widget creation utility showing two PNGs with transparency" /><figcaption>Bitmap/Widget creation utility window</figcaption></figure>
 
 ### Importing images and managing images
 
 To add an image either copy an image from a tool such as GIMP or other editing package onto the clipboard, then paste it into the window using CTRL-V (macOS use CMD-V) or choose "Load Image" to load from a file. This will open the following dialog:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/bitmap-creation-image-import.jpg" alt="Importing an image and selecting the palette" title="Importing an image and selecting the palette" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/bitmap-creation-image-import.jpg" alt="Importing an image and selecting the palette" /><figcaption>Importing an image and selecting the palette</figcaption></figure>
 
 On the left is the image to import. Now you can choose the format that it should be converted into. If you choose a palette based image, it is best that the image is already converted to have that number of colors using your preferred tool. Although TcMenu will attempt to do this for you, it will not be anywhere near as good as a fully fledged image editor at this. 
 
@@ -59,17 +59,17 @@ You can create a new bitmap by pressing "New Image", this provides a dialog wher
 
 You can edit and remove bitmaps from the main panel by using the "edit" and "remove" buttons that are above the image. Pressing "edit" takes you to a new image editor panel, which has very basic editing capabilities. It is not designed for more than simple icon creation and image touch up. The editor is shown below:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/bitmap-editor-dialog.png" alt="Simple bitmap editor and touch up" title="Simple bitmap editor and touch up" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/bitmap-editor-dialog.png" alt="Simple bitmap editor and touch up" /><figcaption>Simple bitmap editor and touch up</figcaption></figure>
 
 Using this panel you can touch up images in any supported format. The function can be selected either from the keyboard on combobox as follows:
 
-* Drawing one pixel at a time - D
-* Drawing a line - L
-* Drawing a box outline - R
-* Drawing a filled box - B
-* Drawing a circle - I
-* Flood fill an area - F
-* Select an area of the image - E
+* Drawing one pixel at a time - `D`
+* Drawing a line - `L`
+* Drawing a box outline - `R`
+* Drawing a filled box - `B`
+* Drawing a circle - `I`
+* Flood fill an area - `F`
+* Select an area of the image - `E`
 
 You can use normal clipboard operations, either by pressing the cut, copy, paste buttons, or using the regular keyboard shortcuts. Further, you can save any image loaded into the panel as a PNG file.
 
@@ -85,7 +85,7 @@ Using XBM with a TcMenu device drawable is also trivial, and works on all suppor
 
     drawable->drawXBitmap(Coord(xLoc,yLoc), Coord(width, height), xbmpData);
 
-Read more about [tcMenu device drawable]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md" >}}). 
+Read more about [tcMenu device drawable](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")}). 
 
 ### Drawing other types of bitmap using a DrawableIcon
 
@@ -110,7 +110,7 @@ For all displays including LiquidCrystal we support the concept of title widgets
 
 Here's an example OLED display showing two widgets:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/title-widget-example.jpg" title="Screen shot of menu showing title widgets - upper right" alt="OLED display showing tcMenu with title widgets" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/title-widget-example.jpg" alt="OLED display showing tcMenu with title widgets" /><figcaption>Screen shot of menu showing title widgets - upper right</figcaption></figure>
 
 Each `TitleWidget` has an array of icons that represent the `states`. Each icon should first be defined:
 

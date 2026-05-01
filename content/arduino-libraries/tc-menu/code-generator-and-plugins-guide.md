@@ -15,14 +15,14 @@ toc_needed = true
 
 In this guide we cover code generation in more detail. Once a menu structure has been built it needs to be turned into code. To do this we use the code generator (menu: "Code -> Generate code"). Once selected a dialog similar to the one below will be presented. 
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/quickstart-menu-designer-codegen.png" title="Code Generator dialog in tcMenu Designer" alt="code generator dialog within the menu designer software" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/quickstart-menu-designer-codegen.png" alt="code generator dialog within the menu designer software" /><figcaption>Code Generator dialog in tcMenu Designer</figcaption></figure>
 
 At this point we need to define the devices that we plan to use, in terms of Board, EEPROM, Authentication, input, display, and any remote connectivity. Before moving on to discuss plugins and actual code generation, we'll go through the options at the top of the code generator.
 
 * Embedded platform: this defines the platform that we are generating for, and should be set before any other options are chosen, as this affects what EEPROM and plugin options can be chosen.
 * Application details: this is read only and just shows the application details as they were set in the root panel during menu editing. If these are wrong, go back to the main designer window and select the root item where you can edit them.
-* EEPROM support: configure the type of EEPROM to be used - see [EEPROM configuration documentation]({{< relref "menu-eeprom-integrations.md" >}}).
-* Pin & Authentication: configure the type of authenticator to use for storing pins and authentication for remote control - see [Authenticator documentation]({{< relref "secure-menuitem-pins-and-remotes.md" >}})
+* EEPROM support: configure the type of EEPROM to be used - see [EEPROM configuration documentation](${relRef("menu-eeprom-integrations.md")}).
+* Pin & Authentication: configure the type of authenticator to use for storing pins and authentication for remote control - see [Authenticator documentation](${relRef("secure-menuitem-pins-and-remotes.md")})
 
 ## How plugins work
 
@@ -30,7 +30,7 @@ In order to simplify both your code and the designer, inputs, displays, themes a
 
 There are four main plugin groups, Input, Display, Theme, and Remote. While you can only have one Input, Display and Theme plugin, it's possible to have more than one remote/IoT plugin. Below we see an example of a plugin within Code Generator.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-code-plugin.png" title="TFT_eSPI plugin within code generator" alt="TFT_eSPI plugin within code generator" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-code-plugin.png" alt="TFT_eSPI plugin within code generator" /><figcaption>TFT_eSPI plugin within code generator</figcaption></figure>
 
 On the left side we see the description of the plugin and an image representation in a button, clicking on the image button allows you to change to another plugin. We can also see the description, license and documentation link next to the button. Clicking on the online documentation will open information about the plugin in your browser.
 
@@ -43,8 +43,8 @@ Over to the right, you'll see a series of properties that can be edited. These a
 * Boolean fields are normally shown as a check box.
 * Choices in the form of a combo box where one must be selected.
 * Pin fields that can either be -1, a positive value, or a variable name
-* Font definition, [see theme documentation on fonts]({{< relref "using-custom-fonts-in-menu.md">}}).
-* IO device is a reference to an IoAbstractionRef or devicePins / blank for none, [see the IO device documentation]({{< relref "setting-up-io-expanders-in-menu-designer.md">}})
+* Font definition, [see theme documentation on fonts](${relRef("using-custom-fonts-in-menu.md")}).
+* IO device is a reference to an IoAbstractionRef or devicePins / blank for none, [see the IO device documentation](${relRef("setting-up-io-expanders-in-menu-designer.md")})
 
 ### Specific types of plugin
 
@@ -61,13 +61,13 @@ Unlike other plugins, there can be more than one IoT remote plugin. To the right
 
 Once the "Generate Code" button is pressed, a logging window is displayed that udpates as the code generator runs, once complete the "Close" button will be enabled on this dialog. You can take a copy of the contents of the window using the "Copy to Clipboard" button. In the event that the generator didn't do what you expected, you could try pressing "Include Debug" to get extra log information. This window is presented below:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-code-generator-logging.png" title="Code generator logging window" alt="Code generator logging window after execution has completed" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-code-generator-logging.png" alt="Code generator logging window after execution has completed" /><figcaption>Code generator logging window</figcaption></figure>
 
 ### How the code is generated
 
-Code generation starts by turning the menu items into a series of linked lists, one for each submenu. This is fully documented in the [menu item docs]({{< relref "menu-item-types.md" >}}) where the code generated for each specific type is also discussed.
+Code generation starts by turning the menu items into a series of linked lists, one for each submenu. This is fully documented in the [menu item docs](${relRef("menu-item-types.md")}) where the code generated for each specific type is also discussed.
 
-Along with menu structures, a `ConnectorLocalInfo` is created that contains the unique ID (in the form of a UUID) and name of this embedded application. At this point the EEPROM and Authentication are also generated, the next step is to work out what variables, header file includes and setup functions are needed for each plugin. Note that you can also set the board serial number using compiler flags, or even override how it is generated completely for larger scale situations, consult the [build time flags settings]({{< relref "_index.md" >}}).
+Along with menu structures, a `ConnectorLocalInfo` is created that contains the unique ID (in the form of a UUID) and name of this embedded application. At this point the EEPROM and Authentication are also generated, the next step is to work out what variables, header file includes and setup functions are needed for each plugin. Note that you can also set the board serial number using compiler flags, or even override how it is generated completely for larger scale situations, consult the [build time flags settings](${relRef("arduino-libraries.md")}).
 
 The way this works is that each plugin, Display, then Input, then IoT and lastly theme is asked to generate the includes, variables, and setup functions needed. Menu structures and plugin setup is written into files with the name of the project followed by `_menu.cpp`/`_menu.h`. These two files are overwritten every time code generator runs, so it's best not to edit them.
 
@@ -93,11 +93,11 @@ Example project directory annotated:
 
 ### The make-up of a typical menu application
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/how-code-is-generated.jpg" title="Structure of code in menu application" alt="Structure of code in menu application" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/how-code-is-generated.jpg" alt="Structure of code in menu application" /><figcaption>Structure of code in menu application</figcaption></figure>
 
 In the diagram above, we can see a block diagram view of how an application is formed. On the left is the drawing code, depending on the type of display you use part or all of this structure will be in place. In the middle is the menu manager or `menuMgr` on device. Then over on the right you see the input, user level code, and the remote plugins.
 
-User code and graphical theme code are considered part of your project for you to edit, the rest are mainly generated for you during the code generation run. You can read more about the [drawing code structure]({{< relref "rendering-with-themes-icons-grids.md" >}}) to better understand it.
+User code and graphical theme code are considered part of your project for you to edit, the rest are mainly generated for you during the code generation run. You can read more about the [drawing code structure](${relRef("rendering-with-themes-icons-grids.md")}) to better understand it.
 
 For any application to work, you need `tcMenu`, `IoAbstraction` and `TaskManagerIO` at a minimum. Depending on the plugins you have chosen, you may need to install additional libraries too. It's best to keep these libraries up-to-date quite frequently. In nearly all cases, they are backward compatible.
 
@@ -120,7 +120,7 @@ When using manual mode you must have initialized the library BEFORE calling setu
 
 ## When there isn't a plugin for the item you need
 
-There will inevitably always be libraries that we do not support, we’ve made the process much easier for [writing your own plugin]({{< relref "customise-menu-input-display-plugin.md" >}}), in most cases very little code will be needed. You could even contribute it back or make your own plugin that others can use!
+There will inevitably always be libraries that we do not support, we’ve made the process much easier for [writing your own plugin](${relRef("customise-menu-input-display-plugin.md")}), in most cases very little code will be needed. You could even contribute it back or make your own plugin that others can use!
 
 ### The Plugin format
 

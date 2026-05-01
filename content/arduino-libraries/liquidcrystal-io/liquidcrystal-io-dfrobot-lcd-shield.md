@@ -1,10 +1,9 @@
 +++
 title = "LiquidCystalIO with a DfRobot shield"
 description = ""
-tags = [ "arduino", "library", "" ]
+tags = "arduino, library"
 date = "2020-08-01"
 author =  "dave"
-menu = "liquidcrystal-io"
 githublink = "https://github.com/TcMenu/LiquidCrystalIO"
 referenceDocs = "/liquidcrystalio/html/index.html"
 banner = "/images/electronics/arduino/liquidcrystalio/dfrobot-board.jpg"
@@ -16,7 +15,7 @@ weight = 0
 
 DfRobot provides the simplest way to get started with LiquidCrystalIO on Uno and Mega (and other compatible boards). It has a display with an array of switches connected to A0 (up, down, left, right and select). This library works correctly with the display and even has a shorthand way of creating the LCD for this case.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## Connections to an Arduino Uno, Mega
 
@@ -53,4 +52,4 @@ This allows you to control the backlight level at any time by using the `setBack
 * [Simplest DfRobot shield example](https://github.com/TcMenu/LiquidCrystalIO/blob/main/examples/HelloWorld/HelloWorld.ino)
 * [You can also use IoAbstraction's switches to manage the dfRobot buttons](https://github.com/TcMenu/IoAbstraction/blob/main/examples/dfRobotRotaryEncoder/dfRobotRotaryEncoder.ino)
 
-[Back to the main page]({{< relref "liquidcrystal-io.md">}})
+[Back to the main page](${relRef("liquidcrystal-io.md")})

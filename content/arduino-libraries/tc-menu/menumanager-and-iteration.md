@@ -15,9 +15,9 @@ toc_needed = true
 
 `MenuManager` contains the functions to manage menu items, there is a global instance of this class called `menuMgr` on Arduino and mbed boards. Here we present the most commonly used features, check out the reference docs for more details. There are a lot of iteration helper functions that can be used to navigate through menu structures. These are described further down the page. The following two reference documentation pages extend on the information here:
 
-* {{< refdocs title="Menu iteration reference docs" src="tcmenu/html/_menu_iterator_8h.html" >}}
-* {{< refdocs title="MenuManager reference docs" src="tcmenu/html/class_menu_manager.html" >}}
-* [EEPROM support in menus]({{< relref "menu-eeprom-integrations.md">}})
+* [Menu iteration reference docs](${refdocs("tcmenu/html/_menu_iterator_8h.html")})
+* [MenuManager reference docs](${refdocs("tcmenu/html/class_menu_manager.html")})
+* [EEPROM support in menus](${relRef("menu-eeprom-integrations.md")})
 
 ## Enabling next and back functionality
 
@@ -54,7 +54,7 @@ A common use case when the title is pressed is to show a dialog with the version
 
 ## Navigation around menus
 
-On the device, any submenu (even root) is nothing more than a single-direction linked list of items, each item has a `getNext()` and the terminating item's next is nullptr. All the navigation methods expect the first item in this list. So to present a submenu, get the first child item in the linked list by calling `getChild()` on the sub menu. To go back to root, just call `resetMenu(true)`. See [menu item type documentation]({{< relref "menu-item-types.md" >}}).
+On the device, any submenu (even root) is nothing more than a single-direction linked list of items, each item has a `getNext()` and the terminating item's next is nullptr. All the navigation methods expect the first item in this list. So to present a submenu, get the first child item in the linked list by calling `getChild()` on the sub menu. To go back to root, just call `resetMenu(true)`. See [menu item type documentation](${relRef("menu-item-types.md")}).
 
 The navigation is controlled by the navigation manager, it is a N-deep stack of items, where we can push items on, and pop items off, it represents the current linked list we are presenting, and the active item, so that the back function feels more natural, here's an example of how it may look:
 
@@ -170,7 +170,7 @@ Note that either of the above methods use one of the callback spaces. There is a
 
 **When using the designer, this code gets added automatically, this is to fully document the API.**
 
-We initialise the menu manager as shown below, where renderer is a pointer to a renderer (or an instance of `NoRenderer`), root is the very first menu item and then this is followed by the pin used for either switches or the rotary encoder. Remember that pinA of the encoder must be an interrupt capable pin. If you're not using the designer, then the plugins for display and remote are available within the tcMenu code repo within the two plugin packages, or may be packaged with the embedded folder. Copy the required files into your sketch and make sure they are initialised. The full details are available in {{< refdocs title="the menu manager class documentation" src="tcmenu/html/class_menu_manager.html" >}}.
+We initialise the menu manager as shown below, where renderer is a pointer to a renderer (or an instance of `NoRenderer`), root is the very first menu item and then this is followed by the pin used for either switches or the rotary encoder. Remember that pinA of the encoder must be an interrupt capable pin. If you're not using the designer, then the plugins for display and remote are available within the tcMenu code repo within the two plugin packages, or may be packaged with the embedded folder. Copy the required files into your sketch and make sure they are initialised. The full details are available in [the menu manager class documentation](${refdocs("tcmenu/html/class_menu_manager.html")}).
 
 	menuMgr.initForEncoder(MenuRenderer* renderer, MenuItem* root, uint8_t encoderPinA, uint8_t encoderPinB, uint8_t encoderButton);
 	menuMgr.initForUpDownOk(MenuRenderer* renderer, MenuItem* root, uint8_t upPin, 
@@ -189,7 +189,7 @@ Now initialise for no input:
 
 Below we show the overall layout of a tcMenu application on an Arduino or mbed device, the various components shown below are covered in more detail in other sections, they are presented here purely to show the overall layout. Again, the code generator does most of this for you, this is to aid understanding or if you prefer to go it alone.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/menu-manager-introduction.png" title="Menu manager: menu tree, multi level navigation, rendering and control on Arduino/mbed" alt="Menu Manager holding recursive menu tree, multi-level navigation, remote control and rendering for Arduino/mbed" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/menu-manager-introduction.png" alt="Menu Manager holding recursive menu tree, multi-level navigation, remote control and rendering for Arduino/mbed" /><figcaption>Menu manager: menu tree, multi level navigation, rendering and control on Arduino/mbed</figcaption></figure>
 
 Above we see the menu manager surrounded by the components that make up a menu app. First we have the recursive menu tree,  allowing for multi level menus when combined with the navigation components. Next, we see the input control that is managed using the two methods valueChanged and onMenuSelect. Usually these are fulfilled using one of the init methods mentioned earlier. Display rendering is attached to the menu manager, and uses the navigator to handle which sub menu is on display. Lastly, remote facilities are attached to the menu manager so that monitoring and control is possible.
 
@@ -199,7 +199,7 @@ Above we see the menu manager surrounded by the components that make up a menu a
 
 Most of the useful functions to iterate over menu items are within the following reference documentation page, we only document the most popular ones here, so it is worth checking this page too:
 
-* {{< refdocs title="MenuIterator.h reference docs" src="tcmenu/html/_menu_iterator_8h.html" >}}
+* [MenuIterator.h reference docs](${refdocs("tcmenu/html/_menu_iterator_8h.html")})
 
 ### MenuItemIterator - non-recursive iteration of the tree
 
@@ -254,7 +254,7 @@ If you need to do the same thing to many menu items at the same time, certain op
 
 Many of the boolean flags are supported for read and write, and also there is a method `onEachItem()` that gets called for items in the delegate.
 
-Full documentation: {{< refdocs title="Menu Item Delegate docs" src="tcmenu/html/classtccore_1_1_menu_item_delegate.html" >}}
+Full documentation: [Menu Item Delegate docs](${refdocs("tcmenu/html/classtccore_1_1_menu_item_delegate.html")})
 
 Examples:
 
@@ -279,4 +279,4 @@ Example - check if both `item1` and `item2` are local only:
 
 Hopefully the examples above give some ideas how you can use the delegate, it has a lot more method covered in the documentation linked above.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}})
+[Back to tcMenu main page](${relRef("tc-menu")})

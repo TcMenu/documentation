@@ -18,19 +18,19 @@ Scroll Choice menu items allow for a single choice from a list of choices. Unlik
 
 * Type `ScrollChoiceMenuItem` defined in `ScrollChoiceMenuItem.h`, default callback is `enumItemRenderFn`
 * Enum returned by `getMenuType()` is MENUTYPE_SCROLLER_VALUE
-* [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="Scroll choice menu item documentation" src="/tcmenu/html/class_scroll_choice_menu_item.html" >}}
+* [This item is based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [Scroll choice menu item documentation](${refdocs("/tcmenu/html/class_scroll_choice_menu_item.html")})
 
 ## Creating a Scroll Choice item from the designer
 
 From the add dialog choose the "Scroll Choice" option. The form will look similar to the following:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-scroll.png" title="Scroll Choice Editor UI" alt="image showing the scroll choice editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-scroll.png" alt="image showing the scroll choice editor" /><figcaption>Scroll Choice Editor UI</figcaption></figure>
 
 See the section further down on dealing with scroll items in code for the specifics, but here's how to configure for all three cases
 
-To set up for EEPROM storage, you choose data mode as EEPROM, the item width is the maximum width of the text for an item, and initial items is how many items are in the array (can be changed at runtime). EEPROM offset is the position in the EEPROM storage where the array starts. You must call `menuMgr.setEepromRef(ptrToEeprom)` during setup. [See the menu manager docs]({{< relref "menumanager-and-iteration.md" >}})
+To set up for EEPROM storage, you choose data mode as EEPROM, the item width is the maximum width of the text for an item, and initial items is how many items are in the array (can be changed at runtime). EEPROM offset is the position in the EEPROM storage where the array starts. You must call `menuMgr.setEepromRef(ptrToEeprom)` during setup. [See the menu manager docs](${relRef("menumanager-and-iteration.md")})
 
 To set up for RAM storage, you choose data mode as RAM, the item width is again the maximum width and initial items works as per EEPROM mode. In this case you must specify the array variable, which is a character array in memory large enough to account for width * numItems. If it does not exist in your sketch, the variable will be created for you in non-const memory as type `char*`, so you can change it at runtime. As per callbacks, if you start the RAM variable with "@" such as `@myVariableName` then it will be exported but not declared.  
 
@@ -42,7 +42,7 @@ You can also choose custom that will callback every time the item needs data. In
 
 When using either EEPROM or RAM storage of items, we use a flat array of items the same size for each item. Let's say each item is 10 long, they will follow each other sequentially in memory like the illustration below. We use ~ to represent the zero termination. For EEPROM storage you specify the location at which the array starts, whereas for RAM you provide the variable name of the array.
 
-For EEPROM storage, you absolutely must call `menuMgr.setEepromRef(ptrToEeprom)` BEFORE any possible calls to the menu item, the easiest way to do this is to define the EEPROM in the code generator window. [See the menu manager docs]({{< relref "menumanager-and-iteration.md" >}})
+For EEPROM storage, you absolutely must call `menuMgr.setEepromRef(ptrToEeprom)` BEFORE any possible calls to the menu item, the easiest way to do this is to define the EEPROM in the code generator window. [See the menu manager docs](${relRef("menumanager-and-iteration.md")})
 
         item space    
         0 1 2 3 4 5 6 7 8 9
@@ -56,7 +56,7 @@ Caching: To cache EEPROM values into RAM call `cacheEepromValues` on the item, i
 
 In this case the menu item will call a custom rendering function each time information about the item is needed (such as the name or the value of each choice). The designer will create the render function for this automatically, and you can look at many examples for inspiration too.
 
-Consult [Runtime Menu Item documentation]({{< relref "based-on-runtimemenuitem.md" >}}) for a more detailed background on callbacks.
+Consult [Runtime Menu Item documentation](${relRef("based-on-runtimemenuitem.md")}) for a more detailed background on callbacks.
 
 By default, the designer created code will call into the default function as follows:
 
@@ -87,7 +87,7 @@ To get and set the current choice index
 
 ## Creating a scroll choice menu item from the CLI
 
-To create a scroll choice menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create a scroll choice menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type choice --name ChoiceName [--localonly --readonly --hide]
 

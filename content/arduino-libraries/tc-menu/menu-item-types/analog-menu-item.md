@@ -20,22 +20,22 @@ Why the complexity? To enable direct editing with a rotary encoder or touch scre
 
 You can apply an optional step to an analog item, which means that it goes up in value when edited by a rotary encoder or buttons at a rate other than 1, this does not apply when edited in touch based horizontal scrolling facilities, in those cases any value can be selected.
 
-* If you need editable values that cover a much larger range see the [Large Number Support]({{< relref "largenum-menu-item.md" >}})
-* If you need read-only status values outside this range use [Floating point Support]({{< relref "float-menu-item.md" >}}) 
+* If you need editable values that cover a much larger range see the [Large Number Support](${relRef("largenum-menu-item.md")})
+* If you need read-only status values outside this range use [Floating point Support](${relRef("float-menu-item.md")}) 
 
 ## Type information for AnalogMenuItem
 
 * Type: `AnalogMenuItem` and associated `AnalogMenuInfo` in MenuItems.h
 * Type returned by `getMenuType()` is MENUTYPE_INT_VALUE
-* [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="AnalogMenuItem reference documentation" src="/tcmenu/html/class_analog_menu_item.html" >}} 
+* [This item is based on an Info block](${relRef("based-on-infoblock.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [AnalogMenuItem reference documentation](${refdocs("/tcmenu/html/class_analog_menu_item.html")}) 
 
 ## Creating an object from the designer
 
 Choose to add a new menu item, and from the dialog choose Boolean item, once created the properties panel will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-analog.png" title="Analog Item editor UI" alt="image showing editor for analog item" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-analog.png" alt="image showing editor for analog item" /><figcaption>Analog Item editor UI</figcaption></figure>
 
 * Maximum Value - is the maximum integer value that can be represented, not including offset and divisor.
 * Offset from zero - is for display only, it is added/subtracted from the current value.
@@ -98,9 +98,27 @@ Although the above helpers make it easier to work with, you can also get and cha
     uint16_t currentValue = menuItem.getCurrentValue()
     menuItem.setCurrentValue(uint16_t val, bool silent = false)
 
-## Creating an analog menu item from the CLI
+## Creating an analog menu item
 
-To create an analog menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+Using menu builder - [more about menu builder here](${relRef("fluent-menu-builder-intro.md")}):
+
+        tcMenuBuilder.analogBuilder(ITEM_ID, "ItemName", ROM_SAVE_LOC, NoMenuFlags, defVal)
+            .offset(offs).divisor(div).maxValue(maxVal).unit("%")
+            .endItem()
+
+The above will create an analog menu item, the parameters are:
+
+- `ITEM_ID`: Unique identifier for the menu item (integer 1..50000)
+- `ItemName`: Display name of the menu item
+- `ROM_SAVE_LOC`: save location, use `ROM_SAVE` or `DONT_SAVE` with dynamic EEPROM, otherwise a number. 
+- `NoMenuFlags`: Menu flags, use `NoMenuFlags` for no flags, or `MenuFlags().___` as appropriate
+- `defVal`: The default value of the menu item
+- `offs`: The offset to apply to the value
+- `div`: The divisor to apply to the value
+- `maxVal`: The maximum value of the menu item
+- `unit`: The unit of measurement for the menu item (or blank)
+
+To create an analog menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type analog --name AnalogName --eeprom AUTO [--localonly --readonly --hide]
 
@@ -126,15 +144,3 @@ The structure of an analog menu item in the EMF file is:
         "staticDataInRAM": false
       }
     }
-
-## Creating analog items manually
-
-In nearly all cases it's better to create items using the designer. However, this is how you create an additional analog item manually should it be required. You can drop the `const` and `PROGMEM` from the INFO structure if you choose to create in RAM (isInProgmem parameter set to false). Even for RAM items never change the ID after adding to `menuMgr`.
-
-    [const] AnalogMenuInfo minfoAnalogItem [PROGMEM] = { "Analog Item", myId, eepromLocation,
-                                             maxValue, NO_CALLBACK, offset, divisor, unit };
-    AnalogMenuItem menuAnalogItem(&minfoAnalogItem, 0, &nextMenuItem, [bool isInProgmem = true]);
-
-Above we create an analog item along with it's associated info structure. `myId` should be replaced with the unique ID for the item, `eepromLocation` should be replaced with either -1 (no eeprom location) or a location in ROM, `NO_CALLBACK` signifies there is no callback, you can replace this with a callback if there is one.
-
-Now for the numeric fields, maxValue is the largest represented value, divisor is the fixed point fraction and unit is the unit name to be displayed, up to 4 characters. 

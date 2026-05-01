@@ -15,11 +15,11 @@ toc_needed = true
 aliases = ["/products/arduino-libraries/tc-menu/tcmenu-tagval-protocol-documenation/"]
 +++
 
-Embed Control local area transmissions use a protocol called TagVal with the option of sending binary data too. TagVal is a simple and lightweight protocol that has implementations on device for Arduino and mbed, and developer APIs in [Java]({{< relref "tcmenu-java-api-to-arduino-remote-control.md" >}}), [Javascript](https://github.com/TcMenu/embedcontrolJS), [Python](https://github.com/TcMenu/tcmenu-python-sdk), [DotNet](https://github.com/TcMenu/tcmenu-dotnet-sdk), and Dart is coming soon. 
+Embed Control local area transmissions use a protocol called TagVal with the option of sending binary data too. TagVal is a simple and lightweight protocol that has implementations on device for Arduino and mbed, and developer APIs in [Java](${relRef("tcmenu-java-api-to-arduino-remote-control.md")}), [Javascript](https://github.com/TcMenu/embedcontrolJS), [Python](https://github.com/TcMenu/tcmenu-python-sdk), [DotNet](https://github.com/TcMenu/tcmenu-dotnet-sdk), and Dart is coming soon. 
 
-If you are working in a language where an API is provided, you don't need to understand the protocol as the API deals with the protocol. This guide assumes you've read the [quick start documentation]({{< relref "tcmenu-overview-quick-start.md" >}}) and the reference material (see getting the code section on the right).
+If you are working in a language where an API is provided, you don't need to understand the protocol as the API deals with the protocol. This guide assumes you've read the [quick start documentation](${relRef("tcmenu-overview-quick-start.md")}) and the reference material (see getting the code section on the right).
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## The basics of a TagVal message
 
@@ -78,7 +78,7 @@ A binary message can be sent over a tag value stream, it uses the second availab
 
 Before going any further, let's take a look at the standard sequence of events for a connection. The diagram below shows a high level state machine representation of a connection. 
 
-{{< figure src="/products/arduino-libraries/images/apps/embed-control/embed-control-protocol-state-machine.png" alt="Embed Control/TcMenu Protocol diagram, showing approximate message flow" title="Embed Control/TcMenu Protocol diagram, showing approximate message flow" >}}
+<figure><img src="/products/arduino-libraries/images/apps/embed-control/embed-control-protocol-state-machine.png" alt="Embed Control/TcMenu Protocol diagram, showing approximate message flow" /><figcaption>Embed Control/TcMenu Protocol diagram, showing approximate message flow</figcaption></figure>
 
 To write this out, all connections start by sending a heartbeat with mode set to START to the remote. The remote wil respond to this by sending back a join message. Next, we send either a join or pairing request to either start a connection or in the case of pairing, to store our ID with the device.
 
@@ -502,4 +502,4 @@ To send binary data:
 
 Again the starting and ending of the message are handled internally, you simply implement a lambda that can put the raw data into the transport. At this moment of time, binary data is one way only, from the device to the remote.
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

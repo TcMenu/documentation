@@ -16,21 +16,21 @@ aliases = ["/products/arduino-libraries/tc-menu/tcmenu-java-api-to-arduino-remot
 
 ## Introduction - Java Remote control
 
-The Java API contains domain and state objects that represent the items in your application along with the current value of that item. Whether used locally or remotely you use a menu tree to represent items. Whichever way, the menu structure accurately represents the structure in designer, because the [Arduino embedded menu designer]({{< relref "tcmenu-overview-quick-start.md">}}) uses this API.
+The Java API contains domain and state objects that represent the items in your application along with the current value of that item. Whether used locally or remotely you use a menu tree to represent items. Whichever way, the menu structure accurately represents the structure in designer, because the [Arduino embedded menu designer](${relRef("tcmenu-overview-quick-start.md")}) uses this API.
 
-The [remote communication protocol is fully documented]({{< relref "embed-control-tagval-wire-protocol.md">}}) for use in any language. If you'd like to help with porting please get in touch through github or my contact form, I'd be glad to help you get started with the protocol layer. We have a Java and Typescript implementation, and if anyone is genuinely interested in helping finish it, the shell of a C# implementation.
+The [remote communication protocol is fully documented](${relRef("embed-control-tagval-wire-protocol.md")}) for use in any language. If you'd like to help with porting please get in touch through github or my contact form, I'd be glad to help you get started with the protocol layer. We have a Java and Typescript implementation, and if anyone is genuinely interested in helping finish it, the shell of a C# implementation.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## How the Java API maps to the type system
 
 Below is a block diagram showing the high level components of a menu with remote control capabilities. It looks complex, but don't worry as the designer UI does much of the work on the Arduino side for you. Furthermore, simple builders make it really to setup in Java.
 
-{{< figure title="Block diagram of a menu with remote capability (click for larger image)" alt="Top level block diagram of the menu library" src="/products/arduino-libraries/images/electronics/arduino/tcMenu/menuAPI-structure-thumb.png" link="/products/arduino-libraries/images/electronics/arduino/tcMenu/menuAPI-structure.png" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/menuAPI-structure-thumb.png" alt="Top level block diagram of the menu library" link="/products/arduino-libraries/images/electronics/arduino/tcMenu/menuAPI-structure.png" /><figcaption>Block diagram of a menu with remote capability (click for larger image)</figcaption></figure>
 
 ## Getting the Java API
 
-I'm assuming you've already followed at least the [Quick Start guide]({{< relref "tcmenu-overview-quick-start.md">}}), and got a menu deployed to an Arduino or other board. If not you'll have nothing to connect to. You should also at least skim read [about the menu type system]({{< relref "menu-item-types.md">}}) as we'll not cover it again. 
+I'm assuming you've already followed at least the [Quick Start guide](${relRef("tcmenu-overview-quick-start.md")}), and got a menu deployed to an Arduino or other board. If not you'll have nothing to connect to. You should also at least skim read [about the menu type system](${relRef("menu-item-types.md")}) as we'll not cover it again. 
 
 If you are using Maven or Gradle then add the following dependency to your project:
 
@@ -50,7 +50,7 @@ Although not recommended, you can copy the library from GitHub manually. Full ja
 
 ## Getting started with the API
 
-In the Java API menu items are managed by a `MenuTree` instance, each connection to an Arduino has its own tree, as otherwise the ID's would overlap. Menu's are represented as a ROOT menu and submenu's, the `MenuTree` controls where in this tree of menus each `MenuItem` sits. `MenuItem` is the base class of all menu item instances. We draw a simplified hierarchy below - {{< refdocs title="see the full heirachy in the refdocs" src="/tcmenu/html/class_menu_item.html" >}}:
+In the Java API menu items are managed by a `MenuTree` instance, each connection to an Arduino has its own tree, as otherwise the ID's would overlap. Menu's are represented as a ROOT menu and submenu's, the `MenuTree` controls where in this tree of menus each `MenuItem` sits. `MenuItem` is the base class of all menu item instances. We draw a simplified hierarchy below - [see the full heirachy in the refdocs](${refdocs("/tcmenu/html/class_menu_item.html")}):
 
     MenuItem
         AnalogMenuItem          -- holds numeric values
@@ -205,6 +205,6 @@ To send a dialog button press to the server, use the following method:
 This page is intended to just get you started, you can look at the full API documentation and examples that are packaged with the API tests in the source for more details.
 
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/remote-ethernet-built.jpg" title="Ethernet board with display and encoder" alt="Image of ethernet card running with display and encoder" >}} 
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/remote-ethernet-built.jpg" alt="Image of ethernet card running with display and encoder" /><figcaption>Ethernet board with display and encoder</figcaption></figure> 
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

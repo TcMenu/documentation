@@ -19,7 +19,7 @@ TcMenu 4.0 onward supports multi-language menus based on [resource bundles](http
 
 To enable the bundle support, or setup additional languages from the "Code" menu select "Configure Locales". This will bring up the following dialog where you can add and remove locales from the list of available languages. Please note that designer will not erase locale files that already exist to avoid accidental data loss.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-locale-language-configure.png" alt="Configure locale dialog showing enabled and available locales" title="Locale Configuration dialog" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-locale-language-configure.png" alt="Configure locale dialog showing enabled and available locales" /><figcaption>Locale Configuration dialog</figcaption></figure>
 
 ### Adding and removing languages
 
@@ -87,7 +87,7 @@ Field values examples:
 
 As of 4.0 there are extended save locations, where you can generate files into a "generated" directory (note this is compatible with PlatformIO and CMake but _not_ with Arduino UI/CLI). If supported on your build, this is recommended when combined with locales, as the number of files increases with each language. To change save location simply select the Root item in the tree and change the save location:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-locale-save-locations.png" alt="Possible save locations for both your and the generated code" title="Choosing a save location" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-locale-save-locations.png" alt="Possible save locations for both your and the generated code" /><figcaption>Choosing a save location</figcaption></figure>
 
 
 In the generated output directory there will be several new files. Firstly `projectName_langSelect.h` that will include the right language header file based on a compile time flag, then each of the language files following the pattern `picoAdafruitDashboard_lang.h`. Here's an example:

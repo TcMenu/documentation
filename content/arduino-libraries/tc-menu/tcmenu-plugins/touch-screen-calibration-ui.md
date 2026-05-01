@@ -18,9 +18,9 @@ There are several touch plugins in TcMenu and they all have support for controll
 
 Below is an image showing the common options to most touch plugins.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/touch-menu-pluigin-configuration-options.png" alt="Calibration and Orientation options for menu based touch screen in designer" title="Calibration and Orientation options" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/touch-menu-pluigin-configuration-options.png" alt="Calibration and Orientation options for menu based touch screen in designer" /><figcaption>Calibration and Orientation options</figcaption></figure>
 
 ## Touch screen calibration
 

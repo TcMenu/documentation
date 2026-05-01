@@ -1,10 +1,9 @@
 +++
 title = "All library - Cross platform build support"
 description = ""
-tags = [ "arduino", "library", "eventing" ]
+tags = "arduino, library, event-based"
 date = "2020-12-04"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/taskmgr/taskmanager-marshalling-interrupt.png"

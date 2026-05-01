@@ -15,7 +15,7 @@ toc_needed = true
 
 Below we show an example of the dark mode theme, it is designed to have darker background colors with lighter text and images.
 
-{{< figure title="TFT screen using modern dark mode" alt="menu library on TFT with dark mode" src="/products/arduino-libraries/images/electronics/arduino/themes/color-dark-example.jpg">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/themes/color-dark-example.jpg" alt="menu library on TFT with dark mode" /><figcaption>TFT screen using modern dark mode</figcaption></figure>
 
 TcMenu ships with two dark mode color themes and they are only compatible with color displays. The dark mode theme revolves around black and dark grey backgrounds with light grey and white foregrounds. It is available in traditional mode aimed at smaller resolutions, and as a modern theme designed for larger fonts, with more spacing between elements; which is especially suited for touch screens.
 
@@ -25,11 +25,11 @@ Themes add a theme header file to your sketch, _which once generated will not be
 
 ### Font for items
 
-This is the default font that menu items will draw using. See [Fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}})
+This is the default font that menu items will draw using. See [Fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")})
 
 ### Font for title
 
-This is the title font that will be used for header text. See [Fonts in the menu designer]({{< relref "using-custom-fonts-in-menu.md" >}})
+This is the title font that will be used for header text. See [Fonts in the menu designer](${relRef("using-custom-fonts-in-menu.md")})
 
 ### Border width for action items
 
@@ -49,5 +49,5 @@ Determines if an active / edit item indicator should be shown on the left.  This
 
 ## Additional documentation
 
-* [Information about themes in general]({{< relref "rendering-with-themes-icons-grids.md" >}}).
-* [Full documentation of tcMenu rendering]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md" >}}).
+* [Information about themes in general](${relRef("rendering-with-themes-icons-grids.md")}).
+* [Full documentation of tcMenu rendering](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")}).

@@ -21,13 +21,13 @@ This touch screen input plugin supports both XPT2046 and FT6206 based touch scre
 
 When using this touch plugin, the concept of touching and holding touches is handled by the unit itself, even managing "repeat key" is handled by the library, based on which mode it is in.
 
-You should note that this plugin can only be used with graphical display renderers. You can also read the IoAbstraction [touch screen documentation]({{< relref "touch-screen-support.md" >}}) as this support is based on that.
+You should note that this plugin can only be used with graphical display renderers. You can also read the IoAbstraction [touch screen documentation](${relRef("touch-screen-support.md")}) as this support is based on that.
 
 ## Configuring for your system
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can click on the image below the input plugin selection, and you'll see the two below options in the list:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-adalibtouch-option.jpg" alt="Choices for switches and rotary encoder" title="Choices for switches and rotary encoder" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/inputplugin-adalibtouch-option.jpg" alt="Choices for switches and rotary encoder" /><figcaption>Choices for switches and rotary encoder</figcaption></figure>
 
 Once you've chosen the touch screen plugin, you'll need to configure the plugin for use, this includes choosing the right library and working out the correct rotation that aligns with your display, the easiest way to do this is to use the test sketch that's packaged with IoAbstraction.
 
@@ -36,8 +36,8 @@ Once you've chosen the touch screen plugin, you'll need to configure the plugin 
 * Touch Library - choose the library that you wish to integrate with. As above, the library must be installed.
 * Touch interrupt pin - XPT2046 library only, the interrupt pin to avoid polling.
 * Touch CS pin - XPT2046 library only, the CS pin for the SPI interface.
-* Orientation settings - see the [Orientation Settings section]({{< relref "touch-screen-calibration-ui.md" >}}) for more details on each option
-* Calibration Support - see the [Calibration Settings]({{< relref "touch-screen-calibration-ui.md" >}}) a full explanation of calibration
+* Orientation settings - see the [Orientation Settings section](${relRef("touch-screen-calibration-ui.md")}) for more details on each option
+* Calibration Support - see the [Calibration Settings](${relRef("touch-screen-calibration-ui.md")}) a full explanation of calibration
 
 ## Working with the touch interface in code
 

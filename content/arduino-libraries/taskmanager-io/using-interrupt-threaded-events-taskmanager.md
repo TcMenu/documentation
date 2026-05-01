@@ -1,10 +1,9 @@
 +++
 title = "Creating interrupt and threaded events with TaskManager"
 description = ""
-tags = [ "arduino", "library", "eventing" ]
+tags = "arduino, library, event-based"
 date = "2020-08-20"
 author =  "dave"
-menu = "taskmanager-io"
 githublink = "https://github.com/TcMenu/TaskManagerIO"
 referenceDocs = "/taskmanagerio/html/index.html"
 banner = "/images/electronics/arduino/taskmgr/taskmanager-conceptual-diagram.png"
@@ -85,4 +84,4 @@ Both of the above methods are safe to call in either an interrupt context or on 
 
 Systems that include life support and anything else that is safety critical must NOT use the open source version of the library in production. We can prepare custom versions that are tested on your hardware for a particular purpose. Please contact us for more information.
 
-[Go back to the TaskManagerIO page]({{< relref "taskmanager-io.md" >}})
+[Go back to the TaskManagerIO page](${relRef("taskmanager-io.md")})

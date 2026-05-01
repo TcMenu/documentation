@@ -20,13 +20,13 @@ In order to do this we need an `AutoUI`. The "Automatic UI" reads the components
 
 Both Auto and Custom panels are told of changes coming in from the remote, such as command acknowledgements, updates to menu items, and connectivity changes. Below is a high level design diagram of the components, showing the rough class layout:  
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/java-embedded-open-jfx-overview.jpg" alt="High level overview of Raspberry PI OpenJFX rendering" title="High level diagram of OpenJFX rendering" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/java-embedded-open-jfx-overview.jpg" alt="High level overview of Raspberry PI OpenJFX rendering" /><figcaption>High level diagram of OpenJFX rendering</figcaption></figure>
 
 ## PanelPresentable and stacks of panels
 
 We'll now discuss how the UI works based on the screenshot below.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/status-panel-example-java.png" alt="an example screenshot of the Java embedded UI" title="JavaFX embedded UI example panel" >}} 
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/status-panel-example-java.png" alt="an example screenshot of the Java embedded UI" /><figcaption>JavaFX embedded UI example panel</figcaption></figure> 
 
 1. A `NavigationManager` provides the navigation support and place to present title widgets (3), if the user can go back in the stack, then the back button is presented on the left. The title of the current panel on display is presented here too. It is responsible for the stack of panels presented in the center view. Only one panel is on display at a time, and it is the current top of stack.
 2. A stack of `PanelPresentable` components, which are all managed by the above navigation manager. Only the top one is on display. You can create your own panel presentables and push them onto the display using navigation manager. Panel presentable is more than just a panel, it is the instructions on how to draw the panel, and information about it too.

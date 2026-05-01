@@ -19,7 +19,7 @@ Relying on memory backup like many systems today do, is nowhere near as reliable
 
 There's a readily available series of EEPROM IC's from Atmel in the form of the AT24Cx range; which offers various capacities in a 8 pin package over i2c. This library abstracts either AVR or I2C ROMs with a single interface, so you can easily interchange them just changing the implementation.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 ## The EEPROM Types
 
@@ -71,7 +71,7 @@ Here's the code
 
 The circuit for an i2c EEPROM (nearly all share same pin-outs):
 
-{{< figure src="/images/electronics/arduino/tcMenu/eeprom-wiring-diagram.png" title="EEPROM i2c wiring diagram" alt="Diagram showing wiring of an i2c eeprom">}}
+<figure><img src="/images/electronics/arduino/tcMenu/eeprom-wiring-diagram.png" alt="Diagram showing wiring of an i2c eeprom" /><figcaption>EEPROM i2c wiring diagram</figcaption></figure>
 
 ### EEPROMWrapper
 
@@ -188,4 +188,4 @@ Firstly, never call save in the menu item callback, *if using a rotary encoder t
 * Provide a save option somewhere that performs the save function.
 * Have a task manager event or task that listens for changes and saves a maximum of once every N minutes, where N is as large as you can tolerate. This may still write to EEPROM too frequently.
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

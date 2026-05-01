@@ -18,15 +18,15 @@ tcMenu supports Large numbers for editing, with values up to 12 digits in total,
 
 * Type: `EditableLargeNumberMenuItem` with default callback of `largeNumItemRenderFn` in `EditableLargeNumberMenuItem.h`
 * Enum returned by `getMenuType()` is MENUTYPE_LARGENUM_VALUE
-* [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="Large Number reference documentation" src="/tcmenu/html/class_editable_large_number_menu_item.html" >}}
+* [This item is based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [Large Number reference documentation](${refdocs("/tcmenu/html/class_editable_large_number_menu_item.html")})
 
 ## Creating an object from the designer
 
 From the add dialog choose the "Large numeric value" option. The form will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-largenum.png" alt="editor value for a large number menu item" title="Large Number Editor UI" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-largenum.png" alt="editor value for a large number menu item" /><figcaption>Large Number Editor UI</figcaption></figure>
 
 * Decimal Places: the number of decimal places after the point.
 * Total Digits: the maximum allowable digits for the number item (including decimal places).
@@ -51,7 +51,7 @@ There are two ways to acquire and set the values of a large number item, either 
 
 ## Creating a large number menu item from the CLI
 
-To create a large number menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create a large number menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type largenum --eeprom AUTO --name LgeNumName [--localonly --readonly --hide]
 

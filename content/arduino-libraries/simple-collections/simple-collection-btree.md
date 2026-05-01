@@ -1,16 +1,14 @@
 +++
 title = "Simple Collection - btree list"
 description = ""
-tags = [ "arduino", "digital-io", "library" ]
+tags = "arduino, digital-io, library"
 type = "blog"
 date = "2020-11-28"
 author =  "dave"
-menu = "simple-collections"
 githublink = "https://github.com/TcMenu/SimpleCollections"
 referenceDocs = "/simple-collections/html/index.html"
 banner = "/images/electronics/arduino/power/io-abstraction-encoder-pcf8574-thumb.jpg"
 toc_needed = true
-aliases = ["/products/arduino-libraries/io-abstraction/simple-collection-btree/"]
 weight = 2
 +++
 
@@ -26,7 +24,7 @@ Notes for advanced users:
 * Given the above, you can override the key lookup function that is used to get the key if using pointer de-referencing doesn't work for your case, see the second constructor in the reference documentation. 
 * You should note that this collection is not thread safe, it can be used in as many tasks as you like without locking, but locking is needed when another thread or core is used.
 
-{{< refdocs title="Reference guide to btree list" src="/ioabstraction/html/class_btree_list.html" >}}
+[Reference guide to btree list](${refdocs("/ioabstraction/html/class_btree_list.html")})
 
 ## Creating the list and type to be stored
 
@@ -99,4 +97,4 @@ To find the nearest index to a given key, not the exact key:
 
     bsize_t nearestIndex = myList.nearestLocation(1000);
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

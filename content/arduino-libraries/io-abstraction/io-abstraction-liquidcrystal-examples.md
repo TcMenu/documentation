@@ -1,7 +1,7 @@
 +++
 title = "Liquid Crystal fork example using IO Abstraction library - examples"
 description = ""
-tags = [ "arduino", "digital-io", "library", "button-press", "display-driver", "switches" ]
+tags = "arduino, digital-io, library, button-press, display-driver, switches"
 type = "blog"
 date = "2017-11-30"
 author =  "dave"
@@ -25,7 +25,7 @@ being provided, it defaults to Arduino pins, just like it used to do.
 
 Download link: [LiquidCrystalIO library on github](https://github.com/TcMenu/LiquidCrystalIO)
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 Usage is exactly the same as the standard version of the library with a minor caveat.
 You must call the liquid crystal begin method from within the setup() method, which is not
@@ -41,10 +41,13 @@ Another advantage of this library is that it can be programmed to work with any 
 
 ## Wiring a display using a PCF8574 i2c expander:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/7seg/LCD16x2-wire-8574-circuit.png" alt="Circuit example for wiring display via 8574 " title="Schematic for connecting parallel display via PCF8574" >}}
+<figure>
+    <img src="/products/arduino-libraries/images/electronics/arduino/7seg/LCD16x2-wire-8574-circuit.png" alt="Circuit example for wiring display via 8574 " />
+    <figcaption>Schematic for connecting parallel display via PCF8574</figcaption>
+</figure>
 
 ## Wiring a display using a shift register:
 
 As per the diagram above, but use a shift register instead of the i2c device. 
 
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction")})

@@ -22,7 +22,7 @@ It is possible to generate an impressive menu application using LTDC via the BSP
 
 Most of the settings are provided by the BSP library, for the touch screen we only need to provide:
 
-* Orientation settings - see the [Orientation Settings section]({{< relref "touch-screen-calibration-ui.md" >}}) for more details on each option
-* Calibration Support - see the [Calibration Settings]({{< relref "touch-screen-calibration-ui.md" >}}) a full explanation of calibration
+* Orientation settings - see the [Orientation Settings section](${relRef("touch-screen-calibration-ui.md")}) for more details on each option
+* Calibration Support - see the [Calibration Settings](${relRef("touch-screen-calibration-ui.md")}) a full explanation of calibration
 
 Further a user level settings header file is included into the project, `BspUserSettings.h` this header file allows you to tweak any required settings, and also to provide implementations for any missing BSP functions that we rely on, there are comments in the header that describe its purpose. This file will be included by the plugin source to drive its configuration.

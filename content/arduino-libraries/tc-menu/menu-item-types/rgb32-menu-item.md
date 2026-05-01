@@ -18,15 +18,15 @@ An item type that represents a color in the Red Green Blue space, optionally als
 
 * Type: `Rgb32MenuItem` with default callback of `rgbAlphaItemRenderFn` in `ScrollChoiceMenuItem.h`
 * Enum returned by `getMenuType()` is MENUTYPE_COLOR_VALUE
-* [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="RGB color item reference documentation" src="/tcmenu/html/class_rgb32_menu_item.html" >}}
+* [This item is based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [RGB color item reference documentation](${refdocs("/tcmenu/html/class_rgb32_menu_item.html")})
 
 ## Creating a color menu item using the designer
 
 From the add item dialog choose the RGB Color option. At this point the properties area should look as follows:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-rgb.png" title="RGB Item Editor UI" alt="image showing the RGB editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-rgb.png" alt="image showing the RGB editor" /><figcaption>RGB Item Editor UI</figcaption></figure>
 
 The only RGB specific option is alpha, if this color needs an alpha channel tick the box, otherwise leave un-ticked.
 
@@ -49,7 +49,7 @@ You can check if an menu item is using the alpha channel
 
 ## Creating an RGB menu item from the CLI
 
-To create an RGB menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create an RGB menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type rgb --eeprom AUTO --name RgbName [--localonly --readonly --hide]
 

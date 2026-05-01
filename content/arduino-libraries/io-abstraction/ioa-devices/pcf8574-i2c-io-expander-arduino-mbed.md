@@ -17,7 +17,7 @@ IO Abstraction library fully supports the PCF8574 8-bit and PCF8575 16-bit IO ex
 
 The PCF8574 provides 8 additional input or output ports, but there are few limitations around how the device can be used, and these are discussed below. This device can be used for switches, rotary encoders, and with LiquidCrystalIO.
 
-{{< blockClear "left" >}}
+${blockClear("left")}
 
 There's a few things to note about this device:
  
@@ -39,18 +39,18 @@ There's a few things to note about this device:
     // simple 16 bit exmaple
     PCF8574IoAbstraction ioExpander(i2cAddress, interruptPin, &Wire, true);
 
-We can see above that we simply create an instance of the class, the parameters are full explained in the {{< refdocs title="PCF8574 reference documentation" src="/ioabstraction/html/class_p_c_f8574_io_abstraction.html" >}}.
+We can see above that we simply create an instance of the class, the parameters are full explained in the [PCF8574 reference documentation](${refdocs("/ioabstraction/html/class_p_c_f8574_io_abstraction.html")}).
 
-Once you have created an instance, [simply use it like any other IoAbstraction]({{< relref "ioabstraction-pins-io-expanders-shiftreg.md" >}}) they all work the same way.
+Once you have created an instance, [simply use it like any other IoAbstraction](${relRef("ioabstraction-pins-io-expanders-shiftreg.md")}) they all work the same way.
 
 ## Example usage of the PCF8574  
 
 First power down the Arduino and build the circuit below.
  
-{{< figure src="/images/electronics/arduino/power/example-ioabstraction-8574.png" alt="Circuit example for PCF8574 i2c" title="Schematic for connecting PCF8574 to Arduino" >}} 
+<figure><img src="/images/electronics/arduino/power/example-ioabstraction-8574.png" alt="Circuit example for PCF8574 i2c" /><figcaption>Schematic for connecting PCF8574 to Arduino</figcaption></figure> 
 
 In the circuit below, we connect the PCF8574 IO expansion device to the power (5V-pin16 and GND-pin8) with a 0.1uF decoupling capacitor near the chip between the power rails. Also, note that we must select an address that the chip answers on using A0-A2. Notice that the LED must be connected from 5V to the pin through a resistor, this is the only way it will work, as this chip cannot source very much current, but it can sink a lot more.
 
 To find your i2c device address [use this i2c address scanner](https://playground.arduino.cc/Main/I2cScanner), this sketch will tell you every address on which it finds an i2c chip. 
  
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

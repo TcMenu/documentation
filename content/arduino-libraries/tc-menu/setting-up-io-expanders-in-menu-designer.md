@@ -15,9 +15,9 @@ toc_needed = true
 
 Setting up IO devices has been made much easier as of V2.2 of the designer software. you can now directly edit the IO expander configurations directly within tcMenu.
 
-When we discuss IO devices we are talking about `IoAbstractionRef` objects that refer to either device pins, or any other device such as I2C expanders or shift registers from the [IoAbstraction library]({{< relref "io-abstraction.md" >}}). In order to manage the IO Expanders that are available within a project you can do so from the Code menu -> Show Io Expanders. Once that menu option is selected the following dialog appears:
+When we discuss IO devices we are talking about `IoAbstractionRef` objects that refer to either device pins, or any other device such as I2C expanders or shift registers from the [IoAbstraction library](${relRef("io-abstraction.md")}). In order to manage the IO Expanders that are available within a project you can do so from the Code menu -> Show Io Expanders. Once that menu option is selected the following dialog appears:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/io-expander-management-dialog.png" alt="managing IO Expanders in menu designer" title="Managing IO Expanders in menu designer" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/io-expander-management-dialog.png" alt="managing IO Expanders in menu designer" /><figcaption>Managing IO Expanders in menu designer</figcaption></figure>
 
 From this dialog you can add, edit and remove IO expanders. By default, the "device pins" option is always there, and when you don't want to use any kind of IO expansion device, choose this option. 
 
@@ -27,7 +27,7 @@ Note that if the above dialog is shown from within code generator, it will have 
 
 In code generator, any properties that require an IO expander will be presented as follows:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/io-expander-in-code-generator.png" alt="IO expander property in code generator" title="IO expander property in code generator" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/io-expander-in-code-generator.png" alt="IO expander property in code generator" /><figcaption>IO expander property in code generator</figcaption></figure>
 
 You cannot type directly in this field, instead you select an IO expander by pressing "Choose IO". At this point the above IO expander management dialog is shown. You can select an expander and the press the "Select" button.
 
@@ -35,7 +35,7 @@ You cannot type directly in this field, instead you select an IO expander by pre
 
 Press the "Add New" button in to start, you'll be presented with a dialog like below.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/create-or-edit-expander-dialog.png" alt="create or edit IO Expanders in menu designer" title="Create/Edit IO Expander dialog" >}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/create-or-edit-expander-dialog.png" alt="create or edit IO Expanders in menu designer" /><figcaption>Create/Edit IO Expander dialog</figcaption></figure>
 
 Firstly, you select the IO expander, at the moment code generator can generate all the code for connection on regular device pins, and also for common I2C devices. However, at the moment, for other cases you use the custom case, where you set up the expander yourself.
 

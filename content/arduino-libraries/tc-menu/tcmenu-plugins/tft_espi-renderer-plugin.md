@@ -25,20 +25,20 @@ Thanks to the outstanding performance of this library, we are able to render men
 
 Related documentation:
  
-* [Core menu rendering class guide]({{< relref "rendering-with-tcmenu-LCD-TFT-OLED.md">}})
-* [How to take over the display]({{< relref "renderer-take-over-display.md">}})
+* [Core menu rendering class guide](${relRef("rendering-with-tcmenu-LCD-TFT-OLED.md")})
+* [How to take over the display](${relRef("renderer-take-over-display.md")})
 
 ## Configuring the rendering for your display
 
 First, ensure your menu structure is saved and then choose Code -> Generate Code from the menu. Once the code generation dialog appears, you can change the display renderer by clicking on the image to the left of the renderer.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/graphics-tftespi-renderer-option.jpg" alt="TFT_eSPI menu rendering choice" title="Image showing TFT_eSPI menu rendering choice">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/graphics-tftespi-renderer-option.jpg" alt="TFT_eSPI menu rendering choice" /><figcaption>Image showing TFT_eSPI menu rendering choice</figcaption></figure>
 
 ## Configuration
 
 The following configuration options are available on this renderer.
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/graphics-tftespi-renderer-properties.jpg" alt="TFT_eSPI menu rendering properties" title="Image showing TFT_eSPI menu rendering properties">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/graphics-tftespi-renderer-properties.jpg" alt="TFT_eSPI menu rendering properties" /><figcaption>Image showing TFT_eSPI menu rendering properties</figcaption></figure>
 
 ### Variable Name
 
@@ -71,8 +71,8 @@ How many times the menu structure should be scanned for changes and redrawn if n
 In terms of touch support, the following can be configured:
 
 * Turning touch on and off, when off no touch facilities are added to your project.
-* Orientation settings - see the [Orientation Settings section]({{< relref "touch-screen-calibration-ui.md" >}}) for more details on each option
-* Calibration Support - see the [Calibration Settings]({{< relref "touch-screen-calibration-ui.md" >}}) a full explanation of calibration
+* Orientation settings - see the [Orientation Settings section](${relRef("touch-screen-calibration-ui.md")}) for more details on each option
+* Calibration Support - see the [Calibration Settings](${relRef("touch-screen-calibration-ui.md")}) a full explanation of calibration
 
 
-[Back to tcMenu main page]({{< relref "tc-menu" >}}) 
+[Back to tcMenu main page](${relRef("tc-menu")}) 

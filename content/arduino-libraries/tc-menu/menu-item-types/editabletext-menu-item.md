@@ -20,9 +20,9 @@ An item that represents a complex data type that needs to be edited a part at a 
 * Type: `IpAddressMenuItem` with default callback `ipAddressRenderFn` in RuntimeMenuItem.h
 * Type: `TimeFormattedMenuItem` with a default callback function of `timeItemRenderFn` in `RuntimeMenuItem.h`
 * Type: `DateFormattedMenuItem` with a default callback function of `dateItemRenderFn` in `RuntimeMenuItem.h`
-* [This item is based on RuntimeMenuItem]({{< relref "based-on-runtimemenuitem.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="Documentation page for these types" src="/tcmenu/html/_runtime_menu_item_8h.html" >}}
+* [This item is based on RuntimeMenuItem](${relRef("based-on-runtimemenuitem.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [Documentation page for these types](${refdocs("/tcmenu/html/_runtime_menu_item_8h.html")})
 
 Table showing what `getMenuType()` returns for each class type
 
@@ -37,7 +37,7 @@ Table showing what `getMenuType()` returns for each class type
 
 From the add dialog choose to create a text menu item and once it's selected the editor panel will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-text.png" title="Text Item Editor UI" alt="image showing the text editor">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-text.png" alt="image showing the text editor" /><figcaption>Text Item Editor UI</figcaption></figure>
 
 * maxLength: the allocated size of the string, anything copied in that's longer will be truncated.
 * editorType: at the moment plain text or IP address
@@ -94,7 +94,7 @@ To get and set the value of a date item:
 
 ## Creating a text menu item from the CLI
 
-To create a text menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create a text menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type text --eeprom AUTO --name TextName [--localonly --readonly --hide]
 

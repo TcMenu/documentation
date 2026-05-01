@@ -13,11 +13,11 @@ type ="blog"
 weight = 0
 +++
 
-IoAbstraction has a class named `AnalogInEvent` to support event based programming for Analog Inputs, it is based on the `BaseEvent` class within [the base library TaskManagerIO]({{< relref "taskmanager-io.md">}}). The class itself is very flexible and can work with both polling and interrupt based approaches, or even a hybrid of the two. If you are not familiar with events, I recommend reading about them in the above TaskManagerIO link.
+IoAbstraction has a class named `AnalogInEvent` to support event based programming for Analog Inputs, it is based on the `BaseEvent` class within [the base library TaskManagerIO](${relRef("taskmanager-io.md")}). The class itself is very flexible and can work with both polling and interrupt based approaches, or even a hybrid of the two. If you are not familiar with events, I recommend reading about them in the above TaskManagerIO link.
 
-You can see the {{< refdocs title="reference guide for analog event here" src="/ioabstraction/html/class_analog_in_event.html" >}}.
+You can see the [reference guide for analog event here](${refdocs("/ioabstraction/html/class_analog_in_event.html")}).
 
-`AnalogInEvent` is configurable and can be set to trigger on a level being breached, in either direction - IE less than or greater than. To be able to use an AnalogInEvent, you'll first need an [analog abstraction for the device with the ADC]({{< relref "using-ioabstraction-analog-core.md" >}}) in order to create an event class.
+`AnalogInEvent` is configurable and can be set to trigger on a level being breached, in either direction - IE less than or greater than. To be able to use an AnalogInEvent, you'll first need an [analog abstraction for the device with the ADC](${relRef("using-ioabstraction-analog-core.md")}) in order to create an event class.
 
 ## Creating an analog event
 
@@ -64,4 +64,4 @@ Should you want to register some kind of analog-in interrupt, you can register t
         myAnalogEvent.readingAvailable();
     }
  
-[Go back to the IoAbstraction page]({{< relref "io-abstraction.md" >}})
+[Go back to the IoAbstraction page](${relRef("io-abstraction.md")})

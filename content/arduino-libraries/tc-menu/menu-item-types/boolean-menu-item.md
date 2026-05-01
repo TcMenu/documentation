@@ -17,17 +17,17 @@ An item that can represent only boolean true or false. It can be configured to s
 
 * Class Type: `BooleanMenuItem` / `BooleanMenuInfo` in MenuItems.h
 * Enum returned by `getMenuType()` is MENUTYPE_BOOLEAN_VALUE
-* [This item is based on an Info block]({{< relref "based-on-infoblock.md">}})
-* [Information applicable to all menu items]({{< relref "menu-item-types.md" >}})
-* {{< refdocs title="BooleanMenuItem reference documentation" src="/tcmenu/html/class_boolean_menu_item.html" >}} 
+* [This item is based on an Info block](${relRef("based-on-infoblock.md")})
+* [Information applicable to all menu items](${relRef("menu-item-types.md")})
+* [BooleanMenuItem reference documentation](${refdocs("/tcmenu/html/class_boolean_menu_item.html")}) 
 
 ## Creating an object from the designer
 
 Choose to add a new menu item, and from the dialog choose Boolean item, once created the properties panel will look similar to:
 
-{{< figure src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-boolean.png" title="Boolean Item Editor UI" alt="image showing boolean item editor UI">}}
+<figure><img src="/products/arduino-libraries/images/electronics/arduino/tcMenu/generatorui-edit-boolean.png" alt="image showing boolean item editor UI" /><figcaption>Boolean Item Editor UI</figcaption></figure>
 
-Here we will only look at the boolean specific fields, see here for [common properties for all menu items]({{< relref "menu-item-types.md" >}})
+Here we will only look at the boolean specific fields, see here for [common properties for all menu items](${relRef("menu-item-types.md")})
 
 Naming - the names to use for true and false.
 
@@ -49,7 +49,7 @@ You can check which type of naming (on/off, yes/no etc) it should use by calling
 
 ## Creating a boolean menu item from the CLI
 
-To create an boolean menu item [from the CLI]({{< relref "tcmenu-cli-workflow.md" >}}) here is a template command (options in square brackets are optional):
+To create an boolean menu item [from the CLI](${relRef("tcmenu-cli-workflow.md")}) here is a template command (options in square brackets are optional):
 
     tcmenu create-item --parent 0 --type boolean --eeprom AUTO --name BoolName [--localonly --readonly --hide]
 
