@@ -8,8 +8,8 @@ author =  "dave"
 menu = "ioa-extras"
 githublink = "https://github.com/TcMenu/IoAbstraction"
 referenceDocs = "/ioabstraction/html/index.html"
-banner = ""
-titleimg = ""
+banner = "/products/arduino-libraries/images/electronics/arduino/ioAbstraction/pga2310-in-pcb-custom.jpeg"
+titleimg = "/products/arduino-libraries/images/electronics/arduino/ioAbstraction/pga2310-in-pcb-custom.jpeg"
 toc_needed = true
 weight = 5
 +++

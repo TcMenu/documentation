@@ -8,13 +8,9 @@ type: "blog"
 toc_needed: true
 ---
 
-
-
 ## Libraries Maintained actively by us
 
-Our team actively maintains these libraries. Use these Arduino and PicoSDK libraries safely in the knowledge that there is both community and commercial support. 
-
-There are several core libraries that we keep in lock step in terms of compatibility and board support. These libraries are:
+Arduino and PicoSDK libraries that we have written and actively maintain. You can use these safely in the knowledge that there is both [community](${relRef("community-help.md")}) and [commercial support](${relRef("training-support")}) available.
 
 * [TaskManagerIO](${relRef("taskmanager-io.md")}) provides core event and task scheduling services to Arduino sketches.
 * [IoAbstraction](${relRef("io-abstraction.md")}) provides user input, EEPROM and IO helper classes.
