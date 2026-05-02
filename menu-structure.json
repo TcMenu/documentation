@@ -69,8 +69,8 @@
     },
     {
       "name": "NativeCpp AdafruitGfx fork",
-      "id": "native-adafruit-gfx",
-      "relativePath": "/products/arduino-libraries/picosdk-native-adafruit-gfx/"
+      "id": "picosdk-native-cpp-adafruit-gfx",
+      "relativePath": "/products/arduino-libraries/picosdk-native-cpp-adafruit-gfx/"
     }
   ]
 }

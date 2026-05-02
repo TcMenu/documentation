@@ -16,8 +16,6 @@ toc_needed = true
 
 ## Requirements
 
-Requires tcMenu V2.0 or greater.
-
 Current support:
 
 * ESP32 touch sensor hardware.
