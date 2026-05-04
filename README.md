@@ -4,7 +4,7 @@
 [![davetcc](https://img.shields.io/badge/davetcc-dev-blue.svg)](https://github.com/davetcc)
 [![JSC TechMinds](https://img.shields.io/badge/JSC-TechMinds-green.svg)](https://www.jsctm.cz)
 
-This contains the library docs as found on theCodersCorner website. You can view the documentation [here](https://tcmenu.github.io/documentation).
+This contains the library docs as found on theCodersCorner website. You can view the documentation [here](https://www.thecoderscorner.com/products/arduino-libraries).
 
 This is completely self-contained and can be tested and developed locally with any recent build of hugo https://gohugo.io/
 
