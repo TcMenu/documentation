@@ -3,6 +3,18 @@
 <head>
   <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
 
+    {{- $new_base := "https://www.thecoderscorner.com/products/" -}}
+    {{- $path := .RelPermalink | relURL -}}
+
+    <link rel="canonical" href="{{ $new_base }}{{ $path }}">
+
+    <meta http-equiv="refresh" content="0; url={{ $new_base }}{{ $path }}">
+
+    <script type="text/javascript">
+        let newUrl = "{{ $new_base }}" + window.location.pathname.replace('/documentation/', '');
+        window.location.replace(newUrl);
+    </script>
+
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,3 +36,6 @@
   </head>
 <body>
     {{ partial "base/header" . }}
+    <h1>This documentation has moved, if you're not redirected, please visit
+        <a href="{{ $new_base }}{{ $path }}">the new location</a>
+    </h1>
